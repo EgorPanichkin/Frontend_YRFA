@@ -1,0 +1,17 @@
+{
+  "header": {
+    "info": "Unified information service",
+    "search": "Search",
+    "meet": "Make an appointment",
+    "nav": {
+      "main": {
+        "title": "Main",
+        "item1": "Home page",
+        "item2": "About",
+        "item3": "Sales"
+      },
+      "services": {},
+      "more": {}
+    }
+  }
+}

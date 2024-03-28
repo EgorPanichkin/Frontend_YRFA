@@ -1,0 +1,48 @@
+.button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.1px;
+  padding: 10.5px 24px;
+  border-radius: 40px;
+  color: white;
+  &:hover {
+    background-color: #2d8ab5;
+  }
+  svg {
+    margin-right: 6px;
+  }
+  .chevronRight {
+    margin: 0 0 0 10px;
+  }
+}
+.default {
+  background-color: var(--blue300);
+}
+.orange {
+  background-color: #ff842a;
+  &:hover {
+    background-color: #ffae4f;
+  }
+  font-weight: 700;
+}
+.border {
+  border: 1px solid var(--blue400);
+  &:hover {
+    background-color: #389dcb;
+    border: none;
+    color: white;
+  }
+  color: var(--blue400);
+}
+.errorStyle {
+  padding: 8px 24px;
+}
+.documentStyle {
+  padding: 14px 24px;
+}
+.recordingStyle {
+  padding: 8px 57px;
+}
+.linkStyle {
+  padding: 10.5px 32px;
+}
