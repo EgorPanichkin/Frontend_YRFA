@@ -1,1 +1,1 @@
-export { Modal } from "./Helpers";
+export { Modal } from "./ModalWrapper";
