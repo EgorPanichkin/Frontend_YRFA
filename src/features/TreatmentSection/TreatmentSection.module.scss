@@ -1,0 +1,14 @@
+.treatmentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .contentSection {
+    display: flex;
+    gap: 82px;
+    .pieceContent {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}
