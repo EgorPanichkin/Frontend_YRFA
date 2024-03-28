@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import style from "./Helpers.module.scss";
+import style from "./ModalWrapper.module.scss";
 
 export const ModalWrapper = ({ children, onCloseModal }) => {
   const modalRef = useRef(null);
