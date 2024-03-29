@@ -54,7 +54,7 @@ export const CustomButton = (props) => {
           : varianIcon[2]
             ? "Записаться на приём"
             : children}
-      {icon === "chevron" && <ChevronRight className={style.chevronRight} />}
+      {varianIcon[3] && <ChevronRight className={style.chevronRight} />}
     </button>
   );
 };

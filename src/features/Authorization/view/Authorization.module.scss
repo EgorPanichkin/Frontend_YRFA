@@ -1,0 +1,57 @@
+// миксин для того чтобы поставить в одну колонну елементы
+@mixin flex-direction($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.authorizationForm {
+  padding: 25px 55px 30px;
+  border: 1px solid var(--black300);
+  border-radius: 20px;
+  max-width: 364px;
+  .formWrapper {
+    @include flex-direction(30px);
+    margin-bottom: 10px;
+    .authorizationTitle {
+      line-height: 32.74px;
+      font-weight: 600;
+      font-size: 24px;
+      text-align: center;
+    }
+    .formWrapperInput {
+      @include flex-direction(20px);
+      label {
+        font-size: 15px;
+        line-height: 20.46px;
+        font-weight: 600;
+        color: var(--black400);
+      }
+      .errorLabel {
+        color: red;
+      }
+      .focusedLabel {
+        color: var(--blue300);
+      }
+      .formInput {
+        width: 100%;
+        border-radius: 40px;
+        height: 40px;
+      }
+      .errorInput {
+        border: 1px solid red;
+      }
+      .helpFormBlock {
+        @include flex-direction(8px);
+        .formLink {
+          color: var(--blue200);
+          font-size: 15px;
+          line-height: 20.46px;
+          font-weight: 600;
+          // border-bottom: 1px solid var(--blue200)
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

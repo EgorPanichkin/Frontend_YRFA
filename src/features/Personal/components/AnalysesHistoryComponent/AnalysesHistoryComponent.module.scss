@@ -1,0 +1,21 @@
+.analysesHistoryFormDataBlock {
+  background-color: var(--black100);
+  padding: 20px 0 20px 30px;
+  line-height: 21.82px;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  .analysesHistoryFormText {
+    color: var(--black400);
+    margin-left: 5px;
+  }
+  .analysesHistoryFormLink {
+    text-decoration: underline;
+    color: var(--blue300);
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
