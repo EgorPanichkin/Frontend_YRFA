@@ -1,0 +1,14 @@
+{
+  "editor.tabSize": 2,
+  "liveSassCompile.settings.formats": [
+    // .css и min.css файлы в отдельную директорию
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../style/"
+    }
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.semi": false
+}
