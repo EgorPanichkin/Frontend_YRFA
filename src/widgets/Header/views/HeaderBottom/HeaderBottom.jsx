@@ -1,7 +1,15 @@
-import { Container, Logo, navigationHeaderLinks } from "@/shared";
+import {
+  Container,
+  CustomButton,
+  Logo,
+  Typography,
+  UserCircleIcon,
+  navigationHeaderLinks,
+} from "@/shared";
 import style from "./HeaderBottom.module.scss";
 import { Link } from "react-router-dom";
 import { DropdownHeaderMenu } from "../../models/DropdownHeaderMenu/DropdownHeaderMenu";
+import { LocationSelector } from "../../models/LocationSelector";
 
 export const HeaderBottom = () => {
   return (
@@ -11,19 +19,32 @@ export const HeaderBottom = () => {
           <Logo width="60" height="40" color="#12709A" />
         </Link>
         <nav>
-          <DropdownHeaderMenu
-            items={navigationHeaderLinks.main.items}
-            title={navigationHeaderLinks.main.title}
-          />
-          <DropdownHeaderMenu
-            items={navigationHeaderLinks.services.items}
-            title={navigationHeaderLinks.services.title}
-          />
-          <DropdownHeaderMenu
-            items={navigationHeaderLinks.more.items}
-            title={navigationHeaderLinks.more.title}
-          />
-          <div className={style.user}></div>
+          <div className={style.main}>
+            <DropdownHeaderMenu
+              items={navigationHeaderLinks.main.items}
+              title={navigationHeaderLinks.main.title}
+            />
+            <DropdownHeaderMenu
+              items={navigationHeaderLinks.services.items}
+              title={navigationHeaderLinks.services.title}
+            />
+            <DropdownHeaderMenu
+              items={navigationHeaderLinks.more.items}
+              title={navigationHeaderLinks.more.title}
+            />
+          </div>
+          <div className={style.location}>
+            <LocationSelector />
+          </div>
+          <div className={style.user}>
+            <Link to="/login" className={style.link}>
+              <UserCircleIcon width={20} />
+              <Typography variant="h9">Личный кабинет</Typography>
+            </Link>
+            <CustomButton color="orange" type="link" link="/personal">
+              Записаться онлайн
+            </CustomButton>
+          </div>
         </nav>
       </div>
     </Container>

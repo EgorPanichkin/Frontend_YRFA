@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, DocumentIcon, HomeIcon, PenIcon } from "@/shared";
 
-import style from "./customButton.module.sass";
+import style from "./CustomButton.module.scss";
 
 export const CustomButton = (props) => {
   const { children, color, type, className, disabled, icon, link, onClick } =

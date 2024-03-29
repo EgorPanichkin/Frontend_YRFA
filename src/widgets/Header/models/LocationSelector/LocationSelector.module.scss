@@ -1,0 +1,13 @@
+.location {
+  display: flex;
+  gap: 32px;
+  justify-content: left;
+  cursor: pointer;
+  button {
+    color: var(--black400);
+  }
+  .active {
+    color: var(--blue300);
+    font-weight: 600;
+  }
+}

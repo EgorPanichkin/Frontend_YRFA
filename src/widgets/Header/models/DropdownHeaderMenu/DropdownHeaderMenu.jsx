@@ -1,24 +1,24 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from "./DropdownHeaderMenu.module.scss";
-import { Polygon } from "@/shared";
+import { ChevronRightIcon, Polygon } from "@/shared";
 
 export const DropdownHeaderMenu = ({ items, title }) => {
   const [showMenu, setShowMenu] = useState(false);
-  // const [hoveredItem, setHoveredItem] = useState(null)
+  const [hoveredItem, setHoveredItem] = useState(null);
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-  // FIX ME
-  // const handleMouseEnter = (item) => {
-  //   setHoveredItem(item)
-  // }
 
-  // const handleMouseLeave = () => {
-  //   setHoveredItem(null)
-  // }
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
 
   return (
     <div ref={menuRef}>
@@ -33,16 +33,13 @@ export const DropdownHeaderMenu = ({ items, title }) => {
               to={item.path}
               key={index}
               className={style.childItem}
-              // onMouseEnter={() => handleMouseEnter(item.label)}
-              // onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => handleMouseEnter(item.label)}
+              onMouseLeave={handleMouseLeave}
             >
               <span className={style.link}>{item.label}</span>
-              {
-                //FIX ME
-                /* <div className={style.chevron}>
+              <div className={style.chevron}>
                 {hoveredItem === item.label && <ChevronRightIcon />}
-              </div> */
-              }
+              </div>
             </Link>
           ))}
         </div>
