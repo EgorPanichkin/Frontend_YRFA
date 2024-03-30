@@ -9,6 +9,7 @@ import { useFormValidation } from "../config/useFormValidation";
 import { useNavigate } from "react-router-dom";
 
 import style from "./verificationForm.module.sass";
+
 import { useEffect, useState } from "react";
 
 export const VerificationForm = () => {
@@ -22,10 +23,11 @@ export const VerificationForm = () => {
     errorsInput,
   } = useFormValidation();
 
-  const verificationData = "+996(700)000-000";
+  const verificationData = {};
   const { phone } = verificationData;
 
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  /* eslint-disable */
   const navigate = useNavigate();
   // const { code } = inputValues
 

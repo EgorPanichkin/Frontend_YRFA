@@ -1,5 +1,5 @@
 import { Container } from "@/shared";
-import { VerificationForm } from "@/features/passwordRecovery";
+import { VerificationForm } from "@/features/PasswordRecovery";
 
 import style from "./verificationPage.module.sass";
 

@@ -1,1 +1,0 @@
-export { ConfirmationPersonal } from "./confirmationPersonal";

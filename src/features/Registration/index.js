@@ -1,1 +1,1 @@
-export * from "./registrationForm";
+export * from "./view";

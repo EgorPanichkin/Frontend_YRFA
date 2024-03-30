@@ -1,6 +1,6 @@
 import { Container } from "@/shared";
 import style from "./smsPage.module.sass";
-import { SmsForm } from "@/features/passwordRecovery";
+import { SmsForm } from "@/features/PasswordRecovery";
 
 export const SmsPage = () => {
   return (

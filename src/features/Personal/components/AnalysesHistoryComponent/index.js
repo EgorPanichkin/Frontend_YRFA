@@ -1,0 +1,1 @@
+export { AnalysesHistoryComponent } from "./AnalysesHistoryComponent";

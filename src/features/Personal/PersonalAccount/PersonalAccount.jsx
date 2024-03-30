@@ -1,20 +1,21 @@
 import {
-  ButtonSubmit,
   Cross,
-  InputComponent,
+  CustomButton,
+  CustomInput,
   SelectComponent,
   Typography,
 } from "@/shared";
-import { usePersonalAccount } from "../config/hook/usePersonalAccount";
-import { ConfirmationPersonal, UpcomingReceptionComponent } from "../config";
+
+import { ModalPersonal, UpcomingReceptionComponent } from "../components";
+import { PersonalAccountValidation } from "../model/PersonalAccountValidation";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
 
-import style from "./personalAccount.module.sass";
+import style from "./PersonalAccount.module.scss";
 
 export const PersonalAccount = () => {
+  // диструктурирую состоянии и функции с хука usePersonalAccount
   const {
-    // диструктурирую состоянии и функции с хука usePersonalAccount
     infoCabinetSettingsClose,
     handleDeleteConfirmation,
     handleConfirmationExit,
@@ -39,7 +40,7 @@ export const PersonalAccount = () => {
     selectRef,
     editMode,
     handleOverlayClick,
-  } = usePersonalAccount();
+  } = PersonalAccountValidation();
 
   return (
     <div className={style.personalAccount}>
@@ -60,6 +61,7 @@ export const PersonalAccount = () => {
             />
           ) : (
             <Cross
+              width={24}
               className={style.personalAccountIconClose}
               onClick={infoCabinetSettingsClose}
             />
@@ -103,7 +105,7 @@ export const PersonalAccount = () => {
             >
               Имя
             </label>
-            <InputComponent
+            <CustomInput
               id="name"
               type="text"
               value={inputValues.name}
@@ -131,7 +133,7 @@ export const PersonalAccount = () => {
             >
               Фамилия
             </label>
-            <InputComponent
+            <CustomInput
               id="surName"
               type="text"
               onBlur={handleInputBlur}
@@ -202,7 +204,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="date"
                 type="date"
                 onBlur={handleInputBlur}
@@ -240,7 +242,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="password"
                 type="password"
                 onBlur={handleInputBlur}
@@ -275,9 +277,9 @@ export const PersonalAccount = () => {
           </div>
         </div>
         {editMode === false && (
-          <ButtonSubmit className={style.personalAccountButton} type="submit">
+          <CustomButton className={style.personalAccountButton} type="submit">
             Сохранить
-          </ButtonSubmit>
+          </CustomButton>
         )}
       </form>
       <div className={style.upcomingReceptions}>
@@ -289,7 +291,7 @@ export const PersonalAccount = () => {
           Предстоящие приемы
         </Typography>
         {confirmationExit && (
-          <ConfirmationPersonal
+          <ModalPersonal
             title="Вы действительно хотите выйти из кабинета?"
             confirmation="exit"
             onOverlay={handleOverlayClick}
@@ -297,7 +299,7 @@ export const PersonalAccount = () => {
           />
         )}
         {confirmationId && (
-          <ConfirmationPersonal
+          <ModalPersonal
             title="Вы действительно хотите отменить запись?"
             confirmation="id"
             onOverlay={handleOverlayClick}

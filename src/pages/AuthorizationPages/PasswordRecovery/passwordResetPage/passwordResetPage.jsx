@@ -1,6 +1,6 @@
 import { Container } from "@/shared";
 import style from "./passwordResetPage.module.sass";
-import { PasswordResetForm } from "@/features/passwordRecovery";
+import { PasswordResetForm } from "@/features/PasswordRecovery";
 
 export const PasswordResetPage = () => {
   return (

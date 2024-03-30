@@ -1,19 +1,19 @@
-import { useAnalysesHistory } from "../config/hook/useAnalysesHistory";
-import { AnalysesHistoryComponent } from "../config";
+import { AnalysesHistoryData } from "../model/AnalysesHistoryData";
+import { AnalysesHistoryComponent } from "../components";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Typography } from "@/shared";
 
-import style from "./analysesHistory.module.sass";
+import style from "./AnalysesHistory.module.scss";
 
 export const AnalysesHistory = () => {
-  const { analysesHistoryList } = useAnalysesHistory();
+  const { analysesHistoryList } = AnalysesHistoryData();
+
   const navigate = useNavigate();
 
   return (
     <div className={style.analysesHistoryForm}>
       <div className={style.analysesHistoryFormHead}>
         <ChevronLeft
-          width={20}
           onClick={() => navigate(-1)}
           className={style.analysesHistoryBack}
         />

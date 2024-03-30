@@ -1,10 +1,10 @@
-import { RegistrationForm } from "@/features";
+import { Registration } from "@/features";
 import { Container } from "@/shared";
 
 export const Login = () => {
   return (
     <Container>
-      <RegistrationForm />
+      <Registration />
     </Container>
   );
 };

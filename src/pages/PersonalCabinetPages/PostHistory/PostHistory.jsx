@@ -1,7 +1,7 @@
 import { Container } from "@/shared";
-import { PostHistory } from "@/features";
 
 import style from "./PostHistory.module.scss";
+import { PostHistory } from "@/features/Personal/PostHistory";
 
 export const PostHistoryPage = () => {
   return (

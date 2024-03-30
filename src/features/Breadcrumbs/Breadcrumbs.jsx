@@ -1,5 +1,5 @@
 import { ChevronRight, HomeIcon } from "@/shared";
-import style from "./Breadcrumbs.module.sass";
+import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
 
 export const Breadcrumbs = () => {

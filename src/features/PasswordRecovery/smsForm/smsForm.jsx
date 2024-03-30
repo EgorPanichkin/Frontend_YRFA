@@ -19,6 +19,7 @@ export const SmsForm = () => {
 
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
   const navigate = useNavigate();
+  /* eslint-disable */
   // const { phone } = inputValues
 
   useEffect(() => {
@@ -32,7 +33,6 @@ export const SmsForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate("verification");
-    // dispatch(addPhone({ phone }))
   };
 
   return (
