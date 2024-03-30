@@ -1,0 +1,22 @@
+.section {
+  width: 590px;
+  height: 216px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  div {
+    width: 209px;
+    height: 190px;
+    display: block;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.image {
+  width: 333px;
+  height: 216px;
+}

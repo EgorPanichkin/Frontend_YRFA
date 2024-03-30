@@ -1,0 +1,24 @@
+.cardBlockDetail {
+  display: flex;
+  .contentBlock {
+    width: 242px;
+    height: 271px;
+    padding: 32px 30px 32px 24px;
+    background-color: #f5fcff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 67px;
+  }
+  a {
+    margin-right: auto;
+  }
+  .cardDetailImg {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 372px;
+    height: 271px;
+    object-fit: cover;
+  }
+}

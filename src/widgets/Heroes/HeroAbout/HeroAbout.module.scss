@@ -1,0 +1,21 @@
+.blockHero {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 82px;
+  .slider {
+    flex-basis: 600px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 448px;
+  }
+  .heroTitleBlock {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .line {
+    margin: 8px 0;
+  }
+}

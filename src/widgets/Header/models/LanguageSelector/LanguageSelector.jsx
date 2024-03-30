@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import style from "./LanguageSelector.module.scss";
-import { LanguageIcon, Polygon } from "@/shared";
+import { LanguageIcon, PolygonIcon } from "@/shared";
 
 export const LanguageSelector = () => {
   const [show, setShow] = useState(false);
@@ -27,7 +27,7 @@ export const LanguageSelector = () => {
       <div className={style.selector} onClick={toggleCities}>
         <LanguageIcon />
         Язык
-        <Polygon />
+        <PolygonIcon />
       </div>
       {show && <div className={style.menuDropdown}></div>}
     </div>

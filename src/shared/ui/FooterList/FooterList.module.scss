@@ -1,0 +1,11 @@
+.link {
+  display: block;
+  margin-bottom: 10px;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
+.line {
+  margin: 10px 0;
+}

@@ -1,0 +1,29 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--black100);
+  border-radius: 40px;
+
+  input {
+    color: var(--blue300);
+    padding: 10.5px 15px;
+    border-radius: 40px;
+    line-height: 19.1px;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    height: 40px;
+    width: 100%;
+    &::placeholder {
+      color: var(--black300);
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 13px;
+      line-height: 17.73px;
+    }
+  }
+  .icon {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}

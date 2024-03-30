@@ -1,3 +1,3 @@
-export * from "./PhoneForm";
-export * from "./VerificationForm";
-export * from "./PasswordResetForm";
+export * from "./smsForm";
+export * from "./verificationForm";
+export * from "./passwordResetForm";

@@ -1,0 +1,1 @@
+export { TreatmentAndDetailSection } from "./TreatmentAndDetailSection";

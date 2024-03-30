@@ -1,21 +1,20 @@
 import {
   ButtonSubmit,
+  Cross,
   InputComponent,
   SelectComponent,
   Typography,
 } from "@/shared";
-
-import { EllipsisVerticalIcon, XMarkIcon } from "@heroicons/react/20/solid";
-import { ModalPersonal, UpcomingReceptionComponent } from "../components";
-import { PersonalAccountValidation } from "../model/PersonalAccountValidation";
+import { usePersonalAccount } from "../config/hook/usePersonalAccount";
+import { ConfirmationPersonal, UpcomingReceptionComponent } from "../config";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
 
-import style from "./PersonalAccount.module.scss";
+import style from "./personalAccount.module.sass";
 
 export const PersonalAccount = () => {
-  // диструктурирую состоянии и функции с хука usePersonalAccount
   const {
+    // диструктурирую состоянии и функции с хука usePersonalAccount
     infoCabinetSettingsClose,
     handleDeleteConfirmation,
     handleConfirmationExit,
@@ -40,7 +39,7 @@ export const PersonalAccount = () => {
     selectRef,
     editMode,
     handleOverlayClick,
-  } = PersonalAccountValidation();
+  } = usePersonalAccount();
 
   return (
     <div className={style.personalAccount}>
@@ -54,15 +53,13 @@ export const PersonalAccount = () => {
             Личный кабинет пациента
           </Typography>
           {editMode === true ? (
-            <EllipsisVerticalIcon
-              width={24}
+            <Cross
               ref={selectRef}
               className={style.personalAccountIconOpen}
               onClick={handleEllipsisClick}
             />
           ) : (
-            <XMarkIcon
-              width={24}
+            <Cross
               className={style.personalAccountIconClose}
               onClick={infoCabinetSettingsClose}
             />
@@ -292,7 +289,7 @@ export const PersonalAccount = () => {
           Предстоящие приемы
         </Typography>
         {confirmationExit && (
-          <ModalPersonal
+          <ConfirmationPersonal
             title="Вы действительно хотите выйти из кабинета?"
             confirmation="exit"
             onOverlay={handleOverlayClick}
@@ -300,7 +297,7 @@ export const PersonalAccount = () => {
           />
         )}
         {confirmationId && (
-          <ModalPersonal
+          <ConfirmationPersonal
             title="Вы действительно хотите отменить запись?"
             confirmation="id"
             onOverlay={handleOverlayClick}

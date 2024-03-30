@@ -1,0 +1,9 @@
+.branchesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .cardBlock {
+    display: flex;
+    gap: 21px;
+  }
+}

@@ -1,0 +1,47 @@
+.rehabilitation {
+  &Body {
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+    margin-bottom: 40px;
+    @media (max-width: 320px) {
+      display: flex;
+      gap: 32px;
+    }
+  }
+  &ItemReverse {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 56px;
+    @media (max-width: 320px) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
+  }
+  &Item {
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
+    @media (max-width: 320px) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
+  }
+  &Image {
+    max-height: 340px;
+    max-width: 480px;
+    @media (max-width: 320px) {
+      max-height: 150px;
+      width: 100%;
+    }
+  }
+  &Content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

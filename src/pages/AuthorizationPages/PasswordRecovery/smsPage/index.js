@@ -1,0 +1,1 @@
+export { SmsPage } from "./smsPage";

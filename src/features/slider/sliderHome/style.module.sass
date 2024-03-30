@@ -1,0 +1,65 @@
+.slider
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+  border-radius: 20px
+  width: 680px
+  height: 456px
+  position: relative
+  .sliderBottom
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    position: absolute
+    bottom: 0px
+    width: 100%
+    flex-shrink: 0
+    border-radius: 0 0 20px 20px
+    gap: 8px
+    padding: 16px 112px 32px 32px
+    .sliderTitleButton
+      margin-top: 8px
+      border-radius: 40px
+      background: var(--Blue-300, #12709A)
+      width: 208px
+      height: 40px
+      padding: 12px 24px
+    .sliderTitleButton:hover
+      opacity: 0.8
+      transition: 0.4s
+    .sliderTitleButton:active
+      opacity: 0.4
+  .sliderPictures
+    display: flex
+    flex-direction: column
+    background-color: var(--black100)
+    border-radius: 20px
+  .sliderProgressBar
+    position: absolute
+    bottom: 16px
+    right: 32px
+    display: flex
+    align-items: center
+    gap: 16px
+    .btnToSlide
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      padding: 12px 8px
+      border: none
+      cursor: pointer
+      background-color: #F5F6F6
+      .icon
+        width: 20px
+        height: 20px
+    .progressBar
+      display: flex
+      padding: 10px
+      gap: 10px
+      .progressDot
+        width: 10px
+        height: 10px
+        background-color: var(--black200)
+        border-radius: 50%
+        transition: width 0.3s ease-in-out
+        &[style*='width: 40px']
+          border-radius: 10px
+          background-color: var(--blue300)

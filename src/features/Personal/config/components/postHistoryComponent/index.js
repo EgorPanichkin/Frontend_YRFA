@@ -1,0 +1,1 @@
+export { PostHistoryComponent } from "./postHistoryComponent";

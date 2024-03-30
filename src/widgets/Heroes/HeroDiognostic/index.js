@@ -1,0 +1,1 @@
+export { HeroDiognostic } from "./HeroDiognostic";

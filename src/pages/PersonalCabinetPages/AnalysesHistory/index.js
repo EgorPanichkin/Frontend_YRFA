@@ -1,0 +1,1 @@
+export { AnalysesHistoryPage } from "./AnalysesHistory";

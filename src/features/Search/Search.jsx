@@ -1,7 +1,6 @@
+import { GlassIcon } from "@/shared";
+import style from "./style.module.sass";
 import { useTranslation } from "react-i18next";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-
-import style from "./Search.module.scss";
 
 export const Search = () => {
   const { t } = useTranslation();
@@ -10,7 +9,7 @@ export const Search = () => {
       <input type="text" name="" id="" placeholder={t("header.search")} />
       <div className={style.searchIcon}>
         <button>
-          <MagnifyingGlassIcon width={20} />
+          <GlassIcon />
         </button>
       </div>
     </div>

@@ -1,10 +1,14 @@
-import { ButtonSubmit, InputComponent, Typography } from "@/shared";
-import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import { FormsValidation } from "../model/FormsValidation";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {
+  ButtonSubmit,
+  ChevronLeft,
+  InputComponent,
+  Typography,
+} from "@/shared";
+import { useFormValidation } from "../config/useFormValidation";
 
-import style from "./PasswordResetForm.module.scss";
+import style from "./passwordResetForm.module.sass";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const PasswordResetForm = () => {
   const {
@@ -15,7 +19,7 @@ export const PasswordResetForm = () => {
     handleInputBlur,
     focusedInput,
     errorsInput,
-  } = FormsValidation();
+  } = useFormValidation();
 
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
   const { password, enterPassword } = inputValues;
@@ -34,7 +38,7 @@ export const PasswordResetForm = () => {
         inputValues.enterPassword === "" ||
         !passwordMatch,
     );
-  }, [errorsInput, inputValues]);
+  }, [errorsInput, inputValues, passwordMatch]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,7 +47,7 @@ export const PasswordResetForm = () => {
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
       <div className={style.smsFormHead}>
-        <ChevronLeftIcon
+        <ChevronLeft
           className={style.smsFormBack}
           onClick={() => navigate(-1)}
           width={20}

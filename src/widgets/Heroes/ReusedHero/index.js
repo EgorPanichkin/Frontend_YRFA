@@ -1,0 +1,1 @@
+export { ReusedHero } from "./ReusedHero";

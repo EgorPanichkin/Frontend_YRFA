@@ -1,0 +1,1 @@
+export { RehabilitationPage } from "./Rehabilitation";

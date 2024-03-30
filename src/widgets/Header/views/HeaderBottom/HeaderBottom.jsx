@@ -1,6 +1,5 @@
 import {
   Container,
-  CustomButton,
   Logo,
   Typography,
   UserCircleIcon,
@@ -10,6 +9,7 @@ import style from "./HeaderBottom.module.scss";
 import { Link } from "react-router-dom";
 import { DropdownHeaderMenu } from "../../models/DropdownHeaderMenu/DropdownHeaderMenu";
 import { LocationSelector } from "../../models/LocationSelector";
+import { SignUpButton } from "@/entities";
 
 export const HeaderBottom = () => {
   return (
@@ -41,9 +41,7 @@ export const HeaderBottom = () => {
               <UserCircleIcon width={20} />
               <Typography variant="h9">Личный кабинет</Typography>
             </Link>
-            <CustomButton color="orange" type="link" link="/personal">
-              Записаться онлайн
-            </CustomButton>
+            <SignUpButton>Записаться онлайн</SignUpButton>
           </div>
         </nav>
       </div>

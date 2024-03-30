@@ -1,12 +1,15 @@
-import { ButtonSubmit, InputComponent, Typography } from "@/shared";
-import { ChevronLeftIcon, PhoneIcon } from "@heroicons/react/20/solid";
-import { addCode } from "@/app/store/verificationDataSlice";
-import { FormsValidation } from "../model/FormsValidation";
-import { useDispatch, useSelector } from "react-redux";
+import {
+  ButtonSubmit,
+  ChevronLeft,
+  InputComponent,
+  PhoneIcon,
+  Typography,
+} from "@/shared";
+import { useFormValidation } from "../config/useFormValidation";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
-import style from "./VerificationForm.module.scss";
+import style from "./verificationForm.module.sass";
+import { useEffect, useState } from "react";
 
 export const VerificationForm = () => {
   const {
@@ -17,17 +20,14 @@ export const VerificationForm = () => {
     handleInputBlur,
     focusedInput,
     errorsInput,
-  } = FormsValidation();
+  } = useFormValidation();
 
-  const verificationData = useSelector(
-    (state) => state.verificationData.verificationData,
-  );
+  const verificationData = "+996(700)000-000";
   const { phone } = verificationData;
 
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { code } = inputValues;
+  // const { code } = inputValues
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
@@ -40,7 +40,6 @@ export const VerificationForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate("password-reset");
-    dispatch(addCode({ code }));
   };
 
   const [notificationPhone, setNotificationPhone] = useState(false);
@@ -58,7 +57,7 @@ export const VerificationForm = () => {
     };
   }, [notificationPhone]);
 
-  // Закрыть уведомление через 2 секунды
+  // Закрыть уведомление через 3 секунды
   useEffect(() => {
     const timer = setTimeout(() => {
       setNotificationPhone(false);
@@ -79,7 +78,7 @@ export const VerificationForm = () => {
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
       <div className={style.smsFormHead}>
-        <ChevronLeftIcon
+        <ChevronLeft
           className={style.smsFormBack}
           onClick={() => navigate(-1)}
           width={20}

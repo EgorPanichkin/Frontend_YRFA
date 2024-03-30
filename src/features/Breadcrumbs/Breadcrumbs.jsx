@@ -1,13 +1,13 @@
-import { ChevronRightIcon, HomeIcon } from "@heroicons/react/20/solid";
+import { ChevronRight, HomeIcon } from "@/shared";
+import style from "./Breadcrumbs.module.sass";
 import { Link, useLocation } from "react-router-dom";
-
-import style from "./Breadcrumbs.module.scss";
 
 export const Breadcrumbs = () => {
   const data = {
     about: "О Компании",
     "our-team": "Наша команда",
     diognostic: "Диагностика",
+    rehabilitation: "Реабилитация",
     FAQ: "FAQ",
     analysis: "Анализы",
     login: "Вход в кабинет",
@@ -47,14 +47,14 @@ export const Breadcrumbs = () => {
         return isLast ? (
           <div className={style.link} key={`${name}${index}`}>
             <div className={style.chevron}>
-              <ChevronRightIcon />
+              <ChevronRight />
             </div>
             <div>{data[name]}</div>
           </div>
         ) : (
           <Link className={style.link} key={`${name}${index}`} to={routeTo}>
             <div className={style.chevron}>
-              <ChevronRightIcon />
+              <ChevronRight />
             </div>
             {data[name]}
           </Link>

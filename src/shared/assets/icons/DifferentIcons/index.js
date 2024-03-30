@@ -7,3 +7,5 @@ export * from "./Money";
 export * from "./Question";
 export * from "./Tech";
 export * from "./Time";
+export * from "./LocationIcon";
+export * from "./FeedbackIcon";

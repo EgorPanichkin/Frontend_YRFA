@@ -1,22 +1,42 @@
-import { FeedbackIcon } from "@/shared/assets/icons/feedback";
-import { FeedbackValidation } from "../model/FeedbackValidation";
-import { useState } from "react";
-import { Modal } from "@/shared/lib";
+import { useEffect, useState } from "react";
 
-import { ButtonSubmit, InputComponent, Typography } from "@/shared";
-
+import style from "./Feedback.module.sass";
 import {
-  DocumentTextIcon,
-  UserIcon,
-  XCircleIcon,
-} from "@heroicons/react/20/solid";
-
-import style from "./Feedback.module.scss";
+  ButtonSubmit,
+  Cross,
+  FeedbackIcon,
+  InputComponent,
+  Typography,
+  UserIcons,
+  Tech,
+} from "@/shared";
+import { useValidationFeedback } from "../hook/useValidationFeedback";
 
 export const Feedback = () => {
   const [feedbackModal, setFeedbackModal] = useState(false);
   const { handleInputChange, isButtonDisabled, inputValues, counter } =
-    FeedbackValidation();
+    useValidationFeedback();
+
+  // Функция для обработки клика по тёмной области
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains(style.notificationOverlay)) {
+      // Закрываем уведомление, только если клик произошел на затемненной области
+      setFeedbackModal(false);
+    }
+  };
+
+  useEffect(() => {
+    const body = document.body;
+    if (feedbackModal) {
+      body.style.overflow = "hidden"; // Запрещаем прокрутку страницы
+    } else {
+      body.style.overflow = ""; // Разрешаем прокрутку страницы
+    }
+
+    return () => {
+      body.style.overflow = ""; // Убираем запрет на прокрутку при размонтировании компонента
+    };
+  }, [feedbackModal]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,14 +46,16 @@ export const Feedback = () => {
 
   return (
     <>
-      <div className={style.feedback} onClick={() => setFeedbackModal(true)}>
+      <div
+        className={style.feedback}
+        onClick={() => setFeedbackModal(!feedbackModal)}
+      >
         <FeedbackIcon />
       </div>
       {feedbackModal && (
-        <Modal onCloseModal={() => setFeedbackModal(false)}>
+        <div onClick={handleOverlayClick} className={style.notificationOverlay}>
           <div className={style.questio}>
-            <XCircleIcon
-              width={24}
+            <Cross
               color="var(--black300)"
               className={style.closeModal}
               onClick={() => setFeedbackModal(false)}
@@ -53,7 +75,7 @@ export const Feedback = () => {
                 onChange={(event) => handleInputChange(event, "emailPhone")}
               />
               <div className={style.questioUser}>
-                <UserIcon width={20} />
+                <UserIcons />
                 <input
                   type="text"
                   placeholder="ФИО"
@@ -62,7 +84,7 @@ export const Feedback = () => {
                 />
               </div>
               <div className={style.questioText}>
-                <DocumentTextIcon width={20} />
+                <Tech />
                 <textarea
                   type="text"
                   placeholder="Введите текст"
@@ -80,7 +102,7 @@ export const Feedback = () => {
               </ButtonSubmit>
             </form>
           </div>
-        </Modal>
+        </div>
       )}
     </>
   );

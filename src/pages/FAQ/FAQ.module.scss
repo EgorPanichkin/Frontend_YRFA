@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+
+  .question {
+    margin-bottom: 164px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .actual {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

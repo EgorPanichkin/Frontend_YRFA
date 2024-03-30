@@ -1,0 +1,40 @@
+.select {
+  position: relative;
+  .selectTitle {
+    background-color: var(--black100);
+    justify-content: space-between;
+    color: var(--black400);
+    padding: 10.5px 20px;
+    border-radius: 40px;
+    align-items: center;
+    font-weight: 400px;
+    margin-bottom: 5px;
+    max-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    border: none;
+    width: 100%;
+  }
+  .selectBlock {
+    flex-direction: column;
+    color: var(--blue300);
+    padding: 10px;
+    width: 100%;
+    gap: 10px;
+    background-color: var(--background-color);
+    box-shadow: 3px 2px 4px 4px rgb(185 185 185 / 20%);
+    border-radius: 0 20px 20px;
+    position: absolute;
+    .option {
+      border-radius: 10px;
+      cursor: pointer;
+      display: block;
+      padding: 10px;
+      transition: 250ms;
+      &:hover {
+        background-color: #d5e5ea;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "equipment": [
+    {
+      "title": "Название",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima natus totam at sequi magnam fuga earum, quidem voluptatum itaque? Rem quo cupiditate incidunt tempore libero provident. Doloremque, provident illo.",
+      "image": "https://a-yazdorov.ru/upload/iblock/0e7/0e7d5972d76285d56dea8aba446b7112.jpg"
+    },
+    {
+      "title": "Название",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima natus totam at sequi magnam fuga earum, quidem voluptatum itaque? Rem quo cupiditate incidunt tempore libero provident. Doloremque, provident illo.",
+      "image": "url2"
+    },
+    {
+      "title": "Название",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima natus totam at sequi magnam fuga earum, quidem voluptatum itaque? Rem quo cupiditate incidunt tempore libero provident. Doloremque, provident illo.",
+      "image": "url3"
+    },
+    {
+      "title": "Название",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima natus totam at sequi magnam fuga earum, quidem voluptatum itaque? Rem quo cupiditate incidunt tempore libero provident. Doloremque, provident illo.",
+      "image": "url3"
+    }
+  ]
+}

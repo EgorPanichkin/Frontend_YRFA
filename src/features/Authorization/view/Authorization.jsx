@@ -1,4 +1,4 @@
-import { ButtonSubmit, InputComponent, Typography } from "@/shared";
+import { CustomButton, CustomInput, Typography } from "@/shared";
 import { AuthValidation } from "../model/AuthValidation";
 import { useEffect, useState } from "react";
 import { IMaskInput } from "react-imask";
@@ -88,7 +88,7 @@ export const Authorization = () => {
                 Пароль
               </label>
             )}
-            <InputComponent
+            <CustomInput
               id="password"
               type="password"
               onBlur={handleInputBlur}
@@ -99,9 +99,9 @@ export const Authorization = () => {
             />
           </div>
         </div>
-        <ButtonSubmit type="submit" disabled={isSubmitButtonDisabled}>
+        <CustomButton type="submit" disabled={isSubmitButtonDisabled}>
           Войти в кабинет
-        </ButtonSubmit>
+        </CustomButton>
       </div>
       <div className={style.helpFormBlock}>
         <Link className={style.formLink} to="/registration">

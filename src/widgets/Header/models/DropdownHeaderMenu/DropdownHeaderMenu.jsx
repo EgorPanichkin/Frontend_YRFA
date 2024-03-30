@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from "./DropdownHeaderMenu.module.scss";
-import { ChevronRightIcon, Polygon } from "@/shared";
+import { ChevronRightIcon, PolygonIcon } from "@/shared";
 
 export const DropdownHeaderMenu = ({ items, title }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,8 +23,8 @@ export const DropdownHeaderMenu = ({ items, title }) => {
   return (
     <div ref={menuRef}>
       <div className={style.item} onClick={toggleMenu}>
+        <PolygonIcon />
         {title}
-        <Polygon />
       </div>
       {showMenu && (
         <div className={style.menuDropdown}>

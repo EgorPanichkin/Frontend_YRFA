@@ -1,1 +1,1 @@
-export { PagesNavBar } from "./PagesNavBar";
+export { PagesNavBar } from "./pageNavBar";

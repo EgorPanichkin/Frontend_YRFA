@@ -1,0 +1,24 @@
+.heroRehabilitation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+  }
+  &Content {
+    width: 100%;
+    max-width: 632px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &Button {
+    width: fit-content;
+    display: flex;
+  }
+  &Image {
+    width: 100%;
+    heigth: 100%;
+  }
+}

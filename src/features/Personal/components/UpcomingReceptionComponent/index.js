@@ -1,1 +1,0 @@
-export { UpcomingReceptionComponent } from "./UpcomingReceptionComponent";

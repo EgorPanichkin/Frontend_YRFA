@@ -1,0 +1,129 @@
+.personalAccount
+  border: 1px solid var(--black300)
+  border-radius: 20px
+  padding: 24px 24px 34px
+  .personalForm
+    padding: 0 20px
+    margin-bottom: 100px
+    .personalAccountHeading
+      display: flex
+      justify-content: space-between
+      align-items: center
+      position: relative
+      margin-bottom: 30px
+      .personalCabinetTitle
+        font-size: 24px
+        line-height: 32.74px
+        font-weight: 600
+      .personalAccountIconOpen, .personalAccountIconClose
+        cursor: pointer
+      .dropDownMenu
+        padding: 10px 10px
+        display: flex
+        flex-direction: column
+        position: absolute
+        background-color: var(--background-color)
+        box-shadow: 0px 4px 40px 0px #0000001A
+        border-radius: 20px 0 20px 20px
+        z-index: 100
+        top: 30px
+        right: 0
+        gap: 10px
+        a, .dropDownMenuEdit
+          display: inline
+          color: #1A4862
+          padding: 12px 42px 10px 12px
+          border-radius: 10px
+          transition: 200ms
+          &:hover
+            background-color: #DDF1FA
+    .formWrapper
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      max-width: 534px
+      gap: 20px
+      div
+        width: 254px
+        label
+          margin-left: 10px
+          font-weight: 600
+          font-size: 15px
+          line-height: 20.46px
+          color: var(--black400)
+          @media (max-width: 320px)
+            font-size: 14px
+        .focusedLabel
+          color: var(--blue300)
+        .errorLabel
+          color: var(--error)
+        input
+          border-radius: 10px
+          color: black
+          color: var(--black400)
+        .personalCabinetInput
+          input
+            border-radius: 40px
+            color: var(--black500)
+        .cabinetInputPhone
+          width: 254px
+          height: 40px
+        .cabinetInputPhoneActive
+          color: var(--black500)
+          width: 254px
+          height: 40px
+          border-radius: 40px
+        .fakeInput
+          font-size: 14px
+          font-weight: 400
+          line-height: 19.1px
+          width: 254px
+          height: 40px
+    .personalAccountButton
+      margin: 30px 0 -70px
+  .upcomingReceptions
+    .upcomingReceptionsTitle
+      margin-bottom: 20px
+      font-weight: 600
+      font-size: 24px
+      line-height: 32.74px
+      margin-left: 26px
+    .notificationOverlay
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.5)
+      display: flex
+      justify-content: center
+      align-items: center
+      .upcomingReceptionNotification
+        padding: 24px 32px
+        border-radius: 20px
+        background-color: var(--background-color)
+        .upcomingReceptionNotificationTitle
+          font-weight: 400
+          line-height: 19.1px
+          font-size: 14px
+        .upcomingReceptionNotificationButtons
+          margin-top: 16px
+          display: flex
+          gap: 24px
+          button, a
+            padding: 10.5px 24px
+            border-radius: 40px
+            &:last-child
+              background-color: var(--blue300)
+              transition: 250ms
+              color: white
+              &:hover
+                background-color: #619FBB
+            &:first-child
+              color: #0C4A66
+              transition: 250ms
+              &:hover
+                background-color: #DDF1FA
+  .upcomingReceptionsWrapper
+    display: flex
+    flex-direction: column
+    gap: 30px

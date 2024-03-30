@@ -1,20 +1,18 @@
-import { AnalysesHistoryData } from "../model/AnalysesHistoryData";
-import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import { AnalysesHistoryComponent } from "../components";
+import { useAnalysesHistory } from "../config/hook/useAnalysesHistory";
+import { AnalysesHistoryComponent } from "../config";
 import { useNavigate } from "react-router-dom";
-import { Typography } from "@/shared";
+import { ChevronLeft, Typography } from "@/shared";
 
-import style from "./AnalysesHistory.module.scss";
+import style from "./analysesHistory.module.sass";
 
 export const AnalysesHistory = () => {
-  const { analysesHistoryList } = AnalysesHistoryData();
-
+  const { analysesHistoryList } = useAnalysesHistory();
   const navigate = useNavigate();
 
   return (
     <div className={style.analysesHistoryForm}>
       <div className={style.analysesHistoryFormHead}>
-        <ChevronLeftIcon
+        <ChevronLeft
           width={20}
           onClick={() => navigate(-1)}
           className={style.analysesHistoryBack}

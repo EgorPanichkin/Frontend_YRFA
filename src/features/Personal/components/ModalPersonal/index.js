@@ -1,1 +1,0 @@
-export { ModalPersonal } from "./ModalPersonal";

@@ -1,0 +1,72 @@
+{
+  "questions": [
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    },
+    {
+      "title": "Как записаться на прием?",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit soluta debitis iste fugit nobis, error vel aperiam facilis illo a, voluptatum harum ipsum esse vitae. Accusantium nesciunt, cumque non rerum temporibus ducimus? Omnis asperiores, quidem ex similique nam corporis eius rem accusantium molestias soluta facilis blanditiis at minus eligendi."
+    }
+  ],
+  "actual": [
+    {
+      "title": "Запишитесь на прием к врачу по скидке -20%",
+      "discountExpiration": "Акция действует до 15 марта",
+      "imageSrc": "https://s3-alpha-sig.figma.com/img/ba2d/022b/40bbb2517f3a2d3df8247502f81c8623?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lCHgchL6LISb~QkzueD8r-WxmihrOJt02Ah8u0Fur~LUtnSfQKiwnUo4L1WmHPPxRfS99zciIsIqg-4xPWu8cESSdwEzBv1qqezg~l3ZjdwUzOQz5-QAcE-wq6QdNjmIbgSbAFP7AFvCeoGQwF6CR8d78JBO-N6xf4vlRhD21xq-mVjPD2nI7fYH23mZGv8v-ObdUmHiwJayQXpmfiDusA-i9JdNxmDPxpYMZ5sCfZeIOL2TvUX5hMn6fUODtSMQCPrfCQh86kwDoPLj11-fxWVozkWn34k2WVRM9lqPB5oSY9bS7Eo6Ej2PNeIOeAZkyu9O~khJ~j-ebdlL2ZRSrw__",
+      "imgPosition": "right"
+    },
+    {
+      "title": "Запишитесь на прием к врачу по скидке -20%",
+      "discountExpiration": "Акция действует до 15 марта",
+      "imageSrc": "https://s3-alpha-sig.figma.com/img/1f4d/ed89/385e3d587df65bb952da3034480453f8?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W8SO9Fs9eZdZPZVYLimiTN~KnxvcuUWD9gB5oSThEmOqV1xkZdt6MiLLRHn45faDuVCji5MRZIpkEbZVIF6gelUgW685c7f4lyBc6rwT4rfd-oKdiARLMmQnoPbIQK0cr9KU-0s8-cSLXFHYkToSQxI2oMebwkmqb9V2wO8pvSZmCNPWbnZx1Mqc8kTA2ityG1x7BJmLM9MUmMhnIK21ATI-IpQ0ugcfEvMVoK7fTCA3Oj7s5oJLX~5f8a9V1IU8MFK5Y0HAzWmbJlon-rHVZLNi656dD-xaEtfwayjn8cBKWha~yEmJrdnDeUVVxSIOqnhoOWJHiTU2cJNgpYHZ6g__",
+      "imgPosition": "left"
+    },
+    {
+      "title": "Запишитесь на прием к врачу по скидке -20%",
+      "discountExpiration": "Акция действует до 15 марта",
+      "imageSrc": "https://s3-alpha-sig.figma.com/img/ba2d/022b/40bbb2517f3a2d3df8247502f81c8623?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lCHgchL6LISb~QkzueD8r-WxmihrOJt02Ah8u0Fur~LUtnSfQKiwnUo4L1WmHPPxRfS99zciIsIqg-4xPWu8cESSdwEzBv1qqezg~l3ZjdwUzOQz5-QAcE-wq6QdNjmIbgSbAFP7AFvCeoGQwF6CR8d78JBO-N6xf4vlRhD21xq-mVjPD2nI7fYH23mZGv8v-ObdUmHiwJayQXpmfiDusA-i9JdNxmDPxpYMZ5sCfZeIOL2TvUX5hMn6fUODtSMQCPrfCQh86kwDoPLj11-fxWVozkWn34k2WVRM9lqPB5oSY9bS7Eo6Ej2PNeIOeAZkyu9O~khJ~j-ebdlL2ZRSrw__",
+      "imgPosition": "right"
+    }
+  ]
+}

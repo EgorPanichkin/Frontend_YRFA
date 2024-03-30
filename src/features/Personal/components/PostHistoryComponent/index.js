@@ -1,1 +1,0 @@
-export { PostHistoryComponent } from "./PostHistoryComponent";

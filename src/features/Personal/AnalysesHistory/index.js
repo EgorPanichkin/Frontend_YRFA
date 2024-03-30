@@ -1,1 +1,1 @@
-export { AnalysesHistory } from "./AnalysesHistory";
+export { AnalysesHistory } from "./analysesHistory";

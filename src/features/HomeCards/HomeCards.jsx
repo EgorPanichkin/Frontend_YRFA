@@ -1,4 +1,4 @@
-import style from "./HomeCards.module.scss";
+import style from "./style.module.sass";
 
 export const HomeCards = () => {
   return (

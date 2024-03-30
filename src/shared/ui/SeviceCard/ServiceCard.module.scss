@@ -1,0 +1,23 @@
+.cardBlock {
+  width: 290px;
+  height: 283px;
+  .cardImg {
+    border-radius: 20px;
+    cursor: pointer;
+    width: 290px;
+    height: 283px;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+  }
+  .title {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    padding: 209px 166px 32px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}

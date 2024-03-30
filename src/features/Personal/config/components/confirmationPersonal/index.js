@@ -1,0 +1,1 @@
+export { ConfirmationPersonal } from "./confirmationPersonal";
