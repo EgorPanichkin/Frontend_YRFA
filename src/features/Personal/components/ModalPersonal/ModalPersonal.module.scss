@@ -1,0 +1,35 @@
+.upcomingReceptionNotification {
+  padding: 24px 32px;
+  border-radius: 20px;
+  background-color: var(--background-color);
+  .upcomingReceptionNotificationTitle {
+    font-weight: 400;
+    line-height: 19.1px;
+    font-size: 14px;
+  }
+  .upcomingReceptionNotificationButtons {
+    margin-top: 16px;
+    display: flex;
+    gap: 24px;
+    button,
+    a {
+      padding: 10.5px 24px;
+      border-radius: 40px;
+      &:last-child {
+        background-color: var(--blue300);
+        transition: 250ms;
+        color: white;
+        &:hover {
+          background-color: #619fbb;
+        }
+      }
+      &:first-child {
+        color: #0c4a66;
+        transition: 250ms;
+        &:hover {
+          background-color: #ddf1fa;
+        }
+      }
+    }
+  }
+}
