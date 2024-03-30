@@ -1,1 +1,3 @@
-export { AnalysesHistory } from "./AnalysesHistory";
+export * from "./AnalysesHistory";
+export * from "./PersonalAccount";
+export * from "./PostHistory";
