@@ -18,7 +18,6 @@ import {
   AnalysesHistoryPage,
   Vacancy,
   Directions,
-  LoaderPage,
   SelectDirectionPage,
   RehabilitationPage,
   NotFoundPage,
@@ -74,7 +73,6 @@ export const Routing = () => {
             path="personal-account/analyses-history"
             element={<AnalysesHistoryPage />}
           />
-          <Route path="loader" element={<LoaderPage />} />
 
           <Route path="/actual" element={<Actual />} />
           <Route path="/news" element={<News />} />
