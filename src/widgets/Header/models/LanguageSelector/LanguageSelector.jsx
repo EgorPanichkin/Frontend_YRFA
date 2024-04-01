@@ -3,16 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { langAction } from "@/app/store/langSlice";
 import i18n from "@/app/i18n/i18n";
 import style from "./LanguageSelector.module.scss";
-import { CheckIcon, LanguageIcon, PolygonIcon } from "@/shared";
+import { CheckIcon, LanguageIcon, PolygonIcon, languages } from "@/shared";
 
 export const LanguageSelector = () => {
   const [show, setShow] = useState(false);
   const menuRef = useRef(null);
   const dispatch = useDispatch();
-  const languages = [
-    { lang: "ru", title: "Русский" },
-    { lang: "kg", title: "Кыргызча" },
-  ];
 
   const select = useSelector((state) => state.language.currentLang);
 

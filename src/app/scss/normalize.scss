@@ -1,30 +1,3 @@
-:root {
-  --background-color: #ffffff;
-  // Primary
-  --blue100: #b0cfdd;
-  --blue200: #619fbb;
-  --blue300: #12709a;
-  --blue400: #0c4a66;
-  --blue500: #062533;
-
-  //Dark Shades
-  --black100: #f5f6f6;
-  --black200: #e7e7e7;
-  --black300: #bfbfbf;
-  --black400: #6f6f6f;
-  --black500: #010101;
-
-  //Orange
-  --orange600: #ff842a;
-  --orange400: #fe971f;
-  --orange300: #ffae4f;
-
-  //State
-  --error: #e21d12;
-  --success: #158444;
-  --warning: #f9a747;
-}
-
 /* Создаем базовый размер шрифта */
 html {
   font-size: 16px;

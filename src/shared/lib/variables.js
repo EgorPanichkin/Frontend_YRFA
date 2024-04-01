@@ -2,9 +2,32 @@ export const languages = [
   [
     { title: "Русский", lang: "ru" },
     { title: "Кыргызча", lang: "kg" },
-    { title: "English", lang: "en" },
   ],
 ];
+
+export const PATHS = {
+  home: "/",
+  welcome: "/welcome",
+  about: "/about",
+  ourTeam: "/our-team",
+  diognostic: "diognostic",
+  FAQ: "/FAQ",
+  rehabilitation: "/rehabilitation",
+  directions: "/directions",
+  analysisSelector: "/analysis-selector",
+  selectAnalys: "/analysis-selector/:analysSlug",
+  login: "/login",
+  registration: "/registration",
+  smsVerification: "/sms-verification",
+  verificationCode: "/login/sms-verification/verification",
+  passwordReset: "/login/sms-verification/verification/password-reset",
+  personal: "/personal-account",
+  postHistory: "/personal-account/post-history",
+  actual: "/actual",
+  news: "/news",
+  vacancy: "/vacancy",
+  notFound: "*",
+};
 
 export const navigationHeaderLinks = {
   main: {
