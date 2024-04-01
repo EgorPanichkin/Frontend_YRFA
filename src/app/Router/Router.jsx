@@ -49,7 +49,7 @@ export const Routing = () => {
 
           <Route
             path="/analysis-selector"
-            element={<SelectDirectionPage requestParameter="analysis" />}
+            element={<SelectDirectionPage requestParameter="analyses" />}
           />
           <Route path="/analysis-selector/:analysSlug" element={<Analysis />} />
 

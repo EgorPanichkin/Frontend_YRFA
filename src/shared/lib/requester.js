@@ -1,10 +1,7 @@
 import axios from "axios";
 
 const axiosBase = axios.create({
-  // {FIX ME}
-  // baseURL: import.meta.env.BASE_URL,
-  // baseURL: process.env.BASE_URL,
-  baseURL: "http://34.107.51.235/api",
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 axiosBase.interceptors.request.use(

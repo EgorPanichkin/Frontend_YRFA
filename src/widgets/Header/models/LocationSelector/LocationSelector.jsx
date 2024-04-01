@@ -1,13 +1,25 @@
 import style from "./LocationSelector.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { locationActions } from "@/app/store/locationSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const LocationSelector = () => {
-  const city = "Bishkek";
+  const dispatch = useDispatch();
+  const nav = useNavigate();
+  const city = useSelector((state) => state.location.city);
 
-  // useEffect(() => {
-  //   localStorage.getItem("location") ? null : nav("/location")
-  // })
+  useEffect(() => {
+    localStorage.getItem("location")
+      ? dispatch(
+          locationActions.switchLocation(localStorage.getItem("location")),
+        )
+      : nav("/welcome");
+  });
 
-  const handleSelect = () => {};
+  const handleSelect = (value) => {
+    dispatch(locationActions.switchLocation(value));
+  };
 
   const selectAciveClass = (value) => {
     return value == city ? style.active : style;

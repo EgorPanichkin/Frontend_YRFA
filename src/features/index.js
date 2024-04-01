@@ -5,6 +5,6 @@ export * from "./Breadcrumbs";
 export * from "./Authorization";
 export * from "./PageNavBar";
 export * from "./Personal";
-export * from "./homeCards";
+export * from "./HomeCards";
 export * from "./FeedbackModal";
 export * from "./CityCard";

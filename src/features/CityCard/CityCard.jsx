@@ -2,12 +2,17 @@ import { useNavigate } from "react-router-dom";
 import style from "./CityCard.module.scss";
 import { Typography } from "@/shared";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { locationActions } from "@/app/store/locationSlice";
 
 export const CityCard = ({ data }) => {
+  const dispatch = useDispatch();
   const nav = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (value) => {
+    dispatch(locationActions.switchLocation(value));
+    localStorage.setItem("location", value);
     nav("/");
   };
 
@@ -27,8 +32,10 @@ export const CityCard = ({ data }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className={isHovered ? style.hovered : style.shade}>
-        <h2 className={style.title}>{data.title}</h2>
-        <Typography>{data.text}</Typography>
+        <Typography variant="h2" weight="bold" className={style.title}>
+          {data.title}
+        </Typography>
+        <Typography variant="body">{data.text}</Typography>
         <button
           className={style.button}
           value={data.city}
