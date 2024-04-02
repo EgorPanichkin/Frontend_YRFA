@@ -21,7 +21,7 @@ export const PasswordResetForm = () => {
     errorsInput,
   } = useFormValidation();
 
-  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const { password, enterPassword } = inputValues;
 
   const passwordMatch = enterPassword === password;
@@ -30,7 +30,7 @@ export const PasswordResetForm = () => {
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
-    setIsSubmitButtonDisabled(
+    setIsDisabled(
       // Проверка на наличие ошибок валидации и на пустоту полей
       errorsInput.password !== "" ||
         inputValues.password === "" ||
@@ -120,7 +120,7 @@ export const PasswordResetForm = () => {
       <ButtonSubmit
         type="submit"
         className={style.smsButton}
-        disabled={isSubmitButtonDisabled}
+        disabled={isDisabled}
       >
         Продолжить
       </ButtonSubmit>
