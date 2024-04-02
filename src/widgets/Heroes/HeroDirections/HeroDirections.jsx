@@ -1,6 +1,6 @@
 import { Typography } from "@/shared";
 import style from "./HeroDirections.module.scss";
-import { Slider } from "@/features";
+import { HeroesSlider } from "@/features";
 import { Line } from "@/shared";
 
 export const HeroDirections = ({ heroData }) => {
@@ -21,7 +21,7 @@ export const HeroDirections = ({ heroData }) => {
         </Typography>
       </div>
       <div className={style.slider}>
-        <Slider />
+        <HeroesSlider />
       </div>
     </div>
   );

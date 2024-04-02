@@ -12,18 +12,19 @@ export const LanguageSelector = () => {
 
   const select = useSelector((state) => state.language.currentLang);
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setShow(false);
-      }
-    }
+  // FIX ME
+  // useEffect(() => {
+  //   function handleClickOutside(event) {
+  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //       setShow(false)
+  //     }
+  //   }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuRef]);
+  //   document.addEventListener("mousedown", handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside)
+  //   }
+  // }, [menuRef])
 
   useEffect(() => {
     const lang = localStorage.getItem("lang");

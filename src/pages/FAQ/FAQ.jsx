@@ -2,7 +2,7 @@ import style from "./FAQ.module.scss";
 import { Accordion, ActualCard, Container, Typography } from "@/shared";
 import { questions, actual } from "./FAQ.db.json";
 
-export function FAQ() {
+export const FAQ = () => {
   return (
     <Container>
       <Typography variant={"h2"} weight={"bold"} className={style.header}>
@@ -30,4 +30,4 @@ export function FAQ() {
       </div>
     </Container>
   );
-}
+};

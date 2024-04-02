@@ -1,5 +1,5 @@
 import style from "./HeroHome.module.scss";
-import { SliderHome, HomeCards } from "@/features";
+import { HomeCards, SliderHome } from "@/features";
 
 export const HeroHome = () => {
   return (
