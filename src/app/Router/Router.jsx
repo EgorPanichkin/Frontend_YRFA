@@ -18,11 +18,11 @@ import {
   AnalysesHistoryPage,
   Vacancy,
   Directions,
-  SelectDirectionPage,
   RehabilitationPage,
   NotFoundPage,
   WelcomePage,
   HomePage,
+  AnalysisSelection,
 } from "@/pages";
 import { Layout } from "../Layout/Layout";
 import { PATHS } from "@/shared";
@@ -47,11 +47,8 @@ export const Routing = () => {
           /> */}
           {/* <Route path='/:currentDirectionSelector/:currentServiceInfo' element={<CurrentServicePage />} /> */}
 
-          <Route
-            path={PATHS.analysisSelector}
-            element={<SelectDirectionPage requestParameter="analyses" />}
-          />
-          <Route path={PATHS.selectAnalys} element={<Analysis />} />
+          <Route path="/analysis" element={<Analysis />} />
+          <Route path="/analysis/:id" element={<AnalysisSelection />} />
 
           <Route path={PATHS.login} element={<LoginPage />} />
           <Route path={PATHS.registration} element={<RegisterPage />} />

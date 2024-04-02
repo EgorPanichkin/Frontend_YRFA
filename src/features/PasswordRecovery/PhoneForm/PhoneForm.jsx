@@ -1,12 +1,15 @@
-import { ButtonSubmit, ChevronLeft, Typography } from "@/shared";
+import { CustomButton, ChevronLeft, Typography } from "@/shared";
 import { IMaskInput } from "react-imask";
-import { useFormValidation } from "../config/useFormValidation";
 import { useNavigate } from "react-router-dom";
 
-import style from "./smsForm.module.sass";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addPhone } from "@/app/store/verificationDataSlice";
 
-export const SmsForm = () => {
+import style from "./PhoneForm.module.scss";
+import { useFormValidation } from "../model/useFormValidation";
+
+export const PhoneForm = () => {
   const {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
@@ -17,14 +20,16 @@ export const SmsForm = () => {
     errorsInput,
   } = useFormValidation();
 
-  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
   /* eslint-disable */
   // const { phone } = inputValues
+  const dispatch = useDispatch();
+  const { phone } = inputValues;
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
-    setIsSubmitButtonDisabled(
+    setIsDisabled(
       // Проверка на наличие ошибок валидации и на пустоту поля
       errorsInput.phone !== "" || inputValues.phone === "",
     );
@@ -33,6 +38,7 @@ export const SmsForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate("verification");
+    dispatch(addPhone({ phone }));
   };
 
   return (
@@ -82,13 +88,14 @@ export const SmsForm = () => {
         onBlur={handleInputBlur}
         className={style.formInput}
       />
-      <ButtonSubmit
+      <CustomButton
+        color="default"
         type="submit"
         className={style.smsButton}
-        disabled={isSubmitButtonDisabled}
+        disabled={isDisabled}
       >
         Продолжить
-      </ButtonSubmit>
+      </CustomButton>
     </form>
   );
 };

@@ -120,7 +120,7 @@ export const RegisterValidation = () => {
   };
 
   // ------
-  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
 
   const { password, enterPassword } = inputValues;
@@ -128,7 +128,7 @@ export const RegisterValidation = () => {
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
-    setIsSubmitButtonDisabled(
+    setIsDisabled(
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
         Object.values(inputValues).some((value) => value.trim() === "") || // Проверка на пустые поля ввода
         !passwordMatch,
@@ -159,7 +159,7 @@ export const RegisterValidation = () => {
     handleInputFocus,
     handleInputBlur,
     handleSubmit,
-    isSubmitButtonDisabled,
+    isDisabled,
     navigate,
     passwordMatch,
   };

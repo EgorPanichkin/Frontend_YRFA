@@ -1,33 +1,31 @@
 import {
-  Cross,
   CustomButton,
-  CustomInput,
+  Dagger,
+  InputComponent,
+  ModalWrapper,
+  MoreVertical,
   SelectComponent,
   Typography,
 } from "@/shared";
-
-import { ModalPersonal, UpcomingReceptionComponent } from "../components";
-import { PersonalAccountValidation } from "../model/PersonalAccountValidation";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
 
 import style from "./PersonalAccount.module.scss";
+import { ModalPersonal, UpcomingReceptionComponent } from "../components";
+import { usePersonalAccount } from "../model/PersonalAccountValidation";
 
 export const PersonalAccount = () => {
-  // диструктурирую состоянии и функции с хука usePersonalAccount
   const {
+    // диструктурирую состоянии и функции с хука usePersonalAccount
     infoCabinetSettingsClose,
     handleDeleteConfirmation,
-    handleConfirmationExit,
-    handleEllipsisClick,
     handleConfirmDelete,
     setConfirmationExit,
     handleOptionClick,
     handleInputChange,
     setConfirmationId,
     confirmationExit,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     receptionsList,
     confirmationId,
     optionsItems,
@@ -39,8 +37,8 @@ export const PersonalAccount = () => {
     handleEdit,
     selectRef,
     editMode,
-    handleOverlayClick,
-  } = PersonalAccountValidation();
+    setDropDownMenu,
+  } = usePersonalAccount();
 
   return (
     <div className={style.personalAccount}>
@@ -54,14 +52,13 @@ export const PersonalAccount = () => {
             Личный кабинет пациента
           </Typography>
           {editMode === true ? (
-            <Cross
-              ref={selectRef}
+            <MoreVertical
+              forwardedRef={selectRef}
               className={style.personalAccountIconOpen}
-              onClick={handleEllipsisClick}
+              onClick={() => setDropDownMenu(!dropDownMenu)}
             />
           ) : (
-            <Cross
-              width={24}
+            <Dagger
               className={style.personalAccountIconClose}
               onClick={infoCabinetSettingsClose}
             />
@@ -79,7 +76,7 @@ export const PersonalAccount = () => {
               <Link to={"post-history"}>История записей</Link>
               <button
                 type="button"
-                onClick={handleConfirmationExit}
+                onClick={() => setConfirmationExit(true)}
                 className={style.dropDownMenuEdit}
               >
                 Выйти из кабинета
@@ -105,12 +102,12 @@ export const PersonalAccount = () => {
             >
               Имя
             </label>
-            <CustomInput
+            <InputComponent
               id="name"
               type="text"
               value={inputValues.name}
-              onBlur={handleInputBlur}
-              onFocus={() => handleInputFocus("name")}
+              onBlur={() => setFocusedInput("")}
+              onFocus={() => setFocusedInput("name")}
               onChange={(event) => handleInputChange(event, "name")}
               className={editMode ? "" : style.personalCabinetInput}
               disabledInput={editMode}
@@ -133,12 +130,12 @@ export const PersonalAccount = () => {
             >
               Фамилия
             </label>
-            <CustomInput
+            <InputComponent
               id="surName"
               type="text"
-              onBlur={handleInputBlur}
+              onBlur={() => setFocusedInput("")}
               value={inputValues.surName}
-              onFocus={() => handleInputFocus("surName")}
+              onFocus={() => setFocusedInput("surName")}
               onChange={(event) => handleInputChange(event, "surName")}
               className={editMode ? "" : style.personalCabinetInput}
               disabledInput={editMode}
@@ -170,8 +167,8 @@ export const PersonalAccount = () => {
               value={inputValues.phone}
               onInput={(event) => handleInputChange(event, "phone")}
               disabled={editMode}
-              onFocus={() => handleInputFocus("phone")}
-              onBlur={handleInputBlur}
+              onFocus={() => setFocusedInput("phone")}
+              onBlur={() => setFocusedInput("")}
               className={
                 editMode
                   ? style.cabinetInputPhone
@@ -204,11 +201,11 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <CustomInput
+              <InputComponent
                 id="date"
                 type="date"
-                onBlur={handleInputBlur}
-                onFocus={() => handleInputFocus("date")}
+                onBlur={() => setFocusedInput("")}
+                onFocus={() => setFocusedInput("date")}
                 onChange={(event) => handleInputChange(event, "date")}
                 className={editMode ? "" : style.personalCabinetInput}
               />
@@ -242,11 +239,11 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <CustomInput
+              <InputComponent
                 id="password"
                 type="password"
-                onBlur={handleInputBlur}
-                onFocus={() => handleInputFocus("password")}
+                onBlur={() => setFocusedInput("")}
+                onFocus={() => setFocusedInput("password")}
                 value={inputValues.password}
                 onChange={(event) => handleInputChange(event, "password")}
                 className={editMode ? "" : style.personalCabinetInput}
@@ -277,7 +274,7 @@ export const PersonalAccount = () => {
           </div>
         </div>
         {editMode === false && (
-          <CustomButton className={style.personalAccountButton} type="submit">
+          <CustomButton color="default" className={style.personalAccountButton}>
             Сохранить
           </CustomButton>
         )}
@@ -291,21 +288,23 @@ export const PersonalAccount = () => {
           Предстоящие приемы
         </Typography>
         {confirmationExit && (
-          <ModalPersonal
-            title="Вы действительно хотите выйти из кабинета?"
-            confirmation="exit"
-            onOverlay={handleOverlayClick}
-            setConfirmationExit={setConfirmationExit}
-          />
+          <ModalWrapper onCloseModal={() => setConfirmationExit(false)}>
+            <ModalPersonal
+              title="Вы действительно хотите выйти из кабинета?"
+              confirmation="exit"
+              setConfirmationExit={setConfirmationExit}
+            />
+          </ModalWrapper>
         )}
         {confirmationId && (
-          <ModalPersonal
-            title="Вы действительно хотите отменить запись?"
-            confirmation="id"
-            onOverlay={handleOverlayClick}
-            setConfirmationId={setConfirmationId}
-            handleConfirmDelete={handleConfirmDelete}
-          />
+          <ModalWrapper onCloseModal={() => setConfirmationId(false)}>
+            <ModalPersonal
+              title="Вы действительно хотите отменить запись?"
+              confirmation="id"
+              setConfirmationId={setConfirmationId}
+              handleConfirmDelete={handleConfirmDelete}
+            />
+          </ModalWrapper>
         )}
         <div className={style.upcomingReceptionsWrapper}>
           {receptionsList.map((reception) => (

@@ -6,7 +6,7 @@ export const CategoryCard = ({ data }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/analysis-selector/${data.analysis_slug}`);
+    navigate(`/analysis/${data.analysis_slug}`);
   };
 
   return (
