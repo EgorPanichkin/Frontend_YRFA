@@ -2,6 +2,7 @@ import {
   ButtonSubmit,
   ChevronLeft,
   InputComponent,
+  ModalWrapper,
   PhoneIcon,
   Typography,
 } from "@/shared";
@@ -11,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import style from "./verificationForm.module.sass";
 
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export const VerificationForm = () => {
   const {
@@ -23,17 +25,19 @@ export const VerificationForm = () => {
     errorsInput,
   } = useFormValidation();
 
-  const verificationData = {};
+  const verificationData = useSelector(
+    (state) => state.verificationData.verificationData,
+  );
   const { phone } = verificationData;
 
-  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   /* eslint-disable */
   const navigate = useNavigate();
   // const { code } = inputValues
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
-    setIsSubmitButtonDisabled(
+    setIsDisabled(
       // Проверка на наличие ошибок валидации и на пустоту поляы
       errorsInput.code !== "" || inputValues.code === "",
     );
@@ -46,19 +50,6 @@ export const VerificationForm = () => {
 
   const [notificationPhone, setNotificationPhone] = useState(false);
 
-  useEffect(() => {
-    const body = document.body;
-    if (notificationPhone) {
-      body.style.overflow = "hidden"; // Запрещаем прокрутку страницы
-    } else {
-      body.style.overflow = ""; // Разрешаем прокрутку страницы
-    }
-
-    return () => {
-      body.style.overflow = ""; // Убираем запрет на прокрутку при размонтировании компонента
-    };
-  }, [notificationPhone]);
-
   // Закрыть уведомление через 3 секунды
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -68,14 +59,6 @@ export const VerificationForm = () => {
     // Очищаем таймер при размонтировании компонента или изменении состояния notificationPhone
     return () => clearTimeout(timer);
   }, [notificationPhone]); // Эффект будет перезапускаться при изменении состояния notificationPhone
-
-  // Функция для обработки клика по тёмной области
-  const handleOverlayClick = (e) => {
-    if (e.target.classList.contains(style.notificationOverlay)) {
-      // Закрываем уведомление, только если клик произошел на затемненной области
-      setNotificationPhone(false);
-    }
-  };
 
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
@@ -125,7 +108,7 @@ export const VerificationForm = () => {
       <ButtonSubmit
         type="submit"
         className={style.smsButton}
-        disabled={isSubmitButtonDisabled}
+        disabled={isDisabled}
       >
         Продолжить
       </ButtonSubmit>
@@ -136,12 +119,12 @@ export const VerificationForm = () => {
         Не получили код?
       </a>
       {notificationPhone && (
-        <div onClick={handleOverlayClick} className={style.notificationOverlay}>
+        <ModalWrapper onCloseModal={() => setNotificationPhone(false)}>
           <div className={style.confirmationPhone}>
-            <PhoneIcon width={20} />
+            <PhoneIcon color="black" />
             <Typography>Новый код отправлен</Typography>
           </div>
-        </div>
+        </ModalWrapper>
       )}
     </form>
   );
