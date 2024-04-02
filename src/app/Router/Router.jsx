@@ -47,8 +47,8 @@ export const Routing = () => {
           /> */}
           {/* <Route path='/:currentDirectionSelector/:currentServiceInfo' element={<CurrentServicePage />} /> */}
 
-          <Route path="/analysis" element={<Analysis />} />
-          <Route path="/analysis/:id" element={<AnalysisSelection />} />
+          <Route path={PATHS.analysis} element={<Analysis />} />
+          <Route path={PATHS.selectAnalys} element={<AnalysisSelection />} />
 
           <Route path={PATHS.login} element={<LoginPage />} />
           <Route path={PATHS.registration} element={<RegisterPage />} />
