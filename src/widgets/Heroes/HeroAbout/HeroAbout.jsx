@@ -1,13 +1,13 @@
 import style from "./HeroAbout.module.scss";
 import { Typography } from "@/shared";
-import { Slider } from "@/features";
+import { HeroesSlider } from "@/features";
 import { Line } from "@/shared";
 
 export const HeroAbout = ({ heroData }) => {
   return (
     <div className={style.blockHero}>
       <div className={style.slider}>
-        <Slider />
+        <HeroesSlider />
       </div>
       <div className={style.heroTitleBlock}>
         <Typography variant="h4" color="black">

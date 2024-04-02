@@ -1,8 +1,6 @@
 export const languages = [
-  [
-    { title: "Русский", lang: "ru" },
-    { title: "Кыргызча", lang: "kg" },
-  ],
+  { title: "Русский", lang: "ru" },
+  { title: "Кыргызча", lang: "kg" },
 ];
 
 export const PATHS = {
@@ -23,6 +21,7 @@ export const PATHS = {
   passwordReset: "/login/sms-verification/verification/password-reset",
   personal: "/personal-account",
   postHistory: "/personal-account/post-history",
+  analysHistory: "personal-account/analyses-history",
   actual: "/actual",
   news: "/news",
   vacancy: "/vacancy",

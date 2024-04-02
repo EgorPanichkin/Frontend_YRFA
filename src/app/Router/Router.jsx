@@ -25,21 +25,22 @@ import {
   HomePage,
 } from "@/pages";
 import { Layout } from "../Layout/Layout";
+import { PATHS } from "@/shared";
 
 export const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/" element={<Layout />}>
+        <Route path={PATHS.welcome} element={<WelcomePage />} />
+        <Route path={PATHS.home} element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/our-team" element={<OurTeam />} />
-          <Route path="/diognostic" element={<Diognostic />} />
-          <Route path="/FAQ" element={<FAQ />} />
-          <Route path="/rehabilitation" element={<RehabilitationPage />} />
+          <Route path={PATHS.about} element={<About />} />
+          <Route path={PATHS.ourTeam} element={<OurTeam />} />
+          <Route path={PATHS.diognostic} element={<Diognostic />} />
+          <Route path={PATHS.FAQ} element={<FAQ />} />
+          <Route path={PATHS.rehabilitation} element={<RehabilitationPage />} />
 
-          <Route path="/directions" element={<Directions />} />
+          <Route path={PATHS.directions} element={<Directions />} />
           {/* <Route
             path="/:currentDirectionSelector"
             element={<SelectDirectionPage requestParameter="direction" />}
@@ -47,37 +48,25 @@ export const Routing = () => {
           {/* <Route path='/:currentDirectionSelector/:currentServiceInfo' element={<CurrentServicePage />} /> */}
 
           <Route
-            path="/analysis-selector"
+            path={PATHS.analysisSelector}
             element={<SelectDirectionPage requestParameter="analyses" />}
           />
-          <Route path="/analysis-selector/:analysSlug" element={<Analysis />} />
+          <Route path={PATHS.selectAnalys} element={<Analysis />} />
 
-          <Route path="login" element={<LoginPage />} />
-          <Route path="registration" element={<RegisterPage />} />
-          <Route path="login/sms-verification" element={<SmsPage />} />
-          <Route
-            path="login/sms-verification/verification"
-            element={<VerificationPage />}
-          />
-          <Route
-            path="login/sms-verification/verification/password-reset"
-            element={<PasswordResetPage />}
-          />
+          <Route path={PATHS.login} element={<LoginPage />} />
+          <Route path={PATHS.registration} element={<RegisterPage />} />
+          <Route path={PATHS.smsVerification} element={<SmsPage />} />
+          <Route path={PATHS.verificationCode} element={<VerificationPage />} />
+          <Route path={PATHS.passwordReset} element={<PasswordResetPage />} />
 
-          <Route path="personal-account" element={<PersonalAccountPage />} />
-          <Route
-            path="personal-account/post-history"
-            element={<PostHistoryPage />}
-          />
-          <Route
-            path="personal-account/analyses-history"
-            element={<AnalysesHistoryPage />}
-          />
+          <Route path={PATHS.personal} element={<PersonalAccountPage />} />
+          <Route path={PATHS.postHistory} element={<PostHistoryPage />} />
+          <Route path={PATHS.analysHistory} element={<AnalysesHistoryPage />} />
 
-          <Route path="/actual" element={<Actual />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/vacancy" element={<Vacancy />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path={PATHS.actual} element={<Actual />} />
+          <Route path={PATHS.news} element={<News />} />
+          <Route path={PATHS.vacancy} element={<Vacancy />} />
+          <Route path={PATHS.notFound} element={<NotFoundPage />} />
         </Route>
       </Routes>
     </>

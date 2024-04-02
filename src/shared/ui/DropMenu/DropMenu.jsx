@@ -1,25 +1,26 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from "./DropMenu.module.scss";
 import { ChevronRight } from "@/shared";
 
-export function DropMenu({ items, title }) {
+export const DropMenu = ({ items, title }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setShowMenu(false);
-      }
-    }
+  // FIX ME
+  // useEffect(() => {
+  //   function handleClickOutside(event) {
+  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //       setShowMenu(false)
+  //     }
+  //   }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuRef]);
+  //   document.addEventListener("mousedown", handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside)
+  //   }
+  // }, [menuRef])
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -58,4 +59,4 @@ export function DropMenu({ items, title }) {
       )}
     </div>
   );
-}
+};

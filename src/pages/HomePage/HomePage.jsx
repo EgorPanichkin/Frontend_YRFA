@@ -7,7 +7,7 @@ import {
 import db from "./Home.db.json";
 import { Container } from "@/shared";
 
-export function HomePage() {
+export const HomePage = () => {
   const heroData = db.hero;
   const branchesData = db.card;
   const treatmentData = db.treatment;
@@ -24,4 +24,4 @@ export function HomePage() {
       <BranchesSection branchesData={branchesData} />
     </Container>
   );
-}
+};
