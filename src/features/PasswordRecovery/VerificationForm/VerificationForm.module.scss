@@ -1,0 +1,69 @@
+.smsForm {
+  border: 1px solid var(--black300);
+  padding: 24px 55px 80px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .smsFormHead {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 85px;
+    .smsFormBack {
+      cursor: pointer;
+      margin-left: -38px;
+    }
+    .smsFormTitle {
+      font-size: 24px;
+      line-height: 32.74px;
+    }
+  }
+  .smsFormBody {
+    margin: 0 auto 15px;
+    max-width: 206px;
+    font-size: 15px;
+    line-height: 20.46px;
+  }
+  label {
+    color: var(--black400);
+    line-height: 20.46px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: start;
+    margin-left: 10px;
+  }
+  .focusedLabel {
+    color: var(--blue300);
+  }
+  .errorLabel {
+    color: var(--error);
+  }
+  .formInput {
+    margin-bottom: 32px;
+    width: 254px;
+  }
+  .smsButton {
+    max-width: 134px;
+    margin: 0 auto 10px;
+  }
+  .smsFormLink {
+    color: var(--blue200);
+    text-decoration: underline;
+    font-weight: 600;
+    line-height: 20.46px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .confirmationPhone {
+    display: flex;
+    padding: 16px 40px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.1px;
+    background-color: var(--black100);
+    border-radius: 15px;
+    gap: 8px;
+  }
+}

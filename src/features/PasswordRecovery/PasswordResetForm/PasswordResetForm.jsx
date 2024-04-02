@@ -1,14 +1,14 @@
 import {
-  ButtonSubmit,
   ChevronLeft,
+  CustomButton,
   InputComponent,
   Typography,
 } from "@/shared";
-import { useFormValidation } from "../config/useFormValidation";
 
-import style from "./passwordResetForm.module.sass";
+import style from "./PasswordResetForm.module.scss";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useFormValidation } from "../model/useFormValidation";
 
 export const PasswordResetForm = () => {
   const {
@@ -117,13 +117,14 @@ export const PasswordResetForm = () => {
           onChange={(event) => handleInputChange(event, "enterPassword")}
         />
       </div>
-      <ButtonSubmit
+      <CustomButton
+        color="default"
         type="submit"
         className={style.smsButton}
         disabled={isDisabled}
       >
         Продолжить
-      </ButtonSubmit>
+      </CustomButton>
     </form>
   );
 };
