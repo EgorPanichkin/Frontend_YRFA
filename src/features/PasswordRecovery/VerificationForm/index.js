@@ -1,1 +1,1 @@
-export { VerificationForm } from "./VerificationFormm";
+export { VerificationForm } from "./VerificationForm";

@@ -1,18 +1,18 @@
 import {
-  ButtonSubmit,
   ChevronLeft,
+  CustomButton,
   InputComponent,
   ModalWrapper,
   PhoneIcon,
   Typography,
 } from "@/shared";
-import { useFormValidation } from "../config/useFormValidation";
 import { useNavigate } from "react-router-dom";
 
-import style from "./verificationForm.module.sass";
+import style from "./VerificationForm.module.scss";
 
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useFormValidation } from "../model/useFormValidation";
 
 export const VerificationForm = () => {
   const {
@@ -31,9 +31,7 @@ export const VerificationForm = () => {
   const { phone } = verificationData;
 
   const [isDisabled, setIsDisabled] = useState(false);
-  /* eslint-disable */
   const navigate = useNavigate();
-  // const { code } = inputValues
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
@@ -50,7 +48,7 @@ export const VerificationForm = () => {
 
   const [notificationPhone, setNotificationPhone] = useState(false);
 
-  // Закрыть уведомление через 3 секунды
+  // Закрыть уведомление через 2 секунды
   useEffect(() => {
     const timer = setTimeout(() => {
       setNotificationPhone(false);
@@ -105,13 +103,14 @@ export const VerificationForm = () => {
         onFocus={() => handleInputFocus("phone")}
         onBlur={handleInputBlur}
       />
-      <ButtonSubmit
+      <CustomButton
+        color="default"
         type="submit"
         className={style.smsButton}
         disabled={isDisabled}
       >
         Продолжить
-      </ButtonSubmit>
+      </CustomButton>
       <a
         className={style.smsFormLink}
         onClick={() => setNotificationPhone(!notificationPhone)}

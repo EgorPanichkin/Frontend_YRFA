@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import style from "./Authorization.module.scss";
 
 export const Authorization = () => {
-  // Получаем доступ к функциям и значениям с кастомного хука
   const {
+    // Получаем доступ к функциям и значениям
     inputValues,
     errorsInput,
     handleInputChange,
