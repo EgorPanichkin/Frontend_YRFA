@@ -99,7 +99,7 @@ export const usePersonalAccount = () => {
   // ------
   const [editMode, setEditMode] = useState(true);
 
-  // функция редактирование, для выкл выпадающего списка опций и для активаций елементов для редактирования
+  // функция редактирование, для вкл выпадающего списка опций и для активаций елементов для редактирования
   const handleEdit = () => {
     setEditMode(false);
     setDropDownMenu(true);
