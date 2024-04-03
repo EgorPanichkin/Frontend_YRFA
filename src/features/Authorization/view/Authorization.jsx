@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import style from "./Authorization.module.scss";
 
 export const Authorization = () => {
-  // Получаем доступ к функциям и значениям с кастомного хука
   const {
+    // Получаем доступ к функциям и значениям
     inputValues,
     errorsInput,
     handleInputChange,
@@ -17,11 +17,11 @@ export const Authorization = () => {
     handleInputBlur,
   } = AuthValidation();
 
-  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
-    setIsSubmitButtonDisabled(
+    setIsDisabled(
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
         Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
     );
@@ -99,7 +99,7 @@ export const Authorization = () => {
             />
           </div>
         </div>
-        <CustomButton type="submit" disabled={isSubmitButtonDisabled}>
+        <CustomButton color="default" type="submit" disabled={isDisabled}>
           Войти в кабинет
         </CustomButton>
       </div>

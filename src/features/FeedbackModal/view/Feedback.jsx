@@ -5,11 +5,11 @@ import {
   CustomButton,
   Cross,
   DocumentIcon,
-  Message,
   Typography,
   UserIcons,
   ModalWrapper,
   CustomInput,
+  FeedbackIcon,
 } from "@/shared";
 
 import style from "./Feedback.module.scss";
@@ -28,7 +28,7 @@ export const Feedback = () => {
   return (
     <>
       <div className={style.feedback} onClick={() => setFeedbackModal(true)}>
-        <Message />
+        <FeedbackIcon />
       </div>
       {feedbackModal && (
         <ModalWrapper onCloseModal={() => setFeedbackModal(false)}>

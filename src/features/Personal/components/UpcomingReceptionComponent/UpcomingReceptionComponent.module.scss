@@ -1,22 +1,29 @@
 .upcomingReception {
-  padding: 20px 20px 20px 30px;
+  padding: 20px 30px;
   background-color: var(--black100);
   line-height: 21.82px;
   font-weight: 400;
   border-radius: 15px;
   flex-direction: column;
   display: flex;
-  gap: 30px;
-  .upcomingReceptionData {
-    margin-left: 5px;
-    color: var(--blue400);
+  gap: 20px;
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
   }
   .upcomingReceptionBlock {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .upcomingReceptionsDelet {
-      cursor: pointer;
+    @media screen and (max-width: 320px) {
+      align-items: start;
+    }
+  }
+  .upcomingReceptionData {
+    margin-left: 5px;
+    color: var(--blue400);
+    @media screen and (max-width: 320px) {
+      display: block;
+      margin: 5px 0 0;
     }
   }
 }

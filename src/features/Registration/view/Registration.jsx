@@ -22,7 +22,7 @@ export const Registration = () => {
     handleInputFocus,
     handleInputBlur,
     handleSubmit,
-    isSubmitButtonDisabled,
+    isDisabled,
     navigate,
     passwordMatch,
   } = RegisterValidation();
@@ -193,7 +193,7 @@ export const Registration = () => {
           />
         </div>
       </div>
-      <CustomButton type="submit" disabled={isSubmitButtonDisabled}>
+      <CustomButton type="submit" disabled={isDisabled}>
         Создать кабинет пациента
       </CustomButton>
     </form>

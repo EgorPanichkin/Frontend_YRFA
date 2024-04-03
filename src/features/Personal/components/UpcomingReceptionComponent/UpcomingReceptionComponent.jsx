@@ -1,11 +1,8 @@
-import { Tech } from "@/shared";
+import { Garbage } from "@/shared";
 import style from "./UpcomingReceptionComponent.module.scss";
 
-export const UpcomingReceptionComponent = ({
-  reception,
-  editMode,
-  onDelete,
-}) => {
+export const UpcomingReceptionComponent = (props) => {
+  const { reception, editMode, onDelete } = props;
   const handleDelete = () => {
     onDelete(reception.id); // Передаем id приема для удаления
   };
@@ -19,7 +16,7 @@ export const UpcomingReceptionComponent = ({
           </span>
         </div>
         {!editMode && (
-          <Tech
+          <Garbage
             className={style.upcomingReceptionsDelet}
             onClick={handleDelete}
           />

@@ -1,4 +1,3 @@
-export * from "./slider";
 export * from "./Search";
 export * from "./Registration";
 export * from "./Breadcrumbs";
@@ -8,3 +7,4 @@ export * from "./Personal";
 export * from "./HomeCards";
 export * from "./FeedbackModal";
 export * from "./CityCard";
+export * from "./Sliders";

@@ -1,7 +1,7 @@
 import { Container } from "@/shared";
-import { VerificationForm } from "@/features/PasswordRecovery";
 
 import style from "./verificationPage.module.sass";
+import { VerificationForm } from "@/features/PasswordRecovery";
 
 export const VerificationPage = () => {
   return (

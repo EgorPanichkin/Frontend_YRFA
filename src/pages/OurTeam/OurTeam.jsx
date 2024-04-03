@@ -1,10 +1,10 @@
 import { Container } from "@/shared";
 import { Breadcrumbs } from "@/features";
 
-export function OurTeam() {
+export const OurTeam = () => {
   return (
     <Container>
       <Breadcrumbs />
     </Container>
   );
-}
+};

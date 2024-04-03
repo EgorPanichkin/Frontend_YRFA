@@ -1,8 +1,6 @@
 export const languages = [
-  [
-    { title: "Русский", lang: "ru" },
-    { title: "Кыргызча", lang: "kg" },
-  ],
+  { title: "Русский", lang: "ru" },
+  { title: "Кыргызча", lang: "kg" },
 ];
 
 export const PATHS = {
@@ -14,8 +12,8 @@ export const PATHS = {
   FAQ: "/FAQ",
   rehabilitation: "/rehabilitation",
   directions: "/directions",
-  analysisSelector: "/analysis-selector",
-  selectAnalys: "/analysis-selector/:analysSlug",
+  analysis: "/analysis",
+  selectAnalys: "/analysis/:id",
   login: "/login",
   registration: "/registration",
   smsVerification: "/sms-verification",
@@ -23,6 +21,7 @@ export const PATHS = {
   passwordReset: "/login/sms-verification/verification/password-reset",
   personal: "/personal-account",
   postHistory: "/personal-account/post-history",
+  analysHistory: "personal-account/analyses-history",
   actual: "/actual",
   news: "/news",
   vacancy: "/vacancy",
@@ -42,7 +41,7 @@ export const navigationHeaderLinks = {
     title: "Услуги",
     items: [
       { label: "Направления", path: "/directions" },
-      { label: "Анализы", path: "/analysis-selector" },
+      { label: "Анализы", path: "/analysis" },
       { label: "Реабилитация", path: "/rehabilitation" },
     ],
   },

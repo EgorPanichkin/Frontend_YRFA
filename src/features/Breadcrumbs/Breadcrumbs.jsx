@@ -19,7 +19,6 @@ export const Breadcrumbs = () => {
     news: "Новости",
     vacancy: "Вакансии",
     directions: "Направления",
-    "analysis-selector": "Выбор Анализа",
   };
 
   const location = useLocation();

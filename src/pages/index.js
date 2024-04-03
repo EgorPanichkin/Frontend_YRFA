@@ -16,3 +16,4 @@ export * from "./Rehabilitation";
 export * from "./SelectDirectionPage";
 export * from "./Vacancy";
 export * from "./WelcomePage";
+export * from "./AnalysisSelection";

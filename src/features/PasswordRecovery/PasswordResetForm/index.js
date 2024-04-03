@@ -1,1 +1,1 @@
-export { PasswordResetForm } from "./PasswordResetFormm";
+export { PasswordResetForm } from "./PasswordResetForm";

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const PersonalAccountValidation = () => {
+export const usePersonalAccount = () => {
   const [receptionsList, setReceptionsList] = useState([
     {
       direction: "Название специальности",
@@ -67,14 +67,6 @@ export const PersonalAccountValidation = () => {
   // ------
   const [focusedInput, setFocusedInput] = useState("");
 
-  const handleInputFocus = (inputName) => {
-    setFocusedInput(inputName);
-  };
-
-  const handleInputBlur = () => {
-    setFocusedInput("");
-  };
-
   // ------ данные для выпадающего списка
   const optionsItems = ["Мужской", "Женский"];
 
@@ -85,11 +77,6 @@ export const PersonalAccountValidation = () => {
 
   // ------
   const [dropDownMenu, setDropDownMenu] = useState(true);
-
-  // функция для вкл/выкл выпадающего списка опций
-  const handleEllipsisClick = () => {
-    setDropDownMenu(!dropDownMenu);
-  };
 
   // ------
   const selectRef = useRef(null);
@@ -112,14 +99,14 @@ export const PersonalAccountValidation = () => {
   // ------
   const [editMode, setEditMode] = useState(true);
 
-  // функция редактирование, для выкл выпадающего списка опций и для активаций елементов
+  // функция редактирование, для вкл выпадающего списка опций и для активаций елементов для редактирования
   const handleEdit = () => {
-    setEditMode(!editMode);
+    setEditMode(false);
     setDropDownMenu(true);
   };
 
   const infoCabinetSettingsClose = () => {
-    setEditMode(!editMode);
+    setEditMode(true);
     setDropDownMenu(true);
   };
 
@@ -141,32 +128,6 @@ export const PersonalAccountValidation = () => {
   // -----
   const [confirmationExit, setConfirmationExit] = useState(false);
 
-  const handleConfirmationExit = () => {
-    setConfirmationExit(true);
-  };
-
-  // Функция для обработки клика по тёмной области
-  const handleOverlayClick = (e) => {
-    if (e.target.classList.contains("_notificationOverlay_z4evg_1")) {
-      // Закрываем уведомление, только если клик произошел на затемненной области
-      setConfirmationId(null);
-      setConfirmationExit(false);
-    }
-  };
-
-  useEffect(() => {
-    const body = document.body;
-    if (confirmationId || confirmationExit) {
-      body.style.overflow = "hidden"; // Запрещаем прокрутку страницы
-    } else {
-      body.style.overflow = ""; // Разрешаем прокрутку страницы
-    }
-
-    return () => {
-      body.style.overflow = ""; // Убираем запрет на прокрутку при размонтировании компонента
-    };
-  }, [confirmationId, confirmationExit]);
-
   // -----
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -177,16 +138,13 @@ export const PersonalAccountValidation = () => {
   return {
     infoCabinetSettingsClose,
     handleDeleteConfirmation,
-    handleConfirmationExit,
-    handleEllipsisClick,
     handleConfirmDelete,
     setConfirmationExit,
     handleOptionClick,
     handleInputChange,
     setConfirmationId,
     confirmationExit,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     receptionsList,
     confirmationId,
     optionsItems,
@@ -198,6 +156,6 @@ export const PersonalAccountValidation = () => {
     handleEdit,
     selectRef,
     editMode,
-    handleOverlayClick,
+    setDropDownMenu,
   };
 };
