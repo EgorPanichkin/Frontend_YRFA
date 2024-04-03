@@ -22,7 +22,9 @@ export const DropMenuServices = ({ activeIndex, menuRef }) => {
       className={activeIndex ? style.dropMenuBlock : style.notSee}
     >
       <div className={style.title}>
-        <Typography weight="demibold">{data.title}</Typography>
+        <Typography variant="h3" weight="bold" color="blue400">
+          {data.title}
+        </Typography>
       </div>
       <ul className={style.links}>
         {data.a.map((items, index) => (

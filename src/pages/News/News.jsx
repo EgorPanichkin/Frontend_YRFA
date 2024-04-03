@@ -6,7 +6,7 @@ export const News = () => {
   return (
     <div>
       <Container>
-        <Typography variant="h3" weight="bold">
+        <Typography variant="h3" weight="extraBold" color="blue500">
           Последние новости:
         </Typography>
         <div className={style.wrapper}>

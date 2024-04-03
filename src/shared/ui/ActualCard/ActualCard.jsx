@@ -14,10 +14,10 @@ export const ActualCard = ({
           <img className={style.image} src={imageSrc} alt="actual" />
         )}
         <div>
-          <Typography variant="h3" weight="bold">
+          <Typography variant="h4" weight="semibold" color="blue500">
             {title}
           </Typography>
-          <Typography variant="small" color="gray">
+          <Typography variant="h9" color="black400" weight="regular">
             {discountExpiration}
           </Typography>
         </div>

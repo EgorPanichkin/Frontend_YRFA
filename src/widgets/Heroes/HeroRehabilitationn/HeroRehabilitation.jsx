@@ -9,10 +9,10 @@ export const HeroRehabilitation = () => {
     <section aria-label="HeroRehabilitation">
       <div className={style.heroRehabilitation}>
         <div className={style.heroRehabilitationContent}>
-          <Typography variant="h2">
+          <Typography variant="h4" weight="semibold" color="blue500">
             {data.rehabilitation.title} <br /> {data.rehabilitation.subtitle}
           </Typography>
-          <Typography color="gray" variant="body">
+          <Typography variant="body" weight="regular" color="black400">
             {data.rehabilitation.description}
           </Typography>
           <SignUpButton className={style.heroRehabilitationButton}>

@@ -13,13 +13,17 @@ export const Accordion = ({ item }) => {
       onClick={() => setIsActive(!isActive)}
     >
       <div className={style.header}>
-        <Typography>{item.title}</Typography>
+        <Typography variant="h7" weight="semibold" color="blue500">
+          {item.title}
+        </Typography>
         <div className={isActive ? style.iconActive : style.icon}>
           <ChevronDownIcon />
         </div>
       </div>
       <div className={isActive ? style.contentActive : style.content}>
-        <Typography>{item.content}</Typography>
+        <Typography variant="body" weight="regular" color="black400">
+          {item.content}
+        </Typography>
       </div>
     </div>
   );

@@ -39,8 +39,9 @@ export const Feedback = () => {
             />
             <form onSubmit={handleSubmit} className={style.questioForm}>
               <Typography
-                variant="h2"
+                variant="h7"
                 weight="600"
+                color="blue500"
                 className={style.questioTitle}
               >
                 Введите свой вопрос, жалобу или предложение

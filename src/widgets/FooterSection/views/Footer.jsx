@@ -41,7 +41,7 @@ export const Footer = () => {
             {data.list2.items.map((item, index) => {
               return (
                 <Link to={item.path} key={index} className={style.links}>
-                  <Typography variant="body2" color="white">
+                  <Typography variant="body2" weight="semibold" color="white">
                     {item.text}
                   </Typography>
                 </Link>

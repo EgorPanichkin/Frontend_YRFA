@@ -15,7 +15,7 @@ export const ServiceCard = ({
         className={style.cardImg}
       />
       <div className={style.title}>
-        <Typography variant="h4" weight="semibold" color="white">
+        <Typography variant="h6" weight="semibold" color="white">
           {cardData.title}
         </Typography>
         <PolygonIcon activeIndex={activeIndex === index} />

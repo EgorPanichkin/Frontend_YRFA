@@ -7,7 +7,7 @@ export const Equipment = () => {
 
   return (
     <>
-      <Typography variant="h2" weight="bold">
+      <Typography variant="h2" weight="extraBold">
         Оснащение
       </Typography>
       <div className={style.wrapper}>

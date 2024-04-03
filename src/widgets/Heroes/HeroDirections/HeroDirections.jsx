@@ -8,15 +8,15 @@ export const HeroDirections = ({ heroData }) => {
     <div className={style.blockHero}>
       <div className={style.heroTitleBlock}>
         <div>
-          <Typography variant="heading4" color="black" weight="semibold">
+          <Typography variant="h4" color="blue500" weight="semibold">
             {heroData.h1}
           </Typography>
-          <Typography variant="heading4" color="black" weight="semibold">
+          <Typography variant="h4" color="blue500" weight="semibold">
             {heroData.h2}
           </Typography>
         </div>
         <Line />
-        <Typography variant="body" color="black">
+        <Typography variant="body" color="black400" weight="regular">
           {heroData.p}
         </Typography>
       </div>

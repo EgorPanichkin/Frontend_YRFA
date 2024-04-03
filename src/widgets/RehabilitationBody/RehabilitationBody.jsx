@@ -23,10 +23,10 @@ export const RehabilitationBody = () => {
                 />
               </div>
               <div className={style.rehabilitationContent}>
-                <Typography variant="h3" color="blue400">
+                <Typography variant="h4" weight="semibold" color="blue300">
                   {service.title}
                 </Typography>
-                <Typography variant="body" color="gray">
+                <Typography variant="body" weight="regular" color="black400">
                   {service.description}
                 </Typography>
               </div>
