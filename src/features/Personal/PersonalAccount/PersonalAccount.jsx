@@ -49,7 +49,7 @@ export const PersonalAccount = () => {
             variant="h2"
             className={style.personalCabinetTitle}
           >
-            Личный кабинет пациента
+            Личный кабинет
           </Typography>
           {editMode === true ? (
             <MoreVertical
@@ -285,7 +285,7 @@ export const PersonalAccount = () => {
           variant="h3"
           weight="600"
         >
-          Предстоящие приемы
+          Предстоящие приёмы
         </Typography>
         {confirmationExit && (
           <ModalWrapper onCloseModal={() => setConfirmationExit(false)}>
