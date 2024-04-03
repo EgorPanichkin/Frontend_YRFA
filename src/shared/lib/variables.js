@@ -41,7 +41,7 @@ export const navigationHeaderLinks = {
     title: "Услуги",
     items: [
       { label: "Направления", path: "/directions" },
-      { label: "Анализы", path: "/analysis-selector" },
+      { label: "Анализы", path: "/analysis" },
       { label: "Реабилитация", path: "/rehabilitation" },
     ],
   },
