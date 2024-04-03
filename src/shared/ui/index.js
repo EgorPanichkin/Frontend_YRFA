@@ -23,3 +23,4 @@ export * from "./VerticalLine";
 export * from "./DetailCard";
 export * from "./BrancheCard";
 export * from "./SeviceCard";
+export * from "./CustomCard";
