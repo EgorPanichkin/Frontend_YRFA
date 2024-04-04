@@ -2,12 +2,12 @@ import style from "./CustomCard.module.scss";
 import { CustomButton, Typography } from "..";
 
 export const CustomCard = (props) => {
-  const { link, type, data } = props;
-  const checkReverse = !data.reverse;
-  const check = type === "stock";
+  const { link, option, data, reverse } = props;
+
+  const check = option === "accent";
   return (
     <div
-      className={`${check ? style.cardStockBlock : style.cardDefaultBlock} ${checkReverse ? style.cardRevers : style}`}
+      className={`${check ? style.cardStockBlock : style.cardDefaultBlock} ${reverse ? style.cardRevers : style}`}
     >
       <div className={check ? style.cardStock : style.cardDefault}>
         <div className={check ? style.cardPieceStock : style.cardPieceDefault}>
@@ -26,16 +26,14 @@ export const CustomCard = (props) => {
             {data.p}
           </Typography>
         </div>
-        {check ? (
-          <></>
-        ) : (
+        {!check && (
           <CustomButton color="border" link={link}>
             {data.btn}
           </CustomButton>
         )}
       </div>
       <img
-        className={`${check ? style.imgStock : style.imgDefault} ${checkReverse ? style.imgLeftRadius : style.imgRightRadius}`}
+        className={`${check ? style.imgStock : style.imgDefault} ${reverse ? style.imgLeftRadius : style.imgRightRadius}`}
         src={data.img}
         alt="card-img"
       />
