@@ -5,25 +5,42 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  @media screen and (max-width: 320px) {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 254px;
+  }
   .smsFormHead {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
     gap: 47px;
+    @media screen and (max-width: 320px) {
+      justify-content: center;
+    }
     .smsFormBack {
       margin-left: -38px;
       cursor: pointer;
+      @media screen and (max-width: 320px) {
+        display: none;
+      }
     }
     .smsFormTitle {
-      line-height: 32.74px;
       font-size: 24px;
+      @media screen and (max-width: 320px) {
+        font-size: 16px;
+      }
     }
   }
   .smsFormBody {
-    line-height: 20.46px;
+    color: var(--Black-400, #6f6f6f);
     margin: 0 auto 36px;
     max-width: 206px;
     font-size: 15px;
+    @media screen and (max-width: 320px) {
+      margin-bottom: 20px;
+    }
   }
   label {
     text-align: start;
@@ -38,14 +55,16 @@
   .errorLabel {
     color: var(--error);
   }
-  .formInput {
+  .phoneInput {
     margin-bottom: 55px;
-    line-height: 19.1px;
     border-radius: 40px;
     font-weight: 400;
     max-width: 254px;
     font-size: 14px;
     height: 40px;
+    @media screen and (max-width: 320px) {
+      margin-bottom: 16px;
+    }
   }
   .smsButton {
     max-width: 134px;

@@ -1,7 +1,7 @@
 import {
   ChevronLeft,
   CustomButton,
-  InputComponent,
+  CustomInput,
   ModalWrapper,
   PhoneIcon,
   Typography,
@@ -92,10 +92,10 @@ export const VerificationForm = () => {
           Код
         </label>
       )}
-      <InputComponent
+      <CustomInput
         id="code"
         type="text"
-        className={style.formInput}
+        className={style.codeInput}
         placeholder="Введите код"
         value={inputValues.code}
         onChange={(event) => handleInputChange(event, "code")}
@@ -110,12 +110,12 @@ export const VerificationForm = () => {
       >
         Продолжить
       </CustomButton>
-      <a
+      <button
         className={style.smsFormLink}
         onClick={() => setNotificationPhone(!notificationPhone)}
       >
         Не получили код?
-      </a>
+      </button>
       {notificationPhone && (
         <ModalWrapper onCloseModal={() => setNotificationPhone(false)}>
           <div className={style.confirmationPhone}>
