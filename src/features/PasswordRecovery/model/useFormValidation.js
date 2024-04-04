@@ -1,6 +1,9 @@
+import { validateForm } from "@/shared";
 import { useState } from "react";
 
 export const useFormValidation = () => {
+  const [focusedInput, setFocusedInput] = useState("");
+
   const [inputValues, setInputValues] = useState({
     phone: "",
     code: "",
@@ -15,11 +18,10 @@ export const useFormValidation = () => {
     enterPassword: "",
   });
 
-  const [focusedInput, setFocusedInput] = useState("");
-
   const validationRules = {
     phone: {
       errorMessage: ["Заполните поле номер", "Некорректный номер"],
+      minLength: 16,
     },
     code: {
       errorMessage: [
@@ -51,44 +53,16 @@ export const useFormValidation = () => {
 
   const validateInputs = (inputName, value) => {
     const { maxLength, minLength, errorMessage } = validationRules[inputName];
-    let error = "";
 
-    if (inputName === "phone") {
-      error =
-        value.trim().length === 0
-          ? errorMessage[0]
-          : value.trim().length < 16
-            ? errorMessage[1]
-            : "";
-    } else if (inputName === "code") {
-      error = value.trim().length === 0 ? errorMessage[0] : "";
-    } else if (inputName === "password") {
-      error =
-        value.trim().length === 0
-          ? errorMessage[0]
-          : value.trim().length < minLength || value.trim().length > maxLength
-            ? errorMessage[1]
-            : "";
-    } else if (inputName === "enterPassword") {
-      error = value.trim().length === 0 ? errorMessage[0] : "";
-    }
+    const error = validateForm(value, maxLength, minLength, errorMessage);
 
     setErrorsInput({ ...errorsInput, [inputName]: error });
-  };
-
-  const handleInputFocus = (inputName) => {
-    setFocusedInput(inputName);
-  };
-
-  const handleInputBlur = () => {
-    setFocusedInput("");
   };
 
   return {
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   };

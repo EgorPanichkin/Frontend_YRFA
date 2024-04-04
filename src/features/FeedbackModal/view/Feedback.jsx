@@ -4,12 +4,12 @@ import { useState } from "react";
 import {
   CustomButton,
   Cross,
-  DocumentIcon,
   Typography,
-  UserIcons,
   ModalWrapper,
   CustomInput,
   FeedbackIcon,
+  DocumentIcon,
+  UserButtonIcon,
 } from "@/shared";
 
 import style from "./Feedback.module.scss";
@@ -34,6 +34,7 @@ export const Feedback = () => {
         <ModalWrapper onCloseModal={() => setFeedbackModal(false)}>
           <div className={style.questio}>
             <Cross
+              color="#BFBFBF"
               className={style.closeModal}
               onClick={() => setFeedbackModal(false)}
             />
@@ -51,9 +52,10 @@ export const Feedback = () => {
                 placeholder="Номер телефона или email"
                 value={inputValues.emailPhone}
                 onChange={(event) => handleInputChange(event, "emailPhone")}
+                className={style.questioInputPhone}
               />
               <div className={style.questioUser}>
-                <UserIcons />
+                <UserButtonIcon color="black" />
                 <input
                   type="text"
                   placeholder="ФИО"
@@ -62,7 +64,7 @@ export const Feedback = () => {
                 />
               </div>
               <div className={style.questioText}>
-                <DocumentIcon />
+                <DocumentIcon color="black" />
                 <textarea
                   type="text"
                   placeholder="Введите текст"
@@ -72,6 +74,7 @@ export const Feedback = () => {
               </div>
               <span className={style.questioCounter}>{counter}/300</span>
               <CustomButton
+                color="default"
                 type="submit"
                 disabled={isButtonDisabled}
                 className={style.questioBtn}

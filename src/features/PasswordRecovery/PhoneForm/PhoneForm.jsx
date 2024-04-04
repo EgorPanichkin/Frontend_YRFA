@@ -14,15 +14,14 @@ export const PhoneForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
 
   const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
-  /* eslint-disable */
+
   // const { phone } = inputValues
   const dispatch = useDispatch();
   const { phone } = inputValues;
@@ -84,9 +83,9 @@ export const PhoneForm = () => {
         placeholder="+996 (999) 999-999"
         value={inputValues.phone}
         onInput={(event) => handleInputChange(event, "phone")}
-        onFocus={() => handleInputFocus("phone")}
-        onBlur={handleInputBlur}
-        className={style.formInput}
+        onFocus={() => setFocusedInput("phone")}
+        onBlur={() => setFocusedInput("")}
+        className={style.phoneInput}
       />
       <CustomButton
         color="default"

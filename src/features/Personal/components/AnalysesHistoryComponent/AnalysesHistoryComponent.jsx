@@ -1,6 +1,7 @@
 import style from "./AnalysesHistoryComponent.module.scss";
 
-export const AnalysesHistoryComponent = ({ analyse, date, time, results }) => {
+export const AnalysesHistoryComponent = (props) => {
+  const { analyse, date, time, results } = props;
   return (
     <div className={style.analysesHistoryFormDataBlock}>
       <div>

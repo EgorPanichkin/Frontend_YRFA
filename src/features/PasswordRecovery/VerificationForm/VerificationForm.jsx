@@ -1,7 +1,7 @@
 import {
   ChevronLeft,
   CustomButton,
-  InputComponent,
+  CustomInput,
   ModalWrapper,
   PhoneIcon,
   Typography,
@@ -19,8 +19,7 @@ export const VerificationForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
@@ -93,15 +92,15 @@ export const VerificationForm = () => {
           Код
         </label>
       )}
-      <InputComponent
+      <CustomInput
         id="code"
         type="text"
-        className={style.formInput}
+        className={style.codeInput}
         placeholder="Введите код"
         value={inputValues.code}
         onChange={(event) => handleInputChange(event, "code")}
-        onFocus={() => handleInputFocus("phone")}
-        onBlur={handleInputBlur}
+        onFocus={() => setFocusedInput("phone")}
+        onBlur={() => setFocusedInput("")}
       />
       <CustomButton
         color="default"
@@ -111,12 +110,12 @@ export const VerificationForm = () => {
       >
         Продолжить
       </CustomButton>
-      <a
+      <button
         className={style.smsFormLink}
         onClick={() => setNotificationPhone(!notificationPhone)}
       >
         Не получили код?
-      </a>
+      </button>
       {notificationPhone && (
         <ModalWrapper onCloseModal={() => setNotificationPhone(false)}>
           <div className={style.confirmationPhone}>

@@ -53,7 +53,7 @@ const slideContent = [
 
 export const SliderHome = () => {
   const swiperRef = useRef();
-  console.log(swiperRef);
+  console.log("render");
   const [active, setActive] = useState();
 
   return (

@@ -3,26 +3,33 @@
   border: 1px solid var(--black300);
   border-radius: 20px;
   padding: 25px 55px 55px;
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 
   @media screen and (max-width: 320px) {
-    max-width: 320px;
-    padding: 30px 33px;
+    max-width: 254px;
+    padding: 0;
+    border-radius: 0;
     border: none;
   }
   .registerBlockTitle {
     display: flex;
     align-items: center;
+    @media screen and (max-width: 320px) {
+      justify-content: center;
+    }
     .registerBack {
       margin-left: -16px;
       cursor: pointer;
+      @media screen and (max-width: 320px) {
+        display: none;
+      }
     }
     .registerTitle {
-      line-height: 32.74px;
       font-weight: 600;
 
       @media screen and (max-width: 320px) {
-        line-height: 21.82px;
-        text-align: center;
         font-size: 16px;
       }
     }
@@ -31,7 +38,6 @@
     text-decoration: underline;
     background-color: white;
     color: var(--blue200);
-    line-height: 20.46px;
     font-weight: 600px;
     margin-top: 10px;
     font-size: 15px;
@@ -53,12 +59,7 @@
       margin-left: 10px;
       font-weight: 600;
       font-size: 15px;
-      line-height: 20.46px;
       color: var(--black400);
-
-      @media (max-width: 320px) {
-        font-size: 14px;
-      }
     }
     .focusedLabel {
       color: var(--blue300);
@@ -66,8 +67,11 @@
     .errorLabel {
       color: var(--error);
     }
-    .formInput {
-      width: 100%;
+    .registerInput {
+      width: 254px;
+    }
+    .phoneInput {
+      width: 254px;
       border-radius: 40px;
       height: 40px;
       color: var(--blue300);

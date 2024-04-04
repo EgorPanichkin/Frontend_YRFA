@@ -1,11 +1,15 @@
 import style from "./HeroHome.module.scss";
-import { HomeCards, SliderHome } from "@/features";
+import { SliderHome } from "@/features";
+import { CustomCard } from "@/shared";
 
-export const HeroHome = () => {
+export const HeroHome = ({ heroData }) => {
   return (
     <div className={style.blockHero}>
       <SliderHome />
-      <HomeCards />
+      <div className={style.heroCard}>
+        <CustomCard data={heroData} />
+        <CustomCard data={heroData} />
+      </div>
     </div>
   );
 };

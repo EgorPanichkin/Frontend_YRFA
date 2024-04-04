@@ -1,8 +1,7 @@
 .analysesHistoryFormDataBlock {
   background-color: var(--black100);
-  padding: 20px 0 20px 30px;
-  line-height: 21.82px;
-  border-radius: 15px;
+  padding: 20px 30px;
+  border-radius: 16px;
   font-weight: 400;
   font-size: 16px;
   gap: 20px;
@@ -11,11 +10,19 @@
   .analysesHistoryFormText {
     color: var(--black400);
     margin-left: 5px;
+    @media screen and (max-width: 320px) {
+      margin: 5px 0 0;
+      display: block;
+    }
   }
   .analysesHistoryFormLink {
     text-decoration: underline;
     color: var(--blue300);
     margin-left: 5px;
     cursor: pointer;
+    @media screen and (max-width: 320px) {
+      margin: 5px 0 0;
+      display: block;
+    }
   }
 }

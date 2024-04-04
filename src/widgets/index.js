@@ -1,5 +1,3 @@
-/** @format */
-
 export * from "./AboutPageSections";
 export * from "./BranchesSection";
 export * from "./CategorysListSection";
