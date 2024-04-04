@@ -67,8 +67,11 @@
     .errorLabel {
       color: var(--error);
     }
+    .registerInput {
+      width: 254px;
+    }
     .phoneInput {
-      width: 100%;
+      width: 254px;
       border-radius: 40px;
       height: 40px;
       color: var(--blue300);

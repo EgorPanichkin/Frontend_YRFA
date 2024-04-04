@@ -15,14 +15,19 @@ export const NewsCard = ({ imageUrl, title, date, description }) => {
           </Link>
         </div>
         <div className={style.flex}>
-          <Typography variant="h6" weight="demibold">
+          <Typography variant="h6" weight="bold" color="blue500">
             {title}
           </Typography>
-          <Typography variant="body" weight="semibold" color="black300">
+          <Typography variant="body" weight="regular" color="black300">
             {date}
           </Typography>
         </div>
-        <Typography className={style.flex} variant="body" weight="regular">
+        <Typography
+          className={style.flex}
+          variant="body"
+          weight="regular"
+          color="black400"
+        >
           {description}
         </Typography>
       </div>

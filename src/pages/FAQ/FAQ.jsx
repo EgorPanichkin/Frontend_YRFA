@@ -5,7 +5,7 @@ import { questions, actual } from "./FAQ.db.json";
 export const FAQ = () => {
   return (
     <Container>
-      <Typography variant={"h2"} weight={"bold"} className={style.header}>
+      <Typography variant={"h3"} weight={"extraBold"} className={style.header}>
         Часто задаваемые вопросы:
       </Typography>
       <div className={style.wrapper}>

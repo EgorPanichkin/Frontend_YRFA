@@ -1,25 +1,43 @@
 .postHistoryForm {
   border: 1px solid var(--black300);
-  padding: 25px 24px 30px;
+  padding: 20px 30px;
   border-radius: 20px;
   width: 638px;
+  @media screen and (max-width: 320px) {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    width: 280px;
+  }
   .postHistoryFormHead {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    @media screen and (max-width: 320px) {
+      justify-content: center;
+    }
     .postHistoryBack {
       cursor: pointer;
+      @media screen and (max-width: 320px) {
+        display: none;
+      }
     }
     .postHistoryTitle {
       font-weight: 600;
       font-size: 24px;
-      line-height: 32.74px;
       margin-left: 6px;
+      @media screen and (max-width: 320px) {
+        margin: 0;
+        font-size: 16px;
+      }
     }
   }
   .postHistoryFormWrapper {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @media screen and (max-width: 320px) {
+      gap: 20px;
+    }
   }
 }

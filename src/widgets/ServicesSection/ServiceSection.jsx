@@ -56,7 +56,7 @@ export const ServiceSection = () => {
   const dataTitle = `Услуги города ${dataCity[selectedCity]}`;
   return (
     <div className={style.servicesBlock} ref={dropdownRef}>
-      <Typography variant="h2" weight="bold" color="darkBlue">
+      <Typography variant="h2" weight="extraBold">
         {dataTitle}
       </Typography>
       <div className={style.cardBlock}>

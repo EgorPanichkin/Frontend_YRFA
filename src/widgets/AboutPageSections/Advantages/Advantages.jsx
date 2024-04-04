@@ -5,7 +5,7 @@ import { advantages } from "./db.json";
 export const Advantages = () => {
   return (
     <>
-      <Typography variant="h2" weight="bold">
+      <Typography variant="h2" weight="extraBold">
         Наши преимущества
       </Typography>
       <div className={style.blocks}>
@@ -14,10 +14,10 @@ export const Advantages = () => {
             {index % 2 === 0 ? (
               <>
                 <div className={style.txt}>
-                  <Typography variant="h4" color="blue">
+                  <Typography variant="h5" color="blue400" weight="semibold">
                     {advantage.title}
                   </Typography>
-                  <Typography variant="a" color="darkBlue">
+                  <Typography variant="body" weight="regular" color="black400">
                     {advantage.text}
                   </Typography>
                 </div>
@@ -35,10 +35,10 @@ export const Advantages = () => {
                   alt="advantage image"
                 />
                 <div className={style.txt}>
-                  <Typography variant="h4" color="blue">
+                  <Typography variant="h5" color="blue400" weight="semibold">
                     {advantage.title}
                   </Typography>
-                  <Typography variant="a" color="darkBlue">
+                  <Typography variant="body" weight="regular" color="black400">
                     {advantage.text}
                   </Typography>
                 </div>
