@@ -11,7 +11,7 @@
   right: 35px;
   bottom: 35px;
   position: fixed;
-  z-index: 99;
+  z-index: 100;
 }
 
 .questio {
@@ -20,8 +20,17 @@
   max-width: 560px;
   background-color: var(--background-color);
   position: relative;
-  font-weight: 600;
-  line-height: 21.82px;
+  font-weight: 400;
+  z-index: 100;
+  font-size: 14px;
+  @media screen and (max-width: 760px) {
+    padding: 56px 60px 40px;
+    max-width: 440px;
+  }
+  @media screen and (max-width: 320px) {
+    max-width: 300px;
+    padding: 56px 20px 40px;
+  }
   .closeModal {
     position: absolute;
     cursor: pointer;
@@ -32,11 +41,16 @@
     text-align: center;
     max-width: 360px;
     .questioTitle {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 24.55px;
+      font-size: 22px;
       color: var(--blue500);
       margin-bottom: 24px;
+      font-weight: 400;
+      @media screen and (max-width: 760px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 320px) {
+        font-size: 20px;
+      }
     }
     .questioUser {
       gap: 8px;
@@ -79,15 +93,15 @@
           color: var(--black300);
         }
       }
-      .questioCounter {
-        color: var(--black300);
-        display: block;
-        text-align: end;
-      }
-      .questioBtn {
-        margin-top: 16px;
-        width: 360px;
-      }
+    }
+    .questioCounter {
+      color: var(--black300);
+      display: block;
+      text-align: end;
+    }
+    .questioBtn {
+      margin-top: 16px;
+      width: 100%;
     }
   }
 }
