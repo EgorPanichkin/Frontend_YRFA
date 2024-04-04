@@ -77,7 +77,10 @@ axiosPersonal.interceptors.response.use(
   async function (error) {
     const originalRequest = error.config;
     console.log(originalRequest);
-    if (error.response.status === 401) {
+    if (
+      error.response.status === 401 &&
+      localStorage.getItem("refresh") != null
+    ) {
       await axiosPersonal.post("/refresh/");
       return axiosPersonal(originalRequest);
     }
