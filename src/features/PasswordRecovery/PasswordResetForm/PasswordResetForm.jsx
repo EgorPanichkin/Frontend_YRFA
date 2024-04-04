@@ -15,15 +15,14 @@ export const PasswordResetForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
 
   const [isDisabled, setIsDisabled] = useState(false);
-  const { password, enterPassword } = inputValues;
 
+  const { password, enterPassword } = inputValues;
   const passwordMatch = enterPassword === password;
 
   const navigate = useNavigate();
@@ -83,8 +82,8 @@ export const PasswordResetForm = () => {
         <InputComponent
           id="password"
           type="password"
-          onBlur={handleInputBlur}
-          onFocus={() => handleInputFocus("password")}
+          onBlur={() => setFocusedInput("")}
+          onFocus={() => setFocusedInput("password")}
           value={inputValues.password}
           placeholder="Введите пароль"
           onChange={(event) => handleInputChange(event, "password")}
@@ -110,8 +109,8 @@ export const PasswordResetForm = () => {
         <InputComponent
           id="enterPassword"
           type="password"
-          onBlur={handleInputBlur}
-          onFocus={() => handleInputFocus("enterPassword")}
+          onBlur={() => setFocusedInput("")}
+          onFocus={() => setFocusedInput("enterPassword")}
           value={inputValues.enterPassword}
           placeholder="Повторите пароль"
           onChange={(event) => handleInputChange(event, "enterPassword")}

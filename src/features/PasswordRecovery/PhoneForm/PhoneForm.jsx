@@ -14,8 +14,7 @@ export const PhoneForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
@@ -84,8 +83,8 @@ export const PhoneForm = () => {
         placeholder="+996 (999) 999-999"
         value={inputValues.phone}
         onInput={(event) => handleInputChange(event, "phone")}
-        onFocus={() => handleInputFocus("phone")}
-        onBlur={handleInputBlur}
+        onFocus={() => setFocusedInput("phone")}
+        onBlur={() => setFocusedInput("")}
         className={style.formInput}
       />
       <CustomButton
