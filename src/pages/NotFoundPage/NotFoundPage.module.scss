@@ -14,14 +14,10 @@
     font-size: 23px;
     line-height: 31.37px;
     margin-bottom: 6px;
-    font-weight: 700;
-    color: var(--blue500);
   }
   .errorSubTtitle {
     line-height: 20.46px;
     font-size: 15px;
-    font-weight: 600;
-    color: var(--warning);
   }
   .errorBtn {
     margin: 40px auto 0;
@@ -38,10 +34,7 @@
       background-color: #389dcb;
     }
     .errorBtnText {
-      font-weight: 700;
       line-height: 19.1px;
-      font-size: 14px;
-      color: white;
     }
   }
 }

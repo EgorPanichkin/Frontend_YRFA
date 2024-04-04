@@ -5,7 +5,7 @@ import { partners } from "./db.json";
 export const Partners = () => {
   return (
     <>
-      <Typography variant="h2" weight="bold">
+      <Typography variant="h2" weight="extraBold">
         Партнеры
       </Typography>
       <div className={style.wrapper}>
