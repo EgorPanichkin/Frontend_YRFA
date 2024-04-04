@@ -21,7 +21,7 @@ export const PhoneForm = () => {
 
   const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
-  /* eslint-disable */
+
   // const { phone } = inputValues
   const dispatch = useDispatch();
   const { phone } = inputValues;
