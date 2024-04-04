@@ -60,6 +60,7 @@ export const Registration = () => {
             onFocus={() => setFocusedInput("name")}
             placeholder="Введите Ваше имя"
             onChange={(event) => handleInputChange(event, "name")}
+            className={style.registerInput}
           />
         </div>
         <div>
@@ -83,6 +84,7 @@ export const Registration = () => {
             value={inputValues.surName}
             placeholder="Введите Ваше фамилие"
             onChange={(event) => handleInputChange(event, "surName")}
+            className={style.registerInput}
           />
         </div>
         <div>
@@ -131,6 +133,7 @@ export const Registration = () => {
             onFocus={() => setFocusedInput("date")}
             value={inputValues.date}
             onChange={(event) => handleInputChange(event, "date")}
+            className={style.registerInput}
           />
         </div>
         <div>
@@ -154,6 +157,7 @@ export const Registration = () => {
             value={inputValues.password}
             placeholder="Введите пароль"
             onChange={(event) => handleInputChange(event, "password")}
+            className={style.registerInput}
           />
         </div>
         <div>
@@ -181,6 +185,7 @@ export const Registration = () => {
             value={inputValues.enterPassword}
             placeholder="Повторите пароль"
             onChange={(event) => handleInputChange(event, "enterPassword")}
+            className={style.registerInput}
           />
         </div>
         <div>
