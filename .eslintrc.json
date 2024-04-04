@@ -27,6 +27,6 @@
     "indent": "off",
     "linebreak-style": 0,
     "quotes": ["error", "double"],
-    "semi": "off"
+    "semi": 0
   }
 }
