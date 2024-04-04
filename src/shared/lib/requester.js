@@ -35,7 +35,7 @@ export const baseGetRequest = async (slug) => {
 };
 
 const axiosPersonal = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/users`,
+  baseURL: `${baseURL}/users`,
 });
 
 axiosPersonal.interceptors.request.use(async (config) => {
