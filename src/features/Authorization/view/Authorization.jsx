@@ -37,19 +37,14 @@ export const Authorization = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const isFormValid =
-      Object.values(errorsInput).every((error) => error === "") ||
-      Object.values(inputValues).every((value) => value.trim() !== "");
-    if (isFormValid) {
-      console.log("Данные формы:", inputValues);
-      const phoneNum = phoneNumberRefactorer(inputValues.phone);
-      const response = await usersRequester("/login/", {
-        phone_number: phoneNum,
-        password: inputValues.password,
-      });
-      if (response.status === 200) {
-        navigate(PATHS.personal);
-      }
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+    const response = await usersRequester("/login/", {
+      phone_number: phoneNum,
+      password: inputValues.password,
+    });
+
+    if (response.status === 200) {
+      navigate(PATHS.personal);
     } else {
       console.log("Форма содержит ошибки валидации");
     }
@@ -122,7 +117,7 @@ export const Authorization = () => {
         <Link className={style.formLink} to="/registration">
           Вы еще не зарегистрировались?
         </Link>
-        <Link className={style.formLink} to="sms-verification">
+        <Link className={style.formLink} to="/sms-verification">
           Забыли пароль?
         </Link>
       </div>
