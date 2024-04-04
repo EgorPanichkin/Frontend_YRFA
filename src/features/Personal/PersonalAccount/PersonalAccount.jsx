@@ -6,6 +6,7 @@ import {
   MoreVertical,
   SelectComponent,
   Typography,
+  usersRequester,
 } from "@/shared";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
@@ -39,6 +40,8 @@ export const PersonalAccount = () => {
     editMode,
     setDropDownMenu,
   } = usePersonalAccount();
+
+  console.log(usersRequester("/profile/"));
 
   return (
     <div className={style.personalAccount}>
