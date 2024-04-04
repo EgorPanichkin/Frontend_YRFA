@@ -1,5 +1,5 @@
 import style from "./FAQ.module.scss";
-import { Accordion, ActualCard, Container, Typography } from "@/shared";
+import { Accordion, Container, CustomCard, Typography } from "@/shared";
 import { questions, actual } from "./FAQ.db.json";
 
 export const FAQ = () => {
@@ -15,17 +15,14 @@ export const FAQ = () => {
           })}
         </div>
         <div className={style.actual}>
-          {actual?.map((item, index) => {
-            return (
-              <ActualCard
-                key={index}
-                title={item.title}
-                discountExpiration={item.discountExpiration}
-                imageSrc={item.imageSrc}
-                imgPosition={item.imgPosition}
-              />
-            );
-          })}
+          {actual?.map((item, index) => (
+            <CustomCard
+              key={index}
+              data={item}
+              option="accent"
+              reverse={index % 2 !== 0}
+            />
+          ))}
         </div>
       </div>
     </Container>
