@@ -19,8 +19,7 @@ export const VerificationForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
@@ -100,8 +99,8 @@ export const VerificationForm = () => {
         placeholder="Введите код"
         value={inputValues.code}
         onChange={(event) => handleInputChange(event, "code")}
-        onFocus={() => handleInputFocus("phone")}
-        onBlur={handleInputBlur}
+        onFocus={() => setFocusedInput("phone")}
+        onBlur={() => setFocusedInput("")}
       />
       <CustomButton
         color="default"

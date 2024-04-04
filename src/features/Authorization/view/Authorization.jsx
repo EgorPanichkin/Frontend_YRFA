@@ -20,8 +20,7 @@ export const Authorization = () => {
     errorsInput,
     handleInputChange,
     focusedInput,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
   } = AuthValidation();
   const navigate = useNavigate();
 
@@ -86,8 +85,8 @@ export const Authorization = () => {
               placeholder="+996 (999) 999-999"
               value={inputValues.phone}
               onInput={(event) => handleInputChange(event, "phone")}
-              onFocus={() => handleInputFocus("phone")}
-              onBlur={handleInputBlur}
+              onFocus={() => setFocusedInput("phone")}
+              onBlur={() => setFocusedInput("")}
               className={style.formInput}
             />
           </div>
@@ -107,8 +106,8 @@ export const Authorization = () => {
             <CustomInput
               id="password"
               type="password"
-              onBlur={handleInputBlur}
-              onFocus={() => handleInputFocus("password")}
+              onBlur={() => setFocusedInput("")}
+              onFocus={() => setFocusedInput("password")}
               value={inputValues.password}
               placeholder="Введите пароль"
               onChange={(event) => handleInputChange(event, "password")}

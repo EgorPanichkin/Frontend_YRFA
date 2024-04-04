@@ -19,8 +19,7 @@ export const Registration = () => {
     handleInputChange,
     handleOptionClick,
     focusedInput,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     handleSubmit,
     isDisabled,
     navigate,
@@ -57,8 +56,8 @@ export const Registration = () => {
             id="name"
             type="name"
             value={inputValues.name}
-            onBlur={handleInputBlur}
-            onFocus={() => handleInputFocus("name")}
+            onBlur={() => setFocusedInput("")}
+            onFocus={() => setFocusedInput("name")}
             placeholder="Введите Ваше имя"
             onChange={(event) => handleInputChange(event, "name")}
           />
@@ -79,8 +78,8 @@ export const Registration = () => {
           <CustomInput
             id="surName"
             type="surName"
-            onBlur={handleInputBlur}
-            onFocus={() => handleInputFocus("surName")}
+            onBlur={() => setFocusedInput("")}
+            onFocus={() => setFocusedInput("surName")}
             value={inputValues.surName}
             placeholder="Введите Ваше фамилие"
             onChange={(event) => handleInputChange(event, "surName")}
@@ -107,8 +106,8 @@ export const Registration = () => {
             placeholder="+996 (999) 999-999"
             value={inputValues.phone}
             onInput={(event) => handleInputChange(event, "phone")}
-            onFocus={() => handleInputFocus("phone")}
-            onBlur={handleInputBlur}
+            onFocus={() => setFocusedInput("phone")}
+            onBlur={() => setFocusedInput("")}
             className={style.formInput}
           />
         </div>
@@ -128,8 +127,8 @@ export const Registration = () => {
           <CustomInput
             id="date"
             type="date"
-            onBlur={handleInputBlur}
-            onFocus={() => handleInputFocus("date")}
+            onBlur={() => setFocusedInput("")}
+            onFocus={() => setFocusedInput("date")}
             value={inputValues.date}
             onChange={(event) => handleInputChange(event, "date")}
           />
@@ -150,8 +149,8 @@ export const Registration = () => {
           <CustomInput
             id="password"
             type="password"
-            onBlur={handleInputBlur}
-            onFocus={() => handleInputFocus("password")}
+            onBlur={() => setFocusedInput("")}
+            onFocus={() => setFocusedInput("password")}
             value={inputValues.password}
             placeholder="Введите пароль"
             onChange={(event) => handleInputChange(event, "password")}
@@ -177,8 +176,8 @@ export const Registration = () => {
           <CustomInput
             id="enterPassword"
             type="password"
-            onBlur={handleInputBlur}
-            onFocus={() => handleInputFocus("enterPassword")}
+            onBlur={() => setFocusedInput("")}
+            onFocus={() => setFocusedInput("enterPassword")}
             value={inputValues.enterPassword}
             placeholder="Повторите пароль"
             onChange={(event) => handleInputChange(event, "enterPassword")}
@@ -193,7 +192,7 @@ export const Registration = () => {
           />
         </div>
       </div>
-      <CustomButton type="submit" disabled={isDisabled}>
+      <CustomButton color="default" type="submit" disabled={isDisabled}>
         Создать кабинет пациента
       </CustomButton>
     </form>
