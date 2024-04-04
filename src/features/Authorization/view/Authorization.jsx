@@ -117,7 +117,7 @@ export const Authorization = () => {
         <Link className={style.formLink} to="/registration">
           Вы еще не зарегистрировались?
         </Link>
-        <Link className={style.formLink} to="/sms-verification">
+        <Link className={style.formLink} to="sms-verification">
           Забыли пароль?
         </Link>
       </div>

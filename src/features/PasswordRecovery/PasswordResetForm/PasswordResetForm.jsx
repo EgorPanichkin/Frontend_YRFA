@@ -1,9 +1,4 @@
-import {
-  ChevronLeft,
-  CustomButton,
-  InputComponent,
-  Typography,
-} from "@/shared";
+import { ChevronLeft, CustomButton, CustomInput, Typography } from "@/shared";
 
 import style from "./PasswordResetForm.module.scss";
 import { useEffect, useState } from "react";
@@ -68,7 +63,7 @@ export const PasswordResetForm = () => {
       >
         Введите новый пароль
       </Typography>
-      <div className={style.formInput}>
+      <div className={style.passwordInput}>
         {errorsInput.password ? (
           <label className={style.errorLabel}>{errorsInput.password}</label>
         ) : (
@@ -79,7 +74,7 @@ export const PasswordResetForm = () => {
             Пароль
           </label>
         )}
-        <InputComponent
+        <CustomInput
           id="password"
           type="password"
           onBlur={() => setFocusedInput("")}
@@ -89,7 +84,7 @@ export const PasswordResetForm = () => {
           onChange={(event) => handleInputChange(event, "password")}
         />
       </div>
-      <div className={style.formInput}>
+      <div className={style.passwordInput}>
         {errorsInput.enterPassword ? (
           <label className={style.errorLabel}>
             {errorsInput.enterPassword}
@@ -106,7 +101,7 @@ export const PasswordResetForm = () => {
             Проверка пароля
           </label>
         )}
-        <InputComponent
+        <CustomInput
           id="enterPassword"
           type="password"
           onBlur={() => setFocusedInput("")}
