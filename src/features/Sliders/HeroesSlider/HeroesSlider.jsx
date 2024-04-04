@@ -30,7 +30,7 @@ const slideContent = [
 export const HeroesSlider = () => {
   const swiperRef = useRef();
   const [active, setActive] = useState();
-
+  console.log("render");
   return (
     <div className={style.sliderWrapper}>
       <Swiper
