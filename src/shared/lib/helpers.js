@@ -3,3 +3,8 @@ export const outsideClickHandleer = (target, ref, setState) => {
     return setState(false);
   }
 };
+
+export const phoneNumberRefactorer = (phone) => {
+  const refctorPhone = phone.replace(/[^+\d]/g, "");
+  return refctorPhone;
+};

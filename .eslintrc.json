@@ -26,6 +26,7 @@
     "react/prop-types": "off",
     "indent": "off",
     "linebreak-style": 0,
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "semi": 0
   }
 }

@@ -1,8 +1,15 @@
-import { CustomButton, CustomInput, Typography } from "@/shared";
+import {
+  CustomButton,
+  CustomInput,
+  PATHS,
+  Typography,
+  phoneNumberRefactorer,
+  usersRequester,
+} from "@/shared";
 import { AuthValidation } from "../model/AuthValidation";
 import { useEffect, useState } from "react";
 import { IMaskInput } from "react-imask";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import style from "./Authorization.module.scss";
 
@@ -16,6 +23,7 @@ export const Authorization = () => {
     handleInputFocus,
     handleInputBlur,
   } = AuthValidation();
+  const navigate = useNavigate();
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -27,7 +35,7 @@ export const Authorization = () => {
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const isFormValid =
@@ -35,6 +43,14 @@ export const Authorization = () => {
       Object.values(inputValues).every((value) => value.trim() !== "");
     if (isFormValid) {
       console.log("Данные формы:", inputValues);
+      const phoneNum = phoneNumberRefactorer(inputValues.phone);
+      const response = await usersRequester("/login/", {
+        phone_number: phoneNum,
+        password: inputValues.password,
+      });
+      if (response.status === 200) {
+        navigate(PATHS.personal);
+      }
     } else {
       console.log("Форма содержит ошибки валидации");
     }
