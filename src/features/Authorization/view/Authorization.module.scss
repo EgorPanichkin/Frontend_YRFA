@@ -10,20 +10,31 @@
   border: 1px solid var(--black300);
   border-radius: 20px;
   max-width: 364px;
+  @media screen and (max-width: 320px) {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    max-width: 254px;
+    font-size: 14px;
+  }
   .formWrapper {
     @include flex-direction(30px);
     margin-bottom: 20px;
+    @media screen and (max-width: 320px) {
+      margin-bottom: 16px;
+    }
     .authorizationTitle {
-      line-height: 32.74px;
       font-weight: 600;
       font-size: 24px;
       text-align: center;
+      @media screen and (max-width: 320px) {
+        font-size: 16px;
+      }
     }
     .formWrapperInput {
       @include flex-direction(20px);
       label {
         font-size: 15px;
-        line-height: 20.46px;
         font-weight: 600;
         color: var(--black400);
       }
@@ -45,11 +56,13 @@
   }
   .helpFormBlock {
     @include flex-direction(8px);
+    font-weight: 600;
+    font-size: 15px;
+    @media screen and (max-width: 320px) {
+      text-align: center;
+    }
     .formLink {
       color: var(--blue200);
-      font-size: 15px;
-      line-height: 20.46px;
-      font-weight: 600;
       // border-bottom: 1px solid var(--blue200)
       text-decoration: underline;
     }

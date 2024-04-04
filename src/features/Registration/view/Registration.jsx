@@ -108,7 +108,7 @@ export const Registration = () => {
             onInput={(event) => handleInputChange(event, "phone")}
             onFocus={() => setFocusedInput("phone")}
             onBlur={() => setFocusedInput("")}
-            className={style.formInput}
+            className={style.phoneInput}
           />
         </div>
         <div>

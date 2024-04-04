@@ -1,7 +1,7 @@
 import {
   CustomButton,
+  CustomInput,
   Dagger,
-  InputComponent,
   ModalWrapper,
   MoreVertical,
   SelectComponent,
@@ -102,7 +102,7 @@ export const PersonalAccount = () => {
                 Имя
               </label>
             )}
-            <InputComponent
+            <CustomInput
               id="name"
               type="text"
               value={inputValues.name}
@@ -126,7 +126,7 @@ export const PersonalAccount = () => {
                 Фамилия
               </label>
             )}
-            <InputComponent
+            <CustomInput
               id="surName"
               type="text"
               onBlur={() => setFocusedInput("")}
@@ -189,7 +189,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="date"
                 type="date"
                 onBlur={() => setFocusedInput("")}
@@ -225,7 +225,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="password"
                 type="password"
                 onBlur={() => setFocusedInput("")}
