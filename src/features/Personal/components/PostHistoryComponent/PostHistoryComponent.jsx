@@ -1,6 +1,8 @@
 import style from "./PostHistoryComponent.module.scss";
 
-export const PostHistoryComponent = ({ direction, doctor, date, time }) => {
+export const PostHistoryComponent = (props) => {
+  const { direction, doctor, date, time } = props;
+
   return (
     <div className={style.postHistoryFormDataBlock}>
       <div>
