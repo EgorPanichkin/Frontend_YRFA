@@ -27,25 +27,25 @@
   }
 }
 
-.cardStockBlock {
+.cardAccentBlock {
   border-radius: 20px;
   display: flex;
   box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.1);
   width: 590px;
   height: 216px;
-  .cardStock {
+  .cardAccent {
     padding: 16px 24px;
-    .cardPieceStock {
+    .cardPieceAccent {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
-    .stockTitle {
+    .accentTitle {
       width: 209px;
       height: 149px;
     }
   }
-  .imgStock {
+  .imgAccent {
     width: 333px;
     height: 216px;
   }
@@ -79,24 +79,24 @@
       width: 160px;
     }
   }
-  .cardStockBlock {
+  .cardAccentBlock {
     width: 329px;
     height: 122px;
     border-radius: 15px;
     box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.1);
-    .cardStock {
+    .cardAccent {
       padding: 9px 13.5px;
-      .cardPieceDefault {
+      .cardPieceAccent {
         display: flex;
         flex-direction: column;
         gap: 4.5px;
       }
-      .stockTitle {
+      .accentTitle {
         width: 117.607px;
         height: 83.844px;
       }
     }
-    .imgStock {
+    .imgAccent {
       width: 187.383px;
       height: 121.546px;
     }
@@ -132,21 +132,21 @@
       width: 160px;
     }
   }
-  .cardStockBlock {
+  .cardAccentBlock {
     display: flex;
     flex-direction: column-reverse;
     border-radius: 20px;
-    .cardStock {
+    .cardAccent {
       width: 280px;
       padding: 9px 16px;
-      .cardPieceStock {
+      .cardAccentStock {
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-start;
         gap: 8px;
       }
     }
-    .imgStock {
+    .imgAccent {
       width: 280px;
       height: 163px;
       border-top-right-radius: 15px;

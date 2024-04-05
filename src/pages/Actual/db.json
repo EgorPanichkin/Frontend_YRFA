@@ -1,54 +1,54 @@
 {
   "actuals": [
     {
-      "title": "Запишитесь на прием к врачу по скидке -20%",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Запишитесь на прием к врачу по скидке -20%",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Экономьте 30% на массаже, физиотерапии и реабилитации!",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Экономьте 30% на массаже, физиотерапии и реабилитации!",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на процедуры стоматологического лечения и гигиены!",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на процедуры стоматологического лечения и гигиены!",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на консультации и лечение глазных заболеваний",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на консультации и лечение глазных заболеваний",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Получите вакцинацию от COVID-19 со скидкой 30%",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Получите вакцинацию от COVID-19 со скидкой 30%",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на консультации у врача, диагностику и лечение!",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на консультации у врача, диагностику и лечение!",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Уникальная акция: скидка 30% на лабораторные анализы и исследования",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Уникальная акция: скидка 30% на лабораторные анализы и исследования",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на операции и хирургическое лечение",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на операции и хирургическое лечение",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на косметологические процедуры и услуги по уходу за кожей",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на косметологические процедуры и услуги по уходу за кожей",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     },
     {
-      "title": "Скидка 30% на услуги педиатра и детского невролога",
-      "discountExpiration": "Акция действует до 15 марта",
-      "imageSrc": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
+      "h4": "Скидка 30% на услуги педиатра и детского невролога",
+      "p": "Акция действует до 15 марта",
+      "img": "https://www.alma-clinic.com/wp-content/uploads/2023/07/Alma-Onsite-Care.png"
     }
   ]
 }
