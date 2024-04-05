@@ -1,4 +1,5 @@
 import axios from "axios";
+import { notify } from "./helpers";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -38,6 +39,16 @@ const axiosPersonal = axios.create({
   baseURL: `${baseURL}/users`,
 });
 
+const usersErrorResponse = (data) => {
+  if (data.detail) notify.error(data.detail);
+  for (let error in data) {
+    const errorMessages = data[error];
+    errorMessages.forEach((errorMessage) => {
+      notify.error(errorMessage);
+    });
+  }
+};
+
 axiosPersonal.interceptors.request.use(async (config) => {
   if (config.url === "/profile/" || config.url === "/logout/") {
     const token = localStorage.getItem("access");
@@ -75,14 +86,19 @@ axiosPersonal.interceptors.response.use(
     return response;
   },
   async function (error) {
+    const errorResponse = error.response;
     const originalRequest = error.config;
-    console.log(originalRequest);
     if (
       error.response.status === 401 &&
       localStorage.getItem("refresh") != null
     ) {
       await axiosPersonal.post("/refresh/");
       return axiosPersonal(originalRequest);
+    } else if (
+      error?.response?.status === 400 ||
+      error?.response?.status === 401
+    ) {
+      usersErrorResponse(errorResponse.data);
     }
     return Promise.reject(error);
   },
@@ -97,6 +113,6 @@ export const usersRequester = async (endpoint, data) => {
     const response = await axiosPersonal.post(`${endpoint}`, data);
     return response;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
   }
 };
