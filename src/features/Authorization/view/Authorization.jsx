@@ -26,9 +26,7 @@ export const Authorization = () => {
 
   const navigate = useNavigate();
 
-  if (localStorage.getItem("refresh") != null) {
-    navigate(PATHS.personal);
-  }
+  if (localStorage.getItem("refresh") != null) navigate(PATHS.personal);
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -51,7 +49,7 @@ export const Authorization = () => {
 
     if (response.status === 200) {
       navigate(PATHS.personal);
-      notify("Авторизация успешно!");
+      notify.success("Авторизация успешно!");
     } else {
       console.log("Форма содержит ошибки валидации");
     }
