@@ -31,12 +31,34 @@
 .border {
   border: 1px solid var(--blue400);
   &:hover {
-    background-color: #389dcb;
+    background-color: var(--blue100);
     border: none;
     color: white;
   }
   color: var(--blue400);
 }
+
+.blueBorder {
+  border: 1px solid var(--blue300); position: relative;
+  z-index: -2;
+  &:hover {
+   
+    background-color: var(--blue300);
+    border: none;
+    color: white !important;
+  }
+}
+
+.txtBorder {
+  border: 1px solid var(--blue300);
+  color: var(--blue300);
+  &:hover {
+    background-color: var(--blue300);
+    border: none;
+    color: white !important;
+  }
+}
+
 .errorStyle {
   padding: 8px 24px;
 }

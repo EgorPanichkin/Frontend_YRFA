@@ -1,0 +1,12 @@
+.link {
+  display: block;
+  margin-bottom: 10px;
+}
+.link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.line {
+  margin: 10px 0;
+} /*# sourceMappingURL=FooterList.module.css.map */

@@ -1,0 +1,12 @@
+.analysisSelectionSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+@media screen and (max-width: 320px) {
+  .analysisSelectionSection {
+    display: flex;
+    flex-direction: column;
+  }
+} /*# sourceMappingURL=AnalysisSelectionSection.module.css.map */

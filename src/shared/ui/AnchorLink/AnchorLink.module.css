@@ -1,0 +1,31 @@
+.link {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 10px;
+  background-color: #e4f7ff;
+  color: var(--blue500);
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    background-color: #fcf8d4;
+    color: #b16b02;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+}
+@media (hover: none) {
+  .link:active {
+    background-color: #fcf8d4;
+    color: #b16b02;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+} /*# sourceMappingURL=AnchorLink.module.css.map */

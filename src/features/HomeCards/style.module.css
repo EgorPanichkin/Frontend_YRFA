@@ -1,0 +1,84 @@
+.widgetsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.widgetsContainer .widgetTop,
+.widgetsContainer .widgetBottom {
+  width: 496px;
+  height: 216px;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+}
+.widgetsContainer .widgetBottom {
+  flex-direction: row-reverse;
+}
+.widgetsContainer .widgetContent {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 35px 32px 28px;
+}
+.widgetsContainer .widgetContent .widgetText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.widgetsContainer .widgetContent h5 {
+  color: var(--Blue-500, #062533);
+  margin: 0;
+  font-family: 'Nunito Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.widgetsContainer .widgetContent .txt {
+  color: var(--Black-300, #bfbfbf);
+  font-family: 'Nunito Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widgetsContainer .widgetContent .widgetButton {
+  color: var(--Blue-300, #12709a);
+  font-family: 'Nunito Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 40px;
+  border: 1px solid #12709a;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.widgetsContainer .widgetContent .widgetButton:hover {
+  background-color: #12709a;
+  color: white;
+  transition: 0.4s;
+}
+.widgetsContainer .widgetContent .widgetButton:active {
+  opacity: 0.5;
+}
+.widgetsContainer .widgetImg {
+  width: 83%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+  background-color: red;
+}
+.widgetsContainer .widgetImgBottom {
+  width: 83%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 0 20px;
+  background-color: red;
+} /*# sourceMappingURL=style.module.css.map */

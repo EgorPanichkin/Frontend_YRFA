@@ -1,0 +1,55 @@
+.authorizationForm {
+  padding: 25px 55px 30px;
+  border: 1px solid var(--black300);
+  border-radius: 20px;
+  max-width: 364px;
+}
+.authorizationForm .formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.authorizationForm .formWrapper .authorizationTitle {
+  line-height: 32.74px;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+.authorizationForm .formWrapper .formWrapperInput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.authorizationForm .formWrapper .formWrapperInput label {
+  font-size: 15px;
+  line-height: 20.46px;
+  font-weight: 600;
+  color: var(--black400);
+}
+.authorizationForm .formWrapper .formWrapperInput .errorLabel {
+  color: red;
+}
+.authorizationForm .formWrapper .formWrapperInput .focusedLabel {
+  color: var(--blue300);
+}
+.authorizationForm .formWrapper .formWrapperInput .formInput {
+  width: 100%;
+  border-radius: 40px;
+  height: 40px;
+}
+.authorizationForm .formWrapper .formWrapperInput .errorInput {
+  border: 1px solid red;
+}
+.authorizationForm .helpFormBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.authorizationForm .helpFormBlock .formLink {
+  color: var(--blue200);
+  font-size: 15px;
+  line-height: 20.46px;
+  font-weight: 600;
+  text-decoration: underline;
+} /*# sourceMappingURL=Authorization.module.css.map */

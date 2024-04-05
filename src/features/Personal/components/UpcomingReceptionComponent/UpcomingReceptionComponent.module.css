@@ -1,0 +1,22 @@
+.upcomingReception {
+  padding: 20px 20px 20px 30px;
+  background-color: var(--black100);
+  line-height: 21.82px;
+  font-weight: 400;
+  border-radius: 15px;
+  flex-direction: column;
+  display: flex;
+  gap: 30px;
+}
+.upcomingReception .upcomingReceptionData {
+  margin-left: 5px;
+  color: var(--blue400);
+}
+.upcomingReception .upcomingReceptionBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.upcomingReception .upcomingReceptionBlock .upcomingReceptionsDelet {
+  cursor: pointer;
+} /*# sourceMappingURL=UpcomingReceptionComponent.module.css.map */
