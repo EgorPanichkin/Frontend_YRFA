@@ -1,5 +1,6 @@
 import {
   PATHS,
+  notify,
   phoneNumberRefactorer,
   usersRequester,
   validateForm,
@@ -18,7 +19,7 @@ export const RegisterValidation = () => {
   const navigate = useNavigate();
 
   // данные для опции пола
-  const optionsItems = ["Men", "Women"];
+  const optionsItems = ["Man", "Women"];
 
   const validationRules = {
     name: {
@@ -136,6 +137,7 @@ export const RegisterValidation = () => {
 
     if (response.status === 200) {
       navigate(PATHS.personal);
+      notify("Успешно зарегестрированы!");
     } else {
       console.log("Форма содержит ошибки валидации");
     }

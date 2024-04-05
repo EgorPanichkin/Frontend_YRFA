@@ -3,6 +3,7 @@ import {
   CustomInput,
   PATHS,
   Typography,
+  notify,
   phoneNumberRefactorer,
   usersRequester,
 } from "@/shared";
@@ -50,6 +51,7 @@ export const Authorization = () => {
 
     if (response.status === 200) {
       navigate(PATHS.personal);
+      notify("Авторизация успешно!");
     } else {
       console.log("Форма содержит ошибки валидации");
     }

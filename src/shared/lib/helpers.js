@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const outsideClickHandleer = (target, ref, setState) => {
   if (ref.current && !ref.current.contains(target)) {
     return setState(false);
@@ -39,4 +41,17 @@ export const validateForm = (
   const error = validationFunction();
 
   return error;
+};
+
+export const notify = (title) => {
+  toast.success(title, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 };
