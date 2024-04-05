@@ -22,7 +22,12 @@ export const Authorization = () => {
     focusedInput,
     setFocusedInput,
   } = AuthValidation();
+
   const navigate = useNavigate();
+
+  if (localStorage.getItem("refresh") != null) {
+    navigate(PATHS.personal);
+  }
 
   const [isDisabled, setIsDisabled] = useState(false);
 
