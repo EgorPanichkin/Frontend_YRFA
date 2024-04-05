@@ -1,11 +1,13 @@
-import { validateForm } from "@/shared";
+import {
+  PATHS,
+  phoneNumberRefactorer,
+  usersRequester,
+  validateForm,
+} from "@/shared";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const RegisterValidation = () => {
-  // FEX ME
-  // const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,24}$/
-
   // для состояния кнопки, тоесть активная кнопка или не активная
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -16,7 +18,7 @@ export const RegisterValidation = () => {
   const navigate = useNavigate();
 
   // данные для опции пола
-  const optionsItems = ["Мужской", "Женский"];
+  const optionsItems = ["Men", "Women"];
 
   const validationRules = {
     name: {
@@ -40,12 +42,11 @@ export const RegisterValidation = () => {
     password: {
       minLength: 6,
       maxLength: 24,
-      // regex: passwordRegex,
       errorMessage: [
         "Заполните поле пароля",
         "не менее 6 до 24 символов",
         "Пароли не совпадают",
-        // "Пароль должен содержать от 6 до 14 символов, как минимум одну цифру, одну букву верхнего и нижнего регистра, а также один специальный символ (!@#$%^&*)",
+        "Пароль должен содержать от 8 до 24 символов, как минимум одну цифру, одну букву верхнего и нижнего регистра",
       ],
     },
     enterPassword: {
@@ -87,7 +88,13 @@ export const RegisterValidation = () => {
   const validateInput = (inputName, value) => {
     const { minLength, maxLength, errorMessage } = validationRules[inputName];
 
-    const error = validateForm(value, maxLength, minLength, errorMessage);
+    const error = validateForm(
+      value,
+      maxLength,
+      minLength,
+      errorMessage,
+      inputName,
+    );
 
     setErrorsInput({ ...errorsInput, [inputName]: error });
   };
@@ -110,15 +117,25 @@ export const RegisterValidation = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const isFormValid =
-      Object.values(errorsInput).every((error) => error === "") ||
-      Object.values(inputValues).every((value) => value.trim() !== "");
-    if (isFormValid) {
-      console.log("Данные формы:", inputValues);
-      navigate("/personal-account");
+    const { name, surName, date, password, enterPassword, sex } = inputValues;
+
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+
+    const response = await usersRequester("/register/", {
+      phone_number: phoneNum,
+      first_name: name,
+      last_name: surName,
+      birth_date: date,
+      gender: sex,
+      password: password,
+      confirm_password: enterPassword,
+    });
+
+    if (response.status === 200) {
+      navigate(PATHS.personal);
     } else {
       console.log("Форма содержит ошибки валидации");
     }
