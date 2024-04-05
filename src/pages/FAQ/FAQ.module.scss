@@ -20,3 +20,35 @@
     gap: 40px;
   }
 }
+
+// Адаптация для экрана шириной 1050px
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    margin-top: 24px;
+    flex-wrap: wrap;
+
+    .actual {
+      gap: 16px;
+    }
+
+    .question {
+      gap: 20px;
+    }
+  }
+}
+
+// Адаптация для экрана шириной 650px
+@media screen and (max-width: 650px) {
+  .wrapper {
+    flex-direction: column;
+
+    .actual {
+      display: none;
+    }
+
+    .question {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
