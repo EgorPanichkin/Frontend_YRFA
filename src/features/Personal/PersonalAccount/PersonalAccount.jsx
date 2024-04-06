@@ -35,7 +35,7 @@ export const PersonalAccount = () => {
     focusedInput,
     errorsInput,
     inputValues,
-    handleEdit,
+    // handleEdit,
     selectRef,
     editMode,
     isDisabled,
@@ -53,7 +53,7 @@ export const PersonalAccount = () => {
             variant="h2"
             className={style.personalCabinetTitle}
           >
-            Личный кабинет
+            Личный кабинет пациента
           </Typography>
           {editMode === true ? (
             <MoreVertical
@@ -69,22 +69,28 @@ export const PersonalAccount = () => {
           )}
           {dropDownMenu === false && (
             <div className={style.dropDownMenu}>
-              <button
-                type="button"
-                onClick={handleEdit}
-                className={style.dropDownMenuEdit}
-              >
-                Редактировать
-              </button>
-              <Link to={"analyses-history"}>История анализов</Link>
-              <Link to={"post-history"}>История записей</Link>
-              <button
+              <CustomButton
                 type="button"
                 onClick={() => setConfirmationExit(true)}
                 className={style.dropDownMenuEdit}
               >
-                Выйти из кабинета
-              </button>
+                <Typography variant="h7" color="blue">
+                  Редактировать
+                </Typography>
+              </CustomButton>
+              <Link to={"analyses-history"}>История анализов</Link>
+              <Link to={"post-history"}>История записей</Link>
+
+              <CustomButton
+                type="button"
+                onClick={() => setConfirmationExit(true)}
+                className={style.dropDownMenuEdit}
+              >
+                <Typography variant="h7" color="blue">
+                  {" "}
+                  Выйти из кабинета
+                </Typography>
+              </CustomButton>
             </div>
           )}
         </div>
@@ -275,7 +281,7 @@ export const PersonalAccount = () => {
           variant="h3"
           weight="600"
         >
-          Предстоящие приёмы
+          Предстоящие приемы
         </Typography>
         {confirmationExit && (
           <ModalWrapper onCloseModal={() => setConfirmationExit(false)}>

@@ -1,0 +1,25 @@
+.cardBlock {
+  width: 290px;
+  height: 283px;
+}
+.cardBlock .cardImg {
+  border-radius: 20px;
+  cursor: pointer;
+  width: 290px;
+  height: 283px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  position: absolute;
+}
+.cardBlock .title {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  padding: 209px 166px 32px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+} /*# sourceMappingURL=ServiceCard.module.css.map */

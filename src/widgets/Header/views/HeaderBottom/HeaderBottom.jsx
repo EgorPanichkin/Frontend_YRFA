@@ -1,5 +1,6 @@
 import {
   Container,
+  CustomButton,
   Logo,
   Typography,
   UserCircleIcon,
@@ -9,7 +10,7 @@ import style from "./HeaderBottom.module.scss";
 import { Link } from "react-router-dom";
 import { DropdownHeaderMenu } from "../../models/DropdownHeaderMenu/DropdownHeaderMenu";
 import { LocationSelector } from "../../models/LocationSelector";
-import { SignUpButton } from "@/entities";
+// import { SignUpButton } from '@/entities'
 
 export const HeaderBottom = () => {
   return (
@@ -43,7 +44,10 @@ export const HeaderBottom = () => {
                 Личный кабинет
               </Typography>
             </Link>
-            <SignUpButton>Записаться онлайн</SignUpButton>
+            <CustomButton color="orange">
+              <Typography>Записаться онлайн</Typography>
+            </CustomButton>
+            {/* <SignUpButton>Записаться онлайн</SignUpButton> */}
           </div>
         </nav>
       </div>

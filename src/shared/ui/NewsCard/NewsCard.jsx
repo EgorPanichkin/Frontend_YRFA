@@ -1,4 +1,4 @@
-import { Typography } from "@/shared";
+import { CustomButton, Typography } from "@/shared";
 import style from "./NewsCard.module.scss";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,9 @@ export const NewsCard = ({ imageUrl, title, date, description }) => {
           style={{ background: `url(${imageUrl})`, backgroundSize: "cover" }}
         >
           <Link to="/news-details">
-            <button>Подробнее</button>
+            <CustomButton color="orange">
+              <Typography>Подробнее</Typography>
+            </CustomButton>
           </Link>
         </div>
         <div className={style.flex}>

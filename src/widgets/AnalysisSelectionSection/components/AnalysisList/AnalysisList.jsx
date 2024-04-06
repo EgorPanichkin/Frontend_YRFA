@@ -47,7 +47,7 @@ export const AnalysisList = ({ analysisData, getAnalysis }) => {
       </div>
       <div className={style.leftSideAnalysisBottom}>
         <CustomButton color="default" type="submit">
-          Все анализы
+          <Typography>Все анализы</Typography>
         </CustomButton>
       </div>
     </div>

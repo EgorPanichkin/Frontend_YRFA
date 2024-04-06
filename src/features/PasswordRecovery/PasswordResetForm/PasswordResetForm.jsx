@@ -117,7 +117,7 @@ export const PasswordResetForm = () => {
         className={style.smsButton}
         disabled={isDisabled}
       >
-        Продолжить
+        <Typography>Продолжить</Typography>
       </CustomButton>
     </form>
   );

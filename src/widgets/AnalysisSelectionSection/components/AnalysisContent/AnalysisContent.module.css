@@ -1,0 +1,38 @@
+/** @format */
+.analysisContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 32px;
+  background: var(--black100);
+  border-radius: 10px;
+}
+@media screen and (max-width: 320px) {
+  .analysisContent {
+    order: 1;
+  }
+}
+.analysisContentTabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 28px;
+  border: 1px solid var(--black200);
+}
+.analysisContentTab {
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+.analysisContentTab:hover {
+  background: var(--black200);
+}
+.analysisContentTabActive {
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  color: white;
+} /*# sourceMappingURL=AnalysisContent.module.css.map */

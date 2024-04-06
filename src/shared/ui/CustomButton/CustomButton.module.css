@@ -1,0 +1,79 @@
+.button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.1px;
+  padding: 10.5px 24px;
+  border-radius: 40px;
+  color: white;
+}
+.button:hover {
+  background-color: #2d8ab5;
+}
+.button svg {
+  margin-right: 6px;
+}
+.button .chevronRight {
+  margin: 0 0 0 10px;
+}
+.button:disabled {
+  background-color: var(--black300);
+}
+
+.default {
+  background-color: var(--blue300);
+}
+
+.orange {
+  background-color: #ff842a;
+  font-weight: 700;
+}
+.orange:hover {
+  background-color: #ffae4f;
+}
+
+.border {
+  border: 1px solid var(--blue400);
+  color: var(--blue400);
+}
+.border:hover {
+  background-color: var(--blue100);
+  border: none;
+  color: white;
+}
+
+.blueBorder {
+  border: 1px solid var(--blue300);
+  position: relative;
+  z-index: -2;
+}
+.blueBorder:hover {
+  background-color: var(--blue300);
+  border: none;
+  color: white !important;
+}
+
+.txtBorder {
+  border: 1px solid var(--blue300);
+  color: var(--blue300);
+}
+.txtBorder:hover {
+  background-color: var(--blue300);
+  border: none;
+  color: white !important;
+}
+
+.errorStyle {
+  padding: 8px 24px;
+}
+
+.documentStyle {
+  padding: 14px 24px;
+}
+
+.recordingStyle {
+  padding: 8px 57px;
+}
+
+.linkStyle {
+  padding: 10.5px 32px;
+} /*# sourceMappingURL=CustomButton.module.css.map */

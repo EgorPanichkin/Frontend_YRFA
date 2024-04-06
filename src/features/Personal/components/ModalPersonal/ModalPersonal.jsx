@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import style from "./ModalPersonal.module.scss";
-import { CustomButton, PATHS, usersRequester } from "@/shared";
+import { CustomButton, PATHS, Typography, usersRequester } from "@/shared";
 
 export const ModalPersonal = (props) => {
   const {
@@ -35,7 +35,7 @@ export const ModalPersonal = (props) => {
             color="default"
             onClick={() => setConfirmationExit(false)}
           >
-            Отменить
+            <Typography>Отменить</Typography>
           </CustomButton>
         ) : (
           <CustomButton

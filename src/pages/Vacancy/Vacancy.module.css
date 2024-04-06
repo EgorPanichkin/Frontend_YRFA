@@ -1,0 +1,12 @@
+.text {
+  display: block;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 39px;
+  margin-bottom: 50px;
+} /*# sourceMappingURL=Vacancy.module.css.map */
