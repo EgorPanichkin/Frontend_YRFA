@@ -1,5 +1,5 @@
-import { CustomButton, Typography } from '@/shared'
-import style from './style.module.scss'
+import { CustomButton, Typography } from "@/shared";
+import style from "./style.module.scss";
 
 export const HomeCards = () => {
   return (
@@ -10,7 +10,7 @@ export const HomeCards = () => {
             <h5>Запишитесь на прием к врачу по скидке -20%</h5>
             <p className={style.txt}>Акция действует до 15 марта</p>
           </div>
-          <CustomButton color='txtBorder'>
+          <CustomButton color="txtBorder">
             <Typography>Запись на прием</Typography>
           </CustomButton>
         </div>
@@ -22,12 +22,12 @@ export const HomeCards = () => {
             <h5>Получите консультацию от опытных врачей</h5>
             <p className={style.txt}>Акция действует до 15 марта</p>
           </div>
-          <CustomButton color='txtBorder'>
+          <CustomButton color="txtBorder">
             <Typography>Подробнее</Typography>
           </CustomButton>
         </div>
         <div className={style.widgetImgBottom}>img2</div>
       </div>
     </div>
-  )
-}
+  );
+};
