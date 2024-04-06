@@ -8,10 +8,6 @@ export const DropdownHeaderMenu = ({ items, title }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const menuRef = useRef(null);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
   const handleMouseEnter = (item) => {
     setHoveredItem(item);
   };
@@ -30,7 +26,7 @@ export const DropdownHeaderMenu = ({ items, title }) => {
         setShowMenu(false);
       }}
     >
-      <div className={style.item} onClick={toggleMenu}>
+      <div className={style.item}>
         <PolygonIcon />
         {title}
       </div>
