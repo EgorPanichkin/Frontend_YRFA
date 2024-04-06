@@ -18,14 +18,14 @@ export const EquipCard = ({ title, text, image }) => {
       <div
         className={`${style.capital} ${showFullText ? "" : style.capitalHidden}`}
       >
-        <Typography variant="h4" weight="light">
+        <Typography variant="h6" weight="semibold" color="black500">
           {title}
         </Typography>
         <Typography
           className={style.txt}
           variant="h7"
           weight="regular"
-          color="blue500"
+          color="blue400"
           truncate={showFullText ? 35 : false}
         >
           {text}

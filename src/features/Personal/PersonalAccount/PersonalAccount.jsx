@@ -1,11 +1,12 @@
 import {
   CustomButton,
+  CustomInput,
   Dagger,
-  InputComponent,
   ModalWrapper,
   MoreVertical,
   SelectComponent,
   Typography,
+  // usersRequester,
 } from "@/shared";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
@@ -32,13 +33,16 @@ export const PersonalAccount = () => {
     dropDownMenu,
     handleSubmit,
     focusedInput,
-    // errorsInput,
+    errorsInput,
     inputValues,
     // handleEdit,
     selectRef,
     editMode,
+    isDisabled,
     setDropDownMenu,
   } = usePersonalAccount();
+
+  // console.log(usersRequester("/profile/"));
 
   return (
     <div className={style.personalAccount}>
@@ -92,23 +96,19 @@ export const PersonalAccount = () => {
         </div>
         <div className={style.formWrapper}>
           <div>
-            {/* FIX ME */}
-            {/* {errorsInput.name ? (
-              <label htmlFor='name' className={style.formLabel}>
+            {errorsInput.name ? (
+              <label htmlFor="name" className={style.errorLabel}>
                 {errorsInput.name}
               </label>
             ) : (
-              <label htmlFor='name' className={focusedInput === 'name' ? style.focusedLabel : ''}>
+              <label
+                htmlFor="name"
+                className={focusedInput === "name" ? style.focusedLabel : ""}
+              >
                 Имя
               </label>
-            )} */}
-            <label
-              htmlFor="name"
-              className={focusedInput === "name" ? style.focusedLabel : ""}
-            >
-              Имя
-            </label>
-            <InputComponent
+            )}
+            <CustomInput
               id="name"
               type="text"
               value={inputValues.name}
@@ -120,23 +120,19 @@ export const PersonalAccount = () => {
             />
           </div>
           <div>
-            {/* FIX ME */}
-            {/* {errorsInput.name ? (
-              <label htmlFor='surName' className={style.formLabel}>
+            {errorsInput.surName ? (
+              <label htmlFor="surName" className={style.errorLabel}>
                 {errorsInput.surName}
               </label>
             ) : (
-              <label htmlFor='surName' className={focusedInput === 'surName' ? style.focusedLabel : ''}>
+              <label
+                htmlFor="surName"
+                className={focusedInput === "surName" ? style.focusedLabel : ""}
+              >
                 Фамилия
               </label>
-            )} */}
-            <label
-              htmlFor="surName"
-              className={focusedInput === "surName" ? style.focusedLabel : ""}
-            >
-              Фамилия
-            </label>
-            <InputComponent
+            )}
+            <CustomInput
               id="surName"
               type="text"
               onBlur={() => setFocusedInput("")}
@@ -148,22 +144,18 @@ export const PersonalAccount = () => {
             />
           </div>
           <div>
-            {/* FIX ME */}
-            {/* {errorsInput.name ? (
-              <label htmlFor='phone' className={style.formLabel}>
+            {errorsInput.phone ? (
+              <label htmlFor="phone" className={style.errorLabel}>
                 {errorsInput.phone}
               </label>
             ) : (
-              <label htmlFor='phone' className={focusedInput === 'phone' ? style.focusedLabel : ''}>
+              <label
+                htmlFor="phone"
+                className={focusedInput === "phone" ? style.focusedLabel : ""}
+              >
                 Номер
               </label>
-            )} */}
-            <label
-              htmlFor="phone"
-              className={focusedInput === "phone" ? style.focusedLabel : ""}
-            >
-              Номер
-            </label>
+            )}
             <IMaskInput
               lazy={true}
               id="phone"
@@ -183,22 +175,18 @@ export const PersonalAccount = () => {
             />
           </div>
           <div>
-            {/* FIX ME */}
-            {/* {errorsInput.name ? (
-              <label htmlFor='date' className={style.formLabel}>
+            {errorsInput.date ? (
+              <label htmlFor="date" className={style.errorLabel}>
                 {errorsInput.date}
               </label>
             ) : (
-              <label htmlFor='date' className={focusedInput === 'date' ? style.focusedLabel : ''}>
+              <label
+                htmlFor="date"
+                className={focusedInput === "date" ? style.focusedLabel : ""}
+              >
                 Дата рождения
               </label>
-            )} */}
-            <label
-              htmlFor="date"
-              className={focusedInput === "date" ? style.focusedLabel : ""}
-            >
-              Дата рождения
-            </label>
+            )}
             {editMode ? (
               <input
                 id="date"
@@ -207,7 +195,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="date"
                 type="date"
                 onBlur={() => setFocusedInput("")}
@@ -218,22 +206,20 @@ export const PersonalAccount = () => {
             )}
           </div>
           <div>
-            {/* FIX ME */}
-            {/* {errorsInput.name ? (
-              <label htmlFor='password' className={style.formLabel}>
+            {errorsInput.password ? (
+              <label htmlFor="password" className={style.errorLabel}>
                 {errorsInput.password}
               </label>
             ) : (
-              <label htmlFor='password' className={focusedInput === 'password' ? style.focusedLabel : ''}>
+              <label
+                htmlFor="password"
+                className={
+                  focusedInput === "password" ? style.focusedLabel : ""
+                }
+              >
                 Пароль
               </label>
-            )} */}
-            <label
-              htmlFor="password"
-              className={focusedInput === "password" ? style.focusedLabel : ""}
-            >
-              Пароль
-            </label>
+            )}
             {editMode ? (
               <input
                 id="password"
@@ -245,7 +231,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <InputComponent
+              <CustomInput
                 id="password"
                 type="password"
                 onBlur={() => setFocusedInput("")}
@@ -280,7 +266,11 @@ export const PersonalAccount = () => {
           </div>
         </div>
         {editMode === false && (
-          <CustomButton color="default" className={style.personalAccountButton}>
+          <CustomButton
+            color="default"
+            disabled={isDisabled}
+            className={style.personalAccountButton}
+          >
             Сохранить
           </CustomButton>
         )}

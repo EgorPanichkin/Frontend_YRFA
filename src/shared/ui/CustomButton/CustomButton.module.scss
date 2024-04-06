@@ -31,18 +31,18 @@
 .border {
   border: 1px solid var(--blue400);
   &:hover {
-    background-color: var(--blue100);
-    border: none;
+    background-color: #389dcb;
+    border: 1px solid #389dcb;
     color: white;
   }
   color: var(--blue400);
 }
 
 .blueBorder {
-  border: 1px solid var(--blue300); position: relative;
+  border: 1px solid var(--blue300);
+  position: relative;
   z-index: -2;
   &:hover {
-   
     background-color: var(--blue300);
     border: none;
     color: white !important;

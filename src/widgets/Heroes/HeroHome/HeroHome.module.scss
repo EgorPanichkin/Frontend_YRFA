@@ -4,4 +4,9 @@
   align-items: center;
   gap: 24px;
   margin-bottom: 20px;
+  .heroCard {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

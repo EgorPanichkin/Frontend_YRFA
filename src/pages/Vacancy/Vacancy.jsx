@@ -6,14 +6,19 @@ export const Vacancy = () => {
   return (
     <div>
       <Container>
-        <Typography className={style.text} variant="h2" weight="emibold">
+        <Typography
+          className={style.text}
+          variant="h1"
+          weight="bold"
+          color="black500"
+        >
           Работа и вакансии в Бишкеке
         </Typography>
         <Typography
           className={style.text}
           variant="h4"
-          weight="regular"
-          color="gray"
+          weight="bold"
+          color="blue400"
         >
           По профессиям
         </Typography>

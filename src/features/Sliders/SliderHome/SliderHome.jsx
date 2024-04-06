@@ -53,7 +53,7 @@ const slideContent = [
 
 export const SliderHome = () => {
   const swiperRef = useRef();
-  console.log(swiperRef);
+  console.log("render");
   const [active, setActive] = useState();
 
   return (
@@ -77,19 +77,20 @@ export const SliderHome = () => {
                   variant="h4"
                   className={style.header}
                   weight="semibold"
+                  color="blue500"
                 >
                   {item.h4}
                 </Typography>
                 <Typography
-                  variant="body"
-                  color="blue300"
+                  variant="body2"
+                  color="black400"
                   className={style.description}
                   weight="semibold"
                 >
                   {item.p}
                 </Typography>
                 <CustomButton color="default">
-                  <Typography variant="h9" color="white" weight="semibold">
+                  <Typography variant="h9" color="white">
                     {item.button}
                   </Typography>
                 </CustomButton>

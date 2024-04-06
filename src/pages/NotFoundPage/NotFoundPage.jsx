@@ -9,12 +9,18 @@ export const NotFoundPage = () => {
       <div className={style.errorWrapper}>
         <div className={style.errorContent}>
           <img className={style.errorImg} src={errorImg} alt="404" />
-          <Typography variant="h2" weight="700" className={style.errorTitle}>
+          <Typography
+            variant="h3"
+            weight="bold"
+            color="blue500"
+            className={style.errorTitle}
+          >
             Ой, кажется возникла ошибка
           </Typography>
           <Typography
-            variant="span"
-            weight="600"
+            variant="body2"
+            weight="semibold"
+            color="orange300"
             className={style.errorSubTtitle}
           >
             К сожалению страница не найдена
@@ -22,8 +28,9 @@ export const NotFoundPage = () => {
           <Link to={"/"} className={style.errorBtn}>
             <HomeIcon color="white" width={24} />
             <Typography
-              variant="span"
-              weight="700"
+              variant="bodySmall"
+              weight="bold"
+              color="white"
               className={style.errorBtnText}
             >
               На главную

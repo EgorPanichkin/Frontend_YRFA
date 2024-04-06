@@ -1,0 +1,162 @@
+.cardRevers {
+  flex-direction: row-reverse;
+}
+
+.cardDefaultBlock {
+  display: flex;
+  width: 496px;
+  height: 216px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.1);
+  .cardDefault {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 34px 0 28px;
+    gap: 41px;
+    .cardPieceDefault {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+  .imgDefault {
+    width: 239px;
+    height: 216px;
+    object-fit: cover;
+  }
+}
+
+.cardAccentBlock {
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.1);
+  width: 590px;
+  height: 216px;
+  .cardAccent {
+    padding: 16px 24px;
+    .cardPieceAccent {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .accentTitle {
+      width: 209px;
+      height: 149px;
+    }
+  }
+  .imgAccent {
+    width: 333px;
+    height: 216px;
+  }
+}
+.imgRightRadius {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.imgLeftRadius {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+@media (max-width: 1280px) {
+  .cardDefaultBlock {
+    height: 160px;
+    width: 332px;
+    border-radius: 15px;
+    box-shadow: 0px 2.677px 26.774px -3.347px rgba(0, 0, 0, 0.1);
+    .cardDefault {
+      gap: 8px;
+      padding: 12px 0 18px 12px;
+      .cardPieceDefault {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+      }
+    }
+    .imgDefault {
+      height: 160px;
+      width: 160px;
+    }
+  }
+  .cardAccentBlock {
+    width: 329px;
+    height: 122px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 40px -5px rgba(0, 0, 0, 0.1);
+    .cardAccent {
+      padding: 9px 13.5px;
+      .cardPieceAccent {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
+      }
+      .accentTitle {
+        width: 117.607px;
+        height: 83.844px;
+      }
+    }
+    .imgAccent {
+      width: 187.383px;
+      height: 121.546px;
+    }
+  }
+
+  .imgRightRadius {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 35px;
+  }
+  .imgLeftRadius {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: 35px;
+  }
+}
+@media (max-width: 400px) {
+  .cardDefaultBlock {
+    height: 135px;
+    width: 280px;
+    align-items: center;
+    box-shadow: 0px 2.258px 22.581px -2.823px rgba(0, 0, 0, 0.1);
+    .cardDefault {
+      padding: 8px 13px 15.19px 8px;
+      .cardPieceDefault {
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+      }
+    }
+    .imgDefault {
+      height: 160px;
+      width: 160px;
+    }
+  }
+  .cardAccentBlock {
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 20px;
+    .cardAccent {
+      width: 280px;
+      padding: 9px 16px;
+      .cardAccentStock {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+    .imgAccent {
+      width: 280px;
+      height: 163px;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+    }
+  }
+  .imgRightRadius {
+    margin-left: 0px;
+  }
+  .imgLeftRadius {
+    margin-right: 0px;
+  }
+}

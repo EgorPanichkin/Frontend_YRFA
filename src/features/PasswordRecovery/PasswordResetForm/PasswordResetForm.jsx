@@ -1,9 +1,4 @@
-import {
-  ChevronLeft,
-  CustomButton,
-  InputComponent,
-  Typography,
-} from "@/shared";
+import { ChevronLeft, CustomButton, CustomInput, Typography } from "@/shared";
 
 import style from "./PasswordResetForm.module.scss";
 import { useEffect, useState } from "react";
@@ -15,15 +10,14 @@ export const PasswordResetForm = () => {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
     handleInputChange,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
     focusedInput,
     errorsInput,
   } = useFormValidation();
 
   const [isDisabled, setIsDisabled] = useState(false);
-  const { password, enterPassword } = inputValues;
 
+  const { password, enterPassword } = inputValues;
   const passwordMatch = enterPassword === password;
 
   const navigate = useNavigate();
@@ -69,7 +63,7 @@ export const PasswordResetForm = () => {
       >
         Введите новый пароль
       </Typography>
-      <div className={style.formInput}>
+      <div className={style.passwordInput}>
         {errorsInput.password ? (
           <label className={style.errorLabel}>{errorsInput.password}</label>
         ) : (
@@ -80,17 +74,17 @@ export const PasswordResetForm = () => {
             Пароль
           </label>
         )}
-        <InputComponent
+        <CustomInput
           id="password"
           type="password"
-          onBlur={handleInputBlur}
-          onFocus={() => handleInputFocus("password")}
+          onBlur={() => setFocusedInput("")}
+          onFocus={() => setFocusedInput("password")}
           value={inputValues.password}
           placeholder="Введите пароль"
           onChange={(event) => handleInputChange(event, "password")}
         />
       </div>
-      <div className={style.formInput}>
+      <div className={style.passwordInput}>
         {errorsInput.enterPassword ? (
           <label className={style.errorLabel}>
             {errorsInput.enterPassword}
@@ -107,11 +101,11 @@ export const PasswordResetForm = () => {
             Проверка пароля
           </label>
         )}
-        <InputComponent
+        <CustomInput
           id="enterPassword"
           type="password"
-          onBlur={handleInputBlur}
-          onFocus={() => handleInputFocus("enterPassword")}
+          onBlur={() => setFocusedInput("")}
+          onFocus={() => setFocusedInput("enterPassword")}
           value={inputValues.enterPassword}
           placeholder="Повторите пароль"
           onChange={(event) => handleInputChange(event, "enterPassword")}

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import style from "./ModalPersonal.module.scss";
-import { CustomButton, Typography } from "@/shared";
+import { CustomButton, PATHS, Typography, usersRequester } from "@/shared";
 
 export const ModalPersonal = (props) => {
   const {
@@ -11,13 +11,22 @@ export const ModalPersonal = (props) => {
     setConfirmationId,
     handleConfirmDelete,
   } = props;
+  const navigate = useNavigate();
+
+  const handleConfirmExit = async () => {
+    const response = await usersRequester("/logout/", {});
+    if (response.status === 205) {
+      navigate(PATHS.home);
+    }
+  };
 
   return (
     <div className={style.exitNotification}>
       <span className={style.exitNotificationTtile}>{title}</span>
       <div className={style.exitNotificationButtons}>
         {confirmation === "exit" ? (
-          <Link to={"/login"}>Подтвердить</Link>
+          // <Link to={"/login"}>Подтвердить</Link>
+          <CustomButton onClick={handleConfirmExit}>Подтвердить</CustomButton>
         ) : (
           <CustomButton onClick={handleConfirmDelete}>Подтвердить</CustomButton>
         )}

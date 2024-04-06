@@ -21,27 +21,37 @@ export const DropdownHeaderMenu = ({ items, title }) => {
   };
 
   return (
-    <div ref={menuRef}>
+    <div
+      ref={menuRef}
+      onMouseEnter={() => {
+        setShowMenu(true);
+      }}
+      onMouseLeave={() => {
+        setShowMenu(false);
+      }}
+    >
       <div className={style.item} onClick={toggleMenu}>
         <PolygonIcon />
         {title}
       </div>
       {showMenu && (
-        <div className={style.menuDropdown}>
-          {items.map((item, index) => (
-            <Link
-              to={item.path}
-              key={index}
-              className={style.childItem}
-              onMouseEnter={() => handleMouseEnter(item.label)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span className={style.link}>{item.label}</span>
-              <div className={style.chevron}>
-                {hoveredItem === item.label && <ChevronRightIcon />}
-              </div>
-            </Link>
-          ))}
+        <div className={style.menuWrapper}>
+          <div className={style.menuDropdown}>
+            {items.map((item, index) => (
+              <Link
+                to={item.path}
+                key={index}
+                className={style.childItem}
+                onMouseEnter={() => handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <span className={style.link}>{item.label}</span>
+                <div className={style.chevron}>
+                  {hoveredItem === item.label && <ChevronRightIcon />}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>

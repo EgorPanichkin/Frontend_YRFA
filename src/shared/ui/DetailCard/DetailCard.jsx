@@ -5,7 +5,9 @@ export const DetailCard = ({ detailData }) => {
   return (
     <div className={style.cardBlockDetail}>
       <div className={style.contentBlock}>
-        <Typography variant="h6">{detailData.h4}</Typography>
+        <Typography variant="h6" weight="semibold" color="blue500">
+          {detailData.h4}
+        </Typography>
         <CustomButton type="link" path="/about" color="default">
           <Typography>{detailData.button}</Typography>
         </CustomButton>

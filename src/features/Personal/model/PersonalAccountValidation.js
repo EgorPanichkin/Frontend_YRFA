@@ -1,6 +1,34 @@
+import { validateForm } from "@/shared";
 import { useEffect, useRef, useState } from "react";
 
 export const usePersonalAccount = () => {
+  // FIX ME
+  // const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,24}$/
+
+  // состояние для фокуса label
+  const [focusedInput, setFocusedInput] = useState("");
+
+  // данные для выпадающего списка
+  const optionsItems = ["Мужской", "Женский"];
+
+  // состояние для подтверждения об выходе с акунта
+  const [confirmationExit, setConfirmationExit] = useState(false);
+
+  // состояние для редактирования
+  const [editMode, setEditMode] = useState(true);
+
+  // состояние для удоления предстоящих приемов
+  const [confirmationId, setConfirmationId] = useState(null);
+
+  // состояние для дроп меню опции
+  const [dropDownMenu, setDropDownMenu] = useState(true);
+
+  // состояние для доступа к кнопке
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  // ------
+  const selectRef = useRef(null);
+
   const [receptionsList, setReceptionsList] = useState([
     {
       direction: "Название специальности",
@@ -18,27 +46,37 @@ export const usePersonalAccount = () => {
     },
   ]);
 
-  // FIX ME
-  // const validationRules = {
-  //   name: {
-  //     errorMessage: ["Заполните поле Имя", "Имя от 2 символов!"],
-  //     maxLength: 500,
-  //     minLength: 2,
-  //   },
-  //   surName: {
-  //     errorName: ["Заполните поле Фамилия", "Фамилия от 2 символов!"],
-  //     maxLength: 500,
-  //     minLength: 2,
-  //   },
-  //   phone: {
-  //     errorName: ["Заполните поле Номер", "Не корректный номер!"],
-  //     minLength: 16,
-  //   },
-  //   date: {
-  //     errorName: "Заполните поле дата",
-  //     minLength: 0,
-  //   },
-  // }
+  const validationRules = {
+    name: {
+      errorMessage: ["Заполните поле Имя", "Имя от 2 до 20 символов!"],
+      maxLength: 20,
+      minLength: 2,
+    },
+    surName: {
+      errorMessage: ["Заполните поле Фамилия", "Фамилия от 2 до 20 символов!"],
+      maxLength: 20,
+      minLength: 2,
+    },
+    phone: {
+      errorMessage: ["Заполните поле Номер", "Не корректный номер!"],
+      minLength: 16,
+    },
+    date: {
+      errorMessage: ["Заполните поле дата"],
+      minLength: 0,
+    },
+    password: {
+      minLength: 6,
+      maxLength: 24,
+      // regex: passwordRegex,
+      errorMessage: [
+        "Заполните поле пароля",
+        "не менее 6 до 24 символов",
+        "Пароли не совпадают",
+        // "Пароль должен содержать от 6 до 14 символов, как минимум одну цифру, одну букву верхнего и нижнего регистра, а также один специальный символ (!@#$%^&*)",
+      ],
+    },
+  };
 
   const [inputValues, setInputValues] = useState({
     name: "Чынгыз",
@@ -49,37 +87,35 @@ export const usePersonalAccount = () => {
     sex: "",
   });
 
-  // FIX ME
-  // const [errorsInput, setErrorsInput] = useState({
-  //   name: "",
-  //   surName: "",
-  //   phone: "",
-  //   date: "",
-  //   password: "",
-  //   sex: "",
-  // })
+  const [errorsInput, setErrorsInput] = useState({
+    name: "",
+    surName: "",
+    phone: "",
+    date: "",
+    password: "",
+    sex: "",
+  });
 
+  // функция для обработки инпутов (полей)
   const handleInputChange = (event, inputName) => {
     const { value } = event.target;
     setInputValues({ ...inputValues, [inputName]: value });
+
+    validateInput(inputName, value);
   };
 
-  // ------
-  const [focusedInput, setFocusedInput] = useState("");
+  const validateInput = (inputName, value) => {
+    const { errorMessage, maxLength, minLength } = validationRules[inputName];
 
-  // ------ данные для выпадающего списка
-  const optionsItems = ["Мужской", "Женский"];
+    const error = validateForm(value, maxLength, minLength, errorMessage);
+
+    setErrorsInput({ ...errorsInput, [inputName]: error });
+  };
 
   //функция для хранения состояния с выбраного варианта
   const handleOptionClick = (option) => {
     setInputValues({ ...inputValues, sex: option });
   };
-
-  // ------
-  const [dropDownMenu, setDropDownMenu] = useState(true);
-
-  // ------
-  const selectRef = useRef(null);
 
   // для выключения выпадающего списка опций, если пользователь нажал не на тот область
   useEffect(() => {
@@ -96,28 +132,24 @@ export const usePersonalAccount = () => {
     };
   }, []);
 
-  // ------
-  const [editMode, setEditMode] = useState(true);
-
-  // функция редактирование, для выкл выпадающего списка опций и для активаций елементов для редактирования
+  // функция редактирование, для вкл выпадающего списка опций и для активаций елементов для редактирования
   const handleEdit = () => {
     setEditMode(false);
     setDropDownMenu(true);
   };
 
+  // функция для включения режима редактирования и так же выкл опцию
   const infoCabinetSettingsClose = () => {
     setEditMode(true);
     setDropDownMenu(true);
   };
 
-  // -------
-  // удоление предстоящих приемов
-  const [confirmationId, setConfirmationId] = useState(null);
-
+  // функция показываем уведомление для подтверждения удаления
   const handleDeleteConfirmation = (receptionId) => {
-    setConfirmationId(receptionId); // Показываем уведомление для подтверждения удаления
+    setConfirmationId(receptionId);
   };
 
+  // --------
   const handleConfirmDelete = () => {
     setReceptionsList(
       receptionsList.filter((reception) => reception.id !== confirmationId),
@@ -125,10 +157,15 @@ export const usePersonalAccount = () => {
     setConfirmationId(null); // Скрываем уведомление
   };
 
-  // -----
-  const [confirmationExit, setConfirmationExit] = useState(false);
+  useEffect(() => {
+    // Проверка, должна ли кнопка стать неактивной
+    setIsDisabled(
+      Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
+        Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
+    );
+  }, [errorsInput, inputValues]);
 
-  // -----
+  // функция отправки формы
   const handleSubmit = (event) => {
     event.preventDefault();
     setEditMode(true);
@@ -151,11 +188,12 @@ export const usePersonalAccount = () => {
     dropDownMenu,
     handleSubmit,
     focusedInput,
-    // errorsInput,
+    errorsInput,
     inputValues,
     handleEdit,
     selectRef,
     editMode,
+    isDisabled,
     setDropDownMenu,
   };
 };

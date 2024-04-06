@@ -10,15 +10,17 @@ export const HeroAbout = ({ heroData }) => {
         <HeroesSlider />
       </div>
       <div className={style.heroTitleBlock}>
-        <Typography variant="h4" color="black">
+        <Typography variant="h4" weight="semibold" color="blue500">
           <b>{heroData.h1}</b>
           {heroData.large}
         </Typography>
-        <Typography variant="h4" weight="regular" color="black">
+        <Typography variant="h4" weight="semibold">
           {heroData.h2}
         </Typography>
         <Line className={style.line} />
-        <Typography color="black">{heroData.p}</Typography>
+        <Typography variant="body" color="black400">
+          {heroData.p}
+        </Typography>
       </div>
     </div>
   );

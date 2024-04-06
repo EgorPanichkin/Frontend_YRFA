@@ -40,7 +40,9 @@ export const HeaderBottom = () => {
           <div className={style.user}>
             <Link to="/login" className={style.link}>
               <UserCircleIcon width={20} />
-              <Typography variant="h9">Личный кабинет</Typography>
+              <Typography variant="h9" color={"blue400"}>
+                Личный кабинет
+              </Typography>
             </Link>
             <CustomButton color="orange">
               <Typography>Записаться онлайн</Typography>

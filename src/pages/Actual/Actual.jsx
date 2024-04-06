@@ -1,22 +1,21 @@
 import style from "./Actual.module.scss";
-import { ActualCard, Container, Typography } from "@/shared";
+import { Container, CustomCard, Typography } from "@/shared";
 import { actuals } from "./db.json";
 
 export const Actual = () => {
   return (
     <div>
       <Container>
-        <Typography variant="h3" weight="bold">
+        <Typography variant="h3" weight="extraBold" color="blue500">
           Актуальные скидки
         </Typography>
         <div className={style.flex}>
           {actuals.map((section, index) => (
-            <ActualCard
+            <CustomCard
               key={index}
-              title={<p>{section.title}</p>}
-              discountExpiration={section.discountExpiration}
-              imageSrc={section.imageSrc}
-              imgPosition={index % 2 === 0 ? "right" : "left"}
+              data={section}
+              reverse={index % 2 !== 0}
+              option="accent"
             />
           ))}
         </div>

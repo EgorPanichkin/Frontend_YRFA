@@ -1,8 +1,16 @@
-import { CustomButton, CustomInput, Typography } from "@/shared";
+import {
+  CustomButton,
+  CustomInput,
+  PATHS,
+  Typography,
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
+} from "@/shared";
 import { AuthValidation } from "../model/AuthValidation";
 import { useEffect, useState } from "react";
 import { IMaskInput } from "react-imask";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import style from "./Authorization.module.scss";
 
@@ -13,9 +21,12 @@ export const Authorization = () => {
     errorsInput,
     handleInputChange,
     focusedInput,
-    handleInputFocus,
-    handleInputBlur,
+    setFocusedInput,
   } = AuthValidation();
+
+  const navigate = useNavigate();
+
+  if (localStorage.getItem("refresh") != null) navigate(PATHS.personal);
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -27,14 +38,18 @@ export const Authorization = () => {
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const isFormValid =
-      Object.values(errorsInput).every((error) => error === "") ||
-      Object.values(inputValues).every((value) => value.trim() !== "");
-    if (isFormValid) {
-      console.log("Данные формы:", inputValues);
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+    const response = await usersRequester("/login/", {
+      phone_number: phoneNum,
+      password: inputValues.password,
+    });
+
+    if (response.status === 200) {
+      navigate(PATHS.personal);
+      notify.success("Авторизация успешно!");
     } else {
       console.log("Форма содержит ошибки валидации");
     }
@@ -70,8 +85,8 @@ export const Authorization = () => {
               placeholder="+996 (999) 999-999"
               value={inputValues.phone}
               onInput={(event) => handleInputChange(event, "phone")}
-              onFocus={() => handleInputFocus("phone")}
-              onBlur={handleInputBlur}
+              onFocus={() => setFocusedInput("phone")}
+              onBlur={() => setFocusedInput("")}
               className={style.formInput}
             />
           </div>
@@ -91,8 +106,8 @@ export const Authorization = () => {
             <CustomInput
               id="password"
               type="password"
-              onBlur={handleInputBlur}
-              onFocus={() => handleInputFocus("password")}
+              onBlur={() => setFocusedInput("")}
+              onFocus={() => setFocusedInput("password")}
               value={inputValues.password}
               placeholder="Введите пароль"
               onChange={(event) => handleInputChange(event, "password")}

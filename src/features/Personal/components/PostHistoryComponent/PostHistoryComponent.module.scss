@@ -1,7 +1,6 @@
 .postHistoryFormDataBlock {
   background-color: var(--black100);
-  padding: 20px 0 20px 30px;
-  line-height: 21.82px;
+  padding: 20px 30px;
   border-radius: 15px;
   font-weight: 400;
   font-size: 16px;
@@ -11,5 +10,9 @@
   .postHistoryFormText {
     color: var(--black400);
     margin-left: 5px;
+    @media screen and (max-width: 320px) {
+      display: block;
+      margin: 5px 0 0;
+    }
   }
 }

@@ -31,10 +31,10 @@ export const WelcomePage = () => {
     <div className={style.wrapper}>
       <Container>
         <div className={style.text}>
-          <Typography variant={"h1"} weight={"bold"}>
+          <Typography variant={"h1"} weight={"extraBold"} color={"blue500"}>
             Добро пожаловать!
           </Typography>
-          <Typography variant={"h3"} color={"lightBlue"}>
+          <Typography variant={"h4"} weight={"semibold"} color={"black300"}>
             Выберите город
           </Typography>
         </div>

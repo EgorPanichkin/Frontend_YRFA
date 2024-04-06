@@ -7,7 +7,7 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
     <div className={style.blockTreatmentAndDetail}>
       <div className={style.blockContent}>
         <div className={style.treatmentBlock}>
-          <Typography variant="h3" weight="demibold" color="blue">
+          <Typography variant="h3" weight="bold" color="blue400">
             {treatmentData.h2}
           </Typography>
           <div className={style.contentSection}>
@@ -15,7 +15,12 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
               {treatmentData.contentOne.map((items, index) => (
                 <li key={index} className={style.content}>
                   <Link to={items.path}>
-                    <Typography variant="h4" className={style.linkText}>
+                    <Typography
+                      variant="h6"
+                      weight="regular"
+                      color="blue400"
+                      className={style.linkText}
+                    >
                       {items}
                     </Typography>
                   </Link>
@@ -26,7 +31,12 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
               {treatmentData.contentToo.map((items, index) => (
                 <li key={index} className={style.content}>
                   <Link to={items?.path}>
-                    <Typography variant="h4" className={style.linkText}>
+                    <Typography
+                      variant="h6"
+                      weight="regular"
+                      color="blue400"
+                      className={style.linkText}
+                    >
                       {items}
                     </Typography>
                   </Link>
@@ -37,7 +47,7 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
         </div>
         <VerticalLine height="239" />
         <div className={style.blockDetail}>
-          <Typography variant="h3" color="blue" weight="demibold">
+          <Typography variant="h3" weight="bold" color="blue400">
             {detailData.h2}
           </Typography>
           <DetailCard detailData={detailData} />
