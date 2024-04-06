@@ -1,6 +1,7 @@
-import { CustomButton, Typography } from "@/shared";
+import { Typography } from "@/shared";
 import style from "./HeroRehabilitation.module.scss";
 import data from "./data/data.json";
+import { SignUpButton } from "@/entities";
 import image from "@/shared/assets/images/Rehabilitation.webp";
 
 export const HeroRehabilitation = () => {
@@ -14,12 +15,9 @@ export const HeroRehabilitation = () => {
           <Typography variant="body" weight="regular" color="black400">
             {data.rehabilitation.description}
           </Typography>
-          <CustomButton
-            color="orange"
-            className={style.heroRehabilitationButton}
-          >
-            <Typography>{data.button}</Typography>
-          </CustomButton>
+          <SignUpButton className={style.heroRehabilitationButton}>
+            {data.button}
+          </SignUpButton>
         </div>
         <img
           src={image}

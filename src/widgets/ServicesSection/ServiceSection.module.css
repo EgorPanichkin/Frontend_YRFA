@@ -1,9 +1,0 @@
-.servicesBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.servicesBlock .cardBlock {
-  display: flex;
-  gap: 13px;
-} /*# sourceMappingURL=ServiceSection.module.css.map */

@@ -9,7 +9,7 @@ export const DetailCard = ({ detailData }) => {
           {detailData.h4}
         </Typography>
         <CustomButton type="link" path="/about" color="default">
-          <Typography>{detailData.button}</Typography>
+          {detailData.button}
         </CustomButton>
       </div>
       <img

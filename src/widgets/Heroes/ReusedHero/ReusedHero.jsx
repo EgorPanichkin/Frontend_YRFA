@@ -1,5 +1,6 @@
+import { SignUpButton } from "@/entities";
 import style from "./ReusedHero.module.scss";
-import { CustomButton, Typography } from "@/shared";
+import { Typography } from "@/shared";
 
 export const ReusedHero = ({ heroData }) => {
   return (
@@ -9,9 +10,7 @@ export const ReusedHero = ({ heroData }) => {
           {heroData?.header}
         </Typography>
         <Typography color="white">{heroData?.text}</Typography>
-        <CustomButton color="orange">
-          <Typography>Записаться на прием</Typography>
-        </CustomButton>
+        <SignUpButton>Записаться на прием</SignUpButton>
       </div>
     </section>
   );

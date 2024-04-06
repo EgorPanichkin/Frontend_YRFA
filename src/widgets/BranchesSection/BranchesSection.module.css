@@ -1,9 +1,0 @@
-.branchesSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.branchesSection .cardBlock {
-  display: flex;
-  gap: 21px;
-} /*# sourceMappingURL=BranchesSection.module.css.map */

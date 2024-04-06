@@ -115,7 +115,7 @@ export const Authorization = () => {
           </div>
         </div>
         <CustomButton color="default" type="submit" disabled={isDisabled}>
-          <Typography>Войти в кабинет</Typography>
+          Войти в кабинет
         </CustomButton>
       </div>
       <div className={style.helpFormBlock}>

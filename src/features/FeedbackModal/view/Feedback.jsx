@@ -1,5 +1,6 @@
 import { FeedbackValidation } from "../model/FeedbackValidation";
 import { useState } from "react";
+
 import {
   CustomButton,
   Cross,
@@ -78,7 +79,7 @@ export const Feedback = () => {
                 disabled={isButtonDisabled}
                 className={style.questioBtn}
               >
-                <Typography>Отправить</Typography>
+                Отправить
               </CustomButton>
             </form>
           </div>

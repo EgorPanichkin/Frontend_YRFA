@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CustomButton, Typography } from "../..";
+import { Typography } from "../..";
 import style from "./EquipCard.module.scss";
 
 export const EquipCard = ({ title, text, image }) => {
@@ -31,11 +31,9 @@ export const EquipCard = ({ title, text, image }) => {
           {text}
         </Typography>
       </div>
-      <CustomButton className={style.button} onClick={changeText}>
-        <Typography color="blue400">
-          {showFullText ? "Подробнее" : "Скрыть"}
-        </Typography>
-      </CustomButton>
+      <button className={style.button} onClick={changeText}>
+        {showFullText ? "Подробнее" : "Скрыть"}
+      </button>
     </div>
   );
 };

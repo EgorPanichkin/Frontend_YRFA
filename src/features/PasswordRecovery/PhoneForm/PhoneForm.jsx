@@ -93,7 +93,7 @@ export const PhoneForm = () => {
         className={style.smsButton}
         disabled={isDisabled}
       >
-        <Typography>Продолжить</Typography>
+        Продолжить
       </CustomButton>
     </form>
   );

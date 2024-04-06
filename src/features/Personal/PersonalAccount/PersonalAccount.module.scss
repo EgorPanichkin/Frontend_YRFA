@@ -11,16 +11,27 @@
   .personalForm {
     padding: 0 20px;
     margin-bottom: 100px;
+    @media screen and (max-width: 320px) {
+      padding: 0;
+      margin-bottom: 32px;
+    }
     .personalAccountHeading {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
       margin-bottom: 30px;
+      @media screen and (max-width: 320px) {
+        margin-left: 60px;
+        margin-bottom: 16px;
+      }
       .personalCabinetTitle {
         font-size: 24px;
         line-height: 32.74px;
         font-weight: 600;
+        @media screen and (max-width: 320px) {
+          font-size: 16px;
+        }
       }
       .personalAccountIconOpen,
       .personalAccountIconClose {
@@ -42,9 +53,13 @@
         .dropDownMenuEdit {
           display: inline;
           color: #1a4862;
-          padding: 12px 42px 10px 12px;
+          padding: 10px 32px 10px 10px;
           border-radius: 10px;
           transition: 200ms;
+          @media screen and (max-width: 320px) {
+            // width: 200px;
+            padding: 10px 20px 10px 10px;
+          }
           &:hover {
             background-color: #ddf1fa;
           }
@@ -56,6 +71,9 @@
       grid-template-columns: repeat(2, 1fr);
       max-width: 534px;
       gap: 20px;
+      @media screen and (max-width: 320px) {
+        grid-template-columns: 1fr;
+      }
       div {
         width: 254px;
         label {
@@ -108,66 +126,26 @@
     }
     .personalAccountButton {
       margin: 30px 0 -70px;
+      @media screen and (max-width: 320px) {
+        margin: 16px auto;
+      }
     }
   }
   .upcomingReceptions {
     .upcomingReceptionsTitle {
-      margin-bottom: 20px;
       font-weight: 600;
       font-size: 24px;
-      line-height: 32.74px;
-      margin-left: 26px;
-    }
-    .notificationOverlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .upcomingReceptionNotification {
-        padding: 24px 32px;
-        border-radius: 20px;
-        background-color: var(--background-color);
-        .upcomingReceptionNotificationTitle {
-          font-weight: 400;
-          line-height: 19.1px;
-          font-size: 14px;
-        }
-        .upcomingReceptionNotificationButtons {
-          margin-top: 16px;
-          display: flex;
-          gap: 24px;
-          button,
-          a {
-            padding: 10.5px 24px;
-            border-radius: 40px;
-            &:last-child {
-              background-color: var(--blue300);
-              transition: 250ms;
-              color: white;
-              &:hover {
-                background-color: #619fbb;
-              }
-            }
-            &:first-child {
-              color: #0c4a66;
-              transition: 250ms;
-              &:hover {
-                background-color: #ddf1fa;
-              }
-            }
-          }
-        }
+      margin: 0 0 20px 26px;
+      @media screen and (max-width: 320px) {
+        font-size: 16px;
+        margin: 0 0 16px 0;
+        text-align: center;
       }
     }
   }
   .upcomingReceptionsWrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 }

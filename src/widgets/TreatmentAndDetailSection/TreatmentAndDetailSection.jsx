@@ -54,7 +54,7 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
         </div>
       </div>
       <CustomButton color="default" icon="chevron">
-        <Typography>{treatmentData.button}</Typography>
+        {treatmentData.button}
       </CustomButton>
     </div>
   );

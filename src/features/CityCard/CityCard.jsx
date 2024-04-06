@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "./CityCard.module.scss";
-import { CustomButton, Typography } from "@/shared";
+import { Typography } from "@/shared";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { locationActions } from "@/app/store/locationSlice";
@@ -36,14 +36,13 @@ export const CityCard = ({ data }) => {
           {data.title}
         </Typography>
         <Typography variant="body">{data.text}</Typography>
-        <CustomButton
-          onClick={(e) => handleClick(e.target.value)}
-          value={data.city}
+        <button
           className={style.button}
-          color="border"
+          value={data.city}
+          onClick={(e) => handleClick(e.target.value)}
         >
-          <Typography>Продолжить</Typography>
-        </CustomButton>
+          Продолжить
+        </button>
       </div>
     </div>
   );

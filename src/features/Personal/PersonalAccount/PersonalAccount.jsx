@@ -35,7 +35,7 @@ export const PersonalAccount = () => {
     focusedInput,
     errorsInput,
     inputValues,
-    // handleEdit,
+    handleEdit,
     selectRef,
     editMode,
     isDisabled,
@@ -53,7 +53,7 @@ export const PersonalAccount = () => {
             variant="h2"
             className={style.personalCabinetTitle}
           >
-            Личный кабинет пациента
+            Личный кабинет
           </Typography>
           {editMode === true ? (
             <MoreVertical
@@ -69,28 +69,22 @@ export const PersonalAccount = () => {
           )}
           {dropDownMenu === false && (
             <div className={style.dropDownMenu}>
-              <CustomButton
+              <button
                 type="button"
-                onClick={() => setConfirmationExit(true)}
+                onClick={handleEdit}
                 className={style.dropDownMenuEdit}
               >
-                <Typography variant="h7" color="blue">
-                  Редактировать
-                </Typography>
-              </CustomButton>
+                Редактировать
+              </button>
               <Link to={"analyses-history"}>История анализов</Link>
               <Link to={"post-history"}>История записей</Link>
-
-              <CustomButton
+              <button
                 type="button"
                 onClick={() => setConfirmationExit(true)}
                 className={style.dropDownMenuEdit}
               >
-                <Typography variant="h7" color="blue">
-                  {" "}
-                  Выйти из кабинета
-                </Typography>
-              </CustomButton>
+                Выйти из кабинета
+              </button>
             </div>
           )}
         </div>
@@ -281,7 +275,7 @@ export const PersonalAccount = () => {
           variant="h3"
           weight="600"
         >
-          Предстоящие приемы
+          Предстоящие приёмы
         </Typography>
         {confirmationExit && (
           <ModalWrapper onCloseModal={() => setConfirmationExit(false)}>

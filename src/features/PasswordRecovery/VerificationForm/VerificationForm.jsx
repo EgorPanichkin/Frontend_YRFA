@@ -108,7 +108,7 @@ export const VerificationForm = () => {
         className={style.smsButton}
         disabled={isDisabled}
       >
-        <Typography>Продолжить</Typography>
+        Продолжить
       </CustomButton>
       <button
         className={style.smsFormLink}
