@@ -9,3 +9,4 @@ export * from "./ServicesSection";
 export * from "./TreatmentAndDetailSection";
 export * from "./AnalysisCards";
 export * from "./AnalysisSelectionSection";
+export * from "./AboutLOVZ";

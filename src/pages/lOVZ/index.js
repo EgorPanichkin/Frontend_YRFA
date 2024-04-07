@@ -1,0 +1,1 @@
+export { LovzPage } from "./LOVZ";

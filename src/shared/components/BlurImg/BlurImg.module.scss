@@ -1,0 +1,32 @@
+.hero {
+  width: 100%;
+  min-height: 430px;
+  margin-top: 16px;
+  background-size: cover;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  background-position: top;
+  .textBlock {
+    min-height: 430px;
+    margin-left: 55.6vw;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    background-blend-mode: plus-darker;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 32px;
+    padding-right: 120px;
+    padding-left: 32px;
+    a {
+      margin-right: auto;
+    }
+    .btnBlurImg{
+      width: 163px;
+      height: 40px;
+      padding: 12px 24px;
+      
+    }
+  }
+}
