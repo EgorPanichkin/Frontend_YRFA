@@ -36,7 +36,7 @@ export const Authorization = () => {
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
         Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
     );
-  }, [errorsInput, inputValues]);
+  }, [errorsInput]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
