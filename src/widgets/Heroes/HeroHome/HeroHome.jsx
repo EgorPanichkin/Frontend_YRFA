@@ -7,7 +7,7 @@ export const HeroHome = ({ heroData }) => {
     <div className={style.blockHero}>
       <SliderHome />
       <div className={style.heroCard}>
-        <CustomCard data={heroData} />
+        <CustomCard data={heroData} reverse="false" />
         <CustomCard data={heroData} />
       </div>
     </div>
