@@ -129,7 +129,7 @@ export const RegisterValidation = () => {
       confirm_password: enterPassword,
     });
 
-    if (response.status === 200) {
+    if (response && response?.status === 200) {
       navigate(PATHS.personal);
       notify.success("Вы успешно зарегестрировались!");
     }
