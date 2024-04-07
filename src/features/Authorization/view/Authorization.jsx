@@ -47,11 +47,9 @@ export const Authorization = () => {
       password: inputValues.password,
     });
 
-    if (response.status === 200) {
+    if (response && response?.status === 200) {
       navigate(PATHS.personal);
       notify.success("Авторизация успешно!");
-    } else {
-      console.log("Форма содержит ошибки валидации");
     }
   };
 
