@@ -130,7 +130,7 @@ export const RegisterValidation = () => {
     });
 
     if (response.status === 200) {
-      navigate(PATHS.personal);
+      navigate(PATHS.login);
       notify.success("Вы успешно зарегестрировались!");
     }
   };

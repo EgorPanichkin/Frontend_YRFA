@@ -1,10 +1,7 @@
-import { validateForm } from "@/shared";
+import { usersRequester, validateForm } from "@/shared";
 import { useEffect, useRef, useState } from "react";
 
 export const usePersonalAccount = () => {
-  // FIX ME
-  // const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,24}$/
-
   // состояние для фокуса label
   const [focusedInput, setFocusedInput] = useState("");
 
@@ -29,6 +26,7 @@ export const usePersonalAccount = () => {
   // ------
   const selectRef = useRef(null);
 
+  // данные для предстоящих приёмом
   const [receptionsList, setReceptionsList] = useState([
     {
       direction: "Название специальности",
@@ -46,13 +44,14 @@ export const usePersonalAccount = () => {
     },
   ]);
 
+  // обьект с данными для валидации полей
   const validationRules = {
     name: {
       errorMessage: ["Заполните поле Имя", "Имя от 2 до 20 символов!"],
       maxLength: 20,
       minLength: 2,
     },
-    surName: {
+    lastName: {
       errorMessage: ["Заполните поле Фамилия", "Фамилия от 2 до 20 символов!"],
       maxLength: 20,
       minLength: 2,
@@ -68,7 +67,6 @@ export const usePersonalAccount = () => {
     password: {
       minLength: 6,
       maxLength: 24,
-      // regex: passwordRegex,
       errorMessage: [
         "Заполните поле пароля",
         "не менее 6 до 24 символов",
@@ -78,22 +76,53 @@ export const usePersonalAccount = () => {
     },
   };
 
+  // состояние для запроса данных клиента
+  const [userProfil, setUserProfil] = useState([]);
+
+  // сама функция для запроса
+  const DataProfil = async () => {
+    try {
+      const response = await usersRequester("/profile/");
+      setUserProfil(response.data);
+    } catch {
+      console.log("error");
+    }
+  };
+
+  useEffect(() => {
+    DataProfil();
+  }, []);
+
+  // состояния для полей
   const [inputValues, setInputValues] = useState({
-    name: "Чынгыз",
-    surName: "Айтматов",
-    phone: "+996 000 000 000",
+    name: "",
+    lastName: "",
+    phone: "",
     date: "",
     password: "hello1234",
-    sex: "",
+    gender: "",
   });
 
+  useEffect(() => {
+    // Обновляем inputValues после получения данных профиля
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      name: userProfil.first_name,
+      lastName: userProfil.last_name,
+      phone: userProfil.phone_number,
+      date: userProfil.birth_date,
+      gender: userProfil.gender,
+    }));
+  }, [userProfil]);
+
+  // состояние для выводов ошибок полей
   const [errorsInput, setErrorsInput] = useState({
     name: "",
-    surName: "",
+    lastName: "",
     phone: "",
     date: "",
     password: "",
-    sex: "",
+    gender: "",
   });
 
   // функция для обработки инпутов (полей)
@@ -101,9 +130,11 @@ export const usePersonalAccount = () => {
     const { value } = event.target;
     setInputValues({ ...inputValues, [inputName]: value });
 
+    // вызываем функцию для валидации
     validateInput(inputName, value);
   };
 
+  // сама функция для валидации
   const validateInput = (inputName, value) => {
     const { errorMessage, maxLength, minLength } = validationRules[inputName];
 
@@ -114,7 +145,7 @@ export const usePersonalAccount = () => {
 
   //функция для хранения состояния с выбраного варианта
   const handleOptionClick = (option) => {
-    setInputValues({ ...inputValues, sex: option });
+    setInputValues({ ...inputValues, gender: option });
   };
 
   // для выключения выпадающего списка опций, если пользователь нажал не на тот область
@@ -149,7 +180,7 @@ export const usePersonalAccount = () => {
     setConfirmationId(receptionId);
   };
 
-  // --------
+  // функция для удоления приёма
   const handleConfirmDelete = () => {
     setReceptionsList(
       receptionsList.filter((reception) => reception.id !== confirmationId),
@@ -163,13 +194,12 @@ export const usePersonalAccount = () => {
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
         Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
     );
-  }, [errorsInput, inputValues]);
+  }, [errorsInput]);
 
   // функция отправки формы
   const handleSubmit = (event) => {
     event.preventDefault();
     setEditMode(true);
-    console.log("данные с формы:", inputValues);
   };
 
   return {
