@@ -6,7 +6,6 @@ import {
   MoreVertical,
   SelectComponent,
   Typography,
-  // usersRequester,
 } from "@/shared";
 import { IMaskInput } from "react-imask";
 import { Link } from "react-router-dom";
@@ -41,8 +40,6 @@ export const PersonalAccount = () => {
     isDisabled,
     setDropDownMenu,
   } = usePersonalAccount();
-
-  // console.log(usersRequester("/profile/"));
 
   return (
     <div className={style.personalAccount}>
@@ -105,7 +102,7 @@ export const PersonalAccount = () => {
             <CustomInput
               id="name"
               type="text"
-              value={inputValues.name}
+              value={inputValues.name || ""}
               onBlur={() => setFocusedInput("")}
               onFocus={() => setFocusedInput("name")}
               onChange={(event) => handleInputChange(event, "name")}
@@ -114,25 +111,27 @@ export const PersonalAccount = () => {
             />
           </div>
           <div>
-            {errorsInput.surName ? (
-              <label htmlFor="surName" className={style.errorLabel}>
-                {errorsInput.surName}
+            {errorsInput.lastName ? (
+              <label htmlFor="lastName" className={style.errorLabel}>
+                {errorsInput.lastName}
               </label>
             ) : (
               <label
-                htmlFor="surName"
-                className={focusedInput === "surName" ? style.focusedLabel : ""}
+                htmlFor="lastName"
+                className={
+                  focusedInput === "lastName" ? style.focusedLabel : ""
+                }
               >
                 Фамилия
               </label>
             )}
             <CustomInput
-              id="surName"
+              id="lastName"
               type="text"
               onBlur={() => setFocusedInput("")}
-              value={inputValues.surName}
-              onFocus={() => setFocusedInput("surName")}
-              onChange={(event) => handleInputChange(event, "surName")}
+              value={inputValues.lastName || ""}
+              onFocus={() => setFocusedInput("lastName")}
+              onChange={(event) => handleInputChange(event, "lastName")}
               className={editMode ? "" : style.personalCabinetInput}
               disabledInput={editMode}
             />
@@ -156,7 +155,7 @@ export const PersonalAccount = () => {
               type="phone"
               mask="+{996}(000)000-000"
               placeholder="+996 (999) 999-999"
-              value={inputValues.phone}
+              value={inputValues.phone || ""}
               onInput={(event) => handleInputChange(event, "phone")}
               disabled={editMode}
               onFocus={() => setFocusedInput("phone")}
@@ -184,7 +183,8 @@ export const PersonalAccount = () => {
             {editMode ? (
               <input
                 id="date"
-                value={"22.09.2004"}
+                type="date"
+                value={inputValues.date || ""}
                 className={style.fakeInput}
                 disabled
               />
@@ -192,6 +192,7 @@ export const PersonalAccount = () => {
               <CustomInput
                 id="date"
                 type="date"
+                value={inputValues.date || ""}
                 onBlur={() => setFocusedInput("")}
                 onFocus={() => setFocusedInput("date")}
                 onChange={(event) => handleInputChange(event, "date")}
@@ -217,10 +218,12 @@ export const PersonalAccount = () => {
             {editMode ? (
               <input
                 id="password"
-                value={inputValues.password
-                  .split("")
-                  .map(() => "•")
-                  .join("")}
+                value={
+                  inputValues.password
+                    .split("")
+                    .map(() => "•")
+                    .join("") || ""
+                }
                 className={style.fakeInput}
                 disabled
               />
@@ -230,7 +233,7 @@ export const PersonalAccount = () => {
                 type="password"
                 onBlur={() => setFocusedInput("")}
                 onFocus={() => setFocusedInput("password")}
-                value={inputValues.password}
+                value={inputValues.password || ""}
                 onChange={(event) => handleInputChange(event, "password")}
                 className={editMode ? "" : style.personalCabinetInput}
                 disabledInput={editMode}
@@ -238,20 +241,20 @@ export const PersonalAccount = () => {
             )}
           </div>
           <div>
-            <label htmlFor="sex" className={style.personalCabinetLabel}>
+            <label htmlFor="gender" className={style.personalCabinetLabel}>
               Пол
             </label>
             {editMode ? (
               <input
-                id="sex"
-                value={"Мужской"}
+                id="gender"
+                value={inputValues.gender || ""}
                 className={style.fakeInput}
                 disabled
               />
             ) : (
               <SelectComponent
                 selectTitle={
-                  inputValues.sex ? inputValues.sex : "Укажите свой пол"
+                  inputValues.gender ? inputValues.gender : "Укажите свой пол"
                 }
                 onClickOption={handleOptionClick}
                 optionsItems={optionsItems}

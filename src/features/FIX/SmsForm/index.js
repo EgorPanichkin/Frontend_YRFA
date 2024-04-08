@@ -1,1 +1,0 @@
-export { SmsForm } from "./smsForm";
