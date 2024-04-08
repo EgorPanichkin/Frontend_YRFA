@@ -1,1 +1,1 @@
-export { MainLovz } from "./MainLOVZ";
+export { BodyLovz } from "./BodyLOVZ";

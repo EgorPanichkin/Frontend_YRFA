@@ -1,1 +1,0 @@
-export { BlurImg } from "./BlurImg";
