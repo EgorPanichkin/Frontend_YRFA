@@ -1,10 +1,10 @@
 import {
+  AccordionForm,
   CustomButton,
   CustomInput,
   Dagger,
   ModalWrapper,
   MoreVertical,
-  SelectComponent,
   Typography,
 } from "@/shared";
 import { IMaskInput } from "react-imask";
@@ -16,7 +16,7 @@ import { usePersonalAccount } from "../model/PersonalAccountValidation";
 
 export const PersonalAccount = () => {
   const {
-    // диструктурирую состоянии и функции с хука usePersonalAccount
+    // диструктурирую состоянии и функции с PersonalAccountValidation
     infoCabinetSettingsClose,
     handleDeleteConfirmation,
     handleConfirmDelete,
@@ -252,7 +252,7 @@ export const PersonalAccount = () => {
                 disabled
               />
             ) : (
-              <SelectComponent
+              <AccordionForm
                 selectTitle={
                   inputValues.gender ? inputValues.gender : "Укажите свой пол"
                 }

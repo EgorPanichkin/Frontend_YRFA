@@ -16,7 +16,7 @@ export * from "./Line";
 export * from "./Loader";
 export * from "./ModalWrapper";
 export * from "./NewsCard";
-export * from "./SelectComponent";
+export * from "./AccordionForm";
 export * from "./Typography";
 export * from "./VacancyCard";
 export * from "./VerticalLine";
