@@ -23,6 +23,7 @@ import {
   WelcomePage,
   HomePage,
   AnalysisSelection,
+  LovzPage,
 } from "@/pages";
 import { Layout } from "../Layout/Layout";
 import { PATHS } from "@/shared";
@@ -39,6 +40,7 @@ export const Routing = () => {
           <Route path={PATHS.diognostic} element={<Diognostic />} />
           <Route path={PATHS.FAQ} element={<FAQ />} />
           <Route path={PATHS.rehabilitation} element={<RehabilitationPage />} />
+          <Route path={PATHS.LOVZ} element={<LovzPage />} />
 
           <Route path={PATHS.directions} element={<Directions />} />
           {/* <Route
