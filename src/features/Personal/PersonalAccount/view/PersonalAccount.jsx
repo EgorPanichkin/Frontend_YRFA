@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 
 import style from "./PersonalAccount.module.scss";
 import { usePersonalAccount } from "../model/PersonalAccountValidation";
-import { ModalPersonal } from "../ui/ModalPersonal";
-import { UpcomingReceptionComponent } from "../ui/UpcomingReceptionComponent";
+import { ModalPersonal } from "./ui/ModalPersonal";
+import { UpcomingReceptionComponent } from "./ui/UpcomingReceptionComponent";
 
 export const PersonalAccount = () => {
   const {

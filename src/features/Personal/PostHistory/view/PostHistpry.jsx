@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Typography } from "@/shared";
 
 import style from "./PostHistory.module.scss";
-import { PostHistoryComponent } from "../ui/PostHistoryComponent";
+import { PostHistoryComponent } from "./ui/PostHistoryComponent";
 
 export const PostHistory = () => {
   const { postsHistoryList } = PostHistoryData();
