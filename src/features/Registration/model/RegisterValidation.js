@@ -63,7 +63,7 @@ export const RegisterValidation = () => {
     date: "",
     password: "",
     enterPassword: "",
-    sex: "",
+    gender: "",
   });
 
   const [errorsInput, setErrorsInput] = useState({
@@ -73,7 +73,7 @@ export const RegisterValidation = () => {
     date: "",
     password: "",
     enterPassword: "",
-    sex: "",
+    gender: "",
   });
 
   // ------
@@ -96,7 +96,7 @@ export const RegisterValidation = () => {
 
   // функция для добавления пола
   const handleOptionClick = (option) => {
-    setInputValues({ ...inputValues, sex: option });
+    setInputValues({ ...inputValues, gender: option });
   };
 
   // проверка на повтор пароля
@@ -112,25 +112,26 @@ export const RegisterValidation = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
+  // диструктуризация значений с полей
+  const { name, surName, date, gender } = inputValues;
+  // функция для того чтобы убрать тере и скобки
+  const phoneNum = phoneNumberRefactorer(inputValues.phone);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const { name, surName, date, password, enterPassword, sex } = inputValues;
-
-    const phoneNum = phoneNumberRefactorer(inputValues.phone);
 
     const response = await usersRequester("/register/", {
       phone_number: phoneNum,
       first_name: name,
       last_name: surName,
       birth_date: date,
-      gender: sex,
+      gender: gender,
       password: password,
       confirm_password: enterPassword,
     });
 
-    if (response && response?.status === 200) {
-      navigate(PATHS.personal);
+    if (response && response.status === 200) {
+      navigate(PATHS.login);
       notify.success("Вы успешно зарегестрировались!");
     }
   };
