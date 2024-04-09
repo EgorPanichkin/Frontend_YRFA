@@ -1,7 +1,7 @@
 import { Container } from "@/shared";
 
 import style from "./PersonalAccount.module.scss";
-import { PersonalAccount } from "@/features/Personal/PersonalAccount/PersonalAccount";
+import { PersonalAccount } from "@/features";
 
 export const PersonalAccountPage = () => {
   return (
