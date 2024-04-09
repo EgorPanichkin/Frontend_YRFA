@@ -52,8 +52,9 @@ export const HeroesSlider = () => {
       >
         {slideContent.map((item, index) => {
           return (
-            <SwiperSlide key={index}>
-              <img src={item.url} alt="slide image" />
+            <SwiperSlide key={index} loading="lazy">
+              <img src={item.url} alt="slide image" loading="lazy" />
+              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </SwiperSlide>
           );
         })}

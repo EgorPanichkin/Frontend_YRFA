@@ -16,8 +16,8 @@ export const AuthValidation = () => {
 
   const validationRules = {
     password: {
-      errorMessage: ["Заполните поле Пароль", "Не менее 6 и 24 символов"],
-      minLength: 6,
+      errorMessage: ["Заполните поле Пароль", "Не менее 8 и 24 символов"],
+      minLength: 8,
       maxLength: 24,
     },
     phone: {

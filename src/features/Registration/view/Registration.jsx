@@ -1,6 +1,7 @@
 import {
   ChevronLeft,
   CustomButton,
+  PATHS,
   SelectComponent,
   Typography,
 } from "@/shared";
@@ -25,6 +26,8 @@ export const Registration = () => {
     navigate,
     passwordMatch,
   } = RegisterValidation();
+
+  if (localStorage.getItem("refresh") != null) navigate(PATHS.personal);
 
   return (
     <form className={style.registerForm} onSubmit={handleSubmit}>

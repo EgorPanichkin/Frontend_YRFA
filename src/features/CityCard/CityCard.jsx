@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "./CityCard.module.scss";
-import { Typography } from "@/shared";
+import { CustomButton, Typography } from "@/shared";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { locationActions } from "@/app/store/locationSlice";
@@ -27,22 +27,31 @@ export const CityCard = ({ data }) => {
   return (
     <div
       className={style.card}
-      style={{ backgroundImage: `url(${data.image})` }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={isHovered ? style.hovered : style.shade}>
-        <Typography variant="h2" weight="bold" className={style.title}>
+      <img src={data.image} alt="city" />
+      <div className={isHovered ? style.shadeHovered : style.shade}>
+        <Typography variant="h2" weight="extraBold" className={style.title}>
           {data.title}
         </Typography>
-        <Typography variant="body">{data.text}</Typography>
-        <button
+        <Typography variant="body" color="black400" className={style.text}>
+          {data.text}
+        </Typography>
+        <CustomButton
+          color="border"
           className={style.button}
-          value={data.city}
-          onClick={(e) => handleClick(e.target.value)}
+          onClick={() => {
+            handleClick(data.city);
+          }}
         >
-          Продолжить
-        </button>
+          <Typography>Продолжить</Typography>
+        </CustomButton>
+        <CustomButton>
+          <Typography variant="h9" color="Blue300">
+            Продолжить
+          </Typography>
+        </CustomButton>
       </div>
     </div>
   );

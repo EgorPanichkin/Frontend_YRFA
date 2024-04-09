@@ -26,9 +26,7 @@ export const Authorization = () => {
 
   const navigate = useNavigate();
 
-  if (localStorage.getItem("refresh") != null) {
-    navigate(PATHS.personal);
-  }
+  if (localStorage.getItem("refresh") != null) navigate(PATHS.personal);
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -38,7 +36,7 @@ export const Authorization = () => {
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
         Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
     );
-  }, [errorsInput, inputValues]);
+  }, [errorsInput]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,11 +47,9 @@ export const Authorization = () => {
       password: inputValues.password,
     });
 
-    if (response.status === 200) {
+    if (response && response?.status === 200) {
       navigate(PATHS.personal);
-      notify("Авторизация успешно!");
-    } else {
-      console.log("Форма содержит ошибки валидации");
+      notify.success("Авторизация успешно!");
     }
   };
 

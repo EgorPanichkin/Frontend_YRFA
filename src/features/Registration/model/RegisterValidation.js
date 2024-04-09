@@ -41,11 +41,11 @@ export const RegisterValidation = () => {
       minLength: 0,
     },
     password: {
-      minLength: 6,
+      minLength: 8,
       maxLength: 24,
       errorMessage: [
         "Заполните поле пароля",
-        "не менее 6 до 24 символов",
+        "не менее 8 до 24 символов",
         "Пароли не совпадают",
         "Пароль должен содержать от 8 до 24 символов, как минимум одну цифру, одну букву верхнего и нижнего регистра",
       ],
@@ -89,13 +89,7 @@ export const RegisterValidation = () => {
   const validateInput = (inputName, value) => {
     const { minLength, maxLength, errorMessage } = validationRules[inputName];
 
-    const error = validateForm(
-      value,
-      maxLength,
-      minLength,
-      errorMessage,
-      inputName,
-    );
+    const error = validateForm(value, maxLength, minLength, errorMessage);
 
     setErrorsInput({ ...errorsInput, [inputName]: error });
   };
@@ -135,11 +129,9 @@ export const RegisterValidation = () => {
       confirm_password: enterPassword,
     });
 
-    if (response.status === 200) {
+    if (response && response?.status === 200) {
       navigate(PATHS.personal);
-      notify("Успешно зарегестрированы!");
-    } else {
-      console.log("Форма содержит ошибки валидации");
+      notify.success("Вы успешно зарегестрировались!");
     }
   };
 
