@@ -4,7 +4,7 @@ import {
   About,
   Diognostic,
   FAQ,
-  OurTeam,
+  Doctors,
   Analysis,
   LoginPage,
   RegisterPage,
@@ -35,7 +35,7 @@ export const Routing = () => {
         <Route path={PATHS.home} element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path={PATHS.about} element={<About />} />
-          <Route path={PATHS.ourTeam} element={<OurTeam />} />
+          <Route path={PATHS.doctors} element={<Doctors />} />
           <Route path={PATHS.diognostic} element={<Diognostic />} />
           <Route path={PATHS.FAQ} element={<FAQ />} />
           <Route path={PATHS.rehabilitation} element={<RehabilitationPage />} />

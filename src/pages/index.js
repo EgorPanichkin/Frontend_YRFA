@@ -10,7 +10,7 @@ export * from "./Loader";
 export * from "./Login";
 export * from "./News";
 export * from "./NotFoundPage";
-export * from "./OurTeam";
+export * from "./Doctors";
 export * from "./PersonalCabinetPages";
 export * from "./Rehabilitation";
 export * from "./SelectDirectionPage";

@@ -7,7 +7,7 @@ export const PATHS = {
   home: "/",
   welcome: "/welcome",
   about: "/about",
-  ourTeam: "/our-team",
+  doctors: "/doctors",
   diognostic: "diognostic",
   FAQ: "/FAQ",
   rehabilitation: "/rehabilitation",
