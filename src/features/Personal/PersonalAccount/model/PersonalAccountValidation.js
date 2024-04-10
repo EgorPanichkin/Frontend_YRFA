@@ -81,11 +81,9 @@ export const usePersonalAccount = () => {
 
   // сама функция для запроса
   const DataProfil = async () => {
-    try {
-      const response = await usersRequester("/profile/");
+    const response = await usersRequester("/profile/");
+    if (response && response.status === 200) {
       setUserProfil(response.data);
-    } catch {
-      console.log("error");
     }
   };
 

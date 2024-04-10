@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Typography } from "@/shared";
 
 import style from "./AnalysesHistory.module.scss";
-import { AnalysesHistoryComponent } from "../ui/AnalysesHistoryComponent";
+import { AnalysesHistoryComponent } from "./ui/AnalysesHistoryComponent";
 
 export const AnalysesHistory = () => {
   const { analysesHistoryList } = AnalysesHistoryData();
