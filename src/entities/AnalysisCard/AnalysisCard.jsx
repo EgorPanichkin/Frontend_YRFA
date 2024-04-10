@@ -8,11 +8,11 @@ export const AnalysisCard = ({ analysis }) => {
   return (
     <Link to={`/analysis/${analysis.id}`} className={style.analysisCard}>
       <div className={style.analysisCardImage}>
-        <img src="" alt={analysis.title} />
+        <img src={analysis.image} alt={analysis.title} />
       </div>
       <div className={style.analysisCardContent}>
         <Typography variant="h3" color="blue">
-          {analysis.title}
+          {analysis.analyse_name}
         </Typography>
         <Typography variant="body" color="darkBlue">
           {analysis.description}

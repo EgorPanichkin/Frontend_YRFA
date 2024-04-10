@@ -16,7 +16,9 @@ export const ReusedHero = (props) => {
           {body}
         </Typography>
         <CustomButton className={style.btnBlurImg} color="orange">
-          {textButton}
+          <Typography variant="h10" color="white" weight="semiBold">
+            {textButton}
+          </Typography>
         </CustomButton>
       </div>
     </section>

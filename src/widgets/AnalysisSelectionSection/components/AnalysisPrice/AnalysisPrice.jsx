@@ -13,12 +13,12 @@ export const AnalysisPrice = ({ priceInfo }) => {
         </Typography>
       </div>
       <Typography variant="h3" weight="bold" color="blue">
-        {priceInfo.price}
+        {priceInfo.price} сом
       </Typography>
       <div className={style.analysisPriceBottom}>
         <Typography variant="span">Сроки результатов</Typography>
         <Typography variant="span" weight="bold" color="blue">
-          {priceInfo.timing_of_results}
+          {priceInfo.results_delivery_time}
         </Typography>
       </div>
     </div>

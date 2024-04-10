@@ -2,6 +2,8 @@
   "analysis": {
     "header": "Заголовок",
     "text": "Lorem ipsum dolor sit amet consectetur. Non dignissim tempor nunc amet pretium pretium enim sed turpis. Id aliquet mauris in condimentum non. Ornare dui vulputate habitasse urna et nec volutpat nibh. Ultricies nisl hendrerit scelerisque egestas. Praesent massa aliquet aliquam fusce vitae amet habitant. Mi sed congue purus arcu. Iaculis pulvinar nibh eget semper vestibulum ultricies. Sed tempus sit non ac pellentesque.",
+    "button": "Записаться на прием",
+    "img": "https://s3-alpha-sig.figma.com/img/38dc/fddc/5d9b2a895e6d52ee5f568a51d5d03ade?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lav05fxZHeEivpAEix0BbCb3SSzF2X9n4zR3f6WdZ1xN10odVLwIlhjxia29ur2s211Rk5RQ0~O9wA6bssjiXC4Ff3sUAuJ7O~JGiQ9zRvaXxksRxupQdJKUQL68sFgrzLfPM-kSJxQ4ew7REfi7UeutSLrtgJvZ9DkNgPV-2-tKfLUlRxtQsA7Q2wUTqoPHtiTNII4GDaxi1~nv3N2E5tY4Vu5OrWgEy38RRUiwPwlwhretxNF2FuqfHBQBXJO50kmygwLsz39IaRSq-WpbzuTmp5w~WfPATgUop7qGqBSxi16co~Epfvm8QjU825IsnnrcLbibZQZEDwYR5TBR8Q__",
     "links": [
       { "text": "Список анализов", "href": "#" },
       { "text": "Список анализов", "href": "#" },

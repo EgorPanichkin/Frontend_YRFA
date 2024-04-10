@@ -1,11 +1,16 @@
 import { ReusedHero } from "@/widgets";
 import { AnalysisCards } from "@/widgets";
-import data from "./analysis.json";
+import { analysis } from "./analysis.json";
 
 export const Analysis = () => {
   return (
     <>
-      <ReusedHero heroData={data.analysis} />
+      <ReusedHero
+        title={analysis.header}
+        textButton={analysis.button}
+        body={analysis.text}
+        img={analysis.img}
+      />
       <AnalysisCards />
     </>
   );

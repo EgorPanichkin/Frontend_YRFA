@@ -1,8 +1,12 @@
 import style from "./Actual.module.scss";
 import { Container, CustomCard, Typography } from "@/shared";
 import { actuals } from "./db.json";
+import { useLoaderData } from "react-router-dom";
 
 export const Actual = () => {
+  const data = useLoaderData();
+  console.log(data);
+
   return (
     <div>
       <Container>
