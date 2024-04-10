@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import {
   About,
@@ -25,49 +25,52 @@ import {
   AnalysisSelection,
   LovzPage,
 } from "@/pages";
+
 import { Layout } from "../Layout/Layout";
-import { PATHS } from "@/shared";
+import { PATHS, baseGetRequest } from "@/shared";
 
-export const Routing = () => {
-  return (
-    <>
-      <Routes>
-        <Route path={PATHS.welcome} element={<WelcomePage />} />
-        <Route path={PATHS.home} element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path={PATHS.about} element={<About />} />
-          <Route path={PATHS.ourTeam} element={<OurTeam />} />
-          <Route path={PATHS.diognostic} element={<Diognostic />} />
-          <Route path={PATHS.FAQ} element={<FAQ />} />
-          <Route path={PATHS.rehabilitation} element={<RehabilitationPage />} />
-          <Route path={PATHS.LOVZ} element={<LovzPage />} />
-
-          <Route path={PATHS.directions} element={<Directions />} />
-          {/* <Route
-            path="/:currentDirectionSelector"
-            element={<SelectDirectionPage requestParameter="direction" />}
-          /> */}
-          {/* <Route path='/:currentDirectionSelector/:currentServiceInfo' element={<CurrentServicePage />} /> */}
-
-          <Route path={PATHS.analysis} element={<Analysis />} />
-          <Route path={PATHS.selectAnalys} element={<AnalysisSelection />} />
-
-          <Route path={PATHS.login} element={<LoginPage />} />
-          <Route path={PATHS.registration} element={<RegisterPage />} />
-          <Route path={PATHS.smsVerification} element={<SmsPage />} />
-          <Route path={PATHS.verificationCode} element={<VerificationPage />} />
-          <Route path={PATHS.passwordReset} element={<PasswordResetPage />} />
-
-          <Route path={PATHS.personal} element={<PersonalAccountPage />} />
-          <Route path={PATHS.postHistory} element={<PostHistoryPage />} />
-          <Route path={PATHS.analysHistory} element={<AnalysesHistoryPage />} />
-
-          <Route path={PATHS.actual} element={<Actual />} />
-          <Route path={PATHS.news} element={<News />} />
-          <Route path={PATHS.vacancy} element={<Vacancy />} />
-          <Route path={PATHS.notFound} element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </>
-  );
-};
+export const router = createBrowserRouter([
+  {
+    path: PATHS.welcome,
+    element: <WelcomePage />,
+  },
+  {
+    element: <Layout />,
+    children: [
+      { path: PATHS.home, element: <HomePage /> },
+      { path: PATHS.about, element: <About /> },
+      { path: PATHS.ourTeam, element: <OurTeam /> },
+      { path: PATHS.diognostic, element: <Diognostic /> },
+      { path: PATHS.FAQ, element: <FAQ /> },
+      { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
+      { path: PATHS.LOVZ, element: <LovzPage /> },
+      { path: PATHS.directions, element: <Directions /> },
+      {
+        path: PATHS.analysis,
+        element: <Analysis />,
+        loader: () => {
+          return baseGetRequest("/servises/analyses/");
+        },
+      },
+      { path: PATHS.selectAnalys, element: <AnalysisSelection /> },
+      { path: PATHS.login, element: <LoginPage /> },
+      { path: PATHS.registration, element: <RegisterPage /> },
+      { path: PATHS.smsVerification, element: <SmsPage /> },
+      { path: PATHS.verificationCode, element: <VerificationPage /> },
+      { path: PATHS.passwordReset, element: <PasswordResetPage /> },
+      { path: PATHS.personal, element: <PersonalAccountPage /> },
+      { path: PATHS.postHistory, element: <PostHistoryPage /> },
+      { path: PATHS.analysHistory, element: <AnalysesHistoryPage /> },
+      {
+        path: PATHS.actual,
+        element: <Actual />,
+        loader: () => {
+          return baseGetRequest("/main/sale/");
+        },
+      },
+      { path: PATHS.news, element: <News /> },
+      { path: PATHS.vacancy, element: <Vacancy /> },
+      { path: PATHS.notFound, element: <NotFoundPage /> },
+    ],
+  },
+]);
