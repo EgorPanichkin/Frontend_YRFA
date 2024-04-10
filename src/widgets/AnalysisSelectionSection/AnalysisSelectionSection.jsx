@@ -1,12 +1,11 @@
-/** @format */
-
 import style from "./AnalysisSelectionSection.module.scss";
-import data from "../AnalysisCards/data/data.json";
 import { useState } from "react";
 import { AnalysisContent, AnalysisList, AnalysisPrice } from "./components";
+import { useLoaderData } from "react-router-dom";
 
 export const AnalysisSelectionSection = () => {
   const [analysisInformation, setAnalysisInformation] = useState(null);
+  const data = useLoaderData();
 
   return (
     <div className={style.analysisSelectionSection}>

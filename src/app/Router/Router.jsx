@@ -52,7 +52,13 @@ export const router = createBrowserRouter([
           return baseGetRequest("/servises/analyses/");
         },
       },
-      { path: PATHS.selectAnalys, element: <AnalysisSelection /> },
+      {
+        path: PATHS.selectAnalys,
+        element: <AnalysisSelection />,
+        loader: () => {
+          return baseGetRequest("/servises/analyses/");
+        },
+      },
       { path: PATHS.login, element: <LoginPage /> },
       { path: PATHS.registration, element: <RegisterPage /> },
       { path: PATHS.smsVerification, element: <SmsPage /> },
