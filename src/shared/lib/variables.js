@@ -10,6 +10,7 @@ export const PATHS = {
   doctors: "/doctors",
   diognostic: "diognostic",
   FAQ: "/FAQ",
+  LOVZ: "/lovz",
   rehabilitation: "/rehabilitation",
   directions: "/directions",
   analysis: "/analysis",

@@ -1,8 +1,8 @@
 import {
+  AccordionForm,
   ChevronLeft,
   CustomButton,
   PATHS,
-  SelectComponent,
   Typography,
 } from "@/shared";
 
@@ -192,9 +192,11 @@ export const Registration = () => {
           />
         </div>
         <div>
-          <label htmlFor="sex">Пол</label>
-          <SelectComponent
-            selectTitle={inputValues.sex ? inputValues.sex : "Укажите свой пол"}
+          <label htmlFor="gender">Пол</label>
+          <AccordionForm
+            accordionTitle={
+              inputValues.gender ? inputValues.gender : "Укажите свой пол"
+            }
             onClickOption={handleOptionClick}
             optionsItems={optionsItems}
           />

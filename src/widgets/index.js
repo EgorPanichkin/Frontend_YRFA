@@ -12,3 +12,4 @@ export * from "./AnalysisSelectionSection";
 export * from "./DoctorsCard";
 export * from "./ArticleSection";
 export * from "./EventsSection";
+export * from "./AboutLOVZ";

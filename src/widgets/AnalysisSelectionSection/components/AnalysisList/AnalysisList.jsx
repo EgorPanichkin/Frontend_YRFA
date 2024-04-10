@@ -1,5 +1,3 @@
-/** @format */
-
 import { CustomButton, Typography } from "@/shared";
 import style from "./AnalysisList.module.scss";
 import { Link, useParams } from "react-router-dom";
@@ -40,7 +38,7 @@ export const AnalysisList = ({ analysisData, getAnalysis }) => {
             onClick={() => getAnalysis(item)}
           >
             <Typography variant="body" color="black">
-              {item.title}
+              {item.analyse_name}
             </Typography>
           </Link>
         ))}

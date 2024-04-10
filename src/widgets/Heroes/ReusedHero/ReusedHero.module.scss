@@ -6,6 +6,7 @@
   background-size: cover;
   background-position-y: 50%;
   background-repeat: no-repeat;
+  background-position: top;
   .textBlock {
     min-height: 430px;
     margin-left: 55.6vw;
@@ -21,6 +22,11 @@
     padding-left: 32px;
     a {
       margin-right: auto;
+    }
+    .btnBlurImg {
+      margin-right: auto;
+      height: 40px;
+      padding: 12px 24px;
     }
   }
 }

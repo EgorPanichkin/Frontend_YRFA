@@ -1,14 +1,9 @@
-import { Suspense } from "react";
-import { Routing } from "./Router/Router";
-import "./scss/index.scss";
 import { LoaderPage } from "@/pages";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router/Router";
 
 const App = () => {
-  return (
-    <Suspense fallback={<LoaderPage />}>
-      <Routing />
-    </Suspense>
-  );
+  return <RouterProvider router={router} fallbackElement={<LoaderPage />} />;
 };
 
 export default App;

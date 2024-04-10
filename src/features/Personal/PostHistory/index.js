@@ -1,1 +1,1 @@
-export { PostHistory } from "./PostHistpry";
+export { PostHistory } from "./view";

@@ -1,20 +1,25 @@
-/** @format */
-
 import { CustomButton, Typography } from "@/shared";
 import style from "./AnalysisContent.module.scss";
 import { useState } from "react";
 
+const tabs = [
+  { title: "Описание", id: "description" },
+  { title: "Подготовка", id: "preparation" },
+  { title: "Проведение процедуры", id: "carrying_procedure" },
+  { title: "Ожидаемые результаты", id: "expected_results" },
+];
+
 export const AnalysisContent = ({ currentAnalysis }) => {
   const [indexValue, setIndexValue] = useState(0);
   if (!currentAnalysis) return;
-  console.log("render");
+
   return (
     <div className={style.analysisContent}>
       <Typography variant="h2" weight="bold">
-        {currentAnalysis.title}
+        {currentAnalysis.analyse_name}
       </Typography>
       <div className={style.analysisContentTabs}>
-        {currentAnalysis.details.map((tab, index) => (
+        {tabs.map((tab, index) => (
           <CustomButton
             className={
               indexValue === index
@@ -38,7 +43,7 @@ export const AnalysisContent = ({ currentAnalysis }) => {
         ))}
       </div>
       <Typography variant="body">
-        {currentAnalysis.details[indexValue].content}
+        {currentAnalysis[tabs[indexValue].id]}
       </Typography>
     </div>
   );

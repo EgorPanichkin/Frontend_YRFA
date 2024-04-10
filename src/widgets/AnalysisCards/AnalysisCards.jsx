@@ -1,11 +1,11 @@
-/** @format */
-
 import { AnalysisCard } from "@/entities";
 import { Container } from "@/shared";
-import data from "./data/data.json";
 import style from "./AnalysisCards.module.scss";
+import { useLoaderData } from "react-router-dom";
 
 export const AnalysisCards = () => {
+  const data = useLoaderData();
+
   return (
     <Container>
       <section aria-label="AnalysisCards" className={style.analysisCards}>

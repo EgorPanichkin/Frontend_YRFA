@@ -17,3 +17,4 @@ export * from "./SelectDirectionPage";
 export * from "./Vacancy";
 export * from "./WelcomePage";
 export * from "./AnalysisSelection";
+export * from "./lOVZ";
