@@ -19,7 +19,7 @@ export const RegisterValidation = () => {
   const navigate = useNavigate();
 
   // данные для опции пола
-  const optionsItems = ["Man", "Women"];
+  const optionsItems = ["Мужской", "Женский"];
 
   const validationRules = {
     name: {
@@ -112,20 +112,24 @@ export const RegisterValidation = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
-  // диструктуризация значений с полей
-  const { name, surName, date, gender } = inputValues;
-  // функция для того чтобы убрать тере и скобки
-  const phoneNum = phoneNumberRefactorer(inputValues.phone);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // диструктуризация значений с полей
+    const { name, surName, date, gender, phone } = inputValues;
+
+    // Перевожу с русский на английский
+    const genderRuEn = gender === "Мужской" ? "Man" : "Women";
+
+    // функция для того чтобы убрать тере и скобки
+    const phoneNum = phoneNumberRefactorer(phone);
 
     const response = await usersRequester("/register/", {
       phone_number: phoneNum,
       first_name: name,
       last_name: surName,
       birth_date: date,
-      gender: gender,
+      gender: genderRuEn,
       password: password,
       confirm_password: enterPassword,
     });
