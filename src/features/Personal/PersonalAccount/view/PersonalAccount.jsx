@@ -254,7 +254,7 @@ export const PersonalAccount = () => {
               />
             ) : (
               <AccordionForm
-                selectTitle={
+                accordionTitle={
                   inputValues.gender ? inputValues.gender : "Укажите свой пол"
                 }
                 onClickOption={handleOptionClick}

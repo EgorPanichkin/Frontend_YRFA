@@ -1,4 +1,9 @@
-import { usersRequester, validateForm } from "@/shared";
+import {
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
+  validateForm,
+} from "@/shared";
 import { useEffect, useRef, useState } from "react";
 
 export const usePersonalAccount = () => {
@@ -101,15 +106,22 @@ export const usePersonalAccount = () => {
     gender: "",
   });
 
+  // диструктуризирую данные с состояния в котором хрянятся данные пользователя
+  const { first_name, last_name, phone_number, birth_date, gender } =
+    userProfil;
+
+  // Перевожу с английского на русский
+  const genderEnRu = gender === "Man" ? "Мужской" : "Женский";
+
   useEffect(() => {
     // Обновляем inputValues после получения данных профиля
     setInputValues((prevValues) => ({
       ...prevValues,
-      name: userProfil.first_name,
-      lastName: userProfil.last_name,
-      phone: userProfil.phone_number,
-      date: userProfil.birth_date,
-      gender: userProfil.gender,
+      name: first_name,
+      lastName: last_name,
+      phone: phone_number,
+      date: birth_date,
+      gender: genderEnRu,
     }));
   }, [userProfil]);
 
@@ -165,6 +177,7 @@ export const usePersonalAccount = () => {
   const handleEdit = () => {
     setEditMode(false);
     setDropDownMenu(true);
+    setInputValues({ ...inputValues, password: "" });
   };
 
   // функция для включения режима редактирования и так же выкл опцию
@@ -195,9 +208,35 @@ export const usePersonalAccount = () => {
   }, [errorsInput]);
 
   // функция отправки формы
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setEditMode(true);
+
+    // диструктуризация значений с полей
+    const { name, lastName, date, gender, password, phone } = inputValues;
+
+    // функция для того чтобы убрать тере и скобки
+    const phoneNum = phoneNumberRefactorer(phone);
+
+    // Перевожу с русский на английский
+    const genderRuEn = gender === "Мужской" ? "Man" : "Women";
+
+    const response = await usersRequester(
+      "/profile/",
+      {
+        phone_number: phoneNum,
+        first_name: name,
+        last_name: lastName,
+        birth_date: date,
+        gender: genderRuEn,
+        password: password,
+      },
+      "patch",
+    );
+
+    if (response && response.status === 200) {
+      notify.success("Данные успешно изменены!");
+      setEditMode(true);
+    }
   };
 
   return {

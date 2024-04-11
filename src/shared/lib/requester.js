@@ -104,15 +104,21 @@ axiosPersonal.interceptors.response.use(
   },
 );
 
-export const usersRequester = async (endpoint, data) => {
+export const usersRequester = async (endpoint, data, type) => {
   try {
+    if (type === "patch") {
+      const response = await axiosPersonal.patch(`${endpoint}`, data);
+      return response;
+    }
     if (!data) {
       const response = await axiosPersonal.get(`${endpoint}`);
       return response;
     }
-    const response = await axiosPersonal.post(`${endpoint}`, data);
-    return response;
+    if (data && type !== "patch") {
+      const response = await axiosPersonal.post(`${endpoint}`, data);
+      return response;
+    }
   } catch (error) {
-    // console.error(error);
+    console.error(error);
   }
 };
