@@ -5,5 +5,8 @@
   .cardBlock {
     display: flex;
     gap: 13px;
+    @media (max-width: 1280px) {
+      flex-wrap: wrap;
+    }
   }
 }

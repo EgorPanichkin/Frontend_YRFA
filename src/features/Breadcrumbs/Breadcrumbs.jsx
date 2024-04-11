@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 export const Breadcrumbs = () => {
   const data = {
     about: "О Компании",
-    "our-team": "Наша команда",
+    doctors: "Врачам",
     diognostic: "Диагностика",
     rehabilitation: "Реабилитация",
     FAQ: "FAQ",

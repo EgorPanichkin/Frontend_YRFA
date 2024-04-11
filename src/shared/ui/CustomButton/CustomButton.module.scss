@@ -21,6 +21,17 @@
 .default {
   background-color: var(--blue300);
 }
+.filter {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: var(--black100);
+  color: var(--black500);
+  &:hover {
+    border-radius: 10;
+    border: 1px solid var(--blue300);
+    background-color: transparent;
+  }
+}
 .orange {
   background-color: #ff842a;
   &:hover {

@@ -1,0 +1,13 @@
+.articleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+  }
+  .btn {
+    margin-right: 1000px;
+  }
+}

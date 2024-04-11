@@ -4,7 +4,7 @@ import {
   About,
   Diognostic,
   FAQ,
-  OurTeam,
+  Doctors,
   Analysis,
   LoginPage,
   RegisterPage,
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
     children: [
       { path: PATHS.home, element: <HomePage /> },
       { path: PATHS.about, element: <About /> },
-      { path: PATHS.ourTeam, element: <OurTeam /> },
+      { path: PATHS.doctors, element: <Doctors /> },
       { path: PATHS.diognostic, element: <Diognostic /> },
       { path: PATHS.FAQ, element: <FAQ /> },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
