@@ -4,7 +4,7 @@ import { CustomButton, Typography } from "@/shared";
 export const DoctorsCard = ({ data, link }) => {
   return (
     <div className={style.articlesCard} key={data.id}>
-      <div className={style.imges} style={{ background: `url(${data.imge})` }}>
+      <div className={style.image} style={{ background: `url(${data.image})` }}>
         <CustomButton color="orange" link={link}>
           {data.slug}
         </CustomButton>

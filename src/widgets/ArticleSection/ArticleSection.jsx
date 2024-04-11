@@ -27,7 +27,11 @@ export const ArticleSection = ({ sectionId, onDataCount }) => {
       ) : (
         <div className={style.flex}>
           {data.map((items) => (
-            <DoctorsCard data={items} key={items.id} link={"currentNews/"} />
+            <DoctorsCard
+              data={items}
+              key={items.id}
+              link={`doctors-articles/${items.slug}`}
+            />
           ))}
           <CustomButton color="border" className={style.btn}>
             {btn}

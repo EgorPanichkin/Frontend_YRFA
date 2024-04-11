@@ -26,7 +26,11 @@ export const EventsSection = ({ sectionId, onDataCount }) => {
       ) : (
         <div className={style.flex}>
           {data.map((items) => (
-            <DoctorsCard key={items.id} data={items} link={"currentNews/"} />
+            <DoctorsCard
+              key={items.id}
+              data={items}
+              link={`events/${items.slug}`}
+            />
           ))}
         </div>
       )}

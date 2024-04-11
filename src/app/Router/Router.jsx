@@ -28,6 +28,7 @@ import {
 
 import { Layout } from "../Layout/Layout";
 import { PATHS, baseGetRequest } from "@/shared";
+import { Article } from "@/pages/Article/Article";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,15 @@ export const router = createBrowserRouter([
       { path: PATHS.home, element: <HomePage /> },
       { path: PATHS.about, element: <About /> },
       { path: PATHS.doctors, element: <Doctors /> },
+      {
+        path: PATHS.doctorsArticles,
+        element: <Article />,
+        loader: (loader) => {
+          return baseGetRequest(
+            `/blogs/${loader.params.type}/${loader.params.slug}`,
+          );
+        },
+      },
       { path: PATHS.diognostic, element: <Diognostic /> },
       { path: PATHS.FAQ, element: <FAQ /> },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
@@ -74,7 +84,20 @@ export const router = createBrowserRouter([
           return baseGetRequest("/main/sale/");
         },
       },
-      { path: PATHS.news, element: <News /> },
+      {
+        path: PATHS.news,
+        element: <News />,
+        loader: () => {
+          return baseGetRequest("/blogs/articles/");
+        },
+      },
+      {
+        path: PATHS.newsArticle,
+        element: <Article />,
+        loader: (loader) => {
+          return baseGetRequest(`/blogs/articles/${loader.params.slug}`);
+        },
+      },
       { path: PATHS.vacancy, element: <Vacancy /> },
       { path: PATHS.notFound, element: <NotFoundPage /> },
     ],

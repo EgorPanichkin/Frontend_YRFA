@@ -2,7 +2,7 @@ import { Typography } from "@/shared";
 import style from "./NewsCard.module.scss";
 import { Link } from "react-router-dom";
 
-export const NewsCard = ({ imageUrl, title, date, description }) => {
+export const NewsCard = ({ imageUrl, title, date, description, url }) => {
   return (
     <div className={style.box}>
       <div className={style.section}>
@@ -10,7 +10,7 @@ export const NewsCard = ({ imageUrl, title, date, description }) => {
           className={style.image}
           style={{ background: `url(${imageUrl})`, backgroundSize: "cover" }}
         >
-          <Link to="/news-details">
+          <Link to={url}>
             <button>Подробнее</button>
           </Link>
         </div>

@@ -3,10 +3,9 @@
   min-height: 430px;
   margin-top: 16px;
   background-image: url(@shared/assets/images/heroBack.webp);
-  background-size: cover;
-  background-position-y: 50%;
+  background-size: 100% 250%;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: top 25% left;
   .textBlock {
     min-height: 430px;
     margin-left: 55.6vw;

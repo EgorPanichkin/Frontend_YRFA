@@ -4,11 +4,12 @@
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  .imges {
+  .image {
     width: 100%;
     height: 248px;
     padding-top: 200px;
     padding-left: 246px;
+    background-color: var(--black200);
   }
   .contentPiece {
     display: flex;
