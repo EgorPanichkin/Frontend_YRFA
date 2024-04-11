@@ -1,5 +1,8 @@
-.buttonAnchor {
-  display: flex;
-  gap: 12px;
-  margin: 16px 0 40px;
+.doctorsPages {
+  min-height: 100vh;
+  .buttonAnchor {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0 40px;
+  }
 }

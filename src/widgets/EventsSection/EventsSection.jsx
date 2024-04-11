@@ -1,15 +1,16 @@
 import style from "./EventsSection.module.scss";
 import { useState, useEffect } from "react";
-import { Typography, baseGetRequest } from "@/shared";
+import { Loader, Typography, baseGetRequest } from "@/shared";
 import { DoctorsCard } from "..";
 
 export const EventsSection = ({ sectionId }) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const response = async () => {
       const dataBase = await baseGetRequest("/blogs/events/");
-      console.log(dataBase);
       setData(dataBase);
+      setLoading(false);
     };
     response();
   }, []);
@@ -19,11 +20,15 @@ export const EventsSection = ({ sectionId }) => {
       <Typography variant="h4" weight="semibold">
         {title}
       </Typography>
-      <div className={style.flex}>
-        {data.map((items) => (
-          <DoctorsCard key={items.id} data={items} />
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className={style.flex}>
+          {data.map((items) => (
+            <DoctorsCard key={items.id} data={items} link={"currentNews/"} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

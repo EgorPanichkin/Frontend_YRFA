@@ -1,11 +1,11 @@
 import style from "./DoctorsCard.module.scss";
 import { CustomButton, Typography } from "@/shared";
 
-export const DoctorsCard = ({ data }) => {
+export const DoctorsCard = ({ data, link }) => {
   return (
     <div className={style.articlesCard} key={data.id}>
       <div className={style.imges} style={{ background: `url(${data.imge})` }}>
-        <CustomButton color="orange" link={data.slug}>
+        <CustomButton color="orange" link={link}>
           {data.slug}
         </CustomButton>
       </div>
