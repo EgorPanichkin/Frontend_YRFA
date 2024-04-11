@@ -24,6 +24,7 @@
 .filter {
   padding: 10px 16px;
   border-radius: 10px;
+  border: 1px solid var(--black100);
   background-color: var(--black100);
   color: var(--black500);
   &:hover {
