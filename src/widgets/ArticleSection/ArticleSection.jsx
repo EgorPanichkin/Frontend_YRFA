@@ -3,17 +3,18 @@ import { CustomButton, Loader, Typography, baseGetRequest } from "@/shared";
 import { useEffect, useState } from "react";
 import { DoctorsCard } from "..";
 
-export const ArticleSection = ({ sectionId }) => {
+export const ArticleSection = ({ sectionId, onDataCount }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const response = async () => {
       const dataBase = await baseGetRequest("/blogs/doctors-articles/");
       setData(dataBase);
+      onDataCount(dataBase.length);
       setLoading(false);
     };
     response();
-  }, []);
+  }, [onDataCount]);
   const title = "Статьи";
   const btn = "Посмотреть ещё";
   return (

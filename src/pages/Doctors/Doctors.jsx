@@ -5,6 +5,16 @@ import { EventsSection, ArticleSection } from "@/widgets";
 import db from "./OurTeam.json";
 export const Doctors = () => {
   const [activeSection, setActiveSection] = useState(null);
+  const [dataCountArticles, setDataCountArticles] = useState(0);
+  const [dataCountEvents, setDataCountEvents] = useState(0);
+
+  const handleDataCountEvents = (count) => {
+    setDataCountEvents(count);
+  };
+
+  const handleDataCountArticles = (count) => {
+    setDataCountArticles(count);
+  };
 
   const toggleSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -22,28 +32,34 @@ export const Doctors = () => {
         </Typography>
         <div className={style.buttonAnchor}>
           <CustomButton
-            color="border"
+            color="filter"
             onClick={showAllResults}
             className={activeSection === null ? "active" : ""}
           >
             {db.buttonAnchor1}
           </CustomButton>
           <CustomButton
-            color="default"
+            color="filter"
             onClick={() => toggleSection("articles")}
           >
             {db.buttonAnchor2}
+            <span className={style.countData}>{dataCountArticles}</span>
           </CustomButton>
-          <CustomButton color="default" onClick={() => toggleSection("events")}>
+          <CustomButton color="filter" onClick={() => toggleSection("events")}>
             {db.buttonAnchor3}
+            <span className={style.countData}>{dataCountEvents}</span>
           </CustomButton>
         </div>
-        {activeSection === "articles" && <ArticleSection />}
-        {activeSection === "events" && <EventsSection />}
+        {activeSection === "articles" && (
+          <ArticleSection onDataCount={handleDataCountArticles} />
+        )}
+        {activeSection === "events" && (
+          <EventsSection onDataCount={handleDataCountEvents} />
+        )}
         {activeSection === null && (
           <div>
-            <ArticleSection />
-            <EventsSection />
+            <ArticleSection onDataCount={handleDataCountArticles} />
+            <EventsSection onDataCount={handleDataCountEvents} />
           </div>
         )}
       </div>
