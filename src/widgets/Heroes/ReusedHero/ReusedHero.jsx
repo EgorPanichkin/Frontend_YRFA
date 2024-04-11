@@ -7,7 +7,7 @@ export const ReusedHero = (props) => {
     backgroundImage: `url(${img})`,
   };
   return (
-    <section className={style.hero} style={heroStyle}>
+    <section className={style.hero} style={img ? heroStyle : null}>
       <div className={style.textBlock}>
         <Typography variant="h1" weight="bold" color="white">
           {title}

@@ -2,25 +2,26 @@ import { ChevronRight, HomeIcon } from "@/shared";
 import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
 
-export const Breadcrumbs = () => {
-  const data = {
-    about: "О Компании",
-    doctors: "Врачам",
-    diognostic: "Диагностика",
-    rehabilitation: "Реабилитация",
-    FAQ: "FAQ",
-    analysis: "Анализы",
-    login: "Вход в кабинет",
-    registration: "Регистрация",
-    "sms-verification": "Восстановление пароля",
-    verification: "Ввод кода",
-    "password-reset": "Восстановление пароля",
-    actual: "Акции",
-    news: "Новости",
-    vacancy: "Вакансии",
-    directions: "Направления",
-  };
+const data = {
+  about: "О Компании",
+  doctors: "Врачам",
+  diognostic: "Диагностика",
+  rehabilitation: "Реабилитация",
+  FAQ: "FAQ",
+  analysis: "Анализы",
+  login: "Вход в кабинет",
+  registration: "Регистрация",
+  "sms-verification": "Восстановление пароля",
+  verification: "Ввод кода",
+  "password-reset": "Восстановление пароля",
+  actual: "Акции",
+  news: "Блог",
+  vacancy: "Вакансии",
+  directions: "Направления",
+  lovz: "ЛОВЗ",
+};
 
+export const Breadcrumbs = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
@@ -35,9 +36,7 @@ export const Breadcrumbs = () => {
   return (
     <div className={style.breadcrumbs}>
       <Link to="/" className={style.homeLink}>
-        <div className={style.icon}>
-          <HomeIcon />
-        </div>
+        <HomeIcon className={style.homeIcon} />
         Главная
       </Link>
       {pathnames.map((name, index) => {
@@ -46,14 +45,14 @@ export const Breadcrumbs = () => {
         return isLast ? (
           <div className={style.link} key={`${name}${index}`}>
             <div className={style.chevron}>
-              <ChevronRight />
+              <ChevronRight className={style.chevronRight} />
             </div>
             <div>{data[name]}</div>
           </div>
         ) : (
           <Link className={style.link} key={`${name}${index}`} to={routeTo}>
             <div className={style.chevron}>
-              <ChevronRight />
+              <ChevronRight className={style.chevronRight} />
             </div>
             {data[name]}
           </Link>

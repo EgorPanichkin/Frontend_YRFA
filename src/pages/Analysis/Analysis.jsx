@@ -9,7 +9,6 @@ export const Analysis = () => {
         title={analysis.header}
         textButton={analysis.button}
         body={analysis.text}
-        img={analysis.img}
       />
       <AnalysisCards />
     </>

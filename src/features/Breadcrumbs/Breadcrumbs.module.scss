@@ -6,6 +6,8 @@
   align-items: center;
   font-weight: 600;
   a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: var(--black300);
   }
@@ -25,5 +27,15 @@
   .link {
     display: flex;
     align-items: center;
+  }
+  .homeIcon {
+    path {
+      fill: var(--black300);
+    }
+  }
+  .chevronRight {
+    path {
+      fill: var(--black300);
+    }
   }
 }
