@@ -34,20 +34,25 @@ export const Doctors = () => {
           <CustomButton
             color="filter"
             onClick={showAllResults}
-            className={activeSection === null ? "active" : ""}
+            className={activeSection === null ? style.active : ""}
           >
             {db.buttonAnchor1}
           </CustomButton>
           <CustomButton
             color="filter"
             onClick={() => toggleSection("articles")}
+            className={activeSection === "articles" ? style.active : ""}
           >
             {db.buttonAnchor2}
-            <span className={style.countData}>{dataCountArticles}</span>
+            <div className={style.countData}>{dataCountArticles}</div>
           </CustomButton>
-          <CustomButton color="filter" onClick={() => toggleSection("events")}>
+          <CustomButton
+            color="filter"
+            onClick={() => toggleSection("events")}
+            className={activeSection === "events" ? style.active : ""}
+          >
             {db.buttonAnchor3}
-            <span className={style.countData}>{dataCountEvents}</span>
+            <div className={style.countData}>{dataCountEvents}</div>
           </CustomButton>
         </div>
         {activeSection === "articles" && (
