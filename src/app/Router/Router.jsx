@@ -24,6 +24,7 @@ import {
   HomePage,
   AnalysisSelection,
   LovzPage,
+  SelectDirectionPage,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -55,6 +56,7 @@ export const router = createBrowserRouter([
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
       { path: PATHS.LOVZ, element: <LovzPage /> },
       { path: PATHS.directions, element: <Directions /> },
+      { path: PATHS.selectDirections, element: <SelectDirectionPage /> },
       {
         path: PATHS.analysis,
         element: <Analysis />,

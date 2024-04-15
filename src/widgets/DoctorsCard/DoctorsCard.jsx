@@ -6,7 +6,7 @@ export const DoctorsCard = ({ data, link }) => {
     <div className={style.articlesCard} key={data.id}>
       <div className={style.image} style={{ background: `url(${data.image})` }}>
         <CustomButton color="orange" link={link}>
-          {data.slug}
+          Подробнее
         </CustomButton>
       </div>
       <div className={style.contentPiece}>
@@ -23,7 +23,8 @@ export const DoctorsCard = ({ data, link }) => {
         color="black400"
         className={style.contentPiece}
       >
-        {data.description}
+        Откройте мир медицинских инноваций! Узнайте о последних технологиях,
+        которые изменяют практику врачей и улучшают уход за пациентами.
       </Typography>
     </div>
   );

@@ -18,6 +18,7 @@ const data = {
   news: "Блог",
   vacancy: "Вакансии",
   directions: "Направления",
+  "select-direction": "Выюор направления",
   lovz: "ЛОВЗ",
 };
 

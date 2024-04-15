@@ -16,7 +16,7 @@ export const Actual = () => {
             <CustomCard
               key={index}
               data={{
-                h4: `${section.title} ${section.percent.slice(0, -3)} %`,
+                h4: `${section.title} ${section.percent.slice(0, -3)}%`,
                 p: `${section.description}`,
                 img: `${section.image}`,
               }}
