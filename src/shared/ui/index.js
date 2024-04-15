@@ -2,7 +2,6 @@ export * from "./AboutUi";
 export * from "./Accordion";
 export * from "./ActualCard";
 export * from "./AnchorLink";
-export * from "./ButtonSubmit";
 export * from "./CategoryCard";
 export * from "./Container";
 export * from "./CustomButton";
@@ -10,8 +9,6 @@ export * from "./CustomInput";
 // export * from "./DropMenu"
 export * from "./DropMenuServices";
 export * from "./FooterList";
-export * from "./InputComponent";
-export * from "./InputComponent";
 export * from "./Line";
 export * from "./Loader";
 export * from "./ModalWrapper";
