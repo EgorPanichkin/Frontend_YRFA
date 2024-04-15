@@ -10,8 +10,6 @@ export * from "./CustomInput";
 // export * from "./DropMenu"
 export * from "./DropMenuServices";
 export * from "./FooterList";
-export * from "./InputComponent";
-export * from "./InputComponent";
 export * from "./Line";
 export * from "./Loader";
 export * from "./ModalWrapper";
