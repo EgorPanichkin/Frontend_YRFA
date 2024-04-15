@@ -1,5 +1,11 @@
 import style from "./TreatmentAndDetailSection.module.scss";
-import { CustomButton, DetailCard, Typography, VerticalLine } from "@/shared";
+import {
+  CustomButton,
+  DetailCard,
+  PATHS,
+  Typography,
+  VerticalLine,
+} from "@/shared";
 import { Link } from "react-router-dom";
 
 export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
@@ -14,7 +20,7 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
             <ul className={style.pieceContent}>
               {treatmentData.contentOne.map((items, index) => (
                 <li key={index} className={style.content}>
-                  <Link to={items.path}>
+                  <Link to={PATHS.selectDirections}>
                     <Typography
                       variant="h6"
                       weight="regular"
