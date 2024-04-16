@@ -1,34 +1,30 @@
 import style from "./EventsSection.module.scss";
 import { useState, useEffect } from "react";
-import { Loader, Typography, baseGetRequest } from "@/shared";
+import { useLoaderData } from "react-router-dom";
+import { Loader, Typography } from "@/shared";
 import { DoctorsCard } from "..";
 
 export const EventsSection = ({ sectionId, onDataCount }) => {
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const data = useLoaderData();
   useEffect(() => {
-    const response = async () => {
-      const dataBase = await baseGetRequest("/blogs/events/");
-      setData(dataBase);
-      onDataCount(dataBase.length);
-      setLoading(false);
-    };
-    response();
-  }, [onDataCount]);
-  const title = "Мероприятия";
+    setLoading(false);
+    console.log(data.events);
+    onDataCount(data.events.length);
+  }, [data.events, onDataCount]);
   return (
     <div id={sectionId} className={style.eventsSection}>
       <Typography variant="h4" weight="semibold">
-        {title}
+        Мероприятия
       </Typography>
       {loading ? (
         <Loader />
       ) : (
         <div className={style.flex}>
-          {data.map((items) => (
+          {data.events.map((items) => (
             <DoctorsCard
               key={items.id}
-              data={items}
+              {...items}
               link={`events/${items.slug}`}
             />
           ))}
