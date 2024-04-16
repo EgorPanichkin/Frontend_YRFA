@@ -1,8 +1,31 @@
 import style from "./FAQ.module.scss";
-import { Accordion, Container, CustomCard, Typography } from "@/shared";
-import { questions, actual } from "./FAQ.db.json";
+import {
+  Accordion,
+  Container,
+  CustomCard,
+  ModalWrapper,
+  Typography,
+  baseGetRequest,
+} from "@/shared";
+import { questions } from "./FAQ.db.json";
+import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 export const FAQ = () => {
+  const [isActiveCard, setIsActiveCard] = useState(false);
+
+  const [cardSlug, setCardSlug] = useState({});
+
+  const onClickCard = async (slug) => {
+    setIsActiveCard(true);
+    const response = await baseGetRequest(`/main/about_company/${slug}`);
+    if (response) {
+      setCardSlug(response);
+    }
+  };
+
+  const actual = useLoaderData();
+
   return (
     <Container>
       <Typography variant={"h3"} weight={"extraBold"} className={style.header}>
@@ -17,7 +40,8 @@ export const FAQ = () => {
         <div className={style.actual}>
           {actual?.map((item, index) => (
             <CustomCard
-              key={index}
+              onClick={onClickCard}
+              key={item.id}
               data={item}
               option="accent"
               reverse={index % 2 !== 0}
@@ -25,6 +49,11 @@ export const FAQ = () => {
           ))}
         </div>
       </div>
+      {isActiveCard && (
+        <ModalWrapper onCloseModal={() => setIsActiveCard(false)}>
+          {<h1>{cardSlug?.title}</h1>}{" "}
+        </ModalWrapper>
+      )}
     </Container>
   );
 };

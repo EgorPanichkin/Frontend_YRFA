@@ -52,7 +52,14 @@ export const router = createBrowserRouter([
         },
       },
       { path: PATHS.diognostic, element: <Diognostic /> },
-      { path: PATHS.FAQ, element: <FAQ /> },
+
+      {
+        path: PATHS.FAQ,
+        element: <FAQ />,
+        loader: () => {
+          return baseGetRequest("/main/about_company/");
+        },
+      },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
       { path: PATHS.LOVZ, element: <LovzPage /> },
       { path: PATHS.directions, element: <Directions /> },
