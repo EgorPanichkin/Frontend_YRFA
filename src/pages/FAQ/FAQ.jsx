@@ -7,8 +7,9 @@ import {
   Typography,
   baseGetRequest,
 } from "@/shared";
-import { questions, actual } from "./FAQ.db.json";
+import { questions } from "./FAQ.db.json";
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 export const FAQ = () => {
   const [isActiveCard, setIsActiveCard] = useState(false);
@@ -22,6 +23,8 @@ export const FAQ = () => {
       setCardSlug(response);
     }
   };
+
+  const actual = useLoaderData();
 
   return (
     <Container>
