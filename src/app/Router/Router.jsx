@@ -28,7 +28,7 @@ import {
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
-import { PATHS, baseGetRequest } from "@/shared";
+import { PATHS, PrivateRoute, baseGetRequest } from "@/shared";
 import { Article } from "@/pages/Article/Article";
 
 export const router = createBrowserRouter([
@@ -76,9 +76,30 @@ export const router = createBrowserRouter([
       { path: PATHS.smsVerification, element: <SmsPage /> },
       { path: PATHS.verificationCode, element: <VerificationPage /> },
       { path: PATHS.passwordReset, element: <PasswordResetPage /> },
-      { path: PATHS.personal, element: <PersonalAccountPage /> },
-      { path: PATHS.postHistory, element: <PostHistoryPage /> },
-      { path: PATHS.analysHistory, element: <AnalysesHistoryPage /> },
+      {
+        path: PATHS.personal,
+        element: (
+          <PrivateRoute>
+            <PersonalAccountPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: PATHS.postHistory,
+        element: (
+          <PrivateRoute>
+            <PostHistoryPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: PATHS.analysHistory,
+        element: (
+          <PrivateRoute>
+            <AnalysesHistoryPage />
+          </PrivateRoute>
+        ),
+      },
       {
         path: PATHS.actual,
         element: <Actual />,
