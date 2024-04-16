@@ -1,40 +1,35 @@
 import style from "./ArticleSection.module.scss";
-import { CustomButton, Loader, Typography, baseGetRequest } from "@/shared";
+import { CustomButton, Loader, Typography } from "@/shared";
 import { useEffect, useState } from "react";
 import { DoctorsCard } from "..";
+import { useLoaderData } from "react-router-dom";
 
 export const ArticleSection = ({ sectionId, onDataCount }) => {
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const data = useLoaderData();
   useEffect(() => {
-    const response = async () => {
-      const dataBase = await baseGetRequest("/blogs/doctors-articles/");
-      setData(dataBase);
-      onDataCount(dataBase.length);
-      setLoading(false);
-    };
-    response();
-  }, [onDataCount]);
-  const title = "Статьи";
-  const btn = "Посмотреть ещё";
+    setLoading(false);
+    console.log(data.articles);
+    onDataCount(data.articles.length);
+  }, [data.articles, onDataCount]);
   return (
     <div className={style.articleBlock} id={sectionId}>
       <Typography variant="h4" weight="semibold">
-        {title}
+        Статьи
       </Typography>
       {loading ? (
         <Loader />
       ) : (
         <div className={style.flex}>
-          {data.map((items) => (
+          {data.articles.map((items) => (
             <DoctorsCard
-              data={items}
+              {...items}
               key={items.id}
               link={`doctors-articles/${items.slug}`}
             />
           ))}
           <CustomButton color="border" className={style.btn}>
-            {btn}
+            Посмотреть ещё
           </CustomButton>
         </div>
       )}

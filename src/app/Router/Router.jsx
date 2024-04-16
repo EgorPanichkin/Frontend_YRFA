@@ -41,7 +41,15 @@ export const router = createBrowserRouter([
     children: [
       { path: PATHS.home, element: <HomePage /> },
       { path: PATHS.about, element: <About /> },
-      { path: PATHS.doctors, element: <Doctors /> },
+      {
+        path: PATHS.doctors,
+        element: <Doctors />,
+        loader: async () => {
+          const articles = await baseGetRequest("/blogs/doctors_articles/");
+          const events = await baseGetRequest("/blogs/events/");
+          return { articles, events };
+        },
+      },
       {
         path: PATHS.doctorsArticles,
         element: <Article />,
