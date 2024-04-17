@@ -10,8 +10,10 @@ import { Link } from "react-router-dom";
 import { DropdownHeaderMenu } from "../../models/DropdownHeaderMenu/DropdownHeaderMenu";
 import { LocationSelector } from "../../models/LocationSelector";
 import { SignUpButton } from "@/entities";
+import { useTranslation } from "react-i18next";
 
 export const HeaderBottom = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <div className={style.navigation}>
@@ -40,10 +42,10 @@ export const HeaderBottom = () => {
             <Link to="/login" className={style.link}>
               <UserCircleIcon width={20} />
               <Typography variant="h9" color={"blue400"}>
-                Личный кабинет
+                {t("header.cabinet")}
               </Typography>
             </Link>
-            <SignUpButton>Записаться онлайн</SignUpButton>
+            <SignUpButton>{t("header.meet")}</SignUpButton>
           </div>
         </nav>
       </div>

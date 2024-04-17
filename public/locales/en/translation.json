@@ -1,8 +1,9 @@
 {
   "header": {
-    "info": "Unified information service",
+    "info": "Unified information service -",
     "search": "Search",
     "meet": "Make an appointment",
+    "cabinet": "Personal area",
     "nav": {
       "main": {
         "title": "Main",
@@ -12,6 +13,30 @@
       },
       "services": {},
       "more": {}
+    },
+    "cities": {
+      "bishkek": "Bishkek",
+      "jalal-abad": "Jalal-Abad",
+      "osh": "Osh"
     }
+  },
+  "breadcrumbs": {
+    "about": "About Us",
+    "doctors": "For Doctors",
+    "diognostic": "Diagnostics",
+    "rehabilitation": "Rehabilitation",
+    "FAQ": "FAQ",
+    "analysis": "Analysis",
+    "login": "Login",
+    "registration": "Registration",
+    "sms-verification": "Password Recovery",
+    "verification": "Enter Code",
+    "password-reset": "Password Recovery",
+    "actual": "Promotions",
+    "news": "Blog",
+    "vacancy": "Vacancies",
+    "directions": "Directions",
+    "select-direction": "Select Direction",
+    "lovz": "LOVZ"
   }
 }

@@ -1,8 +1,9 @@
 {
   "header": {
-    "info": "Единая справочная служба",
+    "info": "Единая справочная служба -",
     "search": "Поиск",
     "meet": "Записаться на прием",
+    "cabinet": "Личный кабинет",
     "nav": {
       "main": {
         "title": "Главная",
@@ -12,6 +13,30 @@
       },
       "services": {},
       "more": {}
+    },
+    "cities": {
+      "bishkek": "Бишкек",
+      "jalal-abad": "Джалал-Абад",
+      "osh": "Ош"
     }
+  },
+  "breadcrumbs": {
+    "about": "О Компании",
+    "doctors": "Врачам",
+    "diognostic": "Диагностика",
+    "rehabilitation": "Реабилитация",
+    "FAQ": "FAQ",
+    "analysis": "Анализы",
+    "login": "Вход в кабинет",
+    "registration": "Регистрация",
+    "sms-verification": "Восстановление пароля",
+    "verification": "Ввод кода",
+    "password-reset": "Восстановление пароля",
+    "actual": "Акции",
+    "news": "Блог",
+    "vacancy": "Вакансии",
+    "directions": "Направления",
+    "select-direction": "Выюор направления",
+    "lovz": "ЛОВЗ"
   }
 }
