@@ -39,7 +39,17 @@ export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: PATHS.home, element: <HomePage /> },
+      {
+        path: PATHS.home,
+        element: <HomePage />,
+        loader: async () => {
+          const services = await baseGetRequest("/servises/popular/");
+          const treatment = await baseGetRequest(
+            "/servises/treatment-categories/",
+          );
+          return { services: services, treatment: treatment };
+        },
+      },
       { path: PATHS.about, element: <About /> },
       {
         path: PATHS.doctors,
@@ -70,8 +80,21 @@ export const router = createBrowserRouter([
       },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
       { path: PATHS.LOVZ, element: <LovzPage /> },
-      { path: PATHS.directions, element: <Directions /> },
-      { path: PATHS.selectDirections, element: <SelectDirectionPage /> },
+      {
+        path: PATHS.directions,
+        element: <Directions />,
+        loader: async () => {
+          const services = await baseGetRequest("/servises/popular/");
+          const treatment = await baseGetRequest(
+            "/servises/treatment-categories/",
+          );
+          return { services: services, treatment: treatment };
+        },
+      },
+      {
+        path: `${PATHS.selectDirections}/:type/:id`,
+        element: <SelectDirectionPage />,
+      },
       {
         path: PATHS.analysis,
         element: <Analysis />,

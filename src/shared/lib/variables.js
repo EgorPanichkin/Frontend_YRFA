@@ -14,7 +14,7 @@ export const PATHS = {
   LOVZ: "/lovz",
   rehabilitation: "/rehabilitation",
   directions: "/directions",
-  selectDirections: "/select-direction",
+  selectDirections: "/select-direction/:type/:id",
   analysis: "/analysis",
   selectAnalys: "/analysis/:id",
   login: "/login",
