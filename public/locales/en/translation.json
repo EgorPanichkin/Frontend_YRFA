@@ -11,8 +11,20 @@
         "item2": "About",
         "item3": "Sales"
       },
-      "services": {},
-      "more": {}
+      "services": {
+        "title": "Services",
+        "item1": "Directions",
+        "item2": "Analyzes",
+        "item3": "Rehabilitation"
+      },
+      "more": {
+        "title": "More",
+        "item1": "For Doctors",
+        "item2": "Blog",
+        "item3": "LOVZ",
+        "item4": "Blagotvoritelnost",
+        "item5": "FAQ"
+      }
     },
     "cities": {
       "bishkek": "Bishkek",
@@ -21,6 +33,7 @@
     }
   },
   "breadcrumbs": {
+    "home": "Home",
     "about": "About Us",
     "doctors": "For Doctors",
     "diognostic": "Diagnostics",
@@ -38,5 +51,30 @@
     "directions": "Directions",
     "select-direction": "Select Direction",
     "lovz": "LOVZ"
+  },
+  "footer": {
+    "list1": {
+      "title": "Social Networks"
+    },
+    "list2": {
+      "title": "About Us",
+      "item1": "Promotions"
+    },
+    "list3": {
+      "title": "Site Map",
+      "item1": "Services",
+      "item2": "Our advantages",
+      "item3": "FAQ"
+    },
+    "list4": {
+      "title": "For partners",
+      "item1": "Vacancies",
+      "item2": "For Doctors"
+    },
+    "list5": {
+      "title": "Contacts"
+    },
+    "policy": "Privacy Policy",
+    "disclamer": "All materials on the site are protected by copyright, their use is possible only with the written consent of the copyright holder, and the information on the site is for informational and educational purposes only, and does not constitute medical advice."
   }
 }

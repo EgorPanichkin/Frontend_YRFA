@@ -1,6 +1,7 @@
 export const languages = [
   { title: "Русский", lang: "ru" },
   { title: "Кыргызча", lang: "kg" },
+  { title: "English", lang: "en" },
 ];
 
 export const PATHS = {
@@ -34,29 +35,29 @@ export const PATHS = {
 
 export const navigationHeaderLinks = {
   main: {
-    title: "Главная",
+    title: "header.nav.main.title",
     items: [
-      { label: "Главная", path: PATHS.home },
-      { label: "О компании", path: PATHS.about },
-      { label: "Акции", path: PATHS.actual },
+      { label: "header.nav.main.item1", path: PATHS.home },
+      { label: "header.nav.main.item2", path: PATHS.about },
+      { label: "header.nav.main.item3", path: PATHS.actual },
     ],
   },
   services: {
-    title: "Услуги",
+    title: "header.nav.services.title",
     items: [
-      { label: "Направления", path: PATHS.directions },
-      { label: "Анализы", path: PATHS.analysis },
-      { label: "Реабилитация", path: PATHS.rehabilitation },
+      { label: "header.nav.services.item1", path: PATHS.directions },
+      { label: "header.nav.services.item2", path: PATHS.analysis },
+      { label: "header.nav.services.item3", path: PATHS.rehabilitation },
     ],
   },
   more: {
-    title: "Еще",
+    title: "header.nav.more.title",
     items: [
-      { label: "Врачам", path: PATHS.doctors },
-      { label: "Блог", path: PATHS.news },
-      { label: "Инфо для инвалидов, пенсионеров, ВОЗ и др.", path: PATHS.LOVZ },
-      { label: "Благотворительность", path: "/blagotvoritelnost" },
-      { label: "Часто задаваемые вопросы", path: PATHS.FAQ },
+      { label: "header.nav.more.item1", path: PATHS.doctors },
+      { label: "header.nav.more.item2", path: PATHS.news },
+      { label: "header.nav.more.item3", path: PATHS.LOVZ },
+      { label: "header.nav.more.item4", path: "/blagotvoritelnost" },
+      { label: "header.nav.more.item5", path: PATHS.FAQ },
     ],
   },
 };
