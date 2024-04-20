@@ -12,8 +12,10 @@ import {
 import style from "./Footer.module.scss";
 import { data } from "../api/data";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className={style.footer}>
       <Container>
@@ -21,7 +23,7 @@ export const Footer = () => {
           <Logo weight="127" height="86" color="#ffff" />
           <div className={style.social}>
             <Typography variant="h7" color="white">
-              {data.list1.title}
+              {t(data.list1.title)}
             </Typography>
             <Line color="blacklight" className={style.line} />
             <div className={style.socialLinks}>
@@ -35,14 +37,14 @@ export const Footer = () => {
           </div>
           <div>
             <Typography variant="h7" color="white">
-              {data.list2.title}
+              {t(data.list2.title)}
             </Typography>
             <Line color="blacklight" className={style.line} />
             {data.list2.items.map((item, index) => {
               return (
                 <Link to={item.path} key={index} className={style.links}>
                   <Typography variant="body2" weight="semibold" color="white">
-                    {item.text}
+                    {t(item.text)}
                   </Typography>
                 </Link>
               );
@@ -50,14 +52,14 @@ export const Footer = () => {
           </div>
           <div>
             <Typography variant="h7" color="white">
-              {data.list3.title}
+              {t(data.list3.title)}
             </Typography>
             <Line color="blacklight" className={style.line} />
             {data.list3.items.map((item, index) => {
               return (
                 <Link to={item.path} key={index} className={style.links}>
                   <Typography variant="body2" color="white">
-                    {item.text}
+                    {t(item.text)}
                   </Typography>
                 </Link>
               );
@@ -65,14 +67,14 @@ export const Footer = () => {
           </div>
           <div>
             <Typography variant="h7" color="white">
-              {data.list4.title}
+              {t(data.list4.title)}
             </Typography>
             <Line color="blacklight" className={style.line} />
             {data.list4.items.map((item, index) => {
               return (
                 <Link to={item.path} key={index} className={style.links}>
                   <Typography variant="body2" color="white">
-                    {item.text}
+                    {t(item.text)}
                   </Typography>
                 </Link>
               );
@@ -81,7 +83,7 @@ export const Footer = () => {
           <div>
             <div className={style.tel}>
               <Typography variant="h7" color="white">
-                {data.list5.title}
+                {t(data.list5.title)}
               </Typography>
               <PhoneIcon color="white" />
             </div>
@@ -115,7 +117,7 @@ export const Footer = () => {
       <div className={style.endFooter}>
         <div>
           <Typography variant="bodySmall" color="white">
-            {data.policy}
+            {t(data.policy)}
           </Typography>
         </div>
         <div className={style.shortLine}></div>
@@ -130,7 +132,7 @@ export const Footer = () => {
       </div>
       <div className={style.disclamer}>
         <Typography variant="bodySmall" color="white">
-          {data.disclamer}
+          {t(data.disclamer)}
         </Typography>
       </div>
     </footer>
