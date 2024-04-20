@@ -30,6 +30,7 @@ export const PATHS = {
   news: "/news",
   newsArticle: "/news/:slug",
   vacancy: "/vacancy",
+  charity: "/charity",
   notFound: "*",
 };
 

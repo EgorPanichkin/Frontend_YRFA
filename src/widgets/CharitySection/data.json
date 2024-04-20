@@ -1,0 +1,33 @@
+{
+  "project": [
+    {
+      "subTitle": "Заголовок",
+      "body": "Lorem ipsum dolor sit amet consectetur. Sed varius vitae at id risus. Sapien ut enim eget tristique non nullam. Vestibulum aliquam vitae lectus mauris nullam. Commodo lorem morbi sed etiam fermentum eros vitae etiam pharetra. Cursus nisl arcu tincidunt dui. Tellus et arcu congue fringilla fermentum augue turpis porttitor. Ultrices in elit pharetra erat risus tempor fringilla morbi neque. Mauris mi ut molestie tellus malesuada vehicula enim aliquet id. Venenatis etiam turpis odio morbi. Morbi nunc sed mattis sed in aliquam orci eleifend condimentum. Integer facilisi proin sem pellentesque habitasse elementum bibendum vitae. Eu iaculis magna donec aliquet neque. Velit dui donec scelerisque nunc aenean donec vulputate vulputate. Vel hendrerit volutpat arcu purus urna maecenas non ut. Elementum posuere eu at enim non eu. Tortor volutpat curabitur gravida sagittis nibh eget."
+    },
+    {
+      "subTitle": "Заголовок",
+      "body": "Lorem ipsum dolor sit amet consectetur. Sed varius vitae at id risus. Sapien ut enim eget tristique non nullam. Vestibulum aliquam vitae lectus mauris nullam. Commodo lorem morbi sed etiam fermentum eros vitae etiam pharetra. Cursus nisl arcu tincidunt dui. Tellus et arcu congue fringilla fermentum augue turpis porttitor. Ultrices in elit pharetra erat risus tempor fringilla morbi neque. Mauris mi ut molestie tellus malesuada vehicula enim aliquet id. Venenatis etiam turpis odio morbi. Morbi nunc sed mattis sed in aliquam orci eleifend condimentum. Integer facilisi proin sem pellentesque habitasse elementum bibendum vitae. Eu iaculis magna donec aliquet neque. Velit dui donec scelerisque nunc aenean donec vulputate vulputate."
+    },
+    {
+      "subTitle": "Заголовок",
+      "body": "Lorem ipsum dolor sit amet consectetur. Sed varius vitae at id risus. Sapien ut enim eget tristique non nullam. Vestibulum aliquam vitae lectus mauris nullam. Commodo lorem morbi sed etiam fermentum eros vitae etiam pharetra. Cursus nisl arcu tincidunt dui. Tellus et arcu congue fringilla fermentum augue turpis porttitor. Ultrices in elit pharetra erat risus tempor fringilla morbi neque. Mauris mi ut molestie tellus malesuada vehicula enim aliquet id. Venenatis etiam turpis odio morbi. Morbi nunc sed mattis sed in aliquam orci eleifend condimentum. Integer facilisi proin sem pellentesque habitasse elementum bibendum vitae. Eu iaculis magna donec aliquet neque. Velit dui donec scelerisque nunc aenean donec vulputate vulputate. Vel hendrerit volutpat arcu purus urna maecenas non ut."
+    }
+  ],
+  "news": [
+    {
+      "title": "Открытие нового филиала",
+      "description": "Узнайте о нашем новом филиале, где мы с радостью приветствуем всех наших пациентв для получения качественного медицинского обслуживания...",
+      "date": "18.02.24"
+    },
+    {
+      "title": "Открытие нового филиала",
+      "description": "Узнайте о нашем новом филиале, где мы с радостью приветствуем всех наших пациентв для получения качественного медицинского обслуживания...",
+      "date": "18.02.24"
+    },
+    {
+      "title": "Открытие нового филиала",
+      "description": "Узнайте о нашем новом филиале, где мы с радостью приветствуем всех наших пациентв для получения качественного медицинского обслуживания...",
+      "date": "18.02.24"
+    }
+  ]
+}

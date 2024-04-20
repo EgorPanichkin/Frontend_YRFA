@@ -2,7 +2,8 @@ import { Typography } from "@/shared";
 import style from "./NewsCard.module.scss";
 import { Link } from "react-router-dom";
 
-export const NewsCard = ({ imageUrl, title, date, description, url }) => {
+export const NewsCard = (props) => {
+  const { imageUrl, title, date, description, url } = props;
   return (
     <div className={style.box}>
       <div className={style.section}>
