@@ -28,7 +28,7 @@ export const ReusedTextSection = (props) => {
       <Typography className={style.title} variant="h2">
         {title}
       </Typography>
-      {contentList.map((content, index) => (
+      {contentList?.map((content, index) => (
         <div className={style.content} key={index}>
           {index % 2 === 0 ? (
             <>
@@ -42,7 +42,7 @@ export const ReusedTextSection = (props) => {
             </>
           ) : (
             <>
-              {windowWidth > 320 && (
+              {windowWidth > 400 && (
                 <img className={style.img} src={content.img} alt="img" />
               )}
               <div>
@@ -51,7 +51,7 @@ export const ReusedTextSection = (props) => {
                 </Typography>
                 <Typography variant="body">{content.body}</Typography>
               </div>
-              {windowWidth < 320 && (
+              {windowWidth < 400 && (
                 <img className={style.img} src={content.img} alt="img" />
               )}
             </>
