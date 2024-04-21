@@ -2,11 +2,13 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from "./DropdownHeaderMenu.module.scss";
 import { ChevronRightIcon, PolygonIcon } from "@/shared";
+import { useTranslation } from "react-i18next";
 
 export const DropdownHeaderMenu = ({ items, title }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const menuRef = useRef(null);
+  const { t } = useTranslation();
 
   const handleMouseEnter = (item) => {
     setHoveredItem(item);
@@ -28,7 +30,7 @@ export const DropdownHeaderMenu = ({ items, title }) => {
     >
       <div className={style.item}>
         <PolygonIcon />
-        {title}
+        {t(title)}
       </div>
       {showMenu && (
         <div className={style.menuWrapper}>
@@ -41,7 +43,7 @@ export const DropdownHeaderMenu = ({ items, title }) => {
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
               >
-                <span className={style.link}>{item.label}</span>
+                <span className={style.link}>{t(item.label)}</span>
                 <div className={style.chevron}>
                   {hoveredItem === item.label && <ChevronRightIcon />}
                 </div>

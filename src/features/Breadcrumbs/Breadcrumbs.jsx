@@ -1,28 +1,30 @@
 import { ChevronRight, HomeIcon } from "@/shared";
 import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const data = {
-  about: "О Компании",
-  doctors: "Врачам",
-  diognostic: "Диагностика",
-  rehabilitation: "Реабилитация",
-  FAQ: "FAQ",
-  analysis: "Анализы",
-  login: "Вход в кабинет",
-  registration: "Регистрация",
-  "sms-verification": "Восстановление пароля",
-  verification: "Ввод кода",
-  "password-reset": "Восстановление пароля",
-  actual: "Акции",
-  news: "Блог",
-  vacancy: "Вакансии",
-  directions: "Направления",
-  "select-direction": "Выюор направления",
-  lovz: "ЛОВЗ",
+  about: "breadcrumbs.about",
+  doctors: "breadcrumbs.doctors",
+  diognostic: "breadcrumbs.diognostic",
+  rehabilitation: "breadcrumbs.rehabilitation",
+  FAQ: "breadcrumbs.FAQ",
+  analysis: "breadcrumbs.analysis",
+  login: "breadcrumbs.login",
+  registration: "breadcrumbs.registration",
+  "sms-verification": "breadcrumbs.sms-verification",
+  verification: "breadcrumbs.verification",
+  "password-reset": "breadcrumbs.password-reset",
+  actual: "breadcrumbs.actual",
+  news: "breadcrumbs.news",
+  vacancy: "breadcrumbs.vacancy",
+  directions: "breadcrumbs.directions",
+  "select-direction": "breadcrumbs.select-direction",
+  lovz: "breadcrumbs.lovz",
 };
 
 export const Breadcrumbs = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
@@ -38,24 +40,25 @@ export const Breadcrumbs = () => {
     <div className={style.breadcrumbs}>
       <Link to="/" className={style.homeLink}>
         <HomeIcon className={style.homeIcon} />
-        Главная
+        {t("breadcrumbs.home")}
       </Link>
       {pathnames.map((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
         const isLast = index === pathnames.length - 1;
+        const translationName = t(data[name]);
         return isLast ? (
           <div className={style.link} key={`${name}${index}`}>
             <div className={style.chevron}>
               <ChevronRight className={style.chevronRight} />
             </div>
-            <div>{data[name]}</div>
+            <div>{translationName}</div>
           </div>
         ) : (
           <Link className={style.link} key={`${name}${index}`} to={routeTo}>
             <div className={style.chevron}>
               <ChevronRight className={style.chevronRight} />
             </div>
-            {data[name]}
+            {translationName}
           </Link>
         );
       })}

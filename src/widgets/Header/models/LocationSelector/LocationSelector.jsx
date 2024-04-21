@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { locationActions } from "@/app/store/locationSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const LocationSelector = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();
   const city = useSelector((state) => state.location.city);
+  const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.getItem("location")
@@ -32,21 +34,21 @@ export const LocationSelector = () => {
         onClick={(e) => handleSelect(e.target.value)}
         className={selectAciveClass("Bishkek")}
       >
-        Бишкек
+        {t("header.cities.bishkek")}
       </button>
       <button
         value={"Osh"}
         onClick={(e) => handleSelect(e.target.value)}
         className={selectAciveClass("Osh")}
       >
-        Ош
+        {t("header.cities.osh")}
       </button>
       <button
         value={"Jalal-Abad"}
         onClick={(e) => handleSelect(e.target.value)}
         className={selectAciveClass("Jalal-Abad")}
       >
-        Джалал-Абад
+        {t("header.cities.jalal-abad")}
       </button>
     </div>
   );

@@ -1,8 +1,9 @@
 {
   "header": {
-    "info": "Unified information service",
+    "info": "Unified information service -",
     "search": "Search",
     "meet": "Make an appointment",
+    "cabinet": "Personal area",
     "nav": {
       "main": {
         "title": "Main",
@@ -10,8 +11,70 @@
         "item2": "About",
         "item3": "Sales"
       },
-      "services": {},
-      "more": {}
+      "services": {
+        "title": "Services",
+        "item1": "Directions",
+        "item2": "Analyzes",
+        "item3": "Rehabilitation"
+      },
+      "more": {
+        "title": "More",
+        "item1": "For Doctors",
+        "item2": "Blog",
+        "item3": "LOVZ",
+        "item4": "Blagotvoritelnost",
+        "item5": "FAQ"
+      }
+    },
+    "cities": {
+      "bishkek": "Bishkek",
+      "jalal-abad": "Jalal-Abad",
+      "osh": "Osh"
     }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "about": "About Us",
+    "doctors": "For Doctors",
+    "diognostic": "Diagnostics",
+    "rehabilitation": "Rehabilitation",
+    "FAQ": "FAQ",
+    "analysis": "Analysis",
+    "login": "Login",
+    "registration": "Registration",
+    "sms-verification": "Password Recovery",
+    "verification": "Enter Code",
+    "password-reset": "Password Recovery",
+    "actual": "Promotions",
+    "news": "Blog",
+    "vacancy": "Vacancies",
+    "directions": "Directions",
+    "select-direction": "Select Direction",
+    "lovz": "LOVZ"
+  },
+  "footer": {
+    "list1": {
+      "title": "Social Networks"
+    },
+    "list2": {
+      "title": "About Us",
+      "item1": "Promotions"
+    },
+    "list3": {
+      "title": "Site Map",
+      "item1": "Services",
+      "item2": "Our advantages",
+      "item3": "FAQ"
+    },
+    "list4": {
+      "title": "For partners",
+      "item1": "Vacancies",
+      "item2": "For Doctors"
+    },
+    "list5": {
+      "title": "Contacts"
+    },
+    "policy": "Privacy Policy",
+    "disclamer": "All materials on the site are protected by copyright, their use is possible only with the written consent of the copyright holder, and the information on the site is for informational and educational purposes only, and does not constitute medical advice."
   }
 }

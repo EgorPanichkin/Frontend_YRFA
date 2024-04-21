@@ -4,11 +4,13 @@ import { langAction } from "@/app/store/langSlice";
 import i18n from "@/app/i18n/i18n";
 import style from "./LanguageSelector.module.scss";
 import { CheckIcon, LanguageIcon, PolygonIcon, languages } from "@/shared";
+// import { useTranslation } from "react-i18next";
 
 export const LanguageSelector = () => {
   const [show, setShow] = useState(false);
   const menuRef = useRef(null);
   const dispatch = useDispatch();
+  // const t = useTranslation()
 
   const select = useSelector((state) => state.language.currentLang);
 
