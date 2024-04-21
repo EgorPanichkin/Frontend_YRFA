@@ -56,7 +56,7 @@ export const navigationHeaderLinks = {
       { label: "Врачам", path: PATHS.doctors },
       { label: "Блог", path: PATHS.news },
       { label: "Инфо для инвалидов, пенсионеров, ВОЗ и др.", path: PATHS.LOVZ },
-      { label: "Благотворительность", path: "/blagotvoritelnost" },
+      { label: "Благотворительность", path: PATHS.charity },
       { label: "Часто задаваемые вопросы", path: PATHS.FAQ },
     ],
   },
