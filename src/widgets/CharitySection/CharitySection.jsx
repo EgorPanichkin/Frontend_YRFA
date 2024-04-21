@@ -1,7 +1,8 @@
 import { Container, NewsCard, ReusedTextSection, Typography } from "@/shared";
-import { project, news } from "./data.json";
+import { project, news, logos } from "./data.json";
 
 import style from "./CharitySection.module.scss";
+import { LogoCarusel } from "../LogoCarusel";
 
 export const CharitySection = () => {
   return (
@@ -25,7 +26,16 @@ export const CharitySection = () => {
           commodo turpis nulla.
         </Typography>
       </div>
-      <ReusedTextSection title="Проекты" contentList={project} />
+      <ReusedTextSection
+        title="Проекты"
+        contentList={project}
+        className={style.reusedTextSection}
+      />
+      <LogoCarusel
+        title="Фонды"
+        logoList={logos}
+        className={style.logoCarusel}
+      />
       <div className={style.newsBlock}>
         <Typography className={style.newsBlockTitle} variant="h2" weight="800">
           Статьи

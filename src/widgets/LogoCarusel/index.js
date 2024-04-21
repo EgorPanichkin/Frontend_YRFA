@@ -1,0 +1,1 @@
+export { LogoCarusel } from "./LogoCarusel";
