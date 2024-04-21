@@ -1,0 +1,26 @@
+.titleBlock {
+  margin: 80px 0;
+  max-width: 895px;
+
+  .titleBlockTitle {
+    margin-bottom: 16px;
+  }
+}
+.newsBlock {
+  margin-bottom: 80px;
+
+  .newsBlockTitle {
+    margin-bottom: 24px;
+  }
+  .cardsWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media screen and (max-width: 760px) {
+      overflow-x: scroll;
+      gap: 16px;
+      // width: fit-content;
+    }
+  }
+}

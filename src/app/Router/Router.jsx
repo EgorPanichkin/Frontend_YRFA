@@ -25,6 +25,7 @@ import {
   AnalysisSelection,
   LovzPage,
   SelectDirectionPage,
+  Charity,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -75,7 +76,7 @@ export const router = createBrowserRouter([
         path: PATHS.FAQ,
         element: <FAQ />,
         loader: () => {
-          return baseGetRequest("/main/about_company/");
+          return baseGetRequest("/main/swiper/");
         },
       },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
@@ -158,6 +159,10 @@ export const router = createBrowserRouter([
         loader: (loader) => {
           return baseGetRequest(`/blogs/articles/${loader.params.slug}`);
         },
+      },
+      {
+        path: PATHS.charity,
+        element: <Charity />,
       },
       { path: PATHS.vacancy, element: <Vacancy /> },
       { path: PATHS.notFound, element: <NotFoundPage /> },

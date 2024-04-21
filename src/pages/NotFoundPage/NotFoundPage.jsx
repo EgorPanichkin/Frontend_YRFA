@@ -26,7 +26,7 @@ export const NotFoundPage = () => {
             К сожалению страница не найдена
           </Typography>
           <Link to={"/"} className={style.errorBtn}>
-            <HomeIcon color="white" width={24} />
+            <HomeIcon fill="white" />
             <Typography
               variant="bodySmall"
               weight="bold"
