@@ -57,7 +57,7 @@ export const navigationHeaderLinks = {
       { label: "header.nav.more.item1", path: PATHS.doctors },
       { label: "header.nav.more.item2", path: PATHS.news },
       { label: "header.nav.more.item3", path: PATHS.LOVZ },
-      { label: "header.nav.more.item4", path: "/blagotvoritelnost" },
+      { label: "header.nav.more.item4", path: PATHS.charity },
       { label: "header.nav.more.item5", path: PATHS.FAQ },
     ],
   },
