@@ -2,12 +2,15 @@ import style from "./ReusedHero.module.scss";
 import { Typography, CustomButton } from "@/shared";
 
 export const ReusedHero = (props) => {
-  const { title, textButton, body, img } = props;
+  const { title, textButton, body, img, className } = props;
   const heroStyle = {
     backgroundImage: `url(${img})`,
   };
   return (
-    <section className={style.hero} style={img ? heroStyle : null}>
+    <section
+      className={`${style.hero} ${className}`}
+      style={img ? heroStyle : null}
+    >
       <div className={style.textBlock}>
         <Typography variant="h1" weight="bold" color="white">
           {title}
