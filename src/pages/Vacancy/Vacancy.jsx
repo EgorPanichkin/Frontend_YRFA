@@ -1,10 +1,14 @@
 import { Container, Typography, VacancyCard } from "@/shared";
 import style from "./Vacancy.module.scss";
-import { vacancies } from "./db.json";
+// import { vacancies } from "./db.json";
+import { useLoaderData } from "react-router-dom";
 
 export const Vacancy = () => {
+  const data = useLoaderData();
+  console.log(data);
+
   return (
-    <div>
+    <>
       <Container>
         <Typography
           className={style.text}
@@ -23,7 +27,7 @@ export const Vacancy = () => {
           По профессиям
         </Typography>
         <div className={style.box}>
-          {vacancies.map((vacancy, index) => (
+          {data.map((vacancy, index) => (
             <VacancyCard
               key={index}
               title={vacancy.title}
@@ -33,6 +37,6 @@ export const Vacancy = () => {
           ))}
         </div>
       </Container>
-    </div>
+    </>
   );
 };
