@@ -167,7 +167,13 @@ export const router = createBrowserRouter([
         path: PATHS.charity,
         element: <Charity />,
       },
-      { path: PATHS.vacancy, element: <Vacancy /> },
+      {
+        path: PATHS.vacancy,
+        element: <Vacancy />,
+        loader: () => {
+          return baseGetRequest("/main/vacancy");
+        },
+      },
       { path: PATHS.notFound, element: <NotFoundPage /> },
     ],
   },
