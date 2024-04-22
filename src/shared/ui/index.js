@@ -23,3 +23,4 @@ export * from "./SeviceCard";
 export * from "./CustomCard";
 export * from "./PrivateRoute";
 export * from "./ReusedTextSection";
+export * from "./LogoCarusel";
