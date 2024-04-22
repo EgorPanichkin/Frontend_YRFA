@@ -1,7 +1,8 @@
 import { Line, Typography } from "..";
 import style from "./VacancyCard.module.scss";
 
-export const VacancyCard = ({ title, salary, vacanciesCount }) => {
+export const VacancyCard = ({ props }) => {
+  const { title, salary, vacanciesCount } = props;
   return (
     <div className={style.box}>
       <Typography variant="h3" weight="semibold" color="blue500">

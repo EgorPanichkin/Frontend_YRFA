@@ -5,7 +5,6 @@ import { useLoaderData } from "react-router-dom";
 
 export const Vacancy = () => {
   const data = useLoaderData();
-  console.log(data);
 
   return (
     <>
@@ -31,8 +30,8 @@ export const Vacancy = () => {
             <VacancyCard
               key={index}
               title={vacancy.title}
-              salary={vacancy.salary}
-              vacanciesCount={vacancy.vacanciesCount}
+              // salary={vacancy.pub_date}
+              // vacanciesCount={vacancy.description}
             />
           ))}
         </div>
