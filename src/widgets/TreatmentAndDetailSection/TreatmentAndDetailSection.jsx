@@ -6,44 +6,32 @@ import {
   Typography,
   VerticalLine,
 } from "@/shared";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
+export const TreatmentAndDetailSection = ({ detailData }) => {
+  const { treatment } = useLoaderData();
+
   return (
     <div className={style.blockTreatmentAndDetail}>
       <div className={style.blockContent}>
         <div className={style.treatmentBlock}>
           <Typography variant="h3" weight="bold" color="blue400">
-            {treatmentData.h2}
+            Лечение
           </Typography>
           <div className={style.contentSection}>
             <ul className={style.pieceContent}>
-              {treatmentData.contentOne.map((items, index) => (
+              {treatment?.map((items, index) => (
                 <li key={index} className={style.content}>
-                  <Link to={PATHS.selectDirections}>
+                  <Link
+                    to={PATHS.selectDirections + "/treatment/" + `${items.id}`}
+                  >
                     <Typography
                       variant="h6"
                       weight="regular"
                       color="blue400"
                       className={style.linkText}
                     >
-                      {items}
-                    </Typography>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className={style.pieceContent}>
-              {treatmentData.contentToo.map((items, index) => (
-                <li key={index} className={style.content}>
-                  <Link to={items?.path}>
-                    <Typography
-                      variant="h6"
-                      weight="regular"
-                      color="blue400"
-                      className={style.linkText}
-                    >
-                      {items}
+                      {items.category_name}
                     </Typography>
                   </Link>
                 </li>
@@ -60,7 +48,7 @@ export const TreatmentAndDetailSection = ({ treatmentData, detailData }) => {
         </div>
       </div>
       <CustomButton color="default" icon="chevron">
-        {treatmentData.button}
+        Записаться на прием
       </CustomButton>
     </div>
   );

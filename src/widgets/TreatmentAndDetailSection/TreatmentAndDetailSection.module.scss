@@ -24,7 +24,7 @@
     gap: 82px;
     .pieceContent {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 16px;
       .linkText {
         transition: 0.5s;

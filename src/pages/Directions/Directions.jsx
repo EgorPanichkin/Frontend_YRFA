@@ -12,10 +12,7 @@ export const Directions = () => {
     <Container>
       <HeroDirections heroData={dataHero} />
       <ServiceSection />
-      <TreatmentAndDetailSection
-        treatmentData={db.treatment}
-        detailData={db.detail}
-      />
+      <TreatmentAndDetailSection detailData={db.detail} />
     </Container>
   );
 };

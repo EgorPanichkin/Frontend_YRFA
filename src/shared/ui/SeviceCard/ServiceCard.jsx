@@ -10,7 +10,7 @@ export const ServiceCard = ({
   return (
     <div className={style.cardBlock} onClick={() => handleClickActive(index)}>
       <img
-        src={cardData.img}
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_JlSBVpmC8TcaxsGbAOpGV9VfbwCScLZwQ&usqp=CAU"
         alt="img-card-service"
         className={style.cardImg}
       />
@@ -20,7 +20,10 @@ export const ServiceCard = ({
         </Typography>
         <PolygonIcon activeIndex={activeIndex === index} />
       </div>
-      <DropMenuServices activeIndex={activeIndex === index} />
+      <DropMenuServices
+        activeIndex={activeIndex === index}
+        data={cardData.diagnostic_popular}
+      />
     </div>
   );
 };

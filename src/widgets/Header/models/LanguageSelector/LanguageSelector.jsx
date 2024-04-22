@@ -4,29 +4,15 @@ import { langAction } from "@/app/store/langSlice";
 import i18n from "@/app/i18n/i18n";
 import style from "./LanguageSelector.module.scss";
 import { CheckIcon, LanguageIcon, PolygonIcon, languages } from "@/shared";
-// import { useTranslation } from "react-i18next";
 
 export const LanguageSelector = () => {
   const [show, setShow] = useState(false);
   const menuRef = useRef(null);
   const dispatch = useDispatch();
-  // const t = useTranslation()
 
   const select = useSelector((state) => state.language.currentLang);
 
-  // FIX ME
-  // useEffect(() => {
-  //   function handleClickOutside(event) {
-  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
-  //       setShow(false)
-  //     }
-  //   }
-
-  //   document.addEventListener("mousedown", handleClickOutside)
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside)
-  //   }
-  // }, [menuRef])
+  const correctValue = { ru: "Русский", kg: "Кыргызча", en: "English" };
 
   useEffect(() => {
     const lang = localStorage.getItem("lang");
@@ -46,7 +32,7 @@ export const LanguageSelector = () => {
     <div ref={menuRef}>
       <div className={style.selector} onClick={toggleCities}>
         <LanguageIcon />
-        {select}
+        {correctValue[select]}
         <PolygonIcon />
       </div>
       {show && (
