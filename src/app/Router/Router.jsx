@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
           const treatment = await baseGetRequest(
             "/servises/treatment-categories/",
           );
-          return { services: services, treatment: treatment };
+          return { services: services.results, treatment: treatment.results };
         },
       },
       { path: PATHS.about, element: <About /> },
@@ -89,12 +89,15 @@ export const router = createBrowserRouter([
           const treatment = await baseGetRequest(
             "/servises/treatment-categories/",
           );
-          return { services: services, treatment: treatment };
+          return { services: services.results, treatment: treatment.results };
         },
       },
       {
         path: `${PATHS.selectDirections}/:type/:id`,
         element: <SelectDirectionPage />,
+        loader: async () => {
+          return baseGetRequest("/servises/diagnostics/");
+        },
       },
       {
         path: PATHS.analysis,

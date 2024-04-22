@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
 }
 .menuDropdown {
   z-index: 999;
@@ -35,4 +36,5 @@
 .link {
   text-decoration: none;
   color: var(--blue400);
+  cursor: pointer;
 }
