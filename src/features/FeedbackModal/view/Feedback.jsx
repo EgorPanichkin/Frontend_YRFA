@@ -10,6 +10,8 @@ import {
   FeedbackIcon,
   DocumentIcon,
   UserButtonIcon,
+  usersRequester,
+  notify,
 } from "@/shared";
 
 import style from "./Feedback.module.scss";
@@ -19,10 +21,21 @@ export const Feedback = () => {
   const { handleInputChange, isButtonDisabled, inputValues, counter } =
     FeedbackValidation();
 
+  const { fio, emailPhone, text } = inputValues;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(inputValues);
+    const response = usersRequester("/feedback/", {
+      full_name: fio,
+      contacts: emailPhone,
+      message: text,
+    });
+
+    if (response && response.status === 200) {
+      notify.success("Форма успешно отправлена!");
+      setFeedbackModal(false);
+    }
   };
 
   return (

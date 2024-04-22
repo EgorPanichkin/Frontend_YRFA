@@ -1,8 +1,13 @@
-import { Container, NewsCard, ReusedTextSection, Typography } from "@/shared";
+import {
+  Container,
+  LogoCarusel,
+  NewsCard,
+  ReusedTextSection,
+  Typography,
+} from "@/shared";
 import { project, news, logos } from "./data.json";
 
 import style from "./CharitySection.module.scss";
-import { LogoCarusel } from "../LogoCarusel";
 
 export const CharitySection = () => {
   return (

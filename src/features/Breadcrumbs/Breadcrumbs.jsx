@@ -21,6 +21,7 @@ const data = {
   directions: "breadcrumbs.directions",
   "select-direction": "breadcrumbs.select-direction",
   lovz: "breadcrumbs.lovz",
+  charity: "breadcrumbs.charity",
 };
 
 export const Breadcrumbs = () => {
