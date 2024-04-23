@@ -48,7 +48,14 @@ export const router = createBrowserRouter([
           const treatment = await baseGetRequest(
             "/servises/treatment-categories/",
           );
-          return { services: services.results, treatment: treatment.results };
+          const swiper = await baseGetRequest("/main/swiper/");
+          const branches = await baseGetRequest("/main/filial/");
+          return {
+            services: services.results,
+            treatment: treatment.results,
+            swiper: swiper.results,
+            branches: branches.results,
+          };
         },
       },
       { path: PATHS.about, element: <About /> },
@@ -58,7 +65,7 @@ export const router = createBrowserRouter([
         loader: async () => {
           const articles = await baseGetRequest("/blogs/doctors_articles/");
           const events = await baseGetRequest("/blogs/events/");
-          return { articles, events };
+          return { articles: articles.results, events: events.results };
         },
       },
       {
