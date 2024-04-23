@@ -5,6 +5,7 @@ import { BrancheCard, Typography } from "@/shared";
 export const BranchesSection = ({ branchesData }) => {
   const { branches } = useLoaderData();
   console.log(branches);
+  
   return (
     <div className={style.branchesSection}>
       <Typography variant="h2" weight="extraBold">
@@ -12,9 +13,9 @@ export const BranchesSection = ({ branchesData }) => {
       </Typography>
 
       <div className={style.cardBlock}>
-        <BrancheCard {...branches} cardData={branchesData} />
-        <BrancheCard {...branches} cardData={branchesData} />
-        <BrancheCard {...branches} cardData={branchesData} />
+        <BrancheCard cardData={branchesData} />
+        <BrancheCard cardData={branchesData} />
+        <BrancheCard cardData={branchesData} />
       </div>
     </div>
   );
