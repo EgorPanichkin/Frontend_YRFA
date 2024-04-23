@@ -6,7 +6,7 @@
 }
 
 .h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--blue500);
 }
@@ -101,6 +101,129 @@
   color: var(--blue500);
 }
 
+@media (max-width: 1280px) {
+  .h1 {
+    font-size: 38px;
+  }
+
+  .h2 {
+    font-size: 30px;
+  }
+
+  .h3 {
+    font-size: 22px;
+  }
+
+  .h4 {
+    font-size: 20px;
+  }
+
+  .h5 {
+    font-size: 18px;
+  }
+
+  .h6 {
+    font-size: 16px;
+  }
+
+  .h7 {
+    font-size: 14px;
+  }
+
+  .h8 {
+    font-size: 15px;
+  }
+
+  .h9 {
+    font-size: 14px;
+  }
+
+  .h10 {
+    font-size: 14px;
+  }
+
+  .h11 {
+    font-size: 13px;
+  }
+
+  .bigBody {
+    font-size: 18px;
+  }
+
+  .body {
+    font-size: 14px;
+  }
+
+  .body2 {
+    font-size: 15px;
+  }
+
+  .bodySmall {
+    font-size: 12px;
+  }
+
+  .seperSmallBody {
+    font-size: 11px;
+  }
+
+  .extraSmall {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .h1 {
+    font-size: 32px;
+  }
+
+  .h2 {
+    font-size: 28px;
+  }
+
+  .h3 {
+    font-size: 20px;
+  }
+
+  .h4 {
+    font-size: 20px;
+  }
+
+  .h5 {
+    font-size: 17px;
+  }
+
+  .h6 {
+    font-size: 16px;
+  }
+
+  .h7 {
+    font-size: 13px;
+  }
+
+  .bigBody {
+    font-size: 17px;
+  }
+
+  .body {
+    font-size: 15px;
+  }
+
+  .body2 {
+    font-size: 14px;
+  }
+
+  .bodySmall {
+    font-size: 12px;
+  }
+
+  .seperSmallBody {
+    font-size: 12px;
+  }
+
+  .extraSmall {
+    font-size: 11px;
+  }
+}
 // Weight
 .regular {
   font-weight: 400;
