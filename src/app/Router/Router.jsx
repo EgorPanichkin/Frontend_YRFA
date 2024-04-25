@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
         element: <Article />,
         loader: (loader) => {
           return baseGetRequest(
-            `/blogs/${loader.params.type}/${loader.params.slug}`,
+            `/blogs/${loader.params.type}/${loader.params.id}`,
           );
         },
       },
@@ -101,12 +101,16 @@ export const router = createBrowserRouter([
       {
         path: `${PATHS.selectDirections}/:idCategory`,
         element: <SelectDirectionPage />,
-        loader: async () => {
+        loader: async (loader) => {
+          const category = await baseGetRequest(
+            `/servises/diagnostic-categories/${loader.params.idCategory}`,
+          );
           const services = await baseGetRequest("/servises/diagnostics/");
           const subCategorys = await baseGetRequest(
             "/servises/diagnostic-subcategories/",
           );
           return {
+            category: category,
             services: services.results,
             subCategorys: subCategorys.results,
           };
@@ -115,10 +119,12 @@ export const router = createBrowserRouter([
       {
         path: "select-direction/:idCategory/current-service/:idService",
         element: <FinalServicePage />,
-        loader: (loader) => {
-          return baseGetRequest(
+        loader: async (loader) => {
+          const main = await baseGetRequest(
             `/servises/diagnostics/${loader.params.idService}/`,
           );
+          const actual = await baseGetRequest("/main/sale/");
+          return { main, actual: actual.results };
         },
       },
       {
@@ -183,7 +189,7 @@ export const router = createBrowserRouter([
         path: PATHS.newsArticle,
         element: <Article />,
         loader: (loader) => {
-          return baseGetRequest(`/blogs/articles/${loader.params.slug}`);
+          return baseGetRequest(`/blogs/articles/${loader.params.id}`);
         },
       },
       {

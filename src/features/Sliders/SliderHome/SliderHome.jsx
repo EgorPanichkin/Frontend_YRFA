@@ -57,7 +57,6 @@ export const SliderHome = () => {
   // const { swiper } = useLoaderData();
 
   const swiperRef = useRef();
-  console.log("render");
   const [active, setActive] = useState();
 
   return (

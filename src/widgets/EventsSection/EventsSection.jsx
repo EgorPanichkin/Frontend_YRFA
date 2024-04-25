@@ -9,7 +9,6 @@ export const EventsSection = ({ sectionId, onDataCount }) => {
   const data = useLoaderData();
   useEffect(() => {
     setLoading(false);
-    console.log(data.events);
     onDataCount(data.events.length);
   }, [data.events, onDataCount]);
   return (
@@ -25,7 +24,7 @@ export const EventsSection = ({ sectionId, onDataCount }) => {
             <DoctorsCard
               key={items.id}
               {...items}
-              link={`events/${items.slug}`}
+              link={`events/${items.id}`}
             />
           ))}
         </div>

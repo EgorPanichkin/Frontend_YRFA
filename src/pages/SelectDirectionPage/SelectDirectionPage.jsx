@@ -1,14 +1,16 @@
 import { Container } from "@/shared";
 import { CategorysList, ReusedHero } from "@/widgets";
-import { header, text } from "./SelectDirectionPage.json";
+import { useLoaderData } from "react-router-dom";
 
 export const SelectDirectionPage = () => {
+  const { category } = useLoaderData();
+
   return (
     <>
       <ReusedHero
-        title={header}
+        title={category.category_name}
         textButton={"Записаться на прием"}
-        body={text}
+        body={category.category_description}
       />
       <Container>
         <CategorysList />

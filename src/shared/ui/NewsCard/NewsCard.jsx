@@ -1,15 +1,18 @@
 import { Typography } from "@/shared";
 import style from "./NewsCard.module.scss";
+import { Link } from "react-router-dom";
 
 export const NewsCard = (props) => {
-  const { image, title, description, pub_date } = props;
+  const { image, title, description, pub_date, id } = props;
   return (
     <div className={style.card}>
       <div
         className={style.img}
         style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}
       >
-        <button className={style.button}>Подробнее</button>
+        <Link to={id.toString()} className={style.button}>
+          Подробнее
+        </Link>
       </div>
       <div className={style.cardBody}>
         <div className={style.cardBodyTop}>

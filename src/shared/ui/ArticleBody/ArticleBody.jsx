@@ -5,13 +5,18 @@ import style from "./ArticleBody.module.scss";
 
 export const ArticleBody = () => {
   const data = useLoaderData();
-  console.log(data);
+
+  if (data.main) {
+    return (
+      <Container>
+        <div className={style.text}>{parse(data.main.description)}</div>
+      </Container>
+    );
+  }
 
   return (
     <Container>
-      <div className={style.text}>
-        {data ? parse(data.description) : "data loading"}
-      </div>
+      <div className={style.text}>{parse(data.description)}</div>
     </Container>
   );
 };

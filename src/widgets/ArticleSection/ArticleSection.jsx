@@ -7,11 +7,12 @@ import { useLoaderData } from "react-router-dom";
 export const ArticleSection = ({ sectionId, onDataCount }) => {
   const [loading, setLoading] = useState(true);
   const data = useLoaderData();
+
   useEffect(() => {
     setLoading(false);
-    console.log(data.articles);
     onDataCount(data.articles.length);
   }, [data.articles, onDataCount]);
+
   return (
     <div className={style.articleBlock} id={sectionId}>
       <Typography variant="h4" weight="semibold">
@@ -25,7 +26,7 @@ export const ArticleSection = ({ sectionId, onDataCount }) => {
             <DoctorsCard
               {...items}
               key={items.id}
-              link={`doctors-articles/${items.slug}`}
+              link={`doctors_articles/${items.id}`}
             />
           ))}
           <CustomButton color="border" className={style.btn}>

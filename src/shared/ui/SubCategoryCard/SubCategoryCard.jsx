@@ -19,9 +19,9 @@ export const SubCategoryCard = ({ data }) => {
         <ChevronDownIcon />
       </div>
       <ul>
-        {data.diagnostic_subcategory?.map((item, index) => {
+        {data.diagnostic_subcategory?.map((item) => {
           return (
-            <li key={index}>
+            <li key={item.id}>
               <Link to={"current-service/" + item.id}>
                 {item.diagnostic_name}
               </Link>
