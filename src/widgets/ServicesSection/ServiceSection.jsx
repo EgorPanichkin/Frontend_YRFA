@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
 
 export const ServiceSection = () => {
-  const { services } = useLoaderData();
+  const { popular } = useLoaderData();
   const [activeIndex, setActiveIndex] = useState(null);
   const dropdownRef = useRef(null);
   const selectedCity = "Bishkek";
@@ -48,7 +48,7 @@ export const ServiceSection = () => {
         {dataTitle}
       </Typography>
       <div className={style.cardBlock}>
-        {services?.map((item, index) => (
+        {popular?.map((item, index) => (
           <ServiceCard
             cardData={item}
             key={index}

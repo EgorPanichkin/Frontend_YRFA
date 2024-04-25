@@ -1,11 +1,10 @@
-import { useLoaderData } from "react-router-dom";
 import style from "./BranchesSection.module.scss";
 import { BrancheCard, Typography } from "@/shared";
 
 export const BranchesSection = ({ branchesData }) => {
-  const { branches } = useLoaderData();
-  console.log(branches);
-  
+  // FIX ME
+  // const { branches } = useLoaderData();
+
   return (
     <div className={style.branchesSection}>
       <Typography variant="h2" weight="extraBold">

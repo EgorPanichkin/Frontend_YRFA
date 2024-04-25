@@ -1,7 +1,8 @@
 import { PageNavBar } from "@/features";
-import { ArticleBody } from "@/shared/ui/ArticleBody/ArticleBody";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
+import style from "./Article.module.scss";
+import { ArticleBody } from "@/shared";
 
 export const Article = () => {
   const data = useLoaderData();
@@ -11,7 +12,7 @@ export const Article = () => {
       <ReusedHero
         title={data.title}
         textButton="Запись на прием"
-        body="Lorem ipsum dolor sit amet consectetur. Non dignissim tempor nunc amet pretium pretium enim sed turpis. Id aliquet mauris in condimentum non. Ornare dui vulputate habitasse urna et nec volutpat nibh. Ultricies nisl hendrerit scelerisque egestas. Praesent massa aliquet aliquam fusce vitae amet habitant. Mi sed congue purus arcu. Iaculis pulvinar nibh eget semper vestibulum ultricies. Sed tempus sit non ac pellentesque."
+        body={data.main_description}
         img={data.image}
       />
       <PageNavBar
@@ -21,7 +22,9 @@ export const Article = () => {
           { text: "Заголовок3", href: "#Заголовок3" },
         ]}
       />
-      <ArticleBody />
+      <div className={style.body}>
+        <ArticleBody />
+      </div>
     </>
   );
 };

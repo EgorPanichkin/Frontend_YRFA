@@ -10,8 +10,8 @@ export const ServiceCard = ({
   return (
     <div className={style.cardBlock} onClick={() => handleClickActive(index)}>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_JlSBVpmC8TcaxsGbAOpGV9VfbwCScLZwQ&usqp=CAU"
-        alt="img-card-service"
+        src={cardData.image}
+        alt={cardData.title}
         className={style.cardImg}
       />
       <div className={style.title}>

@@ -3,7 +3,7 @@ import { Container, CustomCard, Typography } from "@/shared";
 import { useLoaderData } from "react-router-dom";
 
 export const Actual = () => {
-  const data = useLoaderData();
+  const { results } = useLoaderData();
 
   return (
     <div>
@@ -12,7 +12,7 @@ export const Actual = () => {
           Актуальные скидки
         </Typography>
         <div className={style.flex}>
-          {data.map((section, index) => (
+          {results.map((section, index) => (
             <CustomCard
               key={index}
               data={{

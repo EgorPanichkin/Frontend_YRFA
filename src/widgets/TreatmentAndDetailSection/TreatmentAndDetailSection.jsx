@@ -9,7 +9,7 @@ import {
 import { Link, useLoaderData } from "react-router-dom";
 
 export const TreatmentAndDetailSection = ({ detailData }) => {
-  const { treatment } = useLoaderData();
+  const { categories } = useLoaderData();
 
   return (
     <div className={style.blockTreatmentAndDetail}>
@@ -20,11 +20,9 @@ export const TreatmentAndDetailSection = ({ detailData }) => {
           </Typography>
           <div className={style.contentSection}>
             <ul className={style.pieceContent}>
-              {treatment?.map((items, index) => (
+              {categories?.map((items, index) => (
                 <li key={index} className={style.content}>
-                  <Link
-                    to={PATHS.selectDirections + "/treatment/" + `${items.id}`}
-                  >
+                  <Link to={PATHS.selectDirections + `/${items.id}`}>
                     <Typography
                       variant="h6"
                       weight="regular"

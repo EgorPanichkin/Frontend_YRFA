@@ -8,6 +8,7 @@ export const Typography = (props) => {
     className,
     color,
     truncate = false,
+    id,
   } = props;
 
   const Tags = {
@@ -39,7 +40,7 @@ export const Typography = (props) => {
   const TagName = Tags[variant in Tags ? variant : "body"];
 
   return (
-    <TagName className={classNamedGenerated}>
+    <TagName id={id} className={classNamedGenerated}>
       {!truncate ? children : truncateString(children, truncate)}
     </TagName>
   );

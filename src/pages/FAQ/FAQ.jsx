@@ -16,7 +16,7 @@ export const FAQ = () => {
   //   }
   // };
 
-  const data = useLoaderData();
+  const { results } = useLoaderData();
 
   return (
     <Container>
@@ -30,7 +30,7 @@ export const FAQ = () => {
           })}
         </div>
         <div className={style.actual}>
-          {data?.map((item, index) => (
+          {results.map((item, index) => (
             <CustomCard
               // onClick={onClickCard}
               key={item.id}
