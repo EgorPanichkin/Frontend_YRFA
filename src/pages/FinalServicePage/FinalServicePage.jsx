@@ -1,6 +1,11 @@
 import { PageNavBar } from "@/features";
-import { Container, CustomButton, CustomCard, Typography } from "@/shared";
-import { ArticleBody } from "@/shared/ui/ArticleBody/ArticleBody";
+import {
+  ArticleBody,
+  Container,
+  CustomButton,
+  CustomCard,
+  Typography,
+} from "@/shared";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
 import style from "./FinalServicePage.module.scss";

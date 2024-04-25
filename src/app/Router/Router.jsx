@@ -25,12 +25,12 @@ import {
   LovzPage,
   SelectDirectionPage,
   Charity,
+  FinalServicePage,
+  Article,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
 import { PATHS, PrivateRoute, baseGetRequest } from "@/shared";
-import { Article } from "@/pages/Article/Article";
-import { FinalServicePage } from "@/pages/FinalServicePage/FinalServicePage";
 
 export const router = createBrowserRouter([
   {

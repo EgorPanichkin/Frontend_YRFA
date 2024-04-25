@@ -1,8 +1,8 @@
 import { PageNavBar } from "@/features";
-import { ArticleBody } from "@/shared/ui/ArticleBody/ArticleBody";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
 import style from "./Article.module.scss";
+import { ArticleBody } from "@/shared";
 
 export const Article = () => {
   const data = useLoaderData();

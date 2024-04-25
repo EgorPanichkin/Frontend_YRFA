@@ -1,6 +1,7 @@
 export * from "./About";
 export * from "./Actual";
 export * from "./Analysis";
+export * from "./Article";
 export * from "./AuthorizationPages";
 export * from "./Directions";
 export * from "./FAQ";
@@ -18,3 +19,4 @@ export * from "./WelcomePage";
 export * from "./AnalysisSelection";
 export * from "./lOVZ";
 export * from "./Charity";
+export * from "./FinalServicePage";
