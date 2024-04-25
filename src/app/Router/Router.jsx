@@ -174,8 +174,9 @@ export const router = createBrowserRouter([
       {
         path: PATHS.news,
         element: <News />,
-        loader: () => {
-          return baseGetRequest("/blogs/articles/");
+        loader: async () => {
+          const blogArticle = await baseGetRequest("/blogs/articles/");
+          return { blogArticle: blogArticle.results };
         },
       },
       {
@@ -188,6 +189,11 @@ export const router = createBrowserRouter([
       {
         path: PATHS.charity,
         element: <Charity />,
+        loader: async () => {
+          const article = await baseGetRequest("/charity/article/");
+          const fund = await baseGetRequest("/charity/fund/");
+          return { article: article.results, fund: fund.results };
+        },
       },
       {
         path: PATHS.vacancy,

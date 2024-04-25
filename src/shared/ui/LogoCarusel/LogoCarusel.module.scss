@@ -2,13 +2,10 @@
   margin-bottom: 24px;
 }
 
-.logoSlider {
+.logoSliderImg {
   background: var(--Black-200, #e7e7e7);
   border-radius: 20px;
+  font-size: 24px;
   min-width: 180px;
-  height: 180px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  min-height: 180px;
 }

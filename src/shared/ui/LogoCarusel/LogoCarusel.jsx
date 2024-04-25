@@ -5,9 +5,12 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 import { Typography } from "@/shared";
+import { useLoaderData } from "react-router-dom";
 
 export const LogoCarusel = (props) => {
-  const { title, logoList, className } = props;
+  const { title, className } = props;
+
+  const { fund } = useLoaderData();
 
   return (
     <div className={className}>
@@ -16,7 +19,7 @@ export const LogoCarusel = (props) => {
       </Typography>
       <Swiper
         slidesPerView={6}
-        spaceBetween={20}
+        // spaceBetween={20}
         freeMode={true}
         scrollbar={{
           hide: false,
@@ -24,9 +27,9 @@ export const LogoCarusel = (props) => {
         initialSlide={0}
         modules={[FreeMode, Scrollbar]}
       >
-        {logoList?.map((item, index) => (
-          <SwiperSlide key={index} className={style.logoSlider}>
-            {item.logo}
+        {fund?.map((fund) => (
+          <SwiperSlide key={fund.id}>
+            <img src={fund.image} alt="logo" className={style.logoSliderImg} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -5,11 +5,14 @@ import {
   ReusedTextSection,
   Typography,
 } from "@/shared";
-import { project, news, logos } from "./data.json";
+import { project } from "./data.json";
 
 import style from "./CharitySection.module.scss";
+import { useLoaderData } from "react-router-dom";
 
 export const CharitySection = () => {
+  const { article } = useLoaderData();
+
   return (
     <Container>
       <div className={style.titleBlock}>
@@ -36,18 +39,14 @@ export const CharitySection = () => {
         contentList={project}
         className={style.reusedTextSection}
       />
-      <LogoCarusel
-        title="Фонды"
-        logoList={logos}
-        className={style.logoCarusel}
-      />
+      <LogoCarusel title="Фонды" className={style.logoCarusel} />
       <div className={style.newsBlock}>
         <Typography className={style.newsBlockTitle} variant="h2" weight="800">
           Статьи
         </Typography>
         <div className={style.cardsWrapper}>
-          {news?.map((card, index) => (
-            <NewsCard {...card} key={index} />
+          {article?.map((card) => (
+            <NewsCard {...card} key={card.id} />
           ))}
         </div>
       </div>
