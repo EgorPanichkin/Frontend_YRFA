@@ -5,11 +5,14 @@ import { useLoaderData } from "react-router-dom";
 
 export const AnalysisSelectionSection = () => {
   const [analysisInformation, setAnalysisInformation] = useState(null);
-  const data = useLoaderData();
+  const { results } = useLoaderData();
 
   return (
     <div className={style.analysisSelectionSection}>
-      <AnalysisList analysisData={data} getAnalysis={setAnalysisInformation} />
+      <AnalysisList
+        analysisData={results}
+        getAnalysis={setAnalysisInformation}
+      />
       <AnalysisContent currentAnalysis={analysisInformation} />
       <AnalysisPrice priceInfo={analysisInformation} />
     </div>

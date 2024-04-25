@@ -2,7 +2,6 @@ export * from "./About";
 export * from "./Actual";
 export * from "./Analysis";
 export * from "./AuthorizationPages";
-export * from "./Diognostic";
 export * from "./Directions";
 export * from "./FAQ";
 export * from "./HomePage";

@@ -4,12 +4,12 @@ import style from "./AnalysisCards.module.scss";
 import { useLoaderData } from "react-router-dom";
 
 export const AnalysisCards = () => {
-  const data = useLoaderData();
+  const { results } = useLoaderData();
 
   return (
     <Container>
       <section aria-label="AnalysisCards" className={style.analysisCards}>
-        {data.map((analysis) => (
+        {results?.map((analysis) => (
           <AnalysisCard analysis={analysis} key={analysis.id} />
         ))}
       </section>

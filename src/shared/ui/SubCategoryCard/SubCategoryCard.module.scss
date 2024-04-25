@@ -1,0 +1,31 @@
+.card {
+  padding: 16px;
+  width: 45%;
+  background-color: var(--black200);
+  border-radius: 8px;
+  transition: all 1s;
+
+  ul {
+    padding-left: 0px;
+  }
+}
+
+.hidden {
+  padding: 16px;
+  width: 45%;
+  background-color: var(--black200);
+  border-radius: 8px;
+  max-height: 52px;
+  overflow: hidden;
+  transition: all 1s;
+
+  ul {
+    padding-left: 0px;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

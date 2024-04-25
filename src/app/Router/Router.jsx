@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 import {
   About,
-  Diognostic,
   FAQ,
   Doctors,
   Analysis,
@@ -31,6 +30,7 @@ import {
 import { Layout } from "../Layout/Layout";
 import { PATHS, PrivateRoute, baseGetRequest } from "@/shared";
 import { Article } from "@/pages/Article/Article";
+import { FinalServicePage } from "@/pages/FinalServicePage/FinalServicePage";
 
 export const router = createBrowserRouter([
   {
@@ -44,15 +44,15 @@ export const router = createBrowserRouter([
         path: PATHS.home,
         element: <HomePage />,
         loader: async () => {
-          const services = await baseGetRequest("/servises/popular/");
-          const treatment = await baseGetRequest(
-            "/servises/treatment-categories/",
+          const popular = await baseGetRequest("/servises/popular/");
+          const categories = await baseGetRequest(
+            "/servises/diagnostic-categories/",
           );
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
           return {
-            services: services.results,
-            treatment: treatment.results,
+            popular: popular.results,
+            categories: categories.results,
             swiper: swiper.results,
             branches: branches.results,
           };
@@ -77,7 +77,6 @@ export const router = createBrowserRouter([
           );
         },
       },
-      { path: PATHS.diognostic, element: <Diognostic /> },
 
       {
         path: PATHS.FAQ,
@@ -92,18 +91,34 @@ export const router = createBrowserRouter([
         path: PATHS.directions,
         element: <Directions />,
         loader: async () => {
-          const services = await baseGetRequest("/servises/popular/");
-          const treatment = await baseGetRequest(
-            "/servises/treatment-categories/",
+          const popular = await baseGetRequest("/servises/popular/");
+          const categories = await baseGetRequest(
+            "/servises/diagnostic-categories/",
           );
-          return { services: services.results, treatment: treatment.results };
+          return { popular: popular.results, categories: categories.results };
         },
       },
       {
-        path: `${PATHS.selectDirections}/:type/:id`,
+        path: `${PATHS.selectDirections}/:idCategory`,
         element: <SelectDirectionPage />,
         loader: async () => {
-          return baseGetRequest("/servises/diagnostics/");
+          const services = await baseGetRequest("/servises/diagnostics/");
+          const subCategorys = await baseGetRequest(
+            "/servises/diagnostic-subcategories/",
+          );
+          return {
+            services: services.results,
+            subCategorys: subCategorys.results,
+          };
+        },
+      },
+      {
+        path: "select-direction/:idCategory/current-service/:idService",
+        element: <FinalServicePage />,
+        loader: (loader) => {
+          return baseGetRequest(
+            `/servises/diagnostics/${loader.params.idService}/`,
+          );
         },
       },
       {

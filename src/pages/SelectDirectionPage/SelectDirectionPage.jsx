@@ -11,7 +11,7 @@ export const SelectDirectionPage = () => {
         body={text}
       />
       <Container>
-        <CategorysList requestParameter={"analysis"} />
+        <CategorysList />
       </Container>
     </>
   );
