@@ -31,6 +31,7 @@ export const PATHS = {
   newsArticle: "/news/:slug",
   vacancy: "/vacancy",
   charity: "/charity",
+  charityMoreDetails: "/charity/:id",
   notFound: "*",
 };
 
