@@ -1,6 +1,6 @@
-import { about } from "./About.db.json";
-import { Equipment, HeroAbout, Advantages, Mission, Partners } from "@/widgets";
-import { Container, Line } from "@/shared";
+import { about, advantages } from "./About.db.json";
+import { Equipment, HeroAbout, Mission, Partners } from "@/widgets";
+import { Container, Line, ReusedTextSection } from "@/shared";
 
 export const About = () => {
   return (
@@ -9,7 +9,7 @@ export const About = () => {
       <Line />
       <Mission />
       <Equipment />
-      <Advantages />
+      <ReusedTextSection title="Наши преимущества" contentList={advantages} />
       <Partners />
     </Container>
   );

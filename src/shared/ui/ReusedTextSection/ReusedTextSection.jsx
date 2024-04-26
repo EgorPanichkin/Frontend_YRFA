@@ -5,6 +5,7 @@ import style from "./ReusedTextSection.module.scss";
 
 export const ReusedTextSection = (props) => {
   const { title, contentList, className } = props;
+  console.log(contentList);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -35,9 +36,9 @@ export const ReusedTextSection = (props) => {
               <>
                 <div>
                   <Typography className={style.subTitle} variant="h5">
-                    {content.subTitle}
+                    {content.title}
                   </Typography>
-                  <Typography variant="body">{content.body}</Typography>
+                  <Typography variant="body">{content.description}</Typography>
                 </div>
                 <img className={style.img} src={content.img} alt="img" />
               </>
@@ -48,9 +49,9 @@ export const ReusedTextSection = (props) => {
                 )}
                 <div>
                   <Typography className={style.subTitle} variant="h5">
-                    {content.subTitle}
+                    {content.title}
                   </Typography>
-                  <Typography variant="body">{content.body}</Typography>
+                  <Typography variant="body">{content.description}</Typography>
                 </div>
                 {windowWidth < 400 && (
                   <img className={style.img} src={content.img} alt="img" />
