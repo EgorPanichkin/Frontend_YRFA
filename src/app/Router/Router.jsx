@@ -137,8 +137,12 @@ export const router = createBrowserRouter([
       {
         path: PATHS.selectAnalys,
         element: <AnalysisSelection />,
-        loader: () => {
-          return baseGetRequest("/servises/analyses/");
+        loader: async (loader) => {
+          const list = await baseGetRequest("/servises/analyses/");
+          const info = await baseGetRequest(
+            `/servises/analyses/${loader.params.id}`,
+          );
+          return { list: list.results, info };
         },
       },
       { path: PATHS.login, element: <LoginPage /> },
