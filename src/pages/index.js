@@ -18,5 +18,5 @@ export * from "./Vacancy";
 export * from "./WelcomePage";
 export * from "./AnalysisSelection";
 export * from "./lOVZ";
-export * from "./Charity";
+export * from "./CharityPages";
 export * from "./FinalServicePage";

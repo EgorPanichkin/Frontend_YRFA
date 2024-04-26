@@ -25,6 +25,7 @@ import {
   LovzPage,
   SelectDirectionPage,
   Charity,
+  CharityMoreDetails,
   FinalServicePage,
   Article,
 } from "@/pages";
@@ -200,9 +201,19 @@ export const router = createBrowserRouter([
         path: PATHS.charity,
         element: <Charity />,
         loader: async () => {
-          const article = await baseGetRequest("/charity/article/");
+          const article = await baseGetRequest("/charity/articles/");
           const fund = await baseGetRequest("/charity/fund/");
           return { article: article.results, fund: fund.results };
+        },
+      },
+      {
+        path: PATHS.charityMoreDetails,
+        element: <CharityMoreDetails />,
+        loader: async (loader) => {
+          const articleMoreDetails = await baseGetRequest(
+            `/charity/article/${loader.params.id}`,
+          );
+          return articleMoreDetails;
         },
       },
       {
