@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 import {
   About,
-  Diognostic,
   FAQ,
   Doctors,
   Analysis,
@@ -27,11 +26,12 @@ import {
   SelectDirectionPage,
   Charity,
   CharityMoreDetails,
+  FinalServicePage,
+  Article,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
 import { PATHS, PrivateRoute, baseGetRequest } from "@/shared";
-import { Article } from "@/pages/Article/Article";
 
 export const router = createBrowserRouter([
   {
@@ -45,15 +45,15 @@ export const router = createBrowserRouter([
         path: PATHS.home,
         element: <HomePage />,
         loader: async () => {
-          const services = await baseGetRequest("/servises/popular/");
-          const treatment = await baseGetRequest(
-            "/servises/treatment-categories/",
+          const popular = await baseGetRequest("/servises/popular/");
+          const categories = await baseGetRequest(
+            "/servises/diagnostic-categories/",
           );
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
           return {
-            services: services.results,
-            treatment: treatment.results,
+            popular: popular.results,
+            categories: categories.results,
             swiper: swiper.results,
             branches: branches.results,
           };
@@ -74,11 +74,10 @@ export const router = createBrowserRouter([
         element: <Article />,
         loader: (loader) => {
           return baseGetRequest(
-            `/blogs/${loader.params.type}/${loader.params.slug}`,
+            `/blogs/${loader.params.type}/${loader.params.id}`,
           );
         },
       },
-      { path: PATHS.diognostic, element: <Diognostic /> },
 
       {
         path: PATHS.FAQ,
@@ -93,18 +92,40 @@ export const router = createBrowserRouter([
         path: PATHS.directions,
         element: <Directions />,
         loader: async () => {
-          const services = await baseGetRequest("/servises/popular/");
-          const treatment = await baseGetRequest(
-            "/servises/treatment-categories/",
+          const popular = await baseGetRequest("/servises/popular/");
+          const categories = await baseGetRequest(
+            "/servises/diagnostic-categories/",
           );
-          return { services: services.results, treatment: treatment.results };
+          return { popular: popular.results, categories: categories.results };
         },
       },
       {
-        path: `${PATHS.selectDirections}/:type/:id`,
+        path: `${PATHS.selectDirections}/:idCategory`,
         element: <SelectDirectionPage />,
-        loader: async () => {
-          return baseGetRequest("/servises/diagnostics/");
+        loader: async (loader) => {
+          const category = await baseGetRequest(
+            `/servises/diagnostic-categories/${loader.params.idCategory}`,
+          );
+          const services = await baseGetRequest("/servises/diagnostics/");
+          const subCategorys = await baseGetRequest(
+            "/servises/diagnostic-subcategories/",
+          );
+          return {
+            category: category,
+            services: services.results,
+            subCategorys: subCategorys.results,
+          };
+        },
+      },
+      {
+        path: "select-direction/:idCategory/current-service/:idService",
+        element: <FinalServicePage />,
+        loader: async (loader) => {
+          const main = await baseGetRequest(
+            `/servises/diagnostics/${loader.params.idService}/`,
+          );
+          const actual = await baseGetRequest("/main/sale/");
+          return { main, actual: actual.results };
         },
       },
       {
@@ -117,8 +138,12 @@ export const router = createBrowserRouter([
       {
         path: PATHS.selectAnalys,
         element: <AnalysisSelection />,
-        loader: () => {
-          return baseGetRequest("/servises/analyses/");
+        loader: async (loader) => {
+          const list = await baseGetRequest("/servises/analyses/");
+          const info = await baseGetRequest(
+            `/servises/analyses/${loader.params.id}`,
+          );
+          return { list: list.results, info };
         },
       },
       { path: PATHS.login, element: <LoginPage /> },
@@ -169,7 +194,7 @@ export const router = createBrowserRouter([
         path: PATHS.newsArticle,
         element: <Article />,
         loader: (loader) => {
-          return baseGetRequest(`/blogs/articles/${loader.params.slug}`);
+          return baseGetRequest(`/blogs/articles/${loader.params.id}`);
         },
       },
       {

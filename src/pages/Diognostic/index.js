@@ -1,1 +1,0 @@
-export { Diognostic } from "./Diognostic";

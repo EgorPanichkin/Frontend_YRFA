@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import style from "./DropMenuServices.module.scss";
+import { PATHS } from "@/shared";
 
 export const DropMenuServices = ({ activeIndex, menuRef, data }) => {
   return (
@@ -9,7 +10,7 @@ export const DropMenuServices = ({ activeIndex, menuRef, data }) => {
     >
       <ul className={style.links}>
         {data.map((item, index) => (
-          <Link to={`select-direction/service/${item.id}`} key={index}>
+          <Link to={PATHS.selectDirections + `/${item.id}`} key={index}>
             {item.category_name}
           </Link>
         ))}

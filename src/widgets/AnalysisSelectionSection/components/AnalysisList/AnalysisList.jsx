@@ -1,22 +1,9 @@
 import { CustomButton, Typography } from "@/shared";
 import style from "./AnalysisList.module.scss";
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
 
-export const AnalysisList = ({ analysisData, getAnalysis }) => {
+export const AnalysisList = ({ analysisData }) => {
   const { id } = useParams();
-
-  useEffect(() => {
-    const handleGetAnalysis = (data) => {
-      getAnalysis(data);
-    };
-    if (id) {
-      const initialAnalysis = analysisData.find((item) => item.id === +id);
-      if (initialAnalysis) {
-        handleGetAnalysis(initialAnalysis);
-      }
-    }
-  }, [id, analysisData, getAnalysis]);
 
   return (
     <div className={style.leftSideAnalysis}>
@@ -35,7 +22,6 @@ export const AnalysisList = ({ analysisData, getAnalysis }) => {
                 : style.leftSideAnalysisItem
             }
             key={item.id}
-            onClick={() => getAnalysis(item)}
           >
             <Typography variant="body" color="black">
               {item.analyse_name}

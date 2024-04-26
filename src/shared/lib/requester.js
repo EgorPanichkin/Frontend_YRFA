@@ -26,12 +26,12 @@ axiosBase.interceptors.request.use(
   },
 );
 
-export const baseGetRequest = async (slug) => {
+export const baseGetRequest = async (url) => {
   try {
-    const response = await axiosBase.get(slug);
+    const response = await axiosBase.get(url);
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
