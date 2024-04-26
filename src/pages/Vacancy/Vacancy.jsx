@@ -30,8 +30,8 @@ export const Vacancy = () => {
             <VacancyCard
               key={index}
               title={vacancy.title}
-              // salary={vacancy.pub_date}
-              // vacanciesCount={vacancy.description}
+              salary={vacancy.pub_date}
+              vacanciesCount={vacancy.description}
             />
           ))}
         </div>

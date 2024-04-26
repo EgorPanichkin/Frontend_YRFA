@@ -1,8 +1,7 @@
 .wrapper {
   margin: 20px 0 50px 0;
-  overflow-x: scroll;
   width: 100%;
-  a {
+  .link {
     display: inline-block;
     width: 183px;
     height: 180px;
@@ -16,6 +15,7 @@
   }
 }
 .slider {
+  padding: 20px;
   width: fit-content;
   gap: 20px;
   display: flex;
