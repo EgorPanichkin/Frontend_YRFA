@@ -59,7 +59,20 @@ export const router = createBrowserRouter([
           };
         },
       },
-      { path: PATHS.about, element: <About /> },
+      {
+        path: PATHS.about,
+        element: <About />,
+        loader: async () => {
+          const heroAbout = await baseGetRequest("/main/swiper/");
+          const equipment = await baseGetRequest("/main/equipment/");
+          const partners = await baseGetRequest("/main/our_partner/");
+          return {
+            heroAbout: heroAbout.results,
+            equipment: equipment.results,
+            partners: partners.results,
+          };
+        },
+      },
       {
         path: PATHS.doctors,
         element: <Doctors />,
@@ -219,8 +232,9 @@ export const router = createBrowserRouter([
       {
         path: PATHS.vacancy,
         element: <Vacancy />,
-        loader: () => {
-          return baseGetRequest("/main/vacancy");
+        loader: async () => {
+          const vacancy = await baseGetRequest("/main/vacancy/");
+          return { vacancy: vacancy.results };
         },
       },
       { path: PATHS.notFound, element: <NotFoundPage /> },
