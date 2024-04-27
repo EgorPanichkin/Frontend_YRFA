@@ -12,10 +12,10 @@ export const ReusedHero = (props) => {
       style={img ? heroStyle : null}
     >
       <div className={style.textBlock}>
-        <Typography variant="h1" weight="bold" color="white">
+        <Typography variant="h1" weight="bold" color="black">
           {title}
         </Typography>
-        <Typography color="white" variant="body">
+        <Typography color="black" variant="body">
           {body}
         </Typography>
         <CustomButton className={style.btnBlurImg} color="orange">
