@@ -1,7 +1,7 @@
 import { Container } from "@/shared";
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import { Breadcrumbs, Feedback } from "@/features";
-// import { Footer, Header } from "@/widgets";
+import { Footer, Header } from "@/widgets";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -22,14 +22,14 @@ export const Layout = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Container>
         <ToastContainer />
         <Breadcrumbs />
         <Feedback />
       </Container>
       {navigation.state === "loading" ? <LoaderPage /> : <Outlet />}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
