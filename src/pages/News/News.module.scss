@@ -1,8 +1,16 @@
 .wrapper {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 19px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 765px) {
+  .wrapper {
+    gap: 15px;
+  }
 }
 
 .title {
