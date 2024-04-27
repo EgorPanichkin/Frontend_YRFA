@@ -1,6 +1,8 @@
 import { Typography } from "@/shared";
 import style from "./Partners.module.scss";
 import { partners } from "./db.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
 
 export const Partners = () => {
   return (
@@ -9,16 +11,25 @@ export const Partners = () => {
         Партнеры
       </Typography>
       <div className={style.wrapper}>
-        <div className={style.slider}>
-          {partners.map((partner, index) => (
-            <a href="#" key={index}>
-              <img
-                className={style.image}
-                src={partner.imageUrl}
-                alt="partner"
-              />
-            </a>
-          ))}
+        <div className="partners">
+          <Swiper
+            modules={[Scrollbar]}
+            spaceBetween={50}
+            slidesPerView={5.6}
+            scrollbar={{ draggable: true }}
+          >
+            {partners.map((partner, index) => (
+              <SwiperSlide key={index}>
+                <a href="#" className={style.link}>
+                  <img
+                    className={style.image}
+                    src={partner.imageUrl}
+                    alt="Партнер"
+                  />
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </>
