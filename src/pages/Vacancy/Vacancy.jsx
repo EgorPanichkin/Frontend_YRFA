@@ -4,7 +4,7 @@ import style from "./Vacancy.module.scss";
 import { useLoaderData } from "react-router-dom";
 
 export const Vacancy = () => {
-  const data = useLoaderData();
+  const { vacancy } = useLoaderData();
 
   return (
     <>
@@ -26,13 +26,8 @@ export const Vacancy = () => {
           По профессиям
         </Typography>
         <div className={style.box}>
-          {data.map((vacancy, index) => (
-            <VacancyCard
-              key={index}
-              title={vacancy.title}
-              // salary={vacancy.pub_date}
-              // vacanciesCount={vacancy.description}
-            />
+          {vacancy?.map((vacancy) => (
+            <VacancyCard key={vacancy.id} {...vacancy} />
           ))}
         </div>
       </Container>

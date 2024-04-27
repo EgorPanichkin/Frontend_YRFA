@@ -1,8 +1,9 @@
 import { Typography } from "@/shared";
 import style from "./Partners.module.scss";
-import { partners } from "./db.json";
+import { useLoaderData } from "react-router-dom";
 
 export const Partners = () => {
+  const { partners } = useLoaderData();
   return (
     <>
       <Typography variant="h2" weight="extraBold">

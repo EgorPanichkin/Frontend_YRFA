@@ -1,9 +1,9 @@
 import { EquipCard, Typography } from "@/shared";
 import style from "./Equipment.module.scss";
-import dbData from "./db.json";
+import { useLoaderData } from "react-router-dom";
 
 export const Equipment = () => {
-  const { equipment } = dbData;
+  const { equipment } = useLoaderData();
 
   return (
     <>
