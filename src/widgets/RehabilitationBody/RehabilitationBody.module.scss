@@ -4,7 +4,8 @@
     flex-direction: column;
     gap: 82px;
     margin-bottom: 40px;
-    @media (max-width: 320px) {
+
+    @media (max-width: 650px) {
       display: flex;
       gap: 32px;
     }
@@ -13,7 +14,7 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 56px;
-    @media (max-width: 320px) {
+    @media (max-width: 650px) {
       display: flex;
       flex-direction: column-reverse;
       gap: 12px;
@@ -23,16 +24,19 @@
     display: flex;
     flex-direction: row;
     gap: 56px;
-    @media (max-width: 320px) {
+    @media (max-width: 650px) {
       display: flex;
       flex-direction: column-reverse;
       gap: 12px;
     }
   }
   &Image {
-    max-height: 340px;
-    max-width: 480px;
-    @media (max-width: 320px) {
+    min-width: 280px;
+    max-width: 450px;
+    transition:
+      max-height 0.3s ease,
+      width 0.3s ease;
+    @media (max-width: 650px) {
       max-height: 150px;
       width: 100%;
     }
@@ -43,5 +47,35 @@
     gap: 16px;
     align-items: flex-start;
     justify-content: center;
+  }
+
+  @media (max-width: 1050px) {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  &Content {
+    width: 100%;
+    max-width: 632px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &Button {
+    width: fit-content;
+    display: flex;
+  }
+  &Image {
+    width: 100%;
+    min-width: 280px;
+    max-width: 450px;
+  }
+  &Item {
+    display: flex;
+    align-items: center;
+  }
+  &ItemReverse{
+    display: flex;
+    align-items: center;
   }
 }
