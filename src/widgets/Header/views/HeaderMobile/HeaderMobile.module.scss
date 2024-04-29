@@ -1,0 +1,17 @@
+.headerMobile {
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--small);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.phoneLink {
+  color: var(--warning);
+}
