@@ -1,0 +1,31 @@
+.equipment {
+  .swiper-scrollbar-horizontal {
+    max-width: 600px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 380px !important;
+    height: 9px;
+  }
+  .swiper-scrollbar-drag {
+    background-color: var(--black300);
+  }
+  .swiper {
+    height: 440px !important;
+  }
+}
+
+.partners {
+  .swiper-scrollbar-horizontal {
+    max-width: 600px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 220px !important;
+    height: 9px;
+  }
+  .swiper-scrollbar-drag {
+    background-color: var(--black300);
+  }
+  .swiper {
+    height: 250px !important;
+  }
+}
