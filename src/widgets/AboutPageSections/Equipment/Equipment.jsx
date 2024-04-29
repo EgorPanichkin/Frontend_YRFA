@@ -1,6 +1,8 @@
 import { EquipCard, Typography } from "@/shared";
 import style from "./Equipment.module.scss";
 import { useLoaderData } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
 
 export const Equipment = () => {
   const { equipment } = useLoaderData();

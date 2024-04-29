@@ -1,6 +1,8 @@
 import { Typography } from "@/shared";
 import style from "./Partners.module.scss";
 import { useLoaderData } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
 
 export const Partners = () => {
   const { partners } = useLoaderData();
