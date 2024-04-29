@@ -2,7 +2,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 19.1px;
-  padding: 10.5px 24px;
+  padding: 16px 24px;
   border-radius: 40px;
   color: white;
   &:hover {
@@ -50,6 +50,12 @@
     color: white;
   }
   color: var(--blue400);
+}
+.greyBg {
+  background-color: #f5f6f6;
+}
+.greyBorder {
+  border: 1px solid #f5f6f6;
 }
 .errorStyle {
   padding: 8px 24px;
