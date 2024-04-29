@@ -53,7 +53,7 @@
   color: var(--color-text-paragraph-light-default);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 768px) {
   .h1 {
     font-size: 38px;
   }
@@ -91,7 +91,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .h1 {
     font-size: 32px;
   }
@@ -141,6 +141,10 @@
 // Colors
 .primary {
   color: var(--color-text-primary-default);
+}
+
+.light {
+  color: var(--color-text-paragraph-dark-default);
 }
 
 .secondary {
