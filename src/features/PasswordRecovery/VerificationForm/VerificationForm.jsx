@@ -1,5 +1,4 @@
 import {
-  ChevronLeft,
   CustomButton,
   CustomInput,
   ModalWrapper,
@@ -45,6 +44,21 @@ export const VerificationForm = () => {
     navigate("password-reset");
   };
 
+  const [count, setCount] = useState(60);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount((prevSecond) => (prevSecond > 0 ? prevSecond - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNotification = () => {
+    setNotificationPhone(true);
+    setCount(60);
+  };
+
   const [notificationPhone, setNotificationPhone] = useState(false);
 
   // Закрыть уведомление через 2 секунды
@@ -59,28 +73,25 @@ export const VerificationForm = () => {
 
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
-      <div className={style.smsFormHead}>
-        <ChevronLeft
-          className={style.smsFormBack}
-          onClick={() => navigate(-1)}
-          width={20}
-        />
-        <Typography
-          variant="h2"
-          color="black"
-          weight="semibold"
-          className={style.smsFormTitle}
-        >
-          Ввод кода
-        </Typography>
-      </div>
+      <Typography
+        variant="h2"
+        color="black"
+        weight="semibold"
+        className={style.smsFormTitle}
+      >
+        Введите код из СМС
+      </Typography>
       <Typography
         variant="body"
         color="gray"
         weight="regular"
         className={style.smsFormBody}
       >
-        Мы отправили код на номер заканчивающийся на {String(phone).slice(-3)}
+        Мы отправим код на этот номер для подтверждения и дальнейшего сброса
+        пароля
+      </Typography>
+      <Typography variant="span" className={style.phone}>
+        {phone}
       </Typography>
       {errorsInput.code ? (
         <label className={style.errorLabel}>{errorsInput.code}</label>
@@ -89,17 +100,21 @@ export const VerificationForm = () => {
           htmlFor="code"
           className={focusedInput === "code" ? style.focusedLabel : ""}
         >
-          Код
+          Код из СМС
         </label>
       )}
       <CustomInput
         id="code"
-        type="text"
-        className={style.codeInput}
+        type="code"
+        className={
+          focusedInput === "code"
+            ? `${style.focusedCode} ${style.codeInput}`
+            : style.codeInput
+        }
         placeholder="Введите код"
         value={inputValues.code}
         onChange={(event) => handleInputChange(event, "code")}
-        onFocus={() => setFocusedInput("phone")}
+        onFocus={() => setFocusedInput("code")}
         onBlur={() => setFocusedInput("")}
       />
       <CustomButton
@@ -110,12 +125,22 @@ export const VerificationForm = () => {
       >
         Продолжить
       </CustomButton>
-      <button
-        className={style.smsFormLink}
-        onClick={() => setNotificationPhone(!notificationPhone)}
-      >
-        Не получили код?
-      </button>
+      {count !== 0 ? (
+        <Typography variant="span" className={style.timerText}>
+          Отправить код заново через{" "}
+          <Typography className={style.timer} variant="span">
+            {count}
+          </Typography>
+        </Typography>
+      ) : (
+        <button
+          type="button"
+          className={style.smsFormLink}
+          onClick={handleNotification}
+        >
+          Отправить код снова
+        </button>
+      )}
       {notificationPhone && (
         <ModalWrapper onCloseModal={() => setNotificationPhone(false)}>
           <div className={style.confirmationPhone}>

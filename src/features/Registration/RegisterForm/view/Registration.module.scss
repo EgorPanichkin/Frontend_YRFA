@@ -48,11 +48,13 @@
     .errorLabel {
       color: var(--error);
     }
+    .registerInput {
+      outline: 1.5px solid var(--Color-Stroke-Primary-color-stroke-primary-default, #12709a);
+    }
     .phoneInput {
       border-radius: 10px;
       height: 48px;
-      max-width: 384px;
-      color: var(--blue300);
+      width: 384px;
     }
   }
   button {

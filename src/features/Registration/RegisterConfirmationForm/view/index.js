@@ -1,0 +1,1 @@
+export { RegisterConfirmationForm } from "./RegisterConfirmationForm";

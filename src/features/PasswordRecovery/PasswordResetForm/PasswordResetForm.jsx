@@ -1,8 +1,7 @@
-import { ChevronLeft, CustomButton, CustomInput, Typography } from "@/shared";
+import { CustomButton, CustomInput, Typography } from "@/shared";
 
 import style from "./PasswordResetForm.module.scss";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useFormValidation } from "../model/useFormValidation";
 
 export const PasswordResetForm = () => {
@@ -20,7 +19,7 @@ export const PasswordResetForm = () => {
   const { password, enterPassword } = inputValues;
   const passwordMatch = enterPassword === password;
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
@@ -40,28 +39,22 @@ export const PasswordResetForm = () => {
 
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
-      <div className={style.smsFormHead}>
-        <ChevronLeft
-          className={style.smsFormBack}
-          onClick={() => navigate(-1)}
-          width={20}
-        />
-        <Typography
-          variant="h2"
-          color="black"
-          weight="semibold"
-          className={style.smsFormTitle}
-        >
-          Новый пароль
-        </Typography>
-      </div>
+      <Typography
+        variant="h2"
+        color="black"
+        weight="semibold"
+        className={style.smsFormTitle}
+      >
+        Придумайте новый пароль
+      </Typography>
       <Typography
         variant="body"
         color="gray"
         weight="regular"
         className={style.smsFormBody}
       >
-        Введите новый пароль
+        Пароль должен состоять из восьми или более символов латинского алфавита,
+        содержать заглавные и строчные буквы, цифры
       </Typography>
       <div className={style.passwordInput}>
         {errorsInput.password ? (
@@ -82,6 +75,11 @@ export const PasswordResetForm = () => {
           value={inputValues.password}
           placeholder="Введите пароль"
           onChange={(event) => handleInputChange(event, "password")}
+          className={
+            focusedInput === "password"
+              ? `${style.focusedInput} ${style.input}`
+              : style.input
+          }
         />
       </div>
       <div className={style.passwordInput}>
@@ -109,6 +107,11 @@ export const PasswordResetForm = () => {
           value={inputValues.enterPassword}
           placeholder="Повторите пароль"
           onChange={(event) => handleInputChange(event, "enterPassword")}
+          className={
+            focusedInput === "enterPassword"
+              ? `${style.focusedInput} ${style.input}`
+              : style.input
+          }
         />
       </div>
       <CustomButton
