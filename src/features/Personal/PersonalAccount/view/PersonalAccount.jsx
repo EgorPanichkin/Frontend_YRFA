@@ -51,7 +51,7 @@ export const PersonalAccount = () => {
             variant="h2"
             className={style.personalCabinetTitle}
           >
-            Личный кабинет
+            Личный кабинет пациента
           </Typography>
           {editMode === true ? (
             <MoreVertical
@@ -107,7 +107,7 @@ export const PersonalAccount = () => {
               onBlur={() => setFocusedInput("")}
               onFocus={() => setFocusedInput("name")}
               onChange={(event) => handleInputChange(event, "name")}
-              className={editMode ? "" : style.personalCabinetInput}
+              className={focusedInput === "name" ? style.focusedInput : ""}
               disabledInput={editMode}
             />
           </div>
@@ -133,7 +133,7 @@ export const PersonalAccount = () => {
               value={inputValues.lastName || ""}
               onFocus={() => setFocusedInput("lastName")}
               onChange={(event) => handleInputChange(event, "lastName")}
-              className={editMode ? "" : style.personalCabinetInput}
+              className={focusedInput === "lastName" ? style.focusedInput : ""}
               disabledInput={editMode}
             />
           </div>
@@ -161,11 +161,7 @@ export const PersonalAccount = () => {
               disabled={editMode}
               onFocus={() => setFocusedInput("phone")}
               onBlur={() => setFocusedInput("")}
-              className={
-                editMode
-                  ? style.cabinetInputPhone
-                  : style.cabinetInputPhoneActive
-              }
+              className={focusedInput === "phone" ? style.focusedInput : ""}
             />
           </div>
           <div>
@@ -186,7 +182,6 @@ export const PersonalAccount = () => {
                 id="date"
                 type="date"
                 value={inputValues.date || ""}
-                className={style.fakeInput}
                 disabled
               />
             ) : (
@@ -197,7 +192,7 @@ export const PersonalAccount = () => {
                 onBlur={() => setFocusedInput("")}
                 onFocus={() => setFocusedInput("date")}
                 onChange={(event) => handleInputChange(event, "date")}
-                className={editMode ? "" : style.personalCabinetInput}
+                className={focusedInput === "date" ? style.focusedInput : ""}
               />
             )}
           </div>
@@ -225,7 +220,6 @@ export const PersonalAccount = () => {
                     .map(() => "•")
                     .join("") || ""
                 }
-                className={style.fakeInput}
                 disabled
               />
             ) : (
@@ -236,7 +230,9 @@ export const PersonalAccount = () => {
                 onFocus={() => setFocusedInput("password")}
                 value={inputValues.password || ""}
                 onChange={(event) => handleInputChange(event, "password")}
-                className={editMode ? "" : style.personalCabinetInput}
+                className={
+                  focusedInput === "password" ? style.focusedInput : ""
+                }
                 disabledInput={editMode}
               />
             )}
@@ -262,16 +258,16 @@ export const PersonalAccount = () => {
               />
             )}
           </div>
+          {editMode === false && (
+            <CustomButton
+              color="default"
+              disabled={isDisabled}
+              className={style.personalAccountButton}
+            >
+              Сохранить изменения
+            </CustomButton>
+          )}
         </div>
-        {editMode === false && (
-          <CustomButton
-            color="default"
-            disabled={isDisabled}
-            className={style.personalAccountButton}
-          >
-            Сохранить
-          </CustomButton>
-        )}
       </form>
       <div className={style.upcomingReceptions}>
         <Typography
