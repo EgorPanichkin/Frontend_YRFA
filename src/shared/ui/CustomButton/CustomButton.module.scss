@@ -18,7 +18,17 @@
     padding: 8px 12px;
   }
 }
+//SIZE
+.small {
+  font-size: 15px;
+  padding: 8px 12px;
+}
 
+.medium {
+  font-size: 14px;
+  padding: 12px 16px;
+}
+// VARIANTS
 .default {
   background-color: var(--color-bg-button-primary-default);
   color: var(--color-text-paragraph-dark-default);

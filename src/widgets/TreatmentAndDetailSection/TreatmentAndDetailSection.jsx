@@ -1,11 +1,5 @@
 import style from "./TreatmentAndDetailSection.module.scss";
-import {
-  CustomButton,
-  DetailCard,
-  PATHS,
-  Typography,
-  VerticalLine,
-} from "@/shared";
+import { CustomButton, DetailCard, PATHS, Typography } from "@/shared";
 import { Link, useLoaderData } from "react-router-dom";
 
 export const TreatmentAndDetailSection = ({ detailData }) => {
@@ -37,7 +31,6 @@ export const TreatmentAndDetailSection = ({ detailData }) => {
             </ul>
           </div>
         </div>
-        <VerticalLine height="239" />
         <div className={style.blockDetail}>
           <Typography variant="h3" weight="bold" color="blue400">
             {detailData.h2}
