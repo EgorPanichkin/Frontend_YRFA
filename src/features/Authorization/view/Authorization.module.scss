@@ -6,10 +6,11 @@
 }
 
 .authorizationForm {
-  padding: 25px 55px 30px;
-  border: 1px solid var(--black300);
-  border-radius: 20px;
-  max-width: 364px;
+  padding: 40px 100px;
+  border-radius: 10px;
+  background: var(--background-color, #fff);
+  box-shadow: 0px 1px 4px -1px rgba(25, 92, 121, 0.25);
+  max-width: 588px;
   @media screen and (max-width: 320px) {
     padding: 0;
     border: none;
@@ -19,24 +20,34 @@
   }
   .formWrapper {
     @include flex-direction(30px);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     @media screen and (max-width: 320px) {
       margin-bottom: 16px;
     }
-    .authorizationTitle {
-      font-weight: 600;
-      font-size: 24px;
+    .authorizationBlock {
       text-align: center;
-      @media screen and (max-width: 320px) {
-        font-size: 16px;
+      .authorizationTitle {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 8px;
+        @media screen and (max-width: 320px) {
+          font-size: 16px;
+        }
+      }
+      .authorizationBody {
+        color: #4a4a4a;
+        max-width: 384 px;
+        margin: 0 auto;
       }
     }
     .formWrapperInput {
       @include flex-direction(20px);
+      width: 384px;
       label {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--black400);
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--black700);
+        margin-bottom: 40px;
       }
       .errorLabel {
         color: red;
@@ -45,26 +56,35 @@
         color: var(--blue300);
       }
       .formInput {
+        margin-top: 4px;
         width: 100%;
-        border-radius: 40px;
-        height: 40px;
+        border-radius: 10px;
+        height: 48px;
       }
       .errorInput {
         border: 1px solid red;
       }
     }
-  }
-  .helpFormBlock {
-    @include flex-direction(8px);
-    font-weight: 600;
-    font-size: 15px;
-    @media screen and (max-width: 320px) {
-      text-align: center;
+    .formWrapperButton {
+      display: inline-block;
     }
-    .formLink {
-      color: var(--blue200);
-      // border-bottom: 1px solid var(--blue200)
-      text-decoration: underline;
+  }
+  .helpBlock {
+    text-align: center;
+    .helpBlockLinkTop {
+      padding: 8px 16px;
+      background-color: #f5f6f6;
+      border-radius: 100px;
+      font-weight: 700;
+      color: black;
+    }
+    .helpBlockLinkBottom {
+      font-weight: 700;
+      color: var(--blue300);
+    }
+    .helpBlockSpan {
+      margin: 48px 0 4px;
+      display: block;
     }
   }
 }

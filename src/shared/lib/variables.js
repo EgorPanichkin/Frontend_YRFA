@@ -20,6 +20,7 @@ export const PATHS = {
   selectAnalys: "/analysis/:id",
   login: "/login",
   registration: "/registration",
+  registrationPhoneConfirmation: "/registration/phone-confirmation",
   smsVerification: "/login/sms-verification",
   verificationCode: "/login/sms-verification/verification",
   passwordReset: "/login/sms-verification/verification/password-reset",

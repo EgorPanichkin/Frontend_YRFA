@@ -56,13 +56,22 @@ export const Authorization = () => {
   return (
     <form className={style.authorizationForm} onSubmit={handleSubmit}>
       <div className={style.formWrapper}>
-        <Typography
-          variant="h2"
-          weight="600"
-          className={style.authorizationTitle}
-        >
-          Вход в кабинет
-        </Typography>
+        <div className={style.authorizationBlock}>
+          <Typography
+            variant="h2"
+            weight="600"
+            className={style.authorizationTitle}
+          >
+            Войдите
+          </Typography>
+          <Typography
+            className={style.authorizationBody}
+            variant="body"
+            weight="400"
+          >
+            Войдите в свой аккаунт чтобы отслеживать историю записи и анализов
+          </Typography>
+        </div>
         <div className={style.formWrapperInput}>
           <div>
             {errorsInput.phone ? (
@@ -109,19 +118,28 @@ export const Authorization = () => {
               value={inputValues.password}
               placeholder="Введите пароль"
               onChange={(event) => handleInputChange(event, "password")}
+              className={style.formInput}
             />
           </div>
         </div>
-        <CustomButton color="default" type="submit" disabled={isDisabled}>
-          Войти в кабинет
+        <CustomButton
+          className={style.formWrapperButton}
+          color="default"
+          type="submit"
+          disabled={isDisabled}
+        >
+          Войти
         </CustomButton>
       </div>
-      <div className={style.helpFormBlock}>
-        <Link className={style.formLink} to="/registration">
-          Вы еще не зарегистрировались?
-        </Link>
-        <Link className={style.formLink} to="sms-verification">
+      <div className={style.helpBlock}>
+        <Link className={style.helpBlockLinkTop} to="sms-verification">
           Забыли пароль?
+        </Link>
+        <Typography className={style.helpBlockSpan} variant="span" weight="400">
+          Ещё нет аккаунта?
+        </Typography>
+        <Link className={style.helpBlockLinkBottom} to="/registration">
+          Зарегистрируйтесь
         </Link>
       </div>
     </form>
