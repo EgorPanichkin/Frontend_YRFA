@@ -1,0 +1,56 @@
+.card {
+  width: 282px;
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 330px;
+  }
+  @media (max-width: 425px) {
+    width: 280px;
+  }
+  .imageWrapper {
+    width: 100%;
+    height: 158px;
+    @media (max-width: 768px) {
+      height: 184px;
+    }
+    @media (max-width: 425px) {
+      height: 156px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .selectorHidden {
+    background: var(--color-bg-light-primary-hover);
+    cursor: pointer;
+    height: 57px;
+  }
+  .selectorOpen {
+    background: var(--color-bg-light-primary-hover);
+    cursor: pointer;
+    height: auto;
+  }
+
+  .iconOpen {
+    rotate: 180deg;
+    transition: rotate 0.2s;
+  }
+  .icon {
+    transition: rotate 0.2s;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .links {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

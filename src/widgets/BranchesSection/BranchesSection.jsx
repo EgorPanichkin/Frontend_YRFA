@@ -1,5 +1,5 @@
 import style from "./BranchesSection.module.scss";
-import { BrancheCard, Typography } from "@/shared";
+import { Typography } from "@/shared";
 
 export const BranchesSection = ({ branchesData }) => {
   // FIX ME
@@ -12,9 +12,10 @@ export const BranchesSection = ({ branchesData }) => {
       </Typography>
 
       <div className={style.cardBlock}>
+        {/* FIX_ME */}
+        {/* <BrancheCard cardData={branchesData} />
         <BrancheCard cardData={branchesData} />
-        <BrancheCard cardData={branchesData} />
-        <BrancheCard cardData={branchesData} />
+        <BrancheCard cardData={branchesData} /> */}
       </div>
     </div>
   );

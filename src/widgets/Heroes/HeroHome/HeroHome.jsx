@@ -1,14 +1,14 @@
 import style from "./HeroHome.module.scss";
-import { SliderHome } from "@/features";
-import { CustomCard } from "@/shared";
+import { Slider } from "@/features";
+import { ActualCard } from "@/shared";
 
-export const HeroHome = ({ heroData }) => {
+export const HeroHome = () => {
   return (
     <div className={style.blockHero}>
-      <SliderHome />
+      <Slider />
       <div className={style.heroCard}>
-        <CustomCard data={heroData} reverse="false" />
-        <CustomCard data={heroData} />
+        <ActualCard />
+        <ActualCard reverse={true} />
       </div>
     </div>
   );

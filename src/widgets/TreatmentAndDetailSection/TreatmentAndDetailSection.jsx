@@ -1,5 +1,5 @@
 import style from "./TreatmentAndDetailSection.module.scss";
-import { CustomButton, DetailCard, PATHS, Typography } from "@/shared";
+import { ActualCard, CustomButton, PATHS, Typography } from "@/shared";
 import { Link, useLoaderData } from "react-router-dom";
 
 export const TreatmentAndDetailSection = ({ detailData }) => {
@@ -35,12 +35,12 @@ export const TreatmentAndDetailSection = ({ detailData }) => {
           <Typography variant="h3" weight="bold" color="blue400">
             {detailData.h2}
           </Typography>
-          <DetailCard detailData={detailData} />
+          <ActualCard />
+          <CustomButton variant="orange" className={style.button}>
+            Записаться на приём к врачу
+          </CustomButton>
         </div>
       </div>
-      <CustomButton color="default" icon="chevron">
-        Записаться на прием
-      </CustomButton>
     </div>
   );
 };

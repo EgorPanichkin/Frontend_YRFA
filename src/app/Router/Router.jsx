@@ -28,6 +28,7 @@ import {
   CharityMoreDetails,
   FinalServicePage,
   Article,
+  ErrorPage,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -41,9 +42,11 @@ export const router = createBrowserRouter([
   {
     path: PATHS.welcome,
     element: <WelcomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: PATHS.home,
