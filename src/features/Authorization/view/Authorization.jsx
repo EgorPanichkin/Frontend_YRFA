@@ -122,7 +122,12 @@ export const Authorization = () => {
             />
           </div>
         </div>
-        <CustomButton color="default" type="submit" disabled={isDisabled}>
+        <CustomButton
+          className={style.formWrapperButton}
+          color="default"
+          type="submit"
+          disabled={isDisabled}
+        >
           Войти
         </CustomButton>
       </div>

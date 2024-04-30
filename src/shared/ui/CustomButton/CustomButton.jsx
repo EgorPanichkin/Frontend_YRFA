@@ -2,9 +2,18 @@ import { useNavigate } from "react-router-dom";
 import style from "./CustomButton.module.scss";
 
 export const CustomButton = (props) => {
-  const { children, color, type, className, disabled, link, onClick } = props;
+  const {
+    children,
+    variant = "default",
+    size,
+    type,
+    className,
+    disabled,
+    link,
+    onClick,
+  } = props;
 
-  const classGenerated = [style[color], style.button, className]
+  const classGenerated = [style[variant], style[size], style.button, className]
     .join(" ")
     .trim();
 

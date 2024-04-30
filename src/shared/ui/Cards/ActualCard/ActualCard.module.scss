@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--small);
+  max-width: 588px;
+  max-height: 216px;
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    max-width: 332px;
+    min-height: 156px;
+    cursor: pointer;
+  }
+  @media (max-width: 425px) {
+    min-width: 280px;
+    min-height: 232px;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .infoBlock {
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    .expiration {
+      margin: 4px 0 18px;
+      @media (max-width: 768px) {
+        margin: 4px 0 0;
+      }
+    }
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
+    @media (max-width: 425px) {
+      padding: 16px;
+    }
+  }
+  .imageWrapper {
+    width: 216px;
+    height: 216px;
+    background-color: var(--background-light-blue);
+    @media (max-width: 768px) {
+      width: 156px;
+      height: 156px;
+    }
+    @media (max-width: 425px) {
+      width: 100%;
+      height: 158px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .button {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+.reverse {
+  justify-content: start;
+}

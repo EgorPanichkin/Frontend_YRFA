@@ -45,8 +45,8 @@
       width: 384px;
       label {
         font-size: 14px;
-        font-weight: 600;
-        color: var(--black400);
+        font-weight: 400;
+        color: var(--black700);
         margin-bottom: 40px;
       }
       .errorLabel {
@@ -64,6 +64,9 @@
       .errorInput {
         border: 1px solid red;
       }
+    }
+    .formWrapperButton {
+      display: inline-block;
     }
   }
   .helpBlock {

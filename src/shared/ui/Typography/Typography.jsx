@@ -2,7 +2,7 @@ import styles from "./Typography.module.scss";
 
 export const Typography = (props) => {
   const {
-    variant,
+    variant = "body",
     weight = "regular",
     children,
     className,

@@ -1,10 +1,4 @@
-import {
-  AccordionForm,
-  ChevronLeft,
-  CustomButton,
-  PATHS,
-  Typography,
-} from "@/shared";
+import { AccordionForm, CustomButton, PATHS, Typography } from "@/shared";
 
 import { RegisterValidation } from "../model/RegisterValidation";
 import { IMaskInput } from "react-imask";
@@ -32,13 +26,11 @@ export const Registration = () => {
   return (
     <form className={style.registerForm} onSubmit={handleSubmit}>
       <div className={style.registerBlockTitle}>
-        <ChevronLeft
-          className={style.registerBack}
-          width={24}
-          onClick={() => navigate(-1)}
-        />
         <Typography variant="h2" weight="600" className={style.registerTitle}>
-          Регистрация
+          Заполните анкету
+        </Typography>
+        <Typography variant="body" weight="400" color="#4A4A4A">
+          Заполните свои данные для дальнейшней регистрации
         </Typography>
       </div>
       <div className={style.formWrapper}>
@@ -140,6 +132,15 @@ export const Registration = () => {
           />
         </div>
         <div>
+          <AccordionForm
+            accordionTitle={
+              inputValues.gender ? inputValues.gender : "Укажите свой пол"
+            }
+            onClickOption={handleOptionClick}
+            optionsItems={optionsItems}
+          />
+        </div>
+        <div>
           {errorsInput.password ? (
             <label htmlFor="password" className={style.errorLabel}>
               {errorsInput.password}
@@ -191,19 +192,11 @@ export const Registration = () => {
             className={style.registerInput}
           />
         </div>
-        <div>
-          <label htmlFor="gender">Пол</label>
-          <AccordionForm
-            accordionTitle={
-              inputValues.gender ? inputValues.gender : "Укажите свой пол"
-            }
-            onClickOption={handleOptionClick}
-            optionsItems={optionsItems}
-          />
-        </div>
+        {/* <div>
+        </div> */}
       </div>
       <CustomButton color="default" type="submit" disabled={isDisabled}>
-        Создать кабинет пациента
+        Далее
       </CustomButton>
     </form>
   );

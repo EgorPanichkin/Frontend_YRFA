@@ -1,0 +1,32 @@
+.card {
+  padding: 16px 24px;
+  width: 100%;
+  min-height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 51px;
+  border-radius: 12px;
+  background: var(--color-bg-light-primary-hover);
+
+  @media (max-width: 768px) {
+    padding: 24px;
+    flex-direction: column;
+    align-items: start;
+    gap: 0px;
+  }
+  @media (max-width: 425px) {
+    padding: 16px;
+  }
+
+  .price {
+    white-space: nowrap;
+    @media (max-width: 768px) {
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+  }
+  button {
+    white-space: nowrap;
+  }
+}
