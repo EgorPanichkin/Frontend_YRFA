@@ -5,6 +5,7 @@ export const CustomButton = (props) => {
   const {
     children,
     variant = "default",
+    size,
     type,
     className,
     disabled,
@@ -12,7 +13,7 @@ export const CustomButton = (props) => {
     onClick,
   } = props;
 
-  const classGenerated = [style[variant], style.button, className]
+  const classGenerated = [style[variant], style[size], style.button, className]
     .join(" ")
     .trim();
 
