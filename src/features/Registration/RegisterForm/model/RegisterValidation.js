@@ -1,3 +1,4 @@
+import { addPhoneRegister } from "@/app/store/verificationDataSlice";
 import {
   PATHS,
   notify,
@@ -6,6 +7,7 @@ import {
   validateForm,
 } from "@/shared";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const RegisterValidation = () => {
@@ -112,6 +114,8 @@ export const RegisterValidation = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
+  const dispatch = useDispatch();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -124,19 +128,24 @@ export const RegisterValidation = () => {
     // функция для того чтобы убрать тере и скобки
     const phoneNum = phoneNumberRefactorer(phone);
 
-    const response = await usersRequester("/register/", {
-      phone_number: phoneNum,
-      first_name: name,
-      last_name: surName,
-      birth_date: date,
-      gender: genderRuEn,
-      password: password,
-      confirm_password: enterPassword,
-    });
+    try {
+      const response = await usersRequester("/register/", {
+        phone_number: phoneNum,
+        first_name: name,
+        last_name: surName,
+        birth_date: date,
+        gender: genderRuEn,
+        password: password,
+        confirm_password: enterPassword,
+      });
 
-    if (response && response.status === 200) {
-      navigate(PATHS.login);
-      notify.success("Вы успешно зарегестрировались!");
+      if (response && response.status === 200) {
+        navigate(PATHS.registrationPhoneConfirmation);
+        dispatch(addPhoneRegister({ phoneNum }));
+        notify.success("Успешно!");
+      }
+    } catch {
+      console.log("error");
     }
   };
 

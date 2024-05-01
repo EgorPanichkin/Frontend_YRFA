@@ -1,7 +1,7 @@
-import { Registration } from "@/features";
 import { Container } from "@/shared";
 
-import style from "./registerPage.module.sass";
+import style from "./RegisterPage.module.sass";
+import { Registration } from "@/features";
 
 export const RegisterPage = () => {
   return (

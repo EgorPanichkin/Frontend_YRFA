@@ -6,7 +6,6 @@ import {
   Doctors,
   Analysis,
   LoginPage,
-  RegisterPage,
   SmsPage,
   VerificationPage,
   PasswordResetPage,
@@ -28,6 +27,8 @@ import {
   CharityMoreDetails,
   FinalServicePage,
   Article,
+  RegisterPage,
+  RegisterConfirmation,
   ErrorPage,
 } from "@/pages";
 
@@ -170,6 +171,10 @@ export const router = createBrowserRouter([
       },
       { path: PATHS.login, element: <LoginPage /> },
       { path: PATHS.registration, element: <RegisterPage /> },
+      {
+        path: PATHS.registrationPhoneConfirmation,
+        element: <RegisterConfirmation />,
+      },
       { path: PATHS.smsVerification, element: <SmsPage /> },
       { path: PATHS.verificationCode, element: <VerificationPage /> },
       { path: PATHS.passwordReset, element: <PasswordResetPage /> },

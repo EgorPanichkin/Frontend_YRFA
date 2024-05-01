@@ -2,6 +2,7 @@ import {
   CustomButton,
   CustomInput,
   ModalWrapper,
+  PATHS,
   PhoneIcon,
   Typography,
   notify,
@@ -10,13 +11,12 @@ import {
 } from "@/shared";
 import { useNavigate } from "react-router-dom";
 
-import style from "./VerificationForm.module.scss";
-
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+
+import style from "./RegisterConfirmationForm.module.scss";
 import { useFormValidation } from "../model/useFormValidation";
 
-export const VerificationForm = () => {
+export const RegisterConfirmationForm = () => {
   const {
     // Получаем доступ к функциям и значениям с кастомного хука
     inputValues,
@@ -24,12 +24,8 @@ export const VerificationForm = () => {
     setFocusedInput,
     focusedInput,
     errorsInput,
+    registerPhone,
   } = useFormValidation();
-
-  const verificationData = useSelector(
-    (state) => state.verificationData.verificationData,
-  );
-  const { phone } = verificationData;
 
   const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
@@ -37,34 +33,13 @@ export const VerificationForm = () => {
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
     setIsDisabled(
-      // Проверка на наличие ошибок валидации и на пустоту поляы
+      // Проверка на наличие ошибок валидации и на пустоту поля
       errorsInput.code !== "" || inputValues.code === "",
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const phoneNum = phoneNumberRefactorer(phone);
-    const { code } = inputValues;
-
-    try {
-      const response = await usersRequester("/accept_code/", {
-        phone_number: phoneNum,
-        verify_code: code,
-      });
-
-      if (response && response.status === 200) {
-        navigate("password-reset");
-        notify.success("Код успешно принят!");
-      }
-    } catch {
-      console.log("error");
-    }
-  };
-
   // Состояние для счётчика
-  const [count, setCount] = useState(60);
+  const [count, setCount] = useState(2);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -74,11 +49,26 @@ export const VerificationForm = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleNotification = () => {
+  // Функция для отправки кода повторно
+  const handleNotification = async () => {
     setNotificationPhone(true);
     setCount(60);
+
+    // --------------- FIX_ME!!!
+    try {
+      const response = await usersRequester("/accept_phone/", {
+        phone_number: registerPhone,
+      });
+
+      if (response && response.status === 200) {
+        setNotificationPhone(true);
+      }
+    } catch {
+      console.log("error");
+    }
   };
 
+  // --------------- FIX_ME!!!
   // Состояние для уведомления
   const [notificationPhone, setNotificationPhone] = useState(false);
 
@@ -92,15 +82,35 @@ export const VerificationForm = () => {
     return () => clearTimeout(timer);
   }, [notificationPhone]); // Эффект будет перезапускаться при изменении состояния notificationPhone
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+
+    try {
+      const response = await usersRequester("/confirm_register/", {
+        phone_number: phoneNum,
+        verify_code: inputValues.code,
+      });
+
+      if (response && response.status === 200) {
+        navigate(PATHS.login);
+        notify.success("Регистрация успешна!");
+      }
+    } catch {
+      console.log("error");
+    }
+  };
+
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
       <Typography
         variant="h2"
         color="black"
-        weight="semibold"
+        weight="bold"
         className={style.smsFormTitle}
       >
-        Введите код из СМС
+        Введите номер телефона
       </Typography>
       <Typography
         variant="body"
@@ -112,7 +122,7 @@ export const VerificationForm = () => {
         пароля
       </Typography>
       <Typography variant="span" className={style.phone}>
-        {phone}
+        {registerPhone}
       </Typography>
       {errorsInput.code ? (
         <label className={style.errorLabel}>{errorsInput.code}</label>

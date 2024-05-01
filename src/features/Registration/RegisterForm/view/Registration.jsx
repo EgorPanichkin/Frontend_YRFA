@@ -1,10 +1,4 @@
-import {
-  AccordionForm,
-  ChevronLeft,
-  CustomButton,
-  PATHS,
-  Typography,
-} from "@/shared";
+import { AccordionForm, CustomButton, PATHS, Typography } from "@/shared";
 
 import { RegisterValidation } from "../model/RegisterValidation";
 import { IMaskInput } from "react-imask";
@@ -32,13 +26,11 @@ export const Registration = () => {
   return (
     <form className={style.registerForm} onSubmit={handleSubmit}>
       <div className={style.registerBlockTitle}>
-        <ChevronLeft
-          className={style.registerBack}
-          width={24}
-          onClick={() => navigate(-1)}
-        />
         <Typography variant="h2" weight="600" className={style.registerTitle}>
-          Регистрация
+          Заполните анкету
+        </Typography>
+        <Typography variant="body" weight="400" color="#4A4A4A">
+          Заполните свои данные для дальнейшней регистрации
         </Typography>
       </div>
       <div className={style.formWrapper}>
@@ -63,7 +55,7 @@ export const Registration = () => {
             onFocus={() => setFocusedInput("name")}
             placeholder="Введите Ваше имя"
             onChange={(event) => handleInputChange(event, "name")}
-            className={style.registerInput}
+            className={focusedInput === "name" ? style.registerInput : ""}
           />
         </div>
         <div>
@@ -87,7 +79,7 @@ export const Registration = () => {
             value={inputValues.surName}
             placeholder="Введите Ваше фамилие"
             onChange={(event) => handleInputChange(event, "surName")}
-            className={style.registerInput}
+            className={focusedInput === "surName" ? style.registerInput : ""}
           />
         </div>
         <div>
@@ -113,7 +105,11 @@ export const Registration = () => {
             onInput={(event) => handleInputChange(event, "phone")}
             onFocus={() => setFocusedInput("phone")}
             onBlur={() => setFocusedInput("")}
-            className={style.phoneInput}
+            className={
+              focusedInput === "phone"
+                ? `${style.registerInput} ${style.phoneInput}`
+                : style.phoneInput
+            }
           />
         </div>
         <div>
@@ -136,7 +132,17 @@ export const Registration = () => {
             onFocus={() => setFocusedInput("date")}
             value={inputValues.date}
             onChange={(event) => handleInputChange(event, "date")}
-            className={style.registerInput}
+            className={focusedInput === "date" ? style.registerInput : ""}
+          />
+        </div>
+        <div>
+          <label htmlFor="gender">Пол</label>
+          <AccordionForm
+            accordionTitle={
+              inputValues.gender ? inputValues.gender : "Укажите свой пол"
+            }
+            onClickOption={handleOptionClick}
+            optionsItems={optionsItems}
           />
         </div>
         <div>
@@ -160,7 +166,7 @@ export const Registration = () => {
             value={inputValues.password}
             placeholder="Введите пароль"
             onChange={(event) => handleInputChange(event, "password")}
-            className={style.registerInput}
+            className={focusedInput === "password" ? style.registerInput : ""}
           />
         </div>
         <div>
@@ -188,22 +194,14 @@ export const Registration = () => {
             value={inputValues.enterPassword}
             placeholder="Повторите пароль"
             onChange={(event) => handleInputChange(event, "enterPassword")}
-            className={style.registerInput}
-          />
-        </div>
-        <div>
-          <label htmlFor="gender">Пол</label>
-          <AccordionForm
-            accordionTitle={
-              inputValues.gender ? inputValues.gender : "Укажите свой пол"
+            className={
+              focusedInput === "enterPassword" ? style.registerInput : ""
             }
-            onClickOption={handleOptionClick}
-            optionsItems={optionsItems}
           />
         </div>
       </div>
       <CustomButton color="default" type="submit" disabled={isDisabled}>
-        Создать кабинет пациента
+        Далее
       </CustomButton>
     </form>
   );
