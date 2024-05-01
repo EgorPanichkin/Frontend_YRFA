@@ -1,6 +1,6 @@
 import { Container } from "@/shared";
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
-import { Breadcrumbs, Feedback } from "@/features";
+import { Feedback } from "@/features";
 import { Footer, Header } from "@/widgets";
 import { ToastContainer } from "react-toastify";
 
@@ -25,7 +25,6 @@ export const Layout = () => {
       <Header />
       <Container>
         <ToastContainer />
-        <Breadcrumbs />
         <Feedback />
       </Container>
       {navigation.state === "loading" ? <LoaderPage /> : <Outlet />}

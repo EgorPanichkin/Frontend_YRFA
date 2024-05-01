@@ -1,4 +1,4 @@
-import { ChevronRight, HomeIcon } from "@/shared";
+import { ChevronRight, Container, HomeIcon } from "@/shared";
 import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -20,14 +20,47 @@ const data = {
   vacancy: "breadcrumbs.vacancy",
   directions: "breadcrumbs.directions",
   "select-direction": "breadcrumbs.select-direction",
+  "current-service": "breadcrumbs.current-service",
   lovz: "breadcrumbs.lovz",
   charity: "breadcrumbs.charity",
+};
+
+const compareKeys = (obj1, obj2) => {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  const uniqueKeys = keys1.filter((key) => !keys2.includes(key));
+  const filteredObj = {};
+
+  uniqueKeys.forEach((key) => {
+    filteredObj[key] = obj1[key];
+  });
+
+  return filteredObj;
 };
 
 export const Breadcrumbs = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
+
+  // console.log(pathnames);
+  const filteredPathnames = {};
+  for (const key in pathnames) {
+    if (Object.prototype.hasOwnProperty.call(pathnames, key)) {
+      const parsedKey = parseInt(key, 10);
+      if (parsedKey % 2 !== 0) {
+        filteredPathnames[key] = pathnames[key];
+        if (/\d/.test(key)) {
+          filteredPathnames[key] = key;
+        }
+      }
+    }
+  }
+
+  const isNumeric = (str) => {
+    return /^\d+$/.test(str);
+  };
 
   if (pathnames.length === 0) {
     return;
@@ -37,32 +70,53 @@ export const Breadcrumbs = () => {
     return false;
   }
 
+  const uniquePathnames = compareKeys(pathnames, filteredPathnames);
+
+  console.log(uniquePathnames);
+
   return (
-    <div className={style.breadcrumbs}>
-      <Link to="/" className={style.homeLink}>
-        <HomeIcon className={style.homeIcon} />
-        {t("breadcrumbs.home")}
-      </Link>
-      {pathnames.map((name, index) => {
-        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-        const isLast = index === pathnames.length - 1;
-        const translationName = t(data[name]);
-        return isLast ? (
-          <div className={style.link} key={`${name}${index}`}>
-            <div className={style.chevron}>
-              <ChevronRight className={style.chevronRight} />
+    <Container>
+      <div className={style.breadcrumbs}>
+        <Link to="/" className={style.homeLink}>
+          <HomeIcon className={style.homeIcon} />
+          {t("breadcrumbs.home")}
+        </Link>
+        {pathnames.map((name, index) => {
+          const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
+          const isLast = index === pathnames.length - 1;
+          const linkClass = isLast ? style.blueText : style.grayText;
+          const filterNumberObj =
+            Object.keys(filteredPathnames).length > 0
+              ? `${name}/${Object.keys(filteredPathnames)[0]}`
+              : routeTo;
+          // const finishFilter = filterNumberObj.length - 1;
+          // console.log(filterNumberObj);
+          console.log(filterNumberObj);
+          const translationName = t(data[name]).replace(/[0-9]/g, "").trim();
+          if (!translationName || isNumeric(translationName)) {
+            return null;
+          }
+          return isLast ? (
+            <div className={style.link} key={`${name}${index}`}>
+              <div className={style.chevron}>
+                <ChevronRight className={style.chevronRight} />
+              </div>
+              <div>{translationName}</div>
             </div>
-            <div>{translationName}</div>
-          </div>
-        ) : (
-          <Link className={style.link} key={`${name}${index}`} to={routeTo}>
-            <div className={style.chevron}>
-              <ChevronRight className={style.chevronRight} />
-            </div>
-            {translationName}
-          </Link>
-        );
-      })}
-    </div>
+          ) : (
+            <Link
+              className={`${style.link} ${linkClass}`}
+              key={`${name}${index}`}
+              to={filterNumberObj}
+            >
+              <div className={style.chevron}>
+                <ChevronRight className={style.chevronRight} />
+              </div>
+              {translationName}
+            </Link>
+          );
+        })}
+      </div>
+    </Container>
   );
 };

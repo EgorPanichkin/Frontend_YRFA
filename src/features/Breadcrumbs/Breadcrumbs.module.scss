@@ -9,9 +9,15 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+  }
+  .blueText {
+    color: var(--blue300);
+  }
+  .grayText {
     color: var(--black300);
   }
   .homeLink {
+    color: var(--black300);
     display: flex;
     gap: 6px;
   }

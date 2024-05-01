@@ -135,7 +135,7 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: "select-direction/:idCategory/current-service/:idService",
+        path: `select-direction/:idCategory${PATHS.currentService}/:idService`,
         element: <FinalServicePage />,
         loader: async (loader) => {
           const main = await baseGetRequest(
