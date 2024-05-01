@@ -1,0 +1,38 @@
+.card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 387px;
+  border-radius: 8px;
+  overflow: hidden;
+  .imageWrapper {
+    width: 100%;
+    height: 216px;
+    @media (max-width: 768px) {
+      height: 186px;
+    }
+    @media (max-width: 425px) {
+      height: 158px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .head {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-bg-light-primary-hover);
+  }
+  .menu {
+    padding: 8px 16px 16px;
+    height: auto;
+    background-color: var(--color-bg-light-primary-hover);
+  }
+  .hiddenMenu {
+    height: 0;
+    background-color: var(--color-bg-light-primary-hover);
+    overflow: hidden;
+  }
+}

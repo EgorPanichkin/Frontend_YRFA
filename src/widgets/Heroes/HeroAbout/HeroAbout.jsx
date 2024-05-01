@@ -1,24 +1,26 @@
+import { Slider } from "@/features";
 import style from "./HeroAbout.module.scss";
 import { Typography } from "@/shared";
-import { Line } from "@/shared";
 
-export const HeroAbout = ({ heroData }) => {
+export const HeroAbout = () => {
   return (
     <div className={style.blockHero}>
-      <div className={style.slider}></div>
-      <div className={style.heroTitleBlock}>
-        <Typography variant="h4" weight="semibold" color="blue500">
-          <b>{heroData.h1}</b>
-          {heroData.large}
+      <div className={style.text}>
+        <Typography variant="h2" weight="bold" id={style.title}>
+          ЮРФА - многофункциональный лечебно-диагностический центр для всей
+          семьи
         </Typography>
-        <Typography variant="h4" weight="semibold">
-          {heroData.h2}
-        </Typography>
-        <Line className={style.line} />
-        <Typography variant="body" color="black400">
-          {heroData.p}
+        <Typography id={style.description}>
+          Высокий уровень вовлечения представителей целевой аудитории является
+          четким доказательством простого факта: новая модель организационной
+          деятельности является качественно новой ступенью направлений
+          прогрессивного развития. Задача организации, в особенности же
+          постоянный количественный рост и сфера нашей активности представляет
+          собой интересный эксперимент проверки соответствующих условий
+          активизации.
         </Typography>
       </div>
+      <Slider />
     </div>
   );
 };

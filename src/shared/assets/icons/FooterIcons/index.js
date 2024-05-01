@@ -5,3 +5,4 @@ export * from "./GeeksLogo";
 export * from "./Logo";
 export * from "./PhoneIcon";
 export * from "./WhatsApp";
+export * from "./FooterLogo";

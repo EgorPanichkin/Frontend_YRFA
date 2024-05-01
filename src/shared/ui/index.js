@@ -1,4 +1,3 @@
-export * from "./AboutUi";
 export * from "./Accordion";
 export * from "./AnchorLink";
 export * from "./CategoryCard";
