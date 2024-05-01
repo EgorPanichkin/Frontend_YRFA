@@ -31,6 +31,7 @@
     display: block;
     color: var(--blue300, #12709a);
     font-weight: 700;
+    margin-bottom: 24px;
   }
   label {
     color: var(--black700, #010101);
@@ -75,7 +76,6 @@
     color: var(--blue200);
     text-decoration: underline;
     font-weight: 600;
-    line-height: 20.46px;
     font-size: 14px;
     cursor: pointer;
   }

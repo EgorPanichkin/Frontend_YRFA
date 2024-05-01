@@ -41,15 +41,21 @@ export const Authorization = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const phoneNum = phoneNumberRefactorer(inputValues.phone);
-    const response = await usersRequester("/login/", {
-      phone_number: phoneNum,
-      password: inputValues.password,
-    });
+    const { phone, password } = inputValues;
+    const phoneNum = phoneNumberRefactorer(phone);
 
-    if (response && response?.status === 200) {
-      navigate(PATHS.personal);
-      notify.success("Авторизация успешно!");
+    try {
+      const response = await usersRequester("/login/", {
+        phone_number: phoneNum,
+        password: password,
+      });
+
+      if (response && response?.status === 200) {
+        navigate(PATHS.personal);
+        notify.success("Авторизация успешно!");
+      }
+    } catch {
+      console.log("error");
     }
   };
 
@@ -94,7 +100,11 @@ export const Authorization = () => {
               onInput={(event) => handleInputChange(event, "phone")}
               onFocus={() => setFocusedInput("phone")}
               onBlur={() => setFocusedInput("")}
-              className={style.formInput}
+              className={
+                focusedInput === "phone"
+                  ? `${style.focusedInput} ${style.input}`
+                  : style.input
+              }
             />
           </div>
           <div>
@@ -118,7 +128,11 @@ export const Authorization = () => {
               value={inputValues.password}
               placeholder="Введите пароль"
               onChange={(event) => handleInputChange(event, "password")}
-              className={style.formInput}
+              className={
+                focusedInput === "password"
+                  ? `${style.focusedInput} ${style.input}`
+                  : style.input
+              }
             />
           </div>
         </div>

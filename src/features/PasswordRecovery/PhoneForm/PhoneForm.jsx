@@ -1,4 +1,10 @@
-import { CustomButton, Typography } from "@/shared";
+import {
+  CustomButton,
+  Typography,
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
+} from "@/shared";
 import { IMaskInput } from "react-imask";
 import { useNavigate } from "react-router-dom";
 
@@ -33,10 +39,24 @@ export const PhoneForm = () => {
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("verification");
-    dispatch(addPhone({ phone }));
+
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+
+    try {
+      const response = await usersRequester("/accept_phone/", {
+        phone_number: phoneNum,
+      });
+
+      if (response && response.status === 200) {
+        navigate("verification");
+        dispatch(addPhone({ phone }));
+        notify.success("Номер принят!");
+      }
+    } catch {
+      console.log("error");
+    }
   };
 
   return (

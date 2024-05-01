@@ -1,8 +1,18 @@
-import { CustomButton, CustomInput, Typography } from "@/shared";
+import {
+  CustomButton,
+  CustomInput,
+  PATHS,
+  Typography,
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
+} from "@/shared";
 
 import style from "./PasswordResetForm.module.scss";
 import { useEffect, useState } from "react";
 import { useFormValidation } from "../model/useFormValidation";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const PasswordResetForm = () => {
   const {
@@ -19,7 +29,7 @@ export const PasswordResetForm = () => {
   const { password, enterPassword } = inputValues;
   const passwordMatch = enterPassword === password;
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
@@ -33,8 +43,32 @@ export const PasswordResetForm = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
-  const handleSubmit = (event) => {
+  // Вытаскиваю номер телефон
+  const verificationData = useSelector(
+    (state) => state.verificationData.verificationData,
+  );
+  const { phone } = verificationData;
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const phoneNum = phoneNumberRefactorer(phone);
+    const { password, enterPassword } = inputValues;
+
+    try {
+      const response = await usersRequester("/reset_password", {
+        phone_number: phoneNum,
+        new_password: password,
+        confirm_password: enterPassword,
+      });
+
+      if (response && response.status === 200) {
+        navigate(PATHS.login);
+        notify.success("Пароль успешно изменён!");
+      }
+    } catch {
+      console.log("error");
+    }
   };
 
   return (

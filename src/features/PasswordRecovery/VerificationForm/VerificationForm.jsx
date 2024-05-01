@@ -4,6 +4,9 @@ import {
   ModalWrapper,
   PhoneIcon,
   Typography,
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
 } from "@/shared";
 import { useNavigate } from "react-router-dom";
 
@@ -39,11 +42,28 @@ export const VerificationForm = () => {
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("password-reset");
+
+    const phoneNum = phoneNumberRefactorer(phone);
+    const { code } = inputValues;
+
+    try {
+      const response = await usersRequester("/accept_code/", {
+        phone_number: phoneNum,
+        verify_code: code,
+      });
+
+      if (response && response.status === 200) {
+        navigate("password-reset");
+        notify.success("Код успешно принят!");
+      }
+    } catch {
+      console.log("error");
+    }
   };
 
+  // Состояние для счётчика
   const [count, setCount] = useState(60);
 
   useEffect(() => {
@@ -59,6 +79,7 @@ export const VerificationForm = () => {
     setCount(60);
   };
 
+  // Состояние для уведомления
   const [notificationPhone, setNotificationPhone] = useState(false);
 
   // Закрыть уведомление через 2 секунды
