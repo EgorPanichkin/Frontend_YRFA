@@ -1,66 +1,33 @@
-import { useEffect, useState } from "react";
 import { Typography } from "../Typography";
 
 import style from "./ReusedTextSection.module.scss";
 
 export const ReusedTextSection = (props) => {
-  const { title, contentList, className } = props;
-  console.log(contentList);
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    // Функция обработчика события изменения размера окна
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth); // Обновляем состояние при изменении ширины окна
-    };
-
-    // Добавляем слушателя события изменения размера окна
-    window.addEventListener("resize", handleResize);
-
-    // Убираем слушателя события при размонтировании компонента
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); // Пустой массив зависимостей означает, что эффект будет выполнен один раз при монтировании компонента
+  const { image, data, reverse = false } = props;
 
   return (
-    <div className={className}>
-      <Typography className={style.title} variant="h2">
-        {title}
-      </Typography>
-      <div className={style.contentWrapper}>
-        {contentList?.map((content, index) => (
-          <div className={style.content} key={index}>
-            {index % 2 === 0 ? (
-              <>
-                <div>
-                  <Typography className={style.subTitle} variant="h5">
-                    {content.title}
-                  </Typography>
-                  <Typography variant="body">{content.description}</Typography>
-                </div>
-                <img className={style.img} src={content.img} alt="img" />
-              </>
-            ) : (
-              <>
-                {windowWidth > 400 && (
-                  <img className={style.img} src={content.img} alt="img" />
-                )}
-                <div>
-                  <Typography className={style.subTitle} variant="h5">
-                    {content.title}
-                  </Typography>
-                  <Typography variant="body">{content.description}</Typography>
-                </div>
-                {windowWidth < 400 && (
-                  <img className={style.img} src={content.img} alt="img" />
-                )}
-              </>
-            )}
-          </div>
-        ))}
+    <section className={`${style.section} ${reverse ? style.reverse : null}`}>
+      {!reverse && (
+        <div className={style.imageWrapper}>
+          <img src={image} alt="image" />
+        </div>
+      )}
+      <div className={style.text}>
+        <Typography variant="h4" weight="bold" className={style.header}>
+          {data?.header}
+        </Typography>
+        <Typography variant="h5" color="primary">
+          {data?.description}
+        </Typography>
+        <Typography color="light" className={style.body}>
+          {data?.body}
+        </Typography>
       </div>
-    </div>
+      {reverse && (
+        <div className={style.imageWrapper}>
+          <img src={image} alt="image" />
+        </div>
+      )}
+    </section>
   );
 };

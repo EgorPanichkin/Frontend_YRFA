@@ -1,21 +1,31 @@
 .blockHero {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 82px;
-  .slider {
-    flex-basis: 600px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 448px;
+  gap: 25px;
+  @media (max-width: 1065px) {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
   }
-  .heroTitleBlock {
-    text-align: left;
+  .slider {
+    margin: 0 auto;
+  }
+  .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .line {
-    margin: 8px 0;
+    max-width: 680px;
+    min-width: 430px;
+    flex: 1 0;
+    @media (max-width: 650px) {
+      min-width: 250px;
+    }
+    #title {
+      display: inline;
+      word-break: break-word;
+      color: var(--blue500);
+      margin-bottom: 8px;
+    }
+    #description {
+      color: var(--black450);
+    }
   }
 }

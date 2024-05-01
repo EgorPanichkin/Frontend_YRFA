@@ -1,1 +1,0 @@
-export { EquipCard } from "./EquipCard";

@@ -1,23 +1,22 @@
-.blocks {
-  margin: 10px 0 80px 0;
-}
-
-.flex {
-  margin-bottom: 30px;
-  display: flex;
-  height: 235px;
-  width: 100%;
-  gap: 30px;
-  .txt {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
+.section {
+  margin-top: 87px;
+  @media (max-width: 768px) {
+    margin-top: 64px;
   }
-}
-
-.image {
-  width: 383px;
-  height: 235px;
-  border-radius: 10px;
+  @media (max-width: 450px) {
+    margin-top: 48px;
+  }
+  .blocks {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    @media (max-width: 768px) {
+      margin-top: 24px;
+      gap: 48px;
+    }
+    @media (max-width: 450px) {
+      gap: 40px;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import style from "./Actual.module.scss";
-import { Container, CustomCard, Typography } from "@/shared";
+import { ActualCard, Container, Typography } from "@/shared";
 import { useLoaderData } from "react-router-dom";
 
 export const Actual = () => {
@@ -8,20 +8,18 @@ export const Actual = () => {
   return (
     <div>
       <Container>
-        <Typography variant="h3" weight="extraBold" color="blue500">
-          Актуальные скидки
+        <Typography variant="h2" weight="bold">
+          Актуальные акции
         </Typography>
         <div className={style.flex}>
           {results.map((section, index) => (
-            <CustomCard
+            <ActualCard
               key={index}
-              data={{
-                h4: `${section.title} ${section.percent}%`,
-                p: `${section.stock}`,
-                img: `${section.image}`,
-              }}
               reverse={index % 2 !== 0}
-              option="accent"
+              title={section.title}
+              expiration={section.stock}
+              description={section.description}
+              imgSrc={section.image}
             />
           ))}
         </div>

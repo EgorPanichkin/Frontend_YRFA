@@ -6,3 +6,4 @@ export * from "./ServiceListCard";
 export * from "./AnalysCard";
 export * from "./ArticleCard";
 export * from "./LocationCard";
+export * from "./EquipmentCard";
