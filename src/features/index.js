@@ -6,5 +6,5 @@ export * from "./Personal";
 export * from "./HomeCards";
 export * from "./FeedbackModal";
 export * from "./CityCard";
-export * from "./Sliders";
+export * from "./Slider";
 export * from "./Registration";

@@ -1,0 +1,20 @@
+.card {
+  background-color: var(--color-bg-light-primary-hover);
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 352px;
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+  .text {
+    margin: 8px 0 12px;
+    @media (max-width: 768px) {
+      margin: 8px 0 16px;
+    }
+  }
+  .button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

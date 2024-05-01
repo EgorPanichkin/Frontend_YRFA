@@ -29,6 +29,7 @@ import {
   Article,
   RegisterPage,
   RegisterConfirmation,
+  ErrorPage,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -42,9 +43,11 @@ export const router = createBrowserRouter([
   {
     path: PATHS.welcome,
     element: <WelcomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: PATHS.home,
@@ -56,11 +59,13 @@ export const router = createBrowserRouter([
           );
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
+          const actual = await baseGetRequest("/main/sale/");
           return {
             popular: popular.results,
             categories: categories.results,
             swiper: swiper.results,
             branches: branches.results,
+            actual: actual.results,
           };
         },
       },

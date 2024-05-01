@@ -1,1 +1,0 @@
-export { BrancheCard } from "./BrancheCard";

@@ -1,30 +1,25 @@
 import style from "./LocationSelector.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { locationActions } from "@/app/store/locationSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export const LocationSelector = () => {
-  const dispatch = useDispatch();
+  const [city, setCity] = useState(localStorage.getItem("location"));
   const nav = useNavigate();
-  const city = useSelector((state) => state.location.city);
   const { t } = useTranslation();
 
   useEffect(() => {
-    localStorage.getItem("location")
-      ? dispatch(
-          locationActions.switchLocation(localStorage.getItem("location")),
-        )
-      : nav("/welcome");
+    city ? null : nav("/welcome");
   });
 
   const handleSelect = (value) => {
-    dispatch(locationActions.switchLocation(value));
+    window.location.reload();
+    setCity(value);
+    localStorage.setItem("location", value);
   };
 
-  const selectAciveClass = (value) => {
-    return value == city ? style.active : style;
+  const selectActiveClass = (value) => {
+    return value === city ? style.active : style.neutral;
   };
 
   return (
@@ -32,21 +27,21 @@ export const LocationSelector = () => {
       <button
         value={"Bishkek"}
         onClick={(e) => handleSelect(e.target.value)}
-        className={selectAciveClass("Bishkek")}
+        className={selectActiveClass("Bishkek")}
       >
         {t("header.cities.bishkek")}
       </button>
       <button
         value={"Osh"}
         onClick={(e) => handleSelect(e.target.value)}
-        className={selectAciveClass("Osh")}
+        className={selectActiveClass("Osh")}
       >
         {t("header.cities.osh")}
       </button>
       <button
         value={"Jalal-Abad"}
         onClick={(e) => handleSelect(e.target.value)}
-        className={selectAciveClass("Jalal-Abad")}
+        className={selectActiveClass("Jalal-Abad")}
       >
         {t("header.cities.jalal-abad")}
       </button>

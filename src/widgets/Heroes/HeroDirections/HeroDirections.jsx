@@ -1,6 +1,5 @@
 import { Typography } from "@/shared";
 import style from "./HeroDirections.module.scss";
-import { HeroesSlider } from "@/features";
 import { Line } from "@/shared";
 
 export const HeroDirections = ({ heroData }) => {
@@ -20,9 +19,7 @@ export const HeroDirections = ({ heroData }) => {
           {heroData.p}
         </Typography>
       </div>
-      <div className={style.slider}>
-        <HeroesSlider />
-      </div>
+      <div className={style.slider}></div>
     </div>
   );
 };

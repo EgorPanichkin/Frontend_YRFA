@@ -1,19 +1,23 @@
 .wrapper {
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 
   .text {
     text-align: center;
-    margin-top: 125px;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
+    .title {
+      margin: 8px 0 4px;
+    }
   }
 
   .cards {
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 21px;
+    gap: 24px;
+    flex-wrap: wrap;
   }
 }

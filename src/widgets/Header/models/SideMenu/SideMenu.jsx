@@ -1,7 +1,11 @@
-import { Cross, CustomButton, Logo, Typography } from "@/shared";
+import { Cross, CustomButton, Logo } from "@/shared";
 import style from "./SideMenu.module.scss";
-import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
-import { LocationSelector } from "../LocationSelector";
+import { Selector } from "../Selector/Selector";
+import { navigationHeaderLinks } from "@shared/lib/variables";
+import { LanguageSelectorMobile } from "../LanguageSelectorMobile/LanguageSelectorMobile";
+import { LocationSelectorMobile } from "../LocationSelectorMobile/LocationSelectorMobile";
+
+const { main, services, more } = navigationHeaderLinks;
 
 export const SideMenu = ({ handleClick }) => {
   return (
@@ -15,19 +19,20 @@ export const SideMenu = ({ handleClick }) => {
           }}
         />
       </div>
-      <CustomButton color="orange" className={style.button}>
-        <Typography variant="body" weight="bold" color="light">
-          Записаться онлайн
-        </Typography>
+      <CustomButton variant="orange" size="small" className={style.button}>
+        Записаться онлайн
       </CustomButton>
-      <CustomButton color="default" className={style.button}>
-        <Typography variant="body" weight="bold" color="paragraph">
-          Войти как пациент
-        </Typography>
+      <CustomButton variant="neutral" size="small" className={style.button}>
+        Войти как пациент
       </CustomButton>
+      <nav className={style.nav}>
+        <Selector items={main.items} title={main.title} />
+        <Selector items={services.items} title={services.title} />
+        <Selector items={more.items} title={more.title} />
+      </nav>
       <div className={style.selectors}>
-        <LocationSelector />
-        <LanguageSelector />
+        <LanguageSelectorMobile />
+        <LocationSelectorMobile />
       </div>
     </div>
   );

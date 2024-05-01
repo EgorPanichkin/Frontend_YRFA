@@ -1,14 +1,11 @@
 import style from "./HeroDiognostic.module.scss";
 import { Line } from "@/shared";
-import { HeroesSlider } from "@/features";
 import { Typography } from "@/shared";
 
 export const HeroDiognostic = ({ heroData }) => {
   return (
     <div className={style.blockHero}>
-      <div className={style.slider}>
-        <HeroesSlider />
-      </div>
+      <div className={style.slider}></div>
       <div className={style.heroTitleBlock}>
         <Typography variant="h2" weight="semibold">
           {heroData.h1}

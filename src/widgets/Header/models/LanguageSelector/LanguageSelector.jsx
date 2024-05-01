@@ -3,7 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { langAction } from "@/app/store/langSlice";
 import i18n from "@/app/i18n/i18n";
 import style from "./LanguageSelector.module.scss";
-import { CheckIcon, LanguageIcon, PolygonIcon, languages } from "@/shared";
+import {
+  CheckIcon,
+  ChevronDown,
+  LanguageIcon,
+  Typography,
+  languages,
+} from "@/shared";
 
 export const LanguageSelector = () => {
   const [show, setShow] = useState(false);
@@ -32,26 +38,28 @@ export const LanguageSelector = () => {
     <div ref={menuRef}>
       <div className={style.selector} onClick={toggleCities}>
         <LanguageIcon />
-        {correctValue[select]}
-        <PolygonIcon />
-      </div>
-      {show && (
-        <div className={style.menuDropdown}>
-          {languages.map((item, index) => (
-            <div
-              value={item.lang}
-              key={index}
-              className={style.link}
-              onClick={() => handleSelect(item.title, item.lang)}
-            >
-              <div className={style.childItem}>
-                {item.title}
-                {select === item.lang && <CheckIcon />}
+        <Typography variant="smallBody" weight="bold">
+          {correctValue[select]}
+        </Typography>
+        <ChevronDown />
+        {show && (
+          <div className={style.menuDropdown}>
+            {languages.map((item, index) => (
+              <div
+                value={item.lang}
+                key={index}
+                className={style.link}
+                onClick={() => handleSelect(item.title, item.lang)}
+              >
+                <div className={style.childItem}>
+                  {item.title}
+                  {select === item.lang && <CheckIcon />}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
