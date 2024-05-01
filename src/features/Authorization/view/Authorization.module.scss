@@ -47,7 +47,8 @@
         font-size: 14px;
         font-weight: 400;
         color: var(--black700);
-        margin-bottom: 40px;
+        margin-bottom: 4px;
+        display: block;
       }
       .errorLabel {
         color: red;
@@ -55,11 +56,12 @@
       .focusedLabel {
         color: var(--blue300);
       }
-      .formInput {
-        margin-top: 4px;
-        width: 100%;
+      .input {
         border-radius: 10px;
         height: 48px;
+      }
+      .focusedInput {
+        outline: 1.5px solid var(--Color-Stroke-Primary-color-stroke-primary-default, #12709a);
       }
       .errorInput {
         border: 1px solid red;

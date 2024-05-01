@@ -1,43 +1,23 @@
 import { validateForm } from "@/shared";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export const useFormValidation = () => {
   const [focusedInput, setFocusedInput] = useState("");
 
   const [inputValues, setInputValues] = useState({
-    phone: "",
     code: "",
-    password: "",
-    enterPassword: "",
   });
 
   const [errorsInput, setErrorsInput] = useState({
-    phone: "",
     code: "",
-    password: "",
-    enterPassword: "",
   });
 
   const validationRules = {
-    phone: {
-      errorMessage: ["Заполните поле номер", "Некорректный номер"],
-      minLength: 16,
-    },
     code: {
       errorMessage: ["Заполните поле код", "Не менее 6 цифр"],
-    },
-    password: {
+      maxLength: 6,
       minLength: 6,
-      maxLength: 24,
-      errorMessage: [
-        "Заполните поле пароля",
-        "Не менее 6 до 24 символов",
-        "Пароли не совпадают",
-      ],
-    },
-    enterPassword: {
-      errorMessage: ["Заполните поле повтор пароля", "Пароли не совпадают"],
-      minLength: 0,
     },
   };
 
@@ -48,12 +28,17 @@ export const useFormValidation = () => {
   };
 
   const validateInputs = (inputName, value) => {
-    const { maxLength, minLength, errorMessage } = validationRules[inputName];
+    const { errorMessage, maxLength, minLength } = validationRules[inputName];
 
     const error = validateForm(value, maxLength, minLength, errorMessage);
 
     setErrorsInput({ ...errorsInput, [inputName]: error });
   };
+
+  const verificationData = useSelector(
+    (state) => state.verificationData.verificationData,
+  );
+  const { registerPhone } = verificationData;
 
   return {
     inputValues,
@@ -61,5 +46,6 @@ export const useFormValidation = () => {
     setFocusedInput,
     focusedInput,
     errorsInput,
+    registerPhone,
   };
 };
