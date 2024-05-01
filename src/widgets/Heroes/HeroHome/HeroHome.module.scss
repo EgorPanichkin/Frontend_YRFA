@@ -4,9 +4,20 @@
   align-items: center;
   gap: 24px;
   margin-bottom: 20px;
-  .heroCard {
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .actualCards {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    justify-content: space-between;
+    gap: 25px;
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+    @media (max-width: 630px) {
+      flex-direction: column;
+    }
   }
 }

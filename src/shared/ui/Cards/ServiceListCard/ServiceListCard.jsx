@@ -23,11 +23,7 @@ export const ServiceListCard = ({ data }) => {
         <div className={style.links}>
           {data.diagnostic_subcategory.map((item) => {
             return (
-              <Link
-                to={"current-service/" + item.id}
-                className={style.link}
-                key={item.id}
-              >
+              <Link to={item.url} className={style.link} key={item.id}>
                 <Typography variant="smallBody" weight="bold" color="primary">
                   {item.diagnostic_name}
                 </Typography>

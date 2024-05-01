@@ -58,11 +58,13 @@ export const router = createBrowserRouter([
           );
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
+          const actual = await baseGetRequest("/main/sale/");
           return {
             popular: popular.results,
             categories: categories.results,
             swiper: swiper.results,
             branches: branches.results,
+            actual: actual.results,
           };
         },
       },

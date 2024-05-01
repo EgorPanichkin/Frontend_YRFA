@@ -1,40 +1,42 @@
-.item {
+.selector {
+  position: relative;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  gap: 8px;
-  height: 100%;
-}
-.menuWrapper {
-  padding-top: 10px;
-  // position: relative;
+  gap: 4px;
+  .whitespace {
+    position: absolute;
+    z-index: 999;
+    top: 20px;
+    padding: 16px 0 0;
+  }
 }
 .menuDropdown {
-  background-color: var(--background-color);
-  border-radius: 20px;
-  border-top-left-radius: 1px;
-  position: absolute;
-  box-shadow: 0px 10px 10px rgba(0.2, 0.2, 0.2, 0.2);
-  z-index: 10000;
+  background-color: var(--background-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--small);
 }
-
 .childItem {
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  padding: 10px 16px 10px 16px;
-  margin: 10px;
   align-items: center;
-  .chevron {
-    width: 20px;
-    height: 20px;
+  gap: 8px;
+  .text {
+    white-space: nowrap;
+  }
+  svg {
+    flex-shrink: 0;
   }
   &:hover {
-    background-color: var(--black100);
-    border-radius: 20px;
+    background-color: var(--color-bg-light-primary-hover);
+  }
+  &:active {
+    background-color: var(--color-bg-light-primary-pressed);
   }
 }
+
 .link {
   text-decoration: none;
-  color: var(--blue400);
+  cursor: pointer;
 }

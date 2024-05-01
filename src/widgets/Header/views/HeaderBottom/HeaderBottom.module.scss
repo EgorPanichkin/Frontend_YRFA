@@ -1,24 +1,16 @@
 .navigation {
   display: flex;
-  padding: 10px 0;
+  padding: 9px 0;
   .logoLink {
     margin-right: 40px;
-    path {
-      fill: var(--blue300);
-    }
-    @media (hover: hover) {
-      &:hover {
-        path {
-          fill: var(--blue400);
-        }
+    &:hover {
+      path {
+        fill: #619fbb;
       }
     }
-
-    @media (hover: none) {
-      &:active {
-        path {
-          fill: var(--blue400);
-        }
+    &:active {
+      path {
+        fill: #0c4a66;
       }
     }
   }
@@ -40,7 +32,13 @@ nav {
   }
   .user {
     display: flex;
-    gap: 32px;
+    gap: 16px;
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+    }
   }
 }
 

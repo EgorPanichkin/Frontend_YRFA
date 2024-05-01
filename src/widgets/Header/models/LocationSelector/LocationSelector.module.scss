@@ -1,13 +1,15 @@
 .location {
   display: flex;
   gap: 32px;
-  justify-content: left;
+  white-space: nowrap;
   cursor: pointer;
-  button {
-    color: var(--black400);
+  .neutral {
+    white-space: nowrap;
+    font-size: 14px;
   }
   .active {
-    color: var(--blue300);
-    font-weight: 600;
+    white-space: nowrap;
+    font-size: 14px;
+    color: var(--color-text-primary-default);
   }
 }

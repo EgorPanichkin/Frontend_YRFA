@@ -84,7 +84,9 @@ export const Slider = () => {
                 <Typography color="light" className={style.title}>
                   {item.description}
                 </Typography>
-                <CustomButton size="small">{item.button_title}</CustomButton>
+                <CustomButton size="small" className={style.button}>
+                  {item.button_title}
+                </CustomButton>
               </div>
             </SwiperSlide>
           );

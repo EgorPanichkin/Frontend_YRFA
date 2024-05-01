@@ -12,6 +12,13 @@
   gap: 3px;
 }
 
+.search {
+  margin: 0 24px 0 auto;
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+
 .phoneLink {
   color: var(--warning);
 }
