@@ -7,7 +7,7 @@ export const ServiceSection = () => {
   const { popular } = useLoaderData();
   const [activeIndex, setActiveIndex] = useState(null);
   const dropdownRef = useRef(null);
-  const selectedCity = "Bishkek";
+  const selectedCity = localStorage.getItem("location");
 
   const dataCity = {
     Osh: "Ош",
@@ -44,7 +44,7 @@ export const ServiceSection = () => {
 
   return (
     <div className={style.servicesBlock} ref={dropdownRef}>
-      <Typography variant="h2" weight="extraBold">
+      <Typography variant="h3" weight="bold">
         {dataTitle}
       </Typography>
       <div className={style.cardBlock}>

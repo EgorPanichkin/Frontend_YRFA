@@ -1,0 +1,15 @@
+.treatment {
+  flex-shrink: 1;
+  flex-basis: 588px;
+  @media (max-width: 960px) {
+    flex-basis: 100%;
+  }
+  .categories {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
+    justify-content: space-between;
+  }
+}
