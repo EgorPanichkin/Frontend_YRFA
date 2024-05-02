@@ -73,6 +73,7 @@ export const Breadcrumbs = () => {
   const uniquePathnames = compareKeys(pathnames, filteredPathnames);
 
   console.log(uniquePathnames);
+  console.log(pathnames);
 
   return (
     <Container>
@@ -83,21 +84,23 @@ export const Breadcrumbs = () => {
         </Link>
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-          const isLast = index === pathnames.length - 1;
+          const isLast = index !== uniquePathnames.length - 1;
+          console.log(isLast);
           const linkClass = isLast ? style.blueText : style.grayText;
           const filterNumberObj =
             Object.keys(filteredPathnames).length > 0
-              ? `${name}/${Object.keys(filteredPathnames)[0]}`
+              ? `${name}/${Object.keys(filteredPathnames)}`
               : routeTo;
-          // const finishFilter = filterNumberObj.length - 1;
-          // console.log(filterNumberObj);
           console.log(filterNumberObj);
-          const translationName = t(data[name]).replace(/[0-9]/g, "").trim();
+          const translationName = t(data[name]).replace(/\d+/g, "").trim();
           if (!translationName || isNumeric(translationName)) {
             return null;
           }
           return isLast ? (
-            <div className={style.link} key={`${name}${index}`}>
+            <div
+              className={`${style.link} ${linkClass}`}
+              key={`${name}${index}`}
+            >
               <div className={style.chevron}>
                 <ChevronRight className={style.chevronRight} />
               </div>
