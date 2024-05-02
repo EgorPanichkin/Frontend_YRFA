@@ -1,5 +1,4 @@
 export * from "./Search";
-export * from "./Registration";
 export * from "./Breadcrumbs";
 export * from "./Authorization";
 export * from "./PageNavBar";
@@ -7,4 +6,5 @@ export * from "./Personal";
 export * from "./HomeCards";
 export * from "./FeedbackModal";
 export * from "./CityCard";
-export * from "./Sliders";
+export * from "./Slider";
+export * from "./Registration";

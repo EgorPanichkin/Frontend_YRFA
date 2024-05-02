@@ -1,4 +1,3 @@
-import { HeroesSlider } from "@/features";
 import style from "./Hero.module.scss";
 import { Container } from "@/shared";
 import { Typography } from "@/shared";
@@ -8,7 +7,6 @@ export const Hero = ({ heroData }) => {
   return (
     <Container>
       <div className={style.blockHero}>
-        {heroData.slider === "left" ? <HeroesSlider /> : <></>}
         <div className={style.heroTitle}>
           <Typography variant="large" color="black" weight="bold">
             {heroData.h1}
@@ -21,7 +19,6 @@ export const Hero = ({ heroData }) => {
             {heroData.p}
           </Typography>
         </div>
-        {heroData.slider === "right" ? <HeroesSlider /> : <></>}
       </div>
     </Container>
   );

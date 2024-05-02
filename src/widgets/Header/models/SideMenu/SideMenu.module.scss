@@ -1,12 +1,11 @@
 .sideMenu {
-  min-width: 260px;
+  max-width: 260px;
   position: fixed;
   top: 0;
   right: 0;
   background-color: var(--background-white);
   padding: 24px 16px;
   min-height: 100vh;
-  transition: all 1s;
   transform: translateX(100%);
   animation: ani 1s forwards;
 
@@ -18,12 +17,25 @@
   }
 
   .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin-bottom: 8px;
   }
 
-  .selectors {
+  .nav {
     display: flex;
+    flex-direction: column;
+    min-width: 228px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .selectors {
+    margin-top: 12px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 }
 

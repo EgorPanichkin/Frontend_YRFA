@@ -1,4 +1,10 @@
-import { CustomButton, ChevronLeft, Typography } from "@/shared";
+import {
+  CustomButton,
+  Typography,
+  notify,
+  phoneNumberRefactorer,
+  usersRequester,
+} from "@/shared";
 import { IMaskInput } from "react-imask";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +28,6 @@ export const PhoneForm = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
 
-  // const { phone } = inputValues
   const dispatch = useDispatch();
   const { phone } = inputValues;
 
@@ -34,36 +39,44 @@ export const PhoneForm = () => {
     );
   }, [errorsInput, inputValues]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("verification");
-    dispatch(addPhone({ phone }));
+
+    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+
+    try {
+      const response = await usersRequester("/accept_phone/", {
+        phone_number: phoneNum,
+      });
+
+      if (response && response.status === 200) {
+        navigate("verification");
+        dispatch(addPhone({ phone }));
+        notify.success("Номер принят!");
+      }
+    } catch {
+      console.log("error");
+    }
   };
 
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
-      <div className={style.smsFormHead}>
-        <ChevronLeft
-          className={style.smsFormBack}
-          onClick={() => navigate(-1)}
-          width={20}
-        />
-        <Typography
-          variant="h2"
-          color="black"
-          weight="semibold"
-          className={style.smsFormTitle}
-        >
-          Номер телефона
-        </Typography>
-      </div>
+      <Typography
+        variant="h2"
+        color="black"
+        weight="bold"
+        className={style.smsFormTitle}
+      >
+        Введите номер телефона
+      </Typography>
       <Typography
         variant="body"
         color="gray"
         weight="regular"
         className={style.smsFormBody}
       >
-        Введите номер, на который мы отправим код
+        Мы отправим код на этот номер для подтверждения и дальнейшего сброса
+        пароля
       </Typography>
       {errorsInput.phone ? (
         <label className={style.errorLabel}>{errorsInput.phone}</label>

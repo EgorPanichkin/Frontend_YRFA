@@ -1,4 +1,3 @@
-export * from "./AboutUi";
 export * from "./Accordion";
 export * from "./AnchorLink";
 export * from "./CategoryCard";
@@ -15,8 +14,6 @@ export * from "./AccordionForm";
 export * from "./Typography";
 export * from "./VacancyCard";
 export * from "./DetailCard";
-export * from "./BrancheCard";
-export * from "./SeviceCard";
 export * from "./CustomCard";
 export * from "./PrivateRoute";
 export * from "./ReusedTextSection";

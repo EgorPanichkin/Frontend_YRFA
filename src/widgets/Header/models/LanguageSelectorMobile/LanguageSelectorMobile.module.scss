@@ -1,0 +1,33 @@
+.selector {
+  width: 100%;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px 10px 16px;
+    background-color: var(--color-bg-light-primary-default);
+    cursor: pointer;
+    .title {
+      margin-left: 4px;
+      margin-right: auto;
+    }
+    &:active {
+      background-color: var(--color-bg-light-primary-pressed);
+    }
+  }
+  .menu {
+    height: auto;
+    transition: height 1s linear;
+  }
+  .hiddenMenu {
+    overflow: hidden;
+    height: 0px;
+    transition: height 1s linear;
+  }
+  .link {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px 10px 16px;
+    background-color: var(--color-bg-light-primary-default);
+  }
+}

@@ -1,15 +1,8 @@
-import {
-  Container,
-  Logo,
-  Typography,
-  UserCircleIcon,
-  navigationHeaderLinks,
-} from "@/shared";
+import { Container, CustomButton, Logo, navigationHeaderLinks } from "@/shared";
 import style from "./HeaderBottom.module.scss";
 import { Link } from "react-router-dom";
 import { DropdownHeaderMenu } from "../../models/DropdownHeaderMenu/DropdownHeaderMenu";
 import { LocationSelector } from "../../models/LocationSelector";
-import { SignUpButton } from "@/entities";
 import { useTranslation } from "react-i18next";
 
 export const HeaderBottom = () => {
@@ -18,7 +11,7 @@ export const HeaderBottom = () => {
     <Container>
       <div className={style.navigation}>
         <Link to="/" className={style.logoLink}>
-          <Logo width="60" height="40" color="#12709A" />
+          <Logo className={style.logo} />
         </Link>
         <nav>
           <div className={style.main}>
@@ -39,13 +32,16 @@ export const HeaderBottom = () => {
             <LocationSelector />
           </div>
           <div className={style.user}>
-            <Link to="/login" className={style.link}>
-              <UserCircleIcon width={20} />
-              <Typography variant="h9" color={"blue400"}>
-                {t("header.cabinet")}
-              </Typography>
-            </Link>
-            <SignUpButton>{t("header.meet")}</SignUpButton>
+            <CustomButton size="small" link="/login" className={style.button}>
+              {t("header.cabinet")}
+            </CustomButton>
+            <CustomButton
+              variant="orange"
+              size="small"
+              className={style.button}
+            >
+              {t("header.meet")}
+            </CustomButton>
           </div>
         </nav>
       </div>

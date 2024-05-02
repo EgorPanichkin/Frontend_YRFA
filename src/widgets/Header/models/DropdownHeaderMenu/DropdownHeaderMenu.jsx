@@ -1,57 +1,39 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./DropdownHeaderMenu.module.scss";
-import { ChevronRightIcon, PolygonIcon } from "@/shared";
+import { ChevronDown, Typography } from "@/shared";
 import { useTranslation } from "react-i18next";
 
 export const DropdownHeaderMenu = ({ items, title }) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const menuRef = useRef(null);
+  const [show, setShow] = useState(false);
   const { t } = useTranslation();
-
-  const handleMouseEnter = (item) => {
-    setHoveredItem(item);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
 
   return (
     <div
-      ref={menuRef}
       onMouseEnter={() => {
-        setShowMenu(true);
+        setShow(true);
       }}
       onMouseLeave={() => {
-        setShowMenu(false);
+        setShow(false);
       }}
     >
-      <div className={style.item}>
-        <PolygonIcon />
-        {t(title)}
-      </div>
-      {showMenu && (
-        <div className={style.menuWrapper}>
-          <div className={style.menuDropdown}>
-            {items.map((item, index) => (
-              <Link
-                to={item.path}
-                key={index}
-                className={style.childItem}
-                onMouseEnter={() => handleMouseEnter(item.label)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <span className={style.link}>{t(item.label)}</span>
-                <div className={style.chevron}>
-                  {hoveredItem === item.label && <ChevronRightIcon />}
-                </div>
-              </Link>
-            ))}
+      <div className={style.selector}>
+        <Typography variant="smallBody">{t(title)}</Typography>
+        <ChevronDown />
+        {show && (
+          <div className={style.whitespace}>
+            <div className={style.menuDropdown}>
+              {items.map((item, index) => (
+                <Link to={item.path} key={index} className={style.childItem}>
+                  <Typography className={style.text}>
+                    {t(item.label)}
+                  </Typography>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

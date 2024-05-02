@@ -1,35 +1,11 @@
-import { PriceCard } from "@/shared";
+import { Container, ReusedTextSection } from "@/shared";
 
 export const TestPage = () => {
   return (
-    <div
-      style={{
-        padding: "50px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "25px",
-      }}
-    >
-      <PriceCard
-        text="Прием (осмотр/консультация) акушера-гинеколога первичный"
-        price={3700}
-      />
-      <PriceCard
-        text="Прием (осмотр/консультация) акушера-гинеколога первичный"
-        price={3700}
-      />
-      <PriceCard
-        text="Прием (осмотр/консультация) акушера-гинеколога первичный"
-        price={3700}
-      />
-      <PriceCard
-        text="Прием (осмотр/консультация) акушера-гинеколога первичный"
-        price={3700}
-      />
-      <PriceCard
-        text="Прием (осмотр/консультация) акушера-гинеколога первичный"
-        price={3700}
-      />
+    <div>
+      <Container>
+        <ReusedTextSection image="https://kartinki.pics/uploads/posts/2022-12/1671757789_kartinkin-net-p-krasivie-kvadratnie-kartinki-krasivo-3.jpg" />
+      </Container>
     </div>
   );
 };

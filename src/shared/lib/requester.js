@@ -119,6 +119,6 @@ export const usersRequester = async (endpoint, data, type) => {
       return response;
     }
   } catch (error) {
-    console.error(error);
+    console.log("error");
   }
 };

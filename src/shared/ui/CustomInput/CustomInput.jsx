@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import style from "./CustomInput.module.scss";
-import { EyeClose, EyeOpen } from "@/shared";
+import { Chat, EyeClose, EyeOpen } from "@/shared";
 
 export const CustomInput = (props) => {
   const {
@@ -23,6 +23,7 @@ export const CustomInput = (props) => {
 
   return (
     <div className={`${style.inputWrapper} ${className}`}>
+      {type === "code" && <Chat className={style.chat} />}
       <input
         type={showPassword ? "text" : type}
         value={value}

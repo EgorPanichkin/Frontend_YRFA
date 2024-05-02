@@ -6,7 +6,6 @@ import {
   Doctors,
   Analysis,
   LoginPage,
-  RegisterPage,
   SmsPage,
   VerificationPage,
   PasswordResetPage,
@@ -28,6 +27,9 @@ import {
   CharityMoreDetails,
   FinalServicePage,
   Article,
+  RegisterPage,
+  RegisterConfirmation,
+  ErrorPage,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -41,9 +43,11 @@ export const router = createBrowserRouter([
   {
     path: PATHS.welcome,
     element: <WelcomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: PATHS.home,
@@ -55,11 +59,13 @@ export const router = createBrowserRouter([
           );
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
+          const actual = await baseGetRequest("/main/sale/");
           return {
             popular: popular.results,
             categories: categories.results,
             swiper: swiper.results,
             branches: branches.results,
+            actual: actual.results,
           };
         },
       },
@@ -165,6 +171,10 @@ export const router = createBrowserRouter([
       },
       { path: PATHS.login, element: <LoginPage /> },
       { path: PATHS.registration, element: <RegisterPage /> },
+      {
+        path: PATHS.registrationPhoneConfirmation,
+        element: <RegisterConfirmation />,
+      },
       { path: PATHS.smsVerification, element: <SmsPage /> },
       { path: PATHS.verificationCode, element: <VerificationPage /> },
       { path: PATHS.passwordReset, element: <PasswordResetPage /> },

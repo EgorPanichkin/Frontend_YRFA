@@ -6,6 +6,7 @@ const verificationDataSlice = createSlice({
     verificationData: {
       phone: 0,
       code: "",
+      registerPhone: 0,
     },
   },
   reducers: {
@@ -27,8 +28,18 @@ const verificationDataSlice = createSlice({
         },
       };
     },
+    addPhoneRegister: (state, action) => {
+      return {
+        ...state,
+        verificationData: {
+          ...state.verificationData,
+          registerPhone: action.payload.phoneNum,
+        },
+      };
+    },
   },
 });
 
-export const { addPhone, addCode } = verificationDataSlice.actions;
+export const { addPhone, addCode, addPhoneRegister } =
+  verificationDataSlice.actions;
 export const verificationDataReducer = verificationDataSlice.reducer;
