@@ -1,49 +1,8 @@
 .blockTreatmentAndDetail {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 80px;
-  .blockContent {
-    display: flex;
-    align-items: center;
-    gap: 31px;
-    @media (max-width: 1280px) {
-      flex-wrap: wrap;
-    }
+  justify-content: space-between;
+  gap: 24px;
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
   }
-}
-
-.treatmentBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  .contentSection {
-    display: flex;
-    gap: 82px;
-    .pieceContent {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      .linkText {
-        transition: 0.5s;
-        @media (hover: hover) {
-          .linkText:hover {
-            color: var(--blue300);
-          }
-        }
-        @media (hover: none) {
-          .linkText:active {
-            color: var(--blue300);
-          }
-        }
-      }
-    }
-  }
-}
-.blockDetail {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }

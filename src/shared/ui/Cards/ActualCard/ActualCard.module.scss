@@ -14,7 +14,7 @@
   @media (max-width: 425px) {
     min-width: 280px;
     min-height: 232px;
-    flex-direction: column;
+    flex-direction: column-reverse;
     cursor: pointer;
   }
   .infoBlock {
@@ -61,4 +61,7 @@
 }
 .reverse {
   justify-content: start;
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 }

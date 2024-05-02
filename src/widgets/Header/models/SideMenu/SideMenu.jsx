@@ -1,7 +1,7 @@
 import { Cross, CustomButton, Logo } from "@/shared";
 import style from "./SideMenu.module.scss";
 import { Selector } from "../Selector/Selector";
-import { navigationHeaderLinks } from "@shared/lib/variables";
+import { PATHS, navigationHeaderLinks } from "@shared/lib/variables";
 import { LanguageSelectorMobile } from "../LanguageSelectorMobile/LanguageSelectorMobile";
 import { LocationSelectorMobile } from "../LocationSelectorMobile/LocationSelectorMobile";
 
@@ -22,7 +22,12 @@ export const SideMenu = ({ handleClick }) => {
       <CustomButton variant="orange" size="small" className={style.button}>
         Записаться онлайн
       </CustomButton>
-      <CustomButton variant="neutral" size="small" className={style.button}>
+      <CustomButton
+        link={PATHS.login}
+        variant="neutral"
+        size="small"
+        className={style.button}
+      >
         Войти как пациент
       </CustomButton>
       <nav className={style.nav}>
