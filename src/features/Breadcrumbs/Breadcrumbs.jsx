@@ -1,4 +1,4 @@
-import { ChevronRight, Container, HomeIcon } from "@/shared";
+import { ChevronRight, Container, Typography } from "@/shared";
 import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -45,7 +45,7 @@ export const Breadcrumbs = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
-  // console.log(pathnames);
+  console.log(pathnames);
   const filteredPathnames = {};
   for (const key in pathnames) {
     if (Object.prototype.hasOwnProperty.call(pathnames, key)) {
@@ -73,21 +73,19 @@ export const Breadcrumbs = () => {
 
   const uniquePathnames = compareKeys(pathnames, filteredPathnames);
 
-  console.log(uniquePathnames);
-  console.log(pathnames);
-
   return (
     <Container>
       <div className={style.breadcrumbs}>
         <Link to="/" className={style.homeLink}>
-          <HomeIcon className={style.homeIcon} />
-          {t("breadcrumbs.home")}
+          <Typography variant="smallBody" weight="bold" color="primary">
+            {t("breadcrumbs.home")}
+          </Typography>
         </Link>
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index !== uniquePathnames.length - 1;
           console.log(isLast);
-          const linkClass = isLast ? style.blueText : style.grayText;
+          const linkClass = isLast ? "" : "primary";
           const filterNumberObj =
             Object.keys(filteredPathnames).length > 0
               ? `${name}/${Object.keys(filteredPathnames)}`
@@ -98,25 +96,26 @@ export const Breadcrumbs = () => {
             return null;
           }
           return isLast ? (
-            <div
-              className={`${style.link} ${linkClass}`}
-              key={`${name}${index}`}
-            >
+            <div className={style.link} key={`${name}${index}`}>
               <div className={style.chevron}>
                 <ChevronRight className={style.chevronRight} />
               </div>
-              <div>{translationName}</div>
+              <Typography variant="smallBody" weight="bold" color={linkClass}>
+                {translationName}
+              </Typography>
             </div>
           ) : (
             <Link
-              className={`${style.link} ${linkClass}`}
+              className={style.link}
               key={`${name}${index}`}
               to={filterNumberObj}
             >
               <div className={style.chevron}>
                 <ChevronRight className={style.chevronRight} />
               </div>
-              {translationName}
+              <Typography variant="smallBody" weight="bold" color={linkClass}>
+                {translationName}
+              </Typography>
             </Link>
           );
         })}

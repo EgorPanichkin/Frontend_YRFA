@@ -1,4 +1,4 @@
-import { Line } from "@/shared";
+import { Container, Line } from "@/shared";
 import { HeaderBottom } from "../HeaderBottom";
 import { HeaderTop } from "../HeaderTop";
 import style from "./Header.module.scss";
@@ -24,9 +24,11 @@ export const Header = () => {
         <Line color={"black100"} />
         <HeaderBottom />
       </div>
-      <div className={style.breadcrumbs}>
-        <Breadcrumbs />
-      </div>
+      <Container>
+        <div className={style.breadcrumbs}>
+          <Breadcrumbs />
+        </div>
+      </Container>
     </div>
   );
 };

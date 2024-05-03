@@ -1,3 +1,9 @@
-.header {
-  box-shadow: 0px -5px 31px 0px rgba(0, 0, 0, 0.1);
+.headerBlock {
+  position: relative;
+  .header {
+    box-shadow: 0px -5px 31px 0px rgba(0, 0, 0, 0.1);
+  }
+  .breadcrumbs {
+    position: absolute;
+  }
 }
