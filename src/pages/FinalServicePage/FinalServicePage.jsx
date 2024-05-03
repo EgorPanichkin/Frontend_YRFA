@@ -1,9 +1,9 @@
 import { PageNavBar } from "@/features";
 import {
+  ActualCard,
   ArticleBody,
   Container,
-  CustomButton,
-  CustomCard,
+  PriceCard,
   Typography,
 } from "@/shared";
 import { ReusedHero } from "@/widgets";
@@ -30,8 +30,20 @@ export const FinalServicePage = () => {
       <Container>
         <Typography
           variant="h2"
-          className={style.header}
-          weight="semiBold"
+          className={style.price}
+          weight="bold"
+          id="price"
+        >
+          Цена
+        </Typography>
+        <PriceCard
+          text="пока с бэка не пришел текс решил написать так"
+          price={main.price}
+        />
+        <Typography
+          variant="h2"
+          className={style.about}
+          weight="bold"
           id="about"
         >
           О направлении
@@ -41,8 +53,8 @@ export const FinalServicePage = () => {
       <Container>
         <Typography
           variant="h2"
-          className={style.header}
-          weight="semiBold"
+          className={style.actual}
+          weight="bold"
           id="actual"
         >
           Акции
@@ -51,32 +63,17 @@ export const FinalServicePage = () => {
           {actual.map(
             (section, index) =>
               index < 2 && (
-                <CustomCard
+                <ActualCard
                   key={index}
-                  data={{
-                    h4: `${section.title} ${section.percent}%`,
-                    p: `${section.stock}`,
-                    img: `${section.image}`,
-                  }}
+                  title={section.title}
+                  expiration={section.stock}
+                  description={section.description}
+                  imgSrc={section.image}
                   reverse={index % 2 !== 0}
                   option="accent"
                 />
               ),
           )}
-        </div>
-        <Typography
-          variant="h2"
-          className={style.header}
-          weight="semiBold"
-          id="price"
-        >
-          Цена
-        </Typography>
-        <div className={style.price}>
-          <Typography variant="h6" weight="bold" color="blue300">
-            {main.price} сом
-          </Typography>
-          <CustomButton color="orange">Записаться</CustomButton>
         </div>
       </Container>
     </>

@@ -1,9 +1,22 @@
 .branchesSection {
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
+  @media (max-width: 768px) {
+    margin-top: 64px;
+    gap: 24px;
+  }
+  @media (max-width: 425px) {
+    margin-top: 48px;
+    gap: 20px;
+  }
   .cardBlock {
-    display: flex;
-    gap: 21px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(296px, 380px));
+    }
   }
 }

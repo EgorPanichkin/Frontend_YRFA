@@ -2,16 +2,14 @@
   display: flex;
   justify-content: space-between;
   box-shadow: var(--small);
-  max-width: 588px;
   max-height: 216px;
   border-radius: 8px;
   overflow: hidden;
-  @media (max-width: 768px) {
-    max-width: 332px;
+  @media (max-width: 920px) {
     min-height: 156px;
     cursor: pointer;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 480px) {
     min-width: 280px;
     min-height: 232px;
     flex-direction: column-reverse;
@@ -23,16 +21,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    max-width: 308px;
+    flex: 1;
     .expiration {
       margin: 4px 0 18px;
-      @media (max-width: 768px) {
+      @media (max-width: 920px) {
         margin: 4px 0 0;
       }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 920px) {
       padding: 0 16px;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 480px) {
       padding: 16px;
     }
   }
@@ -40,11 +40,11 @@
     width: 216px;
     height: 216px;
     background-color: var(--background-light-blue);
-    @media (max-width: 768px) {
+    @media (max-width: 920px) {
       width: 156px;
       height: 156px;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 480px) {
       width: 100%;
       height: 158px;
     }
@@ -54,14 +54,14 @@
     }
   }
   .button {
-    @media (max-width: 768px) {
+    @media (max-width: 920px) {
       display: none;
     }
   }
 }
 .reverse {
   justify-content: start;
-  @media (max-width: 425px) {
+  @media (max-width: 480px) {
     flex-direction: column;
   }
 }

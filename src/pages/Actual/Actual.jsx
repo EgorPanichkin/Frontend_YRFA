@@ -8,7 +8,7 @@ export const Actual = () => {
   return (
     <div>
       <Container>
-        <Typography variant="h2" weight="bold">
+        <Typography variant="h2" weight="bold" className={style.header}>
           Актуальные акции
         </Typography>
         <div className={style.flex}>

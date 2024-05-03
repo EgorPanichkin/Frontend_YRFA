@@ -1,17 +1,18 @@
+.header {
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
 .wrapper {
   margin-top: 40px;
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
 
   .question {
-    margin-bottom: 164px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-
-  .header {
-    margin-bottom: 30px;
   }
 
   .actual {
@@ -24,11 +25,16 @@
 // Адаптация для экрана шириной 1050px
 @media screen and (max-width: 1050px) {
   .wrapper {
+    display: flex;
+    flex-direction: column;
     margin-top: 24px;
-    flex-wrap: wrap;
-
+    gap: 64px;
     .actual {
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(332px, auto));
+      grid-template-rows: 1fr 1fr;
+      row-gap: 16px;
+      column-gap: 16px;
     }
 
     .question {

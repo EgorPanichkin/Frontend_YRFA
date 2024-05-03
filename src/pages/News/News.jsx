@@ -1,9 +1,10 @@
-import { Container, NewsCard, Typography } from "@/shared";
+import { ArticleCard, Container, Typography } from "@/shared";
 import style from "./News.module.scss";
 import { useLoaderData } from "react-router-dom";
 
 export const News = () => {
   const { blogArticle } = useLoaderData();
+  console.log(blogArticle.image);
 
   return (
     <div>
@@ -18,7 +19,14 @@ export const News = () => {
         </Typography>
         <div className={style.wrapper}>
           {blogArticle?.map((blog) => (
-            <NewsCard key={blog.id} {...blog} />
+            <ArticleCard
+              image={blog.image}
+              title={blog.title}
+              mainDescription={blog.main_description}
+              pubDate={blog.pub_date}
+              id={blog.id}
+              key={blog.id}
+            />
           ))}
         </div>
       </Container>

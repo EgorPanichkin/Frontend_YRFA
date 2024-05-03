@@ -7,28 +7,33 @@ import { useState } from "react";
 export const SubCategoryCard = ({ data }) => {
   const [isActive, setIsActive] = useState(false);
 
+  if (data.diagnostic_subcategory === null) {
+    return (
+      <Link to={"current-service/" + data.id} className={style.card}>
+        <Typography weight="bold">{data.diagnostic_name}</Typography>
+      </Link>
+    );
+  }
+
   return (
-    <div
-      className={isActive ? style.card : style.hidden}
-      onClick={() => setIsActive(!isActive)}
-    >
+    <div className={style.card} onClick={() => setIsActive(!isActive)}>
       <div className={style.title}>
-        <Typography variant="h8" weight="semi-bold" color="black500">
+        <Typography weight="bold" color="default">
           {data.subcategory_name}
         </Typography>
         <ChevronDownIcon />
       </div>
-      <ul>
+      <div className={isActive ? style.menu : style.hidden}>
         {data.diagnostic_subcategory?.map((item) => {
           return (
-            <li key={item.id}>
-              <Link to={"current-service/" + item.id}>
+            <Link to={"current-service/" + item.id} key={item.id}>
+              <Typography variant="smallBody" weight="bold" color="primary">
                 {item.diagnostic_name}
-              </Link>
-            </li>
+              </Typography>
+            </Link>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -56,7 +56,7 @@ const slideContent = [
 export const Slider = () => {
   // const { swiper } = useLoaderData();
 
-  const swiperRef = useRef();
+  const swiperRef = useRef(null);
   const [active, setActive] = useState();
 
   return (

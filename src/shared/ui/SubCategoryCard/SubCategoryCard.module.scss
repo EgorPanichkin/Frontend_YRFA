@@ -1,27 +1,18 @@
 .card {
+  width: 100%;
   padding: 16px;
-  width: 45%;
   background-color: var(--black200);
   border-radius: 8px;
   transition: all 1s;
-
-  ul {
-    padding-left: 0px;
-  }
 }
 
+.menu {
+  margin-top: 16px;
+  height: auto;
+}
 .hidden {
-  padding: 16px;
-  width: 45%;
-  background-color: var(--black200);
-  border-radius: 8px;
-  max-height: 52px;
   overflow: hidden;
-  transition: all 1s;
-
-  ul {
-    padding-left: 0px;
-  }
+  height: 0;
 }
 
 .title {

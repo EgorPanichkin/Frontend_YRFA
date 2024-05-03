@@ -1,23 +1,35 @@
 .blockHero {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 20px;
-  @media (max-width: 900px) {
-    flex-wrap: wrap;
+  margin-top: 64px;
+  margin-bottom: 61px;
+  display: grid;
+  row-gap: 24px;
+  column-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(auto, 588px));
+  grid-template-areas:
+    "A B"
+    "A C";
+  @media (max-width: 1115px) {
+    grid-template-areas:
+      "A A"
+      "B C";
     justify-content: center;
   }
-  .actualCards {
+  @media (max-width: 768px) {
+    margin-top: 48px;
+    margin-bottom: 81px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
-    @media (max-width: 768px) {
-      flex-direction: row;
-    }
-    @media (max-width: 630px) {
-      flex-direction: column;
-    }
+    align-items: stretch;
+  }
+  @media (max-width: 425px) {
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+  .slider {
+    grid-area: A;
+    justify-self: center;
+  }
+  .actualCards {
+    grid-area: B C;
   }
 }
