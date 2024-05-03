@@ -30,6 +30,7 @@ import {
   RegisterPage,
   RegisterConfirmation,
   ErrorPage,
+  Search,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -143,7 +144,7 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: "select-direction/:idCategory/current-service/:idService",
+        path: `select-direction/:idCategory${PATHS.currentService}/:idService`,
         element: <FinalServicePage />,
         loader: async (loader) => {
           const main = await baseGetRequest(
@@ -252,6 +253,10 @@ export const router = createBrowserRouter([
           const vacancy = await baseGetRequest("/main/vacancy/");
           return { vacancy: vacancy.results };
         },
+      },
+      {
+        path: PATHS.search,
+        element: <Search />,
       },
       { path: PATHS.notFound, element: <NotFoundPage /> },
     ],

@@ -50,7 +50,9 @@
     "vacancy": "Вакансии",
     "directions": "Направления",
     "select-direction": "Выбор направления",
-    "lovz": "ЛОВЗ"
+    "lovz": "ЛОВЗ",
+    "current-service": "О направления",
+    "search": "Результаты поиска"
   },
   "footer": {
     "list1": {

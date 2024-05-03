@@ -16,6 +16,7 @@ export const PATHS = {
   rehabilitation: "/rehabilitation",
   directions: "/directions",
   selectDirections: "/select-direction",
+  currentService: "/current-service",
   analysis: "/analysis",
   selectAnalys: "/analysis/:id",
   login: "/login",
@@ -33,6 +34,7 @@ export const PATHS = {
   vacancy: "/vacancy",
   charity: "/charity",
   charityMoreDetails: "/charity/:id",
+  search: "/search",
   notFound: "*",
 };
 

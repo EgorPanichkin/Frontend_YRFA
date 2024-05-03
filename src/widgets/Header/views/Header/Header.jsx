@@ -1,9 +1,10 @@
-import { Line } from "@/shared";
+import { Container, Line } from "@/shared";
 import { HeaderBottom } from "../HeaderBottom";
 import { HeaderTop } from "../HeaderTop";
 import style from "./Header.module.scss";
 import { useState } from "react";
 import { HeaderMobile } from "../HeaderMobile/HeaderMobile";
+import { Breadcrumbs } from "@/features";
 
 export const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -17,10 +18,17 @@ export const Header = () => {
   }
 
   return (
-    <div className={style.header}>
-      <HeaderTop />
-      <Line color={"black100"} />
-      <HeaderBottom />
+    <div className={style.headerBlock}>
+      <div className={style.header}>
+        <HeaderTop />
+        <Line color={"black100"} />
+        <HeaderBottom />
+      </div>
+      <Container>
+        <div className={style.breadcrumbs}>
+          <Breadcrumbs />
+        </div>
+      </Container>
     </div>
   );
 };

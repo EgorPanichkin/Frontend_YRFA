@@ -21,3 +21,4 @@ export * from "./lOVZ";
 export * from "./CharityPages";
 export * from "./FinalServicePage";
 export * from "./ErrorPage";
+export * from "./Search";
