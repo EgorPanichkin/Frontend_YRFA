@@ -105,8 +105,10 @@ export const router = createBrowserRouter([
       {
         path: PATHS.FAQ,
         element: <FAQ />,
-        loader: () => {
-          return baseGetRequest("/main/swiper/");
+        loader: async () => {
+          const questions = await baseGetRequest("/blogs/questionnaires/");
+          const actual = await baseGetRequest("/main/sale/");
+          return { questions: questions.results, actual: actual.results };
         },
       },
       { path: PATHS.rehabilitation, element: <RehabilitationPage /> },

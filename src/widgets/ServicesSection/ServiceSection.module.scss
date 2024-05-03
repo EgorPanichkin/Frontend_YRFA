@@ -2,8 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 80px;
+  @media (max-width: 768px) {
+    margin-bottom: 48px;
+  }
+  @media (max-width: 425px) {
+    margin-bottom: 16px;
+  }
   .cardBlock {
     display: flex;
+    justify-content: space-between;
     gap: 13px;
     @media (max-width: 1280px) {
       flex-wrap: wrap;

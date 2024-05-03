@@ -1,16 +1,16 @@
 .sliderWrapper {
   position: relative;
-  width: 588px;
+  max-width: 588px;
   height: 476px;
   border-radius: 8px;
   box-shadow: var(--small);
   overflow: hidden;
   @media (max-width: 850px) {
-    width: 680px;
+    max-width: 680px;
     height: 552px;
   }
-  @media (max-width: 425px) {
-    width: 280px;
+  @media (max-width: 480px) {
+    // max-width: 280px;
     height: 270px;
   }
 }
@@ -32,7 +32,7 @@
     @media (max-width: 850px) {
       height: 382px;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 480px) {
       height: 158px;
     }
     flex: auto;

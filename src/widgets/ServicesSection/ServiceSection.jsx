@@ -1,5 +1,5 @@
 import style from "./ServiceSection.module.scss";
-import { ServiceCard, Typography } from "@/shared";
+import { ServiceListCard, Typography } from "@/shared";
 import { useState, useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
 
@@ -49,10 +49,11 @@ export const ServiceSection = () => {
       </Typography>
       <div className={style.cardBlock}>
         {popular?.map((item, index) => (
-          <ServiceCard
-            cardData={item}
+          <ServiceListCard
+            image={item.image}
+            title={item.title}
+            categoryList={item.diagnostic_popular}
             key={index}
-            index={index}
             activeIndex={activeIndex}
             handleClickActive={handleClickActive}
           />

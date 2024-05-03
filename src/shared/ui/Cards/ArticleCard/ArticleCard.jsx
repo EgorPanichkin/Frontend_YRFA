@@ -1,21 +1,21 @@
 import { CustomButton, Typography } from "../..";
 import style from "./ArticleCard.module.scss";
 
-export const ArticleCard = ({ data }) => {
-  const { image, title, main_description, pub_date, id } = data;
+export const ArticleCard = (props) => {
+  const { image, title, mainDescription, pubDate, id } = props;
 
   return (
     <div className={style.card}>
       <div className={style.imageWrapper}>
-        <img src={image} alt="" />
+        <img src={image} alt={title} />
       </div>
       <div className={style.text}>
-        <Typography color="light">{pub_date}</Typography>
+        <Typography color="light">{pubDate}</Typography>
         <Typography variant="h6" weight="bold" className={style.title}>
           {title}
         </Typography>
         <Typography color="light" truncate={80}>
-          {main_description}
+          {mainDescription}
         </Typography>
         <CustomButton
           link={id.toString()}

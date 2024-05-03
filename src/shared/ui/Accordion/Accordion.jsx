@@ -3,18 +3,14 @@ import { Typography } from "@/shared";
 import { ChevronDownIcon } from "@/shared/assets/icons";
 import { useState } from "react";
 
-export const Accordion = ({ item }) => {
+export const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div
-      className={style.accordion}
-      key={item.title}
-      onClick={() => setIsActive(!isActive)}
-    >
+    <div className={style.accordion} onClick={() => setIsActive(!isActive)}>
       <div className={style.header}>
         <Typography variant="h7" weight="semibold" color="blue500">
-          {item.title}
+          {title}
         </Typography>
         <div className={isActive ? style.iconActive : style.icon}>
           <ChevronDownIcon />
@@ -22,7 +18,7 @@ export const Accordion = ({ item }) => {
       </div>
       <div className={isActive ? style.contentActive : style.content}>
         <Typography variant="body" weight="regular" color="black400">
-          {item.content}
+          {content}
         </Typography>
       </div>
     </div>

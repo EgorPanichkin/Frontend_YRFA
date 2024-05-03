@@ -1,7 +1,14 @@
 .footer {
+  margin-top: 80px;
   background-color: var(--blue500);
   width: 100%;
   padding: 30px 0;
+  @media (max-width: 768px) {
+    margin-top: 64px;
+  }
+  @media (max-width: 425px) {
+    margin-top: 48px;
+  }
 }
 
 .section {
