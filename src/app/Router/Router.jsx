@@ -30,6 +30,7 @@ import {
   RegisterPage,
   RegisterConfirmation,
   ErrorPage,
+  Search,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -250,6 +251,10 @@ export const router = createBrowserRouter([
           const vacancy = await baseGetRequest("/main/vacancy/");
           return { vacancy: vacancy.results };
         },
+      },
+      {
+        path: PATHS.search,
+        element: <Search />,
       },
       { path: PATHS.notFound, element: <NotFoundPage /> },
     ],

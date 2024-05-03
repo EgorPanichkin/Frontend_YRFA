@@ -23,6 +23,7 @@ const data = {
   "current-service": "breadcrumbs.current-service",
   lovz: "breadcrumbs.lovz",
   charity: "breadcrumbs.charity",
+  search: "breadcrumbs.search",
 };
 
 const compareKeys = (obj1, obj2) => {
