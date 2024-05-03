@@ -2,7 +2,7 @@
   width: 282px;
   border-radius: 8px;
   overflow: hidden;
-  @media (max-width: 768px) {
+  @media (max-width: 946px) {
     width: 330px;
   }
   @media (max-width: 425px) {
@@ -11,7 +11,7 @@
   .imageWrapper {
     width: 100%;
     height: 158px;
-    @media (max-width: 768px) {
+    @media (max-width: 946px) {
       height: 184px;
     }
     @media (max-width: 425px) {
@@ -24,6 +24,7 @@
   }
   .selectorHidden {
     background: var(--color-bg-light-primary-hover);
+    overflow: hidden;
     cursor: pointer;
     height: 57px;
   }

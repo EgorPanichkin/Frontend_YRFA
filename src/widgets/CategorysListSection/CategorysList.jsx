@@ -1,4 +1,3 @@
-import { CategoryCard } from "@/shared";
 import { useLoaderData, useParams } from "react-router-dom";
 import style from "./CategoryList.module.scss";
 import { SubCategoryCard } from "@/shared/ui/SubCategoryCard";
@@ -21,7 +20,7 @@ export const CategorysList = () => {
         return <SubCategoryCard data={item} key={index} />;
       })}
       {filteredServices?.map((item, index) => {
-        return <CategoryCard data={item} key={index} />;
+        return <SubCategoryCard data={item} key={index} />;
       })}
     </div>
   );

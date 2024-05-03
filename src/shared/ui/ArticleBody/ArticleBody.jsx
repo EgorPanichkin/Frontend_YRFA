@@ -5,6 +5,9 @@ import style from "./ArticleBody.module.scss";
 
 export const ArticleBody = () => {
   const data = useLoaderData();
+  if (data === null) {
+    return <div />;
+  }
 
   if (data.main) {
     return (

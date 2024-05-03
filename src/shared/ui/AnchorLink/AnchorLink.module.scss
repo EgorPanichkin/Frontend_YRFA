@@ -1,20 +1,21 @@
 .link {
   display: inline-block;
   padding: 10px 24px;
-  border-radius: 10px;
-  background-color: #e4f7ff;
-  color: var(--blue500);
+  border-radius: 100px;
+  background-color: var(--color-bg-button-neutral-default);
   font-size: 14px;
   font-weight: 700;
   transition:
     background-color 0.3s,
     color 0.3s;
+  @media (max-width: 425px) {
+    padding: 8px 12px;
+  }
 }
 
 @media (hover: hover) {
   .link:hover {
-    background-color: #fcf8d4;
-    color: #b16b02;
+    background-color: var(--color-bg-button-neutral-hover);
     transition:
       background-color 0.3s,
       color 0.3s;
@@ -22,8 +23,7 @@
 }
 @media (hover: none) {
   .link:active {
-    background-color: #fcf8d4;
-    color: #b16b02;
+    background-color: var(--color-bg-button-neutral-pressed);
     transition:
       background-color 0.3s,
       color 0.3s;
