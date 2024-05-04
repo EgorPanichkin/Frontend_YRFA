@@ -1,4 +1,4 @@
-import { Container, Line } from "@/shared";
+import { Container } from "@/shared";
 import { HeroRehabilitation, RehabilitationBody } from "@/widgets";
 import style from "./Rehabilitation.module.scss";
 
@@ -7,7 +7,6 @@ export const RehabilitationPage = () => {
     <Container>
       <div className={style.rehabilitation}>
         <HeroRehabilitation />
-        <Line />
         <RehabilitationBody />
       </div>
     </Container>

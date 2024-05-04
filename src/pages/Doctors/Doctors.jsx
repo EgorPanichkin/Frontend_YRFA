@@ -1,8 +1,7 @@
 import style from "./Doctors.module.scss";
 import { useState } from "react";
-import { Container, CustomButton, Typography } from "@/shared";
+import { Container, TabSelectButton, Typography } from "@/shared";
 import { EventsSection, ArticleSection } from "@/widgets";
-import db from "./OurTeam.json";
 export const Doctors = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [dataCountArticles, setDataCountArticles] = useState(0);
@@ -27,33 +26,30 @@ export const Doctors = () => {
   return (
     <Container>
       <div className={style.doctorsPages}>
-        <Typography variant="h3" weight="extraBold">
-          {db.title}
+        <Typography variant="h2" weight="bold">
+          Врачам
         </Typography>
         <div className={style.buttonAnchor}>
-          <CustomButton
-            color="filter"
+          <TabSelectButton
             onClick={showAllResults}
-            className={activeSection === null ? style.active : ""}
+            active={activeSection === null ? true : false}
           >
-            {db.buttonAnchor1}
-          </CustomButton>
-          <CustomButton
-            color="filter"
+            Все результаты
+          </TabSelectButton>
+          <TabSelectButton
             onClick={() => toggleSection("articles")}
-            className={activeSection === "articles" ? style.active : ""}
+            count={dataCountArticles}
+            active={activeSection === "articles" ? true : false}
           >
-            {db.buttonAnchor2}
-            <div className={style.countData}>{dataCountArticles}</div>
-          </CustomButton>
-          <CustomButton
-            color="filter"
+            Статьи
+          </TabSelectButton>
+          <TabSelectButton
             onClick={() => toggleSection("events")}
-            className={activeSection === "events" ? style.active : ""}
+            count={dataCountEvents}
+            active={activeSection === "events" ? true : false}
           >
-            {db.buttonAnchor3}
-            <div className={style.countData}>{dataCountEvents}</div>
-          </CustomButton>
+            Мероприятия
+          </TabSelectButton>
         </div>
         {activeSection === "articles" && (
           <ArticleSection onDataCount={handleDataCountArticles} />

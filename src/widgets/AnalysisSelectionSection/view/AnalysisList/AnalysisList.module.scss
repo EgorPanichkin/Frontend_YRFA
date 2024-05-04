@@ -1,0 +1,46 @@
+.leftSideAnalysis {
+  max-height: 414px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: var(--color-bg-light-primary-hover);
+
+  &Title {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--black200);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  &Body {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+  }
+
+  &Item {
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+      background: var(--color-bg-light-primary-pressed);
+    }
+    &:active {
+      background: var(--color-bg-light-primary-hover);
+    }
+  }
+
+  &ItemActive {
+    padding: 12px 24px;
+    cursor: pointer;
+    background: var(--color-bg-dark-primary-hover);
+    border-radius: 6px;
+
+    &:hover {
+      background: var(--color-bg-dark-primary-hover);
+    }
+  }
+}

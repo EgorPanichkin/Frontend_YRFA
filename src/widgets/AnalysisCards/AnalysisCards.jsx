@@ -1,5 +1,4 @@
-import { AnalysisCard } from "@/entities";
-import { Container } from "@/shared";
+import { AnalysCard, Container } from "@/shared";
 import style from "./AnalysisCards.module.scss";
 import { useLoaderData } from "react-router-dom";
 
@@ -9,8 +8,8 @@ export const AnalysisCards = () => {
   return (
     <Container>
       <section aria-label="AnalysisCards" className={style.analysisCards}>
-        {results?.map((analysis) => (
-          <AnalysisCard analysis={analysis} key={analysis.id} />
+        {results?.map((analys, index) => (
+          <AnalysCard data={analys} key={index} />
         ))}
       </section>
     </Container>

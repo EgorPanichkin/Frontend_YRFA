@@ -45,7 +45,6 @@ export const Breadcrumbs = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
-  console.log(pathnames);
   const filteredPathnames = {};
   for (const key in pathnames) {
     if (Object.prototype.hasOwnProperty.call(pathnames, key)) {
@@ -84,13 +83,11 @@ export const Breadcrumbs = () => {
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
           const isLast = index !== uniquePathnames.length - 1;
-          console.log(isLast);
           const linkClass = isLast ? "" : "primary";
           const filterNumberObj =
             Object.keys(filteredPathnames).length > 0
               ? `${name}/${Object.keys(filteredPathnames)}`
               : routeTo;
-          console.log(filterNumberObj);
           const translationName = t(data[name]).replace(/\d+/g, "").trim();
           if (!translationName || isNumeric(translationName)) {
             return null;

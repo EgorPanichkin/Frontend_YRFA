@@ -24,7 +24,6 @@ import {
   LovzPage,
   SelectDirectionPage,
   Charity,
-  CharityMoreDetails,
   FinalServicePage,
   Article,
   RegisterPage,
@@ -78,10 +77,12 @@ export const router = createBrowserRouter([
           const heroAbout = await baseGetRequest("/main/swiper/");
           const equipment = await baseGetRequest("/main/equipment/");
           const partners = await baseGetRequest("/main/our_partner/");
+          const swiper = await baseGetRequest("/main/swiper/");
           return {
             heroAbout: heroAbout.results,
             equipment: equipment.results,
             partners: partners.results,
+            swiper: swiper.results,
           };
         },
       },
@@ -123,7 +124,14 @@ export const router = createBrowserRouter([
           const categories = await baseGetRequest(
             "/servises/diagnostic-categories/",
           );
-          return { popular: popular.results, categories: categories.results };
+          const swiper = await baseGetRequest("/main/swiper/");
+          const actual = await baseGetRequest("/main/sale/");
+          return {
+            popular: popular.results,
+            categories: categories.results,
+            swiper: swiper.results,
+            actual: actual.results,
+          };
         },
       },
       {
@@ -247,12 +255,9 @@ export const router = createBrowserRouter([
       },
       {
         path: PATHS.charityMoreDetails,
-        element: <CharityMoreDetails />,
-        loader: async (loader) => {
-          const articleMoreDetails = await baseGetRequest(
-            `/charity/article/${loader.params.id}`,
-          );
-          return articleMoreDetails;
+        element: <Article />,
+        loader: (loader) => {
+          return baseGetRequest(`/charity/article/${loader.params.id}`);
         },
       },
       {

@@ -1,11 +1,38 @@
 .analysisSelectionSection {
-	display: flex;
-	align-items: flex-start;
-	gap: 20px;
-	width: 100%;
+  display: grid;
+  grid-template-areas: "A B C";
+  grid-template-columns: (minmax(252px, 282px) minmax(588px, 588px) minmax(250px, auto));
+  margin-top: 64px;
+  gap: 20px;
+  @media (max-width: 1200px) {
+    grid-template-areas: "A B" "C C";
+    grid-template-columns: (minmax(252px, 282px) minmax(588px, auto));
+  }
+  @media (max-width: 946px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 450px) {
+    margin-top: 44px;
+  }
 
-	@media screen and (max-width: 320px) {
-		display: flex;
-		flex-direction: column;
-	}
+  @media screen and (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+  }
+  .list {
+    align-self: stretch;
+    grid-area: A;
+    order: 3;
+  }
+  .content {
+    grid-area: B;
+    order: 1;
+  }
+  .price {
+    align-self: start;
+    grid-area: C;
+    width: 100%;
+    order: 2;
+  }
 }

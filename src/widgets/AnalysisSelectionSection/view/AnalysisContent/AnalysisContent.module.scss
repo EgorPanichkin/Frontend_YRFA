@@ -1,0 +1,25 @@
+.analysisContent {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--black100);
+  border-radius: 8px;
+
+  &Tabs {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--black200);
+    background-color: var(--color-bg-light-primary-pressed);
+    overflow: auto;
+  }
+
+  .tab {
+    border-radius: 6px;
+  }
+}

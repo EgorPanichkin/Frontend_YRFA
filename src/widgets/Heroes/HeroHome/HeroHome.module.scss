@@ -2,8 +2,8 @@
   margin-top: 64px;
   margin-bottom: 61px;
   display: grid;
-  row-gap: 24px;
   column-gap: 24px;
+  row-gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(auto, 588px));
   grid-template-areas:
     "A B"

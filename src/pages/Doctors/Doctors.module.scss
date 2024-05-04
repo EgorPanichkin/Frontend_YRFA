@@ -1,20 +1,22 @@
 .doctorsPages {
   min-height: 100vh;
   margin-bottom: 80px;
+  margin-top: 64px;
+  @media (max-width: 768px) {
+    margin-bottom: 64px;
+    margin-top: 60px;
+  }
+  @media (max-width: 450px) {
+    margin-top: 40px;
+    margin-bottom: 44px;
+  }
   .buttonAnchor {
     display: flex;
     gap: 12px;
     margin: 16px 0 40px;
-    .active {
-      border-radius: 10;
-      border: 1px solid var(--blue300);
-      background-color: transparent;
-    }
-    .countData {
-      padding: 2px 5px;
-      color: white;
-      border-radius: 10px;
-      background: var(--blue300);
+    @media (max-width: 450px) {
+      gap: 8px;
+      flex-wrap: wrap;
     }
   }
 }
