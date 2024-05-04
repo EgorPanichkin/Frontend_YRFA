@@ -2,9 +2,14 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-top: 64px;
   @media (max-width: 650px) {
     display: flex;
     flex-direction: column;
+    margin-top: 68px;
+  }
+  @media (max-width: 450px) {
+    margin-top: 52px;
   }
   &Content {
     width: 100%;
@@ -24,7 +29,8 @@
   }
 
   @media (max-width: 1050px) {
-    display: flex;   
+    display: flex;
+    flex-direction: column-reverse;
   }
   &Content {
     width: 100%;

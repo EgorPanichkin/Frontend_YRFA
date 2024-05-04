@@ -1,7 +1,12 @@
 import style from "./ArticleSection.module.scss";
-import { CustomButton, Loader, Typography } from "@/shared";
+import {
+  ArticleCard,
+  ChevronDownIcon,
+  CustomButton,
+  Loader,
+  Typography,
+} from "@/shared";
 import { useEffect, useState } from "react";
-import { DoctorsCard } from "..";
 import { useLoaderData } from "react-router-dom";
 
 export const ArticleSection = ({ sectionId, onDataCount }) => {
@@ -15,24 +20,29 @@ export const ArticleSection = ({ sectionId, onDataCount }) => {
 
   return (
     <div className={style.articleBlock} id={sectionId}>
-      <Typography variant="h4" weight="semibold">
+      <Typography variant="h3" weight="bold">
         Статьи
       </Typography>
       {loading ? (
         <Loader />
       ) : (
-        <div className={style.flex}>
-          {data.articles.map((items) => (
-            <DoctorsCard
-              {...items}
-              key={items.id}
-              link={`doctors_articles/${items.id}`}
-            />
-          ))}
-          <CustomButton color="border" className={style.btn}>
-            Посмотреть ещё
+        <>
+          <div className={style.flex}>
+            {data.articles.map((item) => (
+              <ArticleCard
+                image={item.image}
+                title={item.title}
+                mainDescription={item.main_description}
+                pubDate={item.pub_date}
+                id={item.id}
+                key={item.id}
+              />
+            ))}
+          </div>
+          <CustomButton variant="neutral" className={style.btn}>
+            Ещё <ChevronDownIcon />
           </CustomButton>
-        </div>
+        </>
       )}
     </div>
   );

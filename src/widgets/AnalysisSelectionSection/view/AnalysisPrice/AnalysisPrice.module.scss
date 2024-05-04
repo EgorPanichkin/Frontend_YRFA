@@ -1,0 +1,15 @@
+.analysisPrice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: 8px;
+  background-color: var(--color-bg-light-primary-hover);
+  padding: 16px;
+  justify-content: space-between;
+  .section {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
