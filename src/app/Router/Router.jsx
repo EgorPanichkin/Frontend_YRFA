@@ -30,6 +30,7 @@ import {
   RegisterConfirmation,
   ErrorPage,
   Search,
+  PersonalResetPage,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -210,6 +211,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AnalysesHistoryPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: PATHS.personalReset,
+        element: (
+          <PrivateRoute>
+            <PersonalResetPage />
           </PrivateRoute>
         ),
       },

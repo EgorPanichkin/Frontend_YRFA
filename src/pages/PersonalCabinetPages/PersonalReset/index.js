@@ -1,0 +1,1 @@
+export { PersonalResetPage } from "./PersonalReset";

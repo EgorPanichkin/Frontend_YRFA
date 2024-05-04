@@ -76,6 +76,7 @@ export const PersonalAccount = () => {
               </button>
               <Link to={"analyses-history"}>История анализов</Link>
               <Link to={"post-history"}>История записей</Link>
+              <Link to={"password-reset"}>Изменить пароль</Link>
               <button
                 type="button"
                 onClick={() => setConfirmationExit(true)}
