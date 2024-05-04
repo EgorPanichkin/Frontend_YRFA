@@ -11,15 +11,19 @@
   background: var(--background-color, #fff);
   box-shadow: 0px 1px 4px -1px rgba(25, 92, 121, 0.25);
   max-width: 588px;
+  @media screen and (max-width: 760px) {
+    padding: 24px 86px;
+    max-width: 504px;
+  }
   @media screen and (max-width: 320px) {
     padding: 0;
-    border: none;
+    box-shadow: none;
     border-radius: 0;
-    max-width: 254px;
+    max-width: 280px;
     font-size: 14px;
   }
   .formWrapper {
-    @include flex-direction(30px);
+    @include flex-direction(24px);
     margin-bottom: 24px;
     @media screen and (max-width: 320px) {
       margin-bottom: 16px;
@@ -41,8 +45,17 @@
       }
     }
     .formWrapperInput {
-      @include flex-direction(20px);
+      @include flex-direction(12px);
       width: 384px;
+
+      @media screen and (max-width: 760px) {
+        @include flex-direction(8px);
+        width: 330px;
+      }
+
+      @media screen and (max-width: 320px) {
+        width: 280px;
+      }
       label {
         font-size: 14px;
         font-weight: 400;
@@ -58,10 +71,18 @@
       }
       .input {
         border-radius: 10px;
+        max-width: 384px;
         height: 48px;
+
+        @media screen and (max-width: 760px) {
+          max-width: 330px;
+        }
+        @media screen and (max-width: 320px) {
+          max-width: 280px;
+        }
       }
       .focusedInput {
-        outline: 1.5px solid var(--Color-Stroke-Primary-color-stroke-primary-default, #12709a);
+        outline: 1.5px solid var(--blue300, #12709a);
       }
       .errorInput {
         border: 1px solid red;
@@ -79,6 +100,7 @@
       border-radius: 100px;
       font-weight: 700;
       color: black;
+      // display: block;
     }
     .helpBlockLinkBottom {
       font-weight: 700;

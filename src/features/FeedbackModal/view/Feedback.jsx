@@ -8,8 +8,6 @@ import {
   ModalWrapper,
   CustomInput,
   FeedbackIcon,
-  DocumentIcon,
-  UserButtonIcon,
   usersRequester,
   notify,
 } from "@/shared";
@@ -60,29 +58,38 @@ export const Feedback = () => {
               >
                 Введите свой вопрос, жалобу или предложение
               </Typography>
-              <CustomInput
-                type="text"
-                placeholder="Номер телефона или email"
-                value={inputValues.emailPhone}
-                onChange={(event) => handleInputChange(event, "emailPhone")}
-                className={style.questioInputPhone}
-              />
-              <div className={style.questioUser}>
-                <UserButtonIcon color="black" />
-                <input
+              <div>
+                <label className={style.feedbackLabel}>
+                  Номер телефона или эл.почта
+                </label>
+                <CustomInput
+                  type="text"
+                  placeholder="Номер телефона или email"
+                  value={inputValues.emailPhone}
+                  onChange={(event) => handleInputChange(event, "emailPhone")}
+                  className={style.questioInputPhone}
+                />
+              </div>
+              <div>
+                <label className={style.feedbackLabel}>ФИО</label>
+                <CustomInput
                   type="text"
                   placeholder="ФИО"
                   value={inputValues.fio}
                   onChange={(event) => handleInputChange(event, "fio")}
+                  className={style.fio}
                 />
               </div>
-              <div className={style.questioText}>
-                <DocumentIcon color="black" />
+              <div>
+                <label className={style.feedbackLabel}>
+                  Введите ваш вопрос
+                </label>
                 <textarea
                   type="text"
                   placeholder="Введите текст"
                   value={inputValues.text}
                   onChange={(event) => handleInputChange(event, "text")}
+                  className={style.bodyText}
                 />
               </div>
               <span className={style.questioCounter}>{counter}/300</span>
