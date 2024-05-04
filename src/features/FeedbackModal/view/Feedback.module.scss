@@ -16,9 +16,9 @@
 
 .questio {
   border-radius: 20px;
-  padding: 56px 80px 40px;
+  padding: 40px 80px;
   max-width: 560px;
-  background-color: var(--background-color);
+  background-color: var(--background-white);
   position: relative;
   font-weight: 400;
   z-index: 100;
@@ -40,10 +40,12 @@
   .questioForm {
     text-align: center;
     max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     .questioTitle {
-      line-height: 24.55px;
       margin-bottom: 24px;
-      font-weight: 400;
+      font-weight: 700;
       font-size: 22px;
       @media screen and (max-width: 760px) {
         font-size: 20px;
@@ -52,46 +54,32 @@
         font-size: 20px;
       }
     }
-    .questioUser {
-      gap: 8px;
-      height: 40px;
-      display: flex;
-      padding: 10px 15px;
-      align-items: center;
-      border-radius: 40px;
-      margin: 12px 0;
-      justify-content: center;
-      background-color: var(--black100);
-      input {
-        outline: none;
-        padding: 0;
-        color: var(--blue300);
-        &::placeholder {
-          color: var(--black300);
-        }
+    .feedbackLabel {
+      display: block;
+      text-align: start;
+      margin-bottom: 4px;
+    }
+    .fio {
+      width: 100%;
+      border-radius: 10px;
+      height: 48px;
+      color: var(--blue300);
+      &::placeholder {
+        color: var(--black300);
       }
     }
-    .questioText {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 4px;
-      padding: 16px 15px;
+    .bodyText {
+      width: 100%;
+      height: 118px;
       border-radius: 10px;
+      border: none;
+      resize: none;
+      outline: none;
       background-color: var(--black100);
-      textarea {
-        background-color: var(--black100);
-        border: none;
-        height: 118px;
-        resize: none;
-        overflow-y: hidden;
-        width: 100%;
-        outline: none;
-        padding: 0;
-        color: var(--blue300);
-        &::placeholder {
-          color: var(--black300);
-        }
+      color: var(--blue300);
+      padding: 15px;
+      &::placeholder {
+        color: var(--black300);
       }
     }
     .questioCounter {
@@ -100,7 +88,7 @@
       text-align: end;
     }
     .questioBtn {
-      margin-top: 16px;
+      display: inline-block;
       width: 100%;
     }
   }
