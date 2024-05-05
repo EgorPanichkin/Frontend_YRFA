@@ -7,23 +7,35 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  @media screen and (max-width: 760px) {
+    max-width: 504px;
+    padding: 24px 86px;
+  }
+
   @media screen and (max-width: 320px) {
-    border: none;
+    box-shadow: none;
     border-radius: 0;
     padding: 0;
-    max-width: 254px;
+    max-width: 280px;
   }
+
   .smsFormTitle {
     font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+
     @media screen and (max-width: 320px) {
-      font-size: 16px;
+      font-size: 22px;
     }
   }
+
   .smsFormBody {
     color: var(--black450, #4a4a4a);
     margin-bottom: 24px;
+
     @media screen and (max-width: 320px) {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
   }
   label {
@@ -42,13 +54,20 @@
     outline: 1.5px solid var(--blue300, #12709a);
   }
   .phoneInput {
-    margin-bottom: 55px;
+    margin-bottom: 24px;
     border-radius: 10px;
     font-weight: 400;
     width: 384px;
     font-size: 14px;
     height: 48px;
+
+    @media screen and (max-width: 760px) {
+      margin-bottom: 16px;
+      width: 330px;
+    }
+
     @media screen and (max-width: 320px) {
+      width: 280px;
       margin-bottom: 16px;
     }
   }

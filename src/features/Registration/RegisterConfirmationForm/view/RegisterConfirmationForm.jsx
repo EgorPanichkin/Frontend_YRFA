@@ -39,7 +39,7 @@ export const RegisterConfirmationForm = () => {
   }, [errorsInput, inputValues]);
 
   // Состояние для счётчика
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(60);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -118,8 +118,7 @@ export const RegisterConfirmationForm = () => {
         weight="regular"
         className={style.smsFormBody}
       >
-        Мы отправим код на этот номер для подтверждения и дальнейшего сброса
-        пароля
+        Мы отправили вам 6-ти значный код для подтверждения
       </Typography>
       <Typography variant="span" className={style.phone}>
         {registerPhone}
