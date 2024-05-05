@@ -34,7 +34,7 @@ export const ArticleSection = ({ sectionId, onDataCount }) => {
                 title={item.title}
                 mainDescription={item.main_description}
                 pubDate={item.pub_date}
-                id={item.id}
+                id={`doctors_articles/${item.id}`}
                 key={item.id}
               />
             ))}
