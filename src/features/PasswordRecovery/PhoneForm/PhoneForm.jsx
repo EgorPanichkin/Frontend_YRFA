@@ -85,7 +85,7 @@ export const PhoneForm = () => {
           htmlFor="phone"
           className={focusedInput === "phone" ? style.focusedLabel : ""}
         >
-          Номер
+          Номер телефона
         </label>
       )}
       <IMaskInput

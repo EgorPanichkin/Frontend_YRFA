@@ -4,35 +4,46 @@
   box-shadow: 0px 1px 4px -1px rgba(25, 92, 121, 0.25);
   padding: 40px 100px;
   max-width: 588px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  text-align: center;
+
+  @media screen and (max-width: 760px) {
+    max-width: 504px;
+    padding: 24px 86px;
+  }
+
   @media screen and (max-width: 320px) {
-    border: none;
+    box-shadow: none;
     border-radius: 0;
     padding: 0;
-    max-width: 254px;
+    max-width: 280px;
   }
+
   .smsFormTitle {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--black700, #010101);
+
     @media screen and (max-width: 320px) {
-      font-size: 16px;
+      font-size: 22px;
     }
   }
+
   .smsFormBody {
     color: var(--Black-400, #6f6f6f);
     margin-bottom: 8px;
     font-size: 14px;
   }
+
   .phone {
     display: block;
     color: var(--blue300, #12709a);
     font-weight: 700;
     margin-bottom: 24px;
   }
+
   label {
     color: var(--black700, #010101);
     font-weight: 400;
@@ -40,22 +51,31 @@
     text-align: start;
     margin-bottom: 4px;
   }
+
   .focusedLabel {
     color: var(--blue300);
   }
+
   .errorLabel {
     color: var(--error);
   }
+
   .codeInput {
-    margin-bottom: 32px;
-    width: 384px;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 760px) {
+      margin-bottom: 16px;
+    }
+
     @media screen and (max-width: 320px) {
       margin-bottom: 16px;
     }
   }
+
   .focusedCode {
     outline: 1.5px solid var(--blue300, #12709a);
   }
+
   .smsButton {
     display: inline-block;
     margin-bottom: 24px;
@@ -79,6 +99,7 @@
     font-size: 14px;
     cursor: pointer;
   }
+
   .confirmationPhone {
     display: flex;
     padding: 16px 40px;

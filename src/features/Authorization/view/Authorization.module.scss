@@ -31,11 +31,11 @@
     .authorizationBlock {
       text-align: center;
       .authorizationTitle {
-        font-weight: 600;
+        font-weight: 700;
         font-size: 24px;
         margin-bottom: 8px;
         @media screen and (max-width: 320px) {
-          font-size: 16px;
+          font-size: 22px;
         }
       }
       .authorizationBody {
