@@ -209,9 +209,9 @@ export const router = createBrowserRouter([
       {
         path: PATHS.analysHistory,
         element: (
-          // <PrivateRoute>
-          <AnalysesHistoryPage />
-          // </PrivateRoute>
+          <PrivateRoute>
+            <AnalysesHistoryPage />
+          </PrivateRoute>
         ),
       },
       {
