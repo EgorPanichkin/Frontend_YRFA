@@ -1,8 +1,11 @@
 .postHistoryForm {
-  border: 1px solid var(--black300);
-  padding: 20px 30px;
-  border-radius: 20px;
-  width: 638px;
+  border-radius: 8px;
+  background: var(--background-white, #fff);
+  box-shadow:
+    0px 3px 12px -1px rgba(25, 92, 121, 0.15),
+    0px 2px 4px -1px rgba(25, 92, 121, 0.1);
+  padding: 26px 24px;
+  width: 588px;
   @media screen and (max-width: 320px) {
     border: none;
     border-radius: 0;
@@ -12,6 +15,7 @@
   .postHistoryFormHead {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
     @media screen and (max-width: 320px) {
       justify-content: center;
@@ -31,10 +35,15 @@
         font-size: 16px;
       }
     }
+    .moreVertical {
+      cursor: pointer;
+    }
   }
   .postHistoryFormWrapper {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 352px;
     gap: 30px;
     @media screen and (max-width: 320px) {
       gap: 20px;

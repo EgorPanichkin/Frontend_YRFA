@@ -5,11 +5,9 @@
   box-shadow: 0px 1px 4px -1px rgba(25, 92, 121, 0.25);
   max-width: 588px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
-
   .personalResetHead {
     .personalResetTitle {
       margin-bottom: 8px;
@@ -21,7 +19,6 @@
       font-weight: 400;
     }
   }
-
   label {
     display: block;
     text-align: start;
@@ -29,11 +26,15 @@
     font-style: 14px;
     font-weight: 400;
   }
-
+  .focusedLabel {
+    color: var(--blue300, #12709a);
+  }
+  .focusedInput {
+    outline: 1.5px solid var(--blue300, #12709a);
+  }
   .errorLabel {
     color: red;
   }
-
   .personalResetButton {
     display: inline-block;
   }
