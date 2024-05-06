@@ -49,11 +49,10 @@ export const PasswordResetForm = () => {
   );
   const { phone } = verificationData;
 
+  const phoneNum = phoneNumberRefactorer(phone);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const phoneNum = phoneNumberRefactorer(phone);
-    const { password, enterPassword } = inputValues;
 
     try {
       const response = await usersRequester("/reset_password", {

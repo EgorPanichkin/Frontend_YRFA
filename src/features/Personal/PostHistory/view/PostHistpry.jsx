@@ -1,6 +1,6 @@
 import { PostHistoryData } from "../model/PostHistoryData";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, Typography } from "@/shared";
+import { ChevronLeft, MoreVertical, Typography } from "@/shared";
 
 import style from "./PostHistory.module.scss";
 import { PostHistoryComponent } from "./ui/PostHistoryComponent";
@@ -13,7 +13,7 @@ export const PostHistory = () => {
     <div className={style.postHistoryForm}>
       <div className={style.postHistoryFormHead}>
         <ChevronLeft
-          width={20}
+          size={24}
           onClick={() => navigate(-1)}
           className={style.postHistoryBack}
         />
@@ -24,6 +24,7 @@ export const PostHistory = () => {
         >
           История записей
         </Typography>
+        <MoreVertical className={style.moreVertical} />
       </div>
       <div className={style.postHistoryFormWrapper}>
         {postsHistoryList.map((postHistory, index) => (
