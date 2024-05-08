@@ -14,3 +14,4 @@ export * from "./ArticleSection";
 export * from "./EventsSection";
 export * from "./AboutLOVZ";
 export * from "./CharitySection";
+export * from "./PartnersFound";
