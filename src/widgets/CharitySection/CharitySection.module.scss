@@ -1,25 +1,11 @@
-.titleBlock {
-  max-width: 895px;
-  margin-bottom: 80px;
-
-  @media screen and (max-width: 760px) {
-    margin-bottom: 40px;
-  }
-
-  .titleBlockTitle {
-    margin-bottom: 16px;
-    font-size: 28px;
-
-    @media screen and (max-width: 760px) {
-      font-size: 24px;
-    }
-  }
+.projectTitle {
+  margin-bottom: 32px;
 }
-.reusedTextSection {
-  margin-bottom: 80px;
-}
-.logoCarusel {
-  margin-bottom: 80px;
+.reusedTextSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 68px;
+  gap: 56px;
 }
 .newsBlock {
   margin-bottom: 80px;
@@ -30,11 +16,5 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-
-    @media screen and (max-width: 760px) {
-      overflow-x: scroll;
-      gap: 16px;
-      // width: fit-content;
-    }
   }
 }

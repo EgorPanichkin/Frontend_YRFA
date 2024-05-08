@@ -17,7 +17,6 @@ export * from "./DetailCard";
 export * from "./CustomCard";
 export * from "./PrivateRoute";
 export * from "./ReusedTextSection";
-export * from "./LogoCarusel";
 export * from "./ArticleBody";
 export * from "./Cards";
 export * from "./TabSelectButton";
