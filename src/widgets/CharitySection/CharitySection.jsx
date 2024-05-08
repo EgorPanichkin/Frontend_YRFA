@@ -8,9 +8,10 @@ import { advantages } from "./data.json";
 
 import style from "./CharitySection.module.scss";
 import { useLoaderData } from "react-router-dom";
+import { PartnersFound } from "../PartnersFound";
 
 export const CharitySection = () => {
-  const { article } = useLoaderData();
+  const { article, fund } = useLoaderData();
 
   return (
     <Container>
@@ -27,6 +28,7 @@ export const CharitySection = () => {
           />
         ))}
       </div>
+      <PartnersFound title="Фонды" data={fund} />
       <div className={style.newsBlock}>
         <Typography className={style.newsBlockTitle} variant="h3" weight="bold">
           Статьи
