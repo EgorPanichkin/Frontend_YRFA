@@ -1,5 +1,9 @@
+import { Container, ReusedTextSection } from "@/shared";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
+import { advantages } from "./data.json";
+
+import style from "./CharityMoreDetails.module.scss";
 
 export const CharityMoreDetails = () => {
   const articleMoreDetails = useLoaderData();
@@ -9,12 +13,23 @@ export const CharityMoreDetails = () => {
   return (
     <>
       <ReusedHero
-        // className={style.reusedHero}
-        textButton="Запись а прием"
+        textButton="Записаться онлайн"
         title={title}
         body={description}
         img={image}
       />
+      <Container>
+        <div className={style.reusedTextSectionWrapper}>
+          {advantages?.map((advantage) => (
+            <ReusedTextSection
+              key={advantage.id}
+              data={advantage}
+              image={advantage.image}
+              reverse={advantage.id % 2 ? true : false}
+            />
+          ))}
+        </div>
+      </Container>
     </>
   );
 };

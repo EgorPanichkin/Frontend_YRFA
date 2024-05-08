@@ -31,6 +31,7 @@ import {
   ErrorPage,
   Search,
   PersonalResetPage,
+  CharityMoreDetails,
 } from "@/pages";
 
 import { Layout } from "../Layout/Layout";
@@ -255,7 +256,7 @@ export const router = createBrowserRouter([
       },
       {
         path: PATHS.charityMoreDetails,
-        element: <Article />,
+        element: <CharityMoreDetails />,
         loader: (loader) => {
           return baseGetRequest(`/charity/article/${loader.params.id}`);
         },
