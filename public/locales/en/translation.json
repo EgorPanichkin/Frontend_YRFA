@@ -42,8 +42,8 @@
     "analysis": "Analysis",
     "login": "Login",
     "registration": "Registration",
-    "sms-verification": "Password Recovery",
-    "verification": "Enter Code",
+    "sms-verification": "Enter the number",
+    "verification": "Enter the code",
     "password-reset": "Password Recovery",
     "actual": "Promotions",
     "news": "Blog",
@@ -52,7 +52,12 @@
     "select-direction": "Select Direction",
     "lovz": "LOVZ",
     "current-service": "Current Service",
-    "search": "Searching results"
+    "search": "Searching results",
+    "charity": "Charity",
+    "personal-account": "Personal account",
+    "post-history": "Post history",
+    "analyses-history": "Analyses history",
+    "personal-reset": "Personal reset"
   },
   "footer": {
     "list1": {
