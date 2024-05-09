@@ -28,7 +28,7 @@ export const PATHS = {
   personal: "/personal-account",
   postHistory: "/personal-account/post-history",
   analysHistory: "/personal-account/analyses-history",
-  personalReset: "/personal-account/password-reset",
+  personalReset: "/personal-account/personal-reset",
   actual: "/actual",
   news: "/news",
   newsArticle: "/news/:id",

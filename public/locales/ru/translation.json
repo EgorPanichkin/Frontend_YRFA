@@ -42,9 +42,9 @@
     "analysis": "Анализы",
     "login": "Вход в кабинет",
     "registration": "Регистрация",
-    "sms-verification": "Восстановление пароля",
-    "verification": "Ввод кода",
-    "password-reset": "Восстановление пароля",
+    "sms-verification": "Введите номер",
+    "verification": "Введите код",
+    "password-reset": "Creating a password",
     "actual": "Акции",
     "news": "Блог",
     "vacancy": "Вакансии",
@@ -52,7 +52,12 @@
     "select-direction": "Выбор направления",
     "lovz": "ЛОВЗ",
     "current-service": "О направления",
-    "search": "Результаты поиска"
+    "search": "Результаты поиска",
+    "charity": "Благотворительность",
+    "personal-account": "Личный кабинет",
+    "post-history": "История записей",
+    "analyses-history": "История анализов",
+    "personal-reset": "Смена пароля"
   },
   "footer": {
     "list1": {
