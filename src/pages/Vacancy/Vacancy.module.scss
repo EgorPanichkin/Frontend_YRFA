@@ -2,11 +2,51 @@
   display: block;
   justify-content: space-between;
   margin-bottom: 20px;
-  // color: var();
 }
 .box {
   display: flex;
   flex-wrap: wrap;
-  gap: 39px;
+  gap: 24px;
   margin-bottom: 50px;
+}
+
+.inputLabel {
+  margin: 0px 0;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 282px;
+  height: 36px;
+  margin: 15px 0 50px;
+}
+
+.none {
+  display: none;
+}
+
+.addFile {
+  width: 162px;
+  height: 36px;
+  background-color: var(--black100);
+  border-radius: 5px;
+  align-items: center;
+  padding: 8px;
+  color: var(--blue300);
+  cursor: pointer;
+}
+
+.secondLabel {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  align-items: center;
+  color: var(--blue300);
+  cursor: pointer;
 }
