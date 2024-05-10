@@ -8,3 +8,4 @@ export * from "./FeedbackModal";
 export * from "./CityCard";
 export * from "./Slider";
 export * from "./Registration";
+export * from "./CVForm";
