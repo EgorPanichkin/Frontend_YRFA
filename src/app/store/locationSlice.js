@@ -28,7 +28,7 @@ export const locationSlice = createSlice({
   extraReducers: (builder) =>
     builder.addCase(fetchRegions.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.results = action.payload.results;
+      state.results = action.payload;
     }),
 });
 

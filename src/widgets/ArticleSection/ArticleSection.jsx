@@ -12,6 +12,7 @@ import { useLoaderData } from "react-router-dom";
 export const ArticleSection = ({ sectionId, onDataCount }) => {
   const [loading, setLoading] = useState(true);
   const data = useLoaderData();
+  console.log(data);
 
   useEffect(() => {
     setLoading(false);

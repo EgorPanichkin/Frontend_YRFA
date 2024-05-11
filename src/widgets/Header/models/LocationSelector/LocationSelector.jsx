@@ -11,7 +11,7 @@ export const LocationSelector = () => {
 
   useEffect(() => {
     city ? null : nav("/welcome");
-  });
+  }, [city]);
 
   useEffect(() => {
     dispatch(fetchRegions());
@@ -20,7 +20,6 @@ export const LocationSelector = () => {
   const regions = useSelector(selectLocation);
 
   const handleSelect = (value) => {
-    console.log(value);
     setCity(value);
     localStorage.setItem("location", value);
     window.location.reload();

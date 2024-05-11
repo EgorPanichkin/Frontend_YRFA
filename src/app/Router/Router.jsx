@@ -63,11 +63,11 @@ export const router = createBrowserRouter([
           const branches = await baseGetRequest("/main/filial/");
           const actual = await baseGetRequest("/main/sale/");
           return {
-            popular: popular.results,
-            categories: categories.results,
-            swiper: swiper.results,
-            branches: branches.results,
-            actual: actual.results,
+            popular: popular,
+            categories: categories,
+            swiper: swiper,
+            branches: branches,
+            actual: actual,
           };
         },
       },
@@ -80,10 +80,10 @@ export const router = createBrowserRouter([
           const partners = await baseGetRequest("/main/our_partner/");
           const swiper = await baseGetRequest("/main/swiper/");
           return {
-            heroAbout: heroAbout.results,
-            equipment: equipment.results,
-            partners: partners.results,
-            swiper: swiper.results,
+            heroAbout: heroAbout,
+            equipment: equipment,
+            partners: partners,
+            swiper: swiper,
           };
         },
       },
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
         loader: async () => {
           const articles = await baseGetRequest("/blogs/doctors_articles/");
           const events = await baseGetRequest("/blogs/events/");
-          return { articles: articles.results, events: events.results };
+          return { articles: articles, events: events };
         },
       },
       {
@@ -112,10 +112,16 @@ export const router = createBrowserRouter([
         loader: async () => {
           const questions = await baseGetRequest("/blogs/questionnaires/");
           const actual = await baseGetRequest("/main/sale/");
-          return { questions: questions.results, actual: actual.results };
+          return { questions: questions, actual: actual };
         },
       },
-      { path: PATHS.rehabilitation, element: <RehabilitationPage /> },
+      {
+        path: PATHS.rehabilitation,
+        element: <RehabilitationPage />,
+        loader: () => {
+          return baseGetRequest("/servises/rehabilitations/");
+        },
+      },
       { path: PATHS.LOVZ, element: <LovzPage /> },
       {
         path: PATHS.directions,
@@ -128,10 +134,10 @@ export const router = createBrowserRouter([
           const swiper = await baseGetRequest("/main/swiper/");
           const actual = await baseGetRequest("/main/sale/");
           return {
-            popular: popular.results,
-            categories: categories.results,
-            swiper: swiper.results,
-            actual: actual.results,
+            popular: popular,
+            categories: categories,
+            swiper: swiper,
+            actual: actual,
           };
         },
       },
@@ -148,8 +154,8 @@ export const router = createBrowserRouter([
           );
           return {
             category: category,
-            services: services.results,
-            subCategorys: subCategorys.results,
+            services: services,
+            subCategorys: subCategorys,
           };
         },
       },
@@ -161,7 +167,7 @@ export const router = createBrowserRouter([
             `/servises/diagnostics/${loader.params.idService}/`,
           );
           const actual = await baseGetRequest("/main/sale/");
-          return { main, actual: actual.results };
+          return { main, actual: actual };
         },
       },
       {
@@ -179,7 +185,7 @@ export const router = createBrowserRouter([
           const info = await baseGetRequest(
             `/servises/analyses/${loader.params.id}`,
           );
-          return { list: list.results, info };
+          return { list: list, info };
         },
       },
       { path: PATHS.login, element: <LoginPage /> },
@@ -235,7 +241,7 @@ export const router = createBrowserRouter([
         element: <News />,
         loader: async () => {
           const blogArticle = await baseGetRequest("/blogs/articles/");
-          return { blogArticle: blogArticle.results };
+          return { blogArticle: blogArticle };
         },
       },
       {
@@ -251,7 +257,7 @@ export const router = createBrowserRouter([
         loader: async () => {
           const article = await baseGetRequest("/charity/articles/");
           const fund = await baseGetRequest("/charity/fund/");
-          return { article: article.results, fund: fund.results };
+          return { article: article, fund: fund };
         },
       },
       {
@@ -266,7 +272,7 @@ export const router = createBrowserRouter([
         element: <Vacancy />,
         loader: async () => {
           const vacancy = await baseGetRequest("/main/vacancy/");
-          return { vacancy: vacancy.results };
+          return { vacancy: vacancy };
         },
       },
       {

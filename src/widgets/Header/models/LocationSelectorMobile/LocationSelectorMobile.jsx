@@ -3,23 +3,30 @@ import { ChevronDown, LocationIcon } from "@/shared";
 import { Typography } from "../../../../shared/ui";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRegions, selectLocation } from "@/app/store/locationSlice";
 
 export const LocationSelectorMobile = () => {
   const [isActive, setIsActive] = useState(false);
   const [city, setCity] = useState(localStorage.getItem("location"));
   const nav = useNavigate();
-  const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     city ? null : nav("/welcome");
-  });
+  }, [city]);
+
+  useEffect(() => {
+    dispatch(fetchRegions());
+  }, [dispatch]);
+
+  const regions = useSelector(selectLocation);
 
   const handleSelect = (value) => {
-    window.location.reload();
     setCity(value);
     localStorage.setItem("location", value);
+    window.location.reload();
   };
 
   return (
@@ -32,38 +39,23 @@ export const LocationSelectorMobile = () => {
       >
         <LocationIcon />
         <Typography variant="smallBody" weight="bold" className={style.title}>
-          {t("header.cities." + city.toLowerCase())}
+          {regions?.filter((region) => region.id == city)[0]?.title}
         </Typography>
         <ChevronDown />
       </div>
       <div className={isActive ? style.menu : style.hiddenMenu}>
-        <button
-          value={"Bishkek"}
-          onClick={(e) => handleSelect(e.target.value)}
-          className={style.link}
-        >
-          <Typography variant="smallBody" color="light">
-            {t("header.cities.bishkek")}
-          </Typography>
-        </button>
-        <button
-          value={"Osh"}
-          onClick={(e) => handleSelect(e.target.value)}
-          className={style.link}
-        >
-          <Typography variant="smallBody" color="light">
-            {t("header.cities.osh")}
-          </Typography>
-        </button>
-        <button
-          value={"Jalal-Abad"}
-          onClick={(e) => handleSelect(e.target.value)}
-          className={style.link}
-        >
-          <Typography variant="smallBody" color="light">
-            {t("header.cities.jalal-abad")}
-          </Typography>
-        </button>
+        {regions.map((region) => {
+          return (
+            <button
+              value={region.id}
+              onClick={(e) => handleSelect(e.target.value)}
+              className={style.link}
+              key={region.id}
+            >
+              {region.title}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

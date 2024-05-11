@@ -1,17 +1,17 @@
 import { ReusedTextSection } from "@/shared";
 import style from "./RehabilitationBody.module.scss";
-import dataBody from "./data/data.json";
-import { imageArray } from "@/shared/assets/images/rehabilitation/index";
+import { useLoaderData } from "react-router-dom";
 
 export const RehabilitationBody = () => {
+  const results = useLoaderData();
+
   return (
     <section aria-label="RehabilitationBody">
       <div className={style.rehabilitationBody}>
-        {dataBody.map((service, index) => {
-          const img = imageArray.find((item) => item.id === service.id);
+        {results.map((service, index) => {
           return (
             <ReusedTextSection
-              image={img.src}
+              image={service.image}
               data={{
                 header: service.title,
                 body: service.rehabilitation_description,
