@@ -15,12 +15,13 @@ export const HeroHome = () => {
       {actual.map((item, index) => {
         return (
           index < 2 && (
-            <div className={style.actualCards}>
+            <div className={style.actualCards} key={index}>
               <ActualCard
                 title={item.title}
                 expiration={item.expiration}
                 description={item.description}
                 imgSrc={item.image}
+                reverse={index % 2 === 0}
               />
             </div>
           )

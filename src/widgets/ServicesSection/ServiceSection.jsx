@@ -1,19 +1,19 @@
+import { selectLocation } from "@/app/store/locationSlice";
 import style from "./ServiceSection.module.scss";
 import { ServiceListCard, Typography } from "@/shared";
 import { useState, useEffect, useRef } from "react";
 import { useLoaderData } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const ServiceSection = () => {
   const { popular } = useLoaderData();
   const [activeIndex, setActiveIndex] = useState(null);
   const dropdownRef = useRef(null);
-  const selectedCity = localStorage.getItem("location");
 
-  const dataCity = {
-    Osh: "Ош",
-    "Jalal-Abad": "Джалал-Абад",
-    Bishkek: "Бишкек",
-  };
+  const regions = useSelector(selectLocation);
+  const selectedCity = regions.filter(
+    (region) => region.id === Number(localStorage.getItem("location")),
+  );
 
   const handleClickActive = (clickedIndex) => {
     if (activeIndex === clickedIndex) {
@@ -40,7 +40,7 @@ export const ServiceSection = () => {
     };
   }, []);
 
-  const dataTitle = `Услуги города ${dataCity[selectedCity]}`;
+  const dataTitle = `Услуги города ${selectedCity[0]?.title}`;
 
   return (
     <div className={style.servicesBlock} ref={dropdownRef}>

@@ -3,7 +3,7 @@ import style from "./AnalysisCards.module.scss";
 import { useLoaderData } from "react-router-dom";
 
 export const AnalysisCards = () => {
-  const { results } = useLoaderData();
+  const results = useLoaderData();
 
   return (
     <Container>
