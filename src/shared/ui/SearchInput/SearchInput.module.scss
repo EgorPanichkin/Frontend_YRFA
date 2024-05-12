@@ -1,0 +1,46 @@
+.searchPages {
+  display: flex;
+}
+
+input {
+  background: var(--color-bg-button-neutral-default);
+  border: none;
+  outline: none;
+  width: 420px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  @media screen and (max-width: 1322px) {
+    width: 380px;
+  }
+}
+.inputPadding {
+  height: 56px;
+  padding: 10px 0px 10px 16px;
+}
+.inputPaddingDef {
+  height: 36px;
+  padding-left: 16px;
+}
+button {
+  all: initial;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchIcon {
+  background: var(--color-bg-button-neutral-default);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+.searchIconDef {
+  height: 36px;
+}
+.searchIconBig {
+  height: 56px;
+}

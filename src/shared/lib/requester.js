@@ -122,3 +122,13 @@ export const usersRequester = async (endpoint, data, type) => {
     console.log("error");
   }
 };
+
+export const searchRequester = async (requestData) => {
+  try {
+    const response = await axiosBase.post("/servises/search/", requestData);
+    return response.data;
+  } catch (error) {
+    console.error("Error performing search:", error);
+    throw error;
+  }
+};

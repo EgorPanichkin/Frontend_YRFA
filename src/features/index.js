@@ -1,4 +1,3 @@
-export * from "./Search";
 export * from "./Breadcrumbs";
 export * from "./Authorization";
 export * from "./PageNavBar";

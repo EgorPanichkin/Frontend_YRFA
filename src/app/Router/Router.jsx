@@ -278,6 +278,11 @@ export const router = createBrowserRouter([
       {
         path: PATHS.search,
         element: <Search />,
+        loader: () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const searchTerm = urlParams.get("q");
+          return searchTerm;
+        },
       },
       { path: PATHS.notFound, element: <NotFoundPage /> },
     ],
