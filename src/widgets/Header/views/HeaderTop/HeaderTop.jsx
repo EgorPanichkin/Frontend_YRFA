@@ -1,7 +1,6 @@
-import { Container, PhoneIcon, Typography } from "@/shared";
+import { Container, PhoneIcon, SearchInput, Typography } from "@/shared";
 import style from "./HeaderTop.module.scss";
 import { LanguageSelector } from "../../models/LanguageSelector/LanguageSelector";
-import { SearchInput } from "@/entities";
 import { useTranslation } from "react-i18next";
 
 export const HeaderTop = () => {

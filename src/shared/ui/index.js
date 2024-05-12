@@ -21,3 +21,5 @@ export * from "./LogoCarusel";
 export * from "./ArticleBody";
 export * from "./Cards";
 export * from "./TabSelectButton";
+export * from "./SearchInput";
+export * from "./MoreButton";
