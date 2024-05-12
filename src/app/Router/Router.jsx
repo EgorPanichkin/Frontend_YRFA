@@ -239,9 +239,8 @@ export const router = createBrowserRouter([
       {
         path: PATHS.news,
         element: <News />,
-        loader: async () => {
-          const blogArticle = await baseGetRequest("/blogs/articles/");
-          return { blogArticle: blogArticle };
+        loader: () => {
+          return baseGetRequest("/blogs/articles/");
         },
       },
       {
