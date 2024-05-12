@@ -1,9 +1,14 @@
-import { BurgerMenu, ModalWrapper, PhoneIcon, Typography } from "@/shared";
+import {
+  BurgerMenu,
+  ModalWrapper,
+  PhoneIcon,
+  SearchInput,
+  Typography,
+} from "@/shared";
 import style from "./HeaderMobile.module.scss";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { SideMenu } from "../../models/SideMenu/SideMenu";
-import { SearchInput } from "@/entities";
 
 export const HeaderMobile = () => {
   const { t } = useTranslation();

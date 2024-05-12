@@ -1,0 +1,21 @@
+.loader {
+  height: 100vh;
+}
+.searchTitle {
+  margin-top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .anchorBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .resultsText {
+      color: var(--color-icon-primary-default);
+    }
+    .buttonAnchor {
+      display: flex;
+      gap: 16px;
+    }
+  }
+}
