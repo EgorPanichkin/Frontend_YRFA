@@ -1,6 +1,6 @@
 import { AnalysesHistoryData } from "../model/AnalysesHistoryData";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, Typography } from "@/shared";
+import { ChevronLeft, MoreVertical, Typography } from "@/shared";
 
 import style from "./AnalysesHistory.module.scss";
 import { AnalysesHistoryComponent } from "./ui/AnalysesHistoryComponent";
@@ -14,6 +14,7 @@ export const AnalysesHistory = () => {
     <div className={style.analysesHistoryForm}>
       <div className={style.analysesHistoryFormHead}>
         <ChevronLeft
+          size={24}
           onClick={() => navigate(-1)}
           className={style.analysesHistoryBack}
         />
@@ -24,6 +25,7 @@ export const AnalysesHistory = () => {
         >
           История анализов
         </Typography>
+        <MoreVertical className={style.moreVertical} />
       </div>
       <div className={style.analysesHistoryFormWrapper}>
         {analysesHistoryList.map((analyseHistory, index) => (

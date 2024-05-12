@@ -22,8 +22,12 @@ const data = {
   "select-direction": "breadcrumbs.select-direction",
   "current-service": "breadcrumbs.current-service",
   lovz: "breadcrumbs.lovz",
-  charity: "breadcrumbs.charity",
   search: "breadcrumbs.search",
+  charity: "breadcrumbs.charity",
+  "personal-account": "breadcrumbs.personal-account",
+  "post-history": "breadcrumbs.post-history",
+  "analyses-history": "breadcrumbs.analyses-history",
+  "personal-reset": "breadcrumbs.personal-reset",
 };
 
 const compareKeys = (obj1, obj2) => {

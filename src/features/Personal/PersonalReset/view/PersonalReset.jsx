@@ -1,8 +1,16 @@
-import { CustomButton, CustomInput, Typography } from "@/shared";
+import {
+  CustomButton,
+  CustomInput,
+  PATHS,
+  Typography,
+  notify,
+  usersRequester,
+} from "@/shared";
 import { useFormValidation } from "../model/useFormValidation";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import style from "./PersonalReset.module.scss";
-import { useEffect, useState } from "react";
 
 export const PersonalReset = () => {
   const {
@@ -25,8 +33,30 @@ export const PersonalReset = () => {
     );
   }, [inputValues, errorsInput]);
 
+  const navigate = useNavigate();
+  const { oldPassword, password, enterPassword } = inputValues;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await usersRequester("/change_password/", {
+        old_password: oldPassword,
+        new_password: password,
+        confirm_password: enterPassword,
+      });
+
+      if (response && response.status === 200) {
+        navigate(PATHS.login);
+        notify.success("Пароль успешно изменён!");
+      }
+    } catch {
+      console.log("error");
+    }
+  };
+
   return (
-    <form className={style.personalReset}>
+    <form onSubmit={handleSubmit} className={style.personalReset}>
       <div className={style.personalResetHead}>
         <Typography variant="h2" className={style.personalResetTitle}>
           Смена пароля
@@ -55,6 +85,7 @@ export const PersonalReset = () => {
           value={inputValues.oldPassword}
           placeholder="Введите старый пароль"
           onChange={(event) => handleInputChange(event, "oldPassword")}
+          className={focusedInput === "oldPassword" ? style.focusedInput : ""}
         />
       </div>
       <div>
@@ -76,6 +107,7 @@ export const PersonalReset = () => {
           value={inputValues.password}
           placeholder="Введите старый пароль"
           onChange={(event) => handleInputChange(event, "password")}
+          className={focusedInput === "password" ? style.focusedInput : ""}
         />
       </div>
       <div>
@@ -103,6 +135,7 @@ export const PersonalReset = () => {
           value={inputValues.enterPassword}
           placeholder="Введите старый пароль"
           onChange={(event) => handleInputChange(event, "enterPassword")}
+          className={focusedInput === "enterPassword" ? style.focusedInput : ""}
         />
       </div>
       <CustomButton

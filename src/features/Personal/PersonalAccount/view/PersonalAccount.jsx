@@ -5,6 +5,7 @@ import {
   Dagger,
   ModalWrapper,
   MoreVertical,
+  PATHS,
   Typography,
 } from "@/shared";
 import { IMaskInput } from "react-imask";
@@ -74,9 +75,9 @@ export const PersonalAccount = () => {
               >
                 Редактировать
               </button>
-              <Link to={"analyses-history"}>История анализов</Link>
-              <Link to={"post-history"}>История записей</Link>
-              <Link to={"password-reset"}>Изменить пароль</Link>
+              <Link to={PATHS.analysHistory}>История анализов</Link>
+              <Link to={PATHS.postHistory}>История записей</Link>
+              <Link to={PATHS.personalReset}>Изменить пароль</Link>
               <button
                 type="button"
                 onClick={() => setConfirmationExit(true)}

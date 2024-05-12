@@ -34,17 +34,17 @@ export const usePersonalAccount = () => {
   // данные для предстоящих приёмом
   const [receptionsList, setReceptionsList] = useState([
     {
-      direction: "Название специальности",
-      doctor: "ФИО Специалиста",
-      date: "20 февраля 2024",
-      time: "12:30",
+      direction: "УЗИ беременности",
+      doctor: "Кадырбекова Уулжан Ахментовна",
+      date: "26.02.2024",
+      time: "13:30",
       id: 1,
     },
     {
-      direction: "Название специальности",
-      doctor: "ФИО Специалиста",
-      date: "20 февраля 2024",
-      time: "12:30",
+      direction: "МРТ головного мозга",
+      doctor: "Садырбаев Замир Кенешович",
+      date: "27.02.2024",
+      time: "12:15",
       id: 2,
     },
   ]);

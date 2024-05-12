@@ -9,3 +9,6 @@ export * from "./Tech";
 export * from "./Time";
 export * from "./LocationIcon";
 export * from "./FeedbackIcon";
+export * from "./Price";
+export * from "./AddFile";
+export * from "./Download";

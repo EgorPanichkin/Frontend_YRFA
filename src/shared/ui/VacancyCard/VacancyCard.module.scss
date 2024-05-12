@@ -1,11 +1,18 @@
 .box {
-  width: 374px;
-  border-radius: 20px;
+  width: 384px;
+  height: 139px;
+  border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
   > * {
-    margin: 10px 0px 0px;
+    margin: 7px 0px 0px;
   }
+}
+
+.iconText{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

@@ -6,9 +6,13 @@
     0px 2px 4px -1px rgba(25, 92, 121, 0.1);
   padding: 24px 100px;
 
+  @media screen and (max-width: 760px) {
+    padding: 24px 86px;
+  }
+
   @media screen and (max-width: 320px) {
-    border: none;
-    padding: 34px 20px;
+    box-shadow: none;
+    padding: none;
     border-radius: 0;
     font-size: 14px;
   }
@@ -24,16 +28,12 @@
       align-items: center;
       position: relative;
       margin-bottom: 30px;
-      @media screen and (max-width: 320px) {
-        margin-left: 60px;
-        margin-bottom: 16px;
-      }
       .personalCabinetTitle {
         font-size: 24px;
-        line-height: 32.74px;
-        font-weight: 600;
+        font-weight: 700;
         @media screen and (max-width: 320px) {
-          font-size: 16px;
+          text-align: center;
+          font-size: 22px;
         }
       }
       .personalAccountIconOpen,
@@ -72,17 +72,23 @@
     .formWrapper {
       display: flex;
       flex-direction: column;
-      max-width: 588px;
-
       gap: 16px;
+
       div {
         max-width: 384px;
+
+        @media screen and (max-width: 760px) {
+          max-width: 330px;
+        }
+        @media screen and (max-width: 320px) {
+          max-width: 280px;
+        }
         label {
           margin-bottom: 4px;
           display: block;
           font-weight: 400;
           font-size: 14px;
-          color: var(--Color-Text-Light-color-text-paragraph-light-default, #010101);
+          color: var(--black700, #010101);
         }
         .focusedLabel {
           color: var(--blue300);
@@ -92,13 +98,20 @@
         }
         input {
           width: 384px;
+
+          @media screen and (max-width: 760px) {
+            max-width: 330px;
+          }
+          @media screen and (max-width: 320px) {
+            max-width: 280px;
+          }
           height: 48px;
           border-radius: 10px;
           color: black;
           color: var(--black400);
         }
         .focusedInput {
-          outline: 1.5px solid var(--Color-Stroke-Primary-color-stroke-primary-default, #12709a);
+          outline: 1.5px solid var(--blue300, #12709a);
         }
       }
       .personalAccountButton {
@@ -108,16 +121,14 @@
     }
   }
   .upcomingReceptions {
-    max-width: 588px;
-
     .upcomingReceptionsTitle {
-      color: var(--Color-Text-Light-color-text-paragraph-light-default, #010101);
+      color: var(--black700, #010101);
       font-weight: 700;
       font-size: 24px;
       text-align: center;
       margin-bottom: 24px;
       @media screen and (max-width: 320px) {
-        font-size: 16px;
+        font-size: 22px;
         margin: 0 0 16px 0;
         text-align: center;
       }

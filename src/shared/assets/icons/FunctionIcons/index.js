@@ -6,3 +6,5 @@ export * from "./Pen";
 export * from "./SearchIcon";
 export * from "./Burger";
 export * from "./HomeIcon";
+export * from "./ArrowUpFile";
+export * from "./FileLoad";
