@@ -15,6 +15,7 @@ import {
   PostHistoryPage,
   AnalysesHistoryPage,
   Vacancy,
+  VacancyDetails,
   Directions,
   RehabilitationPage,
   NotFoundPage,
@@ -272,6 +273,13 @@ export const router = createBrowserRouter([
         loader: async () => {
           const vacancy = await baseGetRequest("/main/vacancy/");
           return { vacancy: vacancy };
+        },
+      },
+      {
+        path: PATHS.vacancyDetails,
+        element: <VacancyDetails />,
+        loader: (loader) => {
+          return baseGetRequest(`/main/vacancy/${loader.params.id}`);
         },
       },
       {

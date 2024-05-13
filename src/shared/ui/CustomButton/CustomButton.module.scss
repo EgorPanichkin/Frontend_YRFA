@@ -168,6 +168,7 @@
   background-color: var(--color-bg-button-primary-disabled);
   color: var(--color-text-paragraph-dark-pressed);
 }
+
 .disabled-border {
   background-color: var(--background-white);
   color: var(--color-text-paragraph-dark-disabled);
@@ -177,4 +178,11 @@
 .disabled-neutral {
   background-color: var(--color-bg-button-neutral-disabled);
   color: var(--color-text-paragraph-dark-disabled);
+}
+
+.without-style {
+  text-align: start;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
