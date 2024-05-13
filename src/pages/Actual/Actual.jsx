@@ -3,7 +3,7 @@ import { ActualCard, Container, Typography } from "@/shared";
 import { useLoaderData } from "react-router-dom";
 
 export const Actual = () => {
-  const { results } = useLoaderData();
+  const results = useLoaderData();
 
   return (
     <div>

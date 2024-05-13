@@ -14,11 +14,10 @@ axiosBase.interceptors.request.use(
     if (userLanguage) {
       config.headers["Accept-Language"] = userLanguage;
     }
-    // Ждем бэкенд
-    // const userLocation = localStorage.getItem('location')
-    // if (userLocation) {
-    //   config.headers['Accept-region'] = userLocation
-    // }
+    const userLocation = localStorage.getItem("location");
+    if (userLocation) {
+      config.headers["Accept-Location"] = userLocation;
+    }
     return config;
   },
   (error) => {
@@ -32,6 +31,7 @@ export const baseGetRequest = async (url) => {
     return response.data;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 

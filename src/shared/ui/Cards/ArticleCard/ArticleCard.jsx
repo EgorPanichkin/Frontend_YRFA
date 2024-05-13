@@ -14,7 +14,7 @@ export const ArticleCard = (props) => {
         <Typography variant="h6" weight="bold" className={style.title}>
           {title}
         </Typography>
-        <Typography color="light" truncate={80}>
+        <Typography color="light" truncate={80} className={style.mainText}>
           {mainDescription}
         </Typography>
         <CustomButton

@@ -24,12 +24,25 @@
     }
   }
   .text {
+    height: calc(100% - 216px);
     padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 768px) {
+      height: calc(100% - 186px);
+    }
+    @media (max-width: 450px) {
+      height: calc(100% - 158px);
+    }
     .title {
-      margin: 4px 0 8px;
+      margin-top: 4px 0 0;
+    }
+    .mainText {
+      margin: 8px 0;
     }
     .button {
-      margin-top: 8px;
+      margin-top: auto;
+      margin-right: auto;
     }
   }
 }
