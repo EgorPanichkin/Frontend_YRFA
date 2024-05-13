@@ -1,8 +1,6 @@
 import { searchRequester } from "@/shared";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-let previousSearchTerm = null;
-
 // eslint-disable-next-line no-unused-vars
 export const searchResults = createAsyncThunk(
   "search/searchResults",
@@ -10,8 +8,7 @@ export const searchResults = createAsyncThunk(
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get("q");
 
-    if (searchTerm && searchTerm !== previousSearchTerm) {
-      previousSearchTerm = searchTerm;
+    if (searchTerm) {
       const response = await searchRequester({ query: searchTerm });
       return response;
     }
