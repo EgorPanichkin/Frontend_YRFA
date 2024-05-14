@@ -35,7 +35,11 @@ export const CharitySection = () => {
         </Typography>
         <div className={style.cardsWrapper}>
           {article?.map((card) => (
-            <ArticleCard {...card} key={card.id} />
+            <ArticleCard
+              {...card}
+              id={`charity-more/${card.id}`}
+              key={card.id}
+            />
           ))}
         </div>
       </div>

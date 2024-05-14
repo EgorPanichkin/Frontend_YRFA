@@ -57,7 +57,10 @@
     "personal-account": "Личный кабинет",
     "post-history": "История записей",
     "analyses-history": "История анализов",
-    "personal-reset": "Смена пароля"
+    "personal-reset": "Смена пароля",
+    "doctors_articles": "Статьи для врачей",
+    "events": "Мероприятия  для докторов",
+    "charity-more": "Статья подробнее"
   },
   "footer": {
     "list1": {

@@ -3,7 +3,6 @@ import style from "./ArticleCard.module.scss";
 
 export const ArticleCard = (props) => {
   const { image, title, mainDescription, pubDate, id } = props;
-
   return (
     <div className={style.card}>
       <div className={style.imageWrapper}>

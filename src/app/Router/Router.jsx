@@ -254,7 +254,7 @@ export const router = createBrowserRouter([
         path: PATHS.charity,
         element: <Charity />,
         loader: async () => {
-          const article = await baseGetRequest("/charity/articles/");
+          const article = await baseGetRequest("charity/article/");
           const fund = await baseGetRequest("/charity/fund/");
           return { article: article, fund: fund };
         },

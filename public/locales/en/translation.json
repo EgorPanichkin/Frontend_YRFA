@@ -57,7 +57,10 @@
     "personal-account": "Personal account",
     "post-history": "Post history",
     "analyses-history": "Analyses history",
-    "personal-reset": "Personal reset"
+    "personal-reset": "Personal reset",
+    "doctors_articles": "Articles for doctors",
+    "events": "Events for doctors",
+    "charity-more": "Articles More"
   },
   "footer": {
     "list1": {
