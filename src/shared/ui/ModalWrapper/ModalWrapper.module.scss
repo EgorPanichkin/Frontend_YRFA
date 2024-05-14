@@ -18,8 +18,12 @@
     animation: fadeOut 250ms ease forwards;
   }
   .modalContent {
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 0.1px);
     overflow-y: auto;
+  }
+
+  .modalContent::-webkit-scrollbar {
+    display: none;
   }
 }
 
