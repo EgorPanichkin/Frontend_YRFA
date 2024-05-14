@@ -23,7 +23,7 @@ export const SearchPrice = (props) => {
         {data.slice(0, visibleCount).map((item) => (
           <div key={item.id} className={style.priceCard}>
             <div className={style.titleCard}>
-              <Typography weight="bold">{item.title}</Typography>
+              <Typography weight="bold">{item.price_description}</Typography>
               <Typography variant="h4" weight="bold" color="primary">
                 {item.price}
               </Typography>

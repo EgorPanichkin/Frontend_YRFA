@@ -28,20 +28,9 @@ const data = {
   "post-history": "breadcrumbs.post-history",
   "analyses-history": "breadcrumbs.analyses-history",
   "personal-reset": "breadcrumbs.personal-reset",
-};
-
-const compareKeys = (obj1, obj2) => {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-
-  const uniqueKeys = keys1.filter((key) => !keys2.includes(key));
-  const filteredObj = {};
-
-  uniqueKeys.forEach((key) => {
-    filteredObj[key] = obj1[key];
-  });
-
-  return filteredObj;
+  doctors_articles: "breadcrumbs.doctors_articles",
+  events: "breadcrumbs.events",
+  "charity-more": "breadcrumbs.charity-more",
 };
 
 export const Breadcrumbs = () => {
@@ -67,15 +56,23 @@ export const Breadcrumbs = () => {
   };
 
   if (pathnames.length === 0) {
-    return;
+    return null;
   }
 
   if (data[pathnames[0]] == undefined) {
     return false;
   }
 
-  const uniquePathnames = compareKeys(pathnames, filteredPathnames);
+  const filteredPathnamess = pathnames.filter((name) => !isNumeric(name));
 
+  if (filteredPathnamess.length === 0) {
+    return null;
+  }
+
+  const numericPathnames = pathnames.map((name) => {
+    const parsed = parseInt(name, 10);
+    return isNaN(parsed) ? name : parsed;
+  });
   return (
     <Container>
       <div className={style.breadcrumbs}>
@@ -86,14 +83,13 @@ export const Breadcrumbs = () => {
         </Link>
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-          const isLast = index !== uniquePathnames.length - 1;
-          const linkClass = isLast ? "" : "primary";
+          const isLast = index === numericPathnames.length - 1;
           const filterNumberObj =
             Object.keys(filteredPathnames).length > 0
-              ? `${name}/${Object.keys(filteredPathnames)}`
-              : routeTo;
+              ? routeTo
+              : `${name}/${Object.keys(filteredPathnames)}`;
           const translationName = t(data[name]).replace(/\d+/g, "").trim();
-          if (!translationName || isNumeric(translationName)) {
+          if (!translationName) {
             return null;
           }
           return isLast ? (
@@ -101,7 +97,11 @@ export const Breadcrumbs = () => {
               <div className={style.chevron}>
                 <ChevronRight className={style.chevronRight} />
               </div>
-              <Typography variant="smallBody" weight="bold" color={linkClass}>
+              <Typography
+                variant="smallBody"
+                weight="bold"
+                color={isLast ? "" : "primary"}
+              >
                 {translationName}
               </Typography>
             </div>
@@ -114,7 +114,11 @@ export const Breadcrumbs = () => {
               <div className={style.chevron}>
                 <ChevronRight className={style.chevronRight} />
               </div>
-              <Typography variant="smallBody" weight="bold" color={linkClass}>
+              <Typography
+                variant="smallBody"
+                weight="bold"
+                color={isLast ? " " : "primary"}
+              >
                 {translationName}
               </Typography>
             </Link>

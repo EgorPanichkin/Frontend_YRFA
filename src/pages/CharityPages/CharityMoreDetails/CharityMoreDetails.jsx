@@ -1,34 +1,28 @@
-import { Container, ReusedTextSection } from "@/shared";
+import { Container } from "@/shared";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
-import { advantages } from "./data.json";
 
 import style from "./CharityMoreDetails.module.scss";
+import parse from "html-react-parser/lib/index";
 
 export const CharityMoreDetails = () => {
   const articleMoreDetails = useLoaderData();
+  console.log(articleMoreDetails);
 
-  const { description, image, title } = articleMoreDetails;
+  const { description, image, title, main_description } = articleMoreDetails;
+
+  const parsedBlock = parse(description);
 
   return (
     <>
       <ReusedHero
         textButton="Записаться онлайн"
         title={title}
-        body={description}
+        body={parse(main_description)}
         img={image}
       />
       <Container>
-        <div className={style.reusedTextSectionWrapper}>
-          {advantages?.map((advantage) => (
-            <ReusedTextSection
-              key={advantage.id}
-              data={advantage}
-              image={advantage.image}
-              reverse={advantage.id % 2 ? true : false}
-            />
-          ))}
-        </div>
+        <div className={style.reusedTextSectionWrapper}>{parsedBlock}</div>
       </Container>
     </>
   );
