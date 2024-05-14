@@ -1,4 +1,5 @@
-.box {
+
+.wrapper {
   width: 384px;
   height: 139px;
   border-radius: 12px;
@@ -11,7 +12,20 @@
   }
 }
 
-.iconText{
+@media screen and (max-width: 876px) {
+  .wrapper {
+    width: 330px;
+    height: 134px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .wrapper {
+    width: 384px;
+  }
+}
+
+.iconText {
   display: flex;
   align-items: center;
   gap: 5px;

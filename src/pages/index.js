@@ -14,7 +14,7 @@ export * from "./Doctors";
 export * from "./PersonalCabinetPages";
 export * from "./Rehabilitation";
 export * from "./SelectDirectionPage";
-export * from "./Vacancy";
+export * from "./VacancyPages";
 export * from "./WelcomePage";
 export * from "./AnalysisSelection";
 export * from "./lOVZ";
