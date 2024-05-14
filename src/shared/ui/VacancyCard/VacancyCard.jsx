@@ -3,7 +3,7 @@ import style from "./VacancyCard.module.scss";
 import { LocationIcon, Price } from "@shared";
 
 export const VacancyCard = (props) => {
-  const { title, pub_date, description, date, id } = props;
+  const { title, price, location, pub_date, id } = props;
   return (
     <CustomButton
       className={style.btn}
@@ -12,7 +12,7 @@ export const VacancyCard = (props) => {
     >
       <div className={style.wrapper}>
         <Typography variant="smallBody" weight="semibold" color="light">
-          {date}
+          {pub_date}
         </Typography>
         <Typography variant="h3" weight="semibold" color="primary">
           {title}
@@ -20,13 +20,13 @@ export const VacancyCard = (props) => {
         <Typography variant="h7" color="orange300">
           <div className={style.iconText}>
             <Price />
-            {pub_date}
+            {price}
           </div>
         </Typography>
         <Typography variant="h7" weight="regular" color="blue300">
           <div className={style.iconText}>
             <LocationIcon />
-            {description}
+            {location}
           </div>
         </Typography>
       </div>
