@@ -13,54 +13,48 @@
 
 .section {
   display: flex;
-  justify-content: left;
-  gap: 70px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 88px;
   flex-wrap: wrap;
 }
+
 .line {
-  margin: 10px 0;
+  margin: 8px 0;
 }
-
-.social {
-  .socialLinks {
-    display: flex;
-    gap: 10px;
-  }
+.title {
+  white-space: nowrap;
 }
-
-.links {
-  display: block;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 10px;
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--backgound-color);
-  }
-}
-.contact {
+.link {
   display: flex;
+  white-space: nowrap;
   gap: 5px;
+  margin-bottom: 12px;
 }
 
-.endFooter {
+.policy {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   gap: 10px;
   color: var(--black100);
-  margin-top: 70px;
+  flex-wrap: wrap;
+  @media (max-width: 960px) {
+    width: 100%;
+    justify-content: start;
+  }
 }
 
 .shortLine {
   width: 1px;
   height: 20px;
   background-color: var(--black400);
-}
-
-.tel {
-  display: flex;
-  gap: 5px;
-  color: var(--black100);
 }
 
 .geeks {
@@ -73,11 +67,11 @@
 
 .disclamer {
   max-width: 900px;
-  margin: 25px auto;
-  p {
-    @media (max-width: 930px) {
-      padding: 20px;
-      text-align: center;
+  margin: 15px auto;
+  .disclamerText {
+    color: var(--black200);
+    @media (max-width: 960px) {
+      text-align: left;
     }
   }
 }

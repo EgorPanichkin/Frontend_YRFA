@@ -1,14 +1,4 @@
-import {
-  Container,
-  Facebook,
-  FooterLogo,
-  GeeksLogo,
-  Instagram,
-  Line,
-  PhoneIcon,
-  Typography,
-  WhatsApp,
-} from "@/shared";
+import { Container, FooterLogo, GeeksLogo, Line, Typography } from "@/shared";
 import style from "./Footer.module.scss";
 import { data } from "../api/data";
 import { Link } from "react-router-dom";
@@ -16,125 +6,89 @@ import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
   const { t } = useTranslation();
+
   return (
     <footer className={style.footer}>
       <Container>
         <div className={style.section}>
           <FooterLogo />
-          <div className={style.social}>
-            <Typography variant="h7" color="dark">
-              {t(data.list1.title)}
-            </Typography>
-            <Line color="blacklight" className={style.line} />
-            <div className={style.socialLinks}>
-              <a href="https://facebook.com">
-                <Facebook />
-              </a>
-              <a href="https://instagram.com">
-                <Instagram />
-              </a>
+          <div className={style.navigation}>
+            {data.nav.map((item, index) => {
+              return (
+                <div key={index}>
+                  <Typography
+                    variant="h6"
+                    weight="bold"
+                    color="dark"
+                    className={style.title}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Line color="primary" className={style.line} />
+                  {item.title === "Соц.сети" &&
+                    item.links.map((link, index) => {
+                      return (
+                        <a href={link.path} className={style.link} key={index}>
+                          <img src={data.icons[index]} alt="icon" />
+                          <Typography color="dark">{link.name}</Typography>
+                        </a>
+                      );
+                    })}
+                  {item.title === "Контакты" &&
+                    item.links.map((link, index) => {
+                      return (
+                        <a
+                          href={`tel:${link.path}`}
+                          className={style.link}
+                          key={index}
+                        >
+                          {index === item.links.length - 1 ? (
+                            <img src={data.icons[3]} alt="icon" />
+                          ) : (
+                            <img src={data.icons[2]} alt="icon" />
+                          )}
+                          <Typography color="dark">{link.name}</Typography>
+                        </a>
+                      );
+                    })}
+                  {item.title !== "Соц.сети" &&
+                    item.title !== "Контакты" &&
+                    item.links.map((link, index) => {
+                      return (
+                        <Link to={link.path} className={style.link} key={index}>
+                          <Typography color="dark">{link.name}</Typography>
+                        </Link>
+                      );
+                    })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className={style.endFooter}>
+          <div className={style.policy}>
+            <div>
+              <Typography variant="bodySmall" color="dark">
+                {t(data.policy)}
+              </Typography>
             </div>
-          </div>
-          <div>
-            <Typography variant="h7" color="dark">
-              {t(data.list2.title)}
-            </Typography>
-            <Line color="blacklight" className={style.line} />
-            {data.list2.items.map((item, index) => {
-              return (
-                <Link to={item.path} key={index} className={style.links}>
-                  <Typography variant="body2" weight="semibold" color="dark">
-                    {t(item.text)}
-                  </Typography>
-                </Link>
-              );
-            })}
-          </div>
-          <div>
-            <Typography variant="h7" color="dark">
-              {t(data.list3.title)}
-            </Typography>
-            <Line color="blacklight" className={style.line} />
-            {data.list3.items.map((item, index) => {
-              return (
-                <Link to={item.path} key={index} className={style.links}>
-                  <Typography variant="body2" color="dark">
-                    {t(item.text)}
-                  </Typography>
-                </Link>
-              );
-            })}
-          </div>
-          <div>
-            <Typography variant="h7" color="dark">
-              {t(data.list4.title)}
-            </Typography>
-            <Line color="blacklight" className={style.line} />
-            {data.list4.items.map((item, index) => {
-              return (
-                <Link to={item.path} key={index} className={style.links}>
-                  <Typography variant="body2" color="dark">
-                    {t(item.text)}
-                  </Typography>
-                </Link>
-              );
-            })}
-          </div>
-          <div>
-            <div className={style.tel}>
-              <Typography variant="h7" color="dark">
-                {t(data.list5.title)}
-              </Typography>
-              <PhoneIcon color="dark" />
-            </div>
-            <Line color="blacklight" className={style.line} />
-            <a href="tel:1-952-965-6121 x0456" className={style.links}>
-              <Typography variant="body2" color="dark">
-                1-952-965-6121 x0456
-              </Typography>
-            </a>
-            <a href="tel:752-356-1881 x955" className={style.links}>
-              <Typography variant="body2" color="dark">
-                752-356-1881 x955
-              </Typography>
-            </a>
-            <a href="tel:401-431-0582" className={style.links}>
-              <Typography variant="body2" color="dark">
-                401-431-0582
-              </Typography>
-            </a>
-            <div className={style.tel}>
-              <WhatsApp />
-              <a href="tel:(230) 908-6360 x291" className={style.links}>
-                <Typography variant="body2" color="dark">
-                  (230) 908-6360 x291
+            <div className={style.shortLine}></div>
+            <div className={style.link}>
+              <a href="https://geeks.kg/geeks-pro" className={style.geeks}>
+                <Typography variant="bodySmall" color="dark">
+                  Made by GeeksPro
                 </Typography>
               </a>
+              <GeeksLogo />
             </div>
+          </div>
+          <div className={style.disclamer}>
+            <Typography variant="smallBody" className={style.disclamerText}>
+              {t(data.disclamer)}
+            </Typography>
           </div>
         </div>
       </Container>
-      <div className={style.endFooter}>
-        <div>
-          <Typography variant="bodySmall" color="dark">
-            {t(data.policy)}
-          </Typography>
-        </div>
-        <div className={style.shortLine}></div>
-        <div className={style.tel}>
-          <a href="https://geeks.kg/geeks-pro" className={style.geeks}>
-            <Typography variant="bodySmall" color="dark">
-              Made by GeeksPro
-            </Typography>
-          </a>
-          <GeeksLogo />
-        </div>
-      </div>
-      <div className={style.disclamer}>
-        <Typography variant="bodySmall" color="dark">
-          {t(data.disclamer)}
-        </Typography>
-      </div>
     </footer>
   );
 };
