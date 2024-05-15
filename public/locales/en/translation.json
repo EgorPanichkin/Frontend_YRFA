@@ -83,5 +83,87 @@
     },
     "policy": "Privacy Policy",
     "disclamer": "All materials on the site are protected by copyright, their use is possible only with the written consent of the copyright holder, and the information on the site is for informational and educational purposes only, and does not constitute medical advice."
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "body": "Log in to your account to track your recording and analysis history",
+      "phoneInput": {
+        "label": "Phone",
+        "errorLabel": {
+          "one": "Fill in the Number field",
+          "twoo": "Incorrect number!"
+        }
+      },
+      "passwordInput": {
+        "label": "Password",
+        "placeholder": "enter password",
+        "errorLabel": {
+          "one": "Fill in the Password field",
+          "twoo": "At least 8 and 24 characters"
+        }
+      },
+      "button": "To come in",
+      "linkPassword": "Forgot your password?",
+      "titleLinkRegister": "Don't have an account yet?",
+      "linkRegister": "Register"
+    },
+    "register": {
+      "title": "Fill in the form",
+      "body": "Fill in your details for further registration",
+      "nameInput": {
+        "label": "Name",
+        "placeholder": "Enter your name",
+        "errorLabel": {
+          "one": "Fill in the Name field",
+          "twoo": "Incorrect name!"
+        }
+      },
+      "surnameInput": {
+        "label": "Surname",
+        "placeholder": "Enter your last name",
+        "errorLabel": {
+          "one": "Fill in the Last Name field",
+          "twoo": "Last name from 2 to 20 characters!"
+        }
+      },
+      "phoneInput": {
+        "label": "Phone",
+        "errorLabel": {
+          "one": "Fill in the Number field",
+          "twoo": "Incorrect number!"
+        }
+      },
+      "dateInput": {
+        "label": "Date of birth",
+        "errorLabel": "Fill in the date field"
+      },
+      "genderInput": {
+        "label": "Gender",
+        "placeholder": "Please indicate your gender",
+        "options": {
+          "man": "Man",
+          "woman": "Woman"
+        }
+      },
+      "passwordInput": {
+        "label": "Password",
+        "placeholder": "enter password",
+        "errorLabel": {
+          "one": "Fill in the Password field",
+          "twoo": "At least 8 and 24 characters"
+        }
+      },
+      "enterPasswordInput": {
+        "label": "Repeat password",
+        "placeholder": "Repeat password",
+        "errorLabel": {
+          "one": "Fill in the repeat password field",
+          "twoo": "Password mismatch"
+        }
+      },
+
+      "button": "Further"
+    }
   }
 }
