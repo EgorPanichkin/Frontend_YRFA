@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRightIcon } from "@/shared";
+import { ChevronLeft, ChevronRight } from "@/shared";
 import style from "./SliderNavbar.module.scss";
 
 export const SliderNavbar = (props) => {
@@ -22,7 +22,7 @@ export const SliderNavbar = (props) => {
         })}
       </div>
       <button onClick={() => slider.current.slideNext()}>
-        <ChevronRightIcon />
+        <ChevronRight />
       </button>
     </div>
   );

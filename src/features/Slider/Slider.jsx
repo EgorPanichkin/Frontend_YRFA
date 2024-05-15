@@ -35,7 +35,7 @@ export const Slider = () => {
                 <Typography variant="h5" weight="bold">
                   {item.title}
                 </Typography>
-                <Typography color="light" className={style.title}>
+                <Typography color="light" className={style.title} truncate={65}>
                   {item.description}
                 </Typography>
                 <CustomButton size="small" className={style.button}>
