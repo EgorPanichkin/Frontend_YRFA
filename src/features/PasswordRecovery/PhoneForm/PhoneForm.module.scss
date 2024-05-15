@@ -57,9 +57,10 @@
     margin-bottom: 24px;
     border-radius: 10px;
     font-weight: 400;
-    width: 384px;
     font-size: 14px;
     height: 48px;
+    width: 384px;
+    padding: 14px;
 
     @media screen and (max-width: 760px) {
       margin-bottom: 16px;
