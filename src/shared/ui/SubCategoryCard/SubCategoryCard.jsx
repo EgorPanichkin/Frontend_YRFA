@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from "@/shared";
+import { ChevronDown } from "@/shared";
 import { Typography } from "..";
 import style from "./SubCategoryCard.module.scss";
 import { Link } from "react-router-dom";
@@ -21,12 +21,12 @@ export const SubCategoryCard = ({ data }) => {
         <Typography weight="bold" color="default">
           {data.subcategory_name}
         </Typography>
-        <ChevronDownIcon />
+        <ChevronDown className={isActive ? style.iconOpen : style.icon} />
       </div>
       <div className={isActive ? style.menu : style.hidden}>
-        {data.diagnostic_subcategory?.map((item) => {
+        {data.diagnostic_subcategory?.map((item, index) => {
           return (
-            <Link to={"current-service/" + item.id} key={item.id}>
+            <Link to={"current-service/" + item.id} key={index}>
               <Typography variant="smallBody" weight="bold" color="primary">
                 {item.diagnostic_name}
               </Typography>
