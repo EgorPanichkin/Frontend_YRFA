@@ -30,9 +30,7 @@ export const SearchInput = (props) => {
           placeholder={t("header.search")}
           value={searchTerm}
           onChange={handleInputChange}
-          className={
-            size === "big" ? style.inputPadding : style.inputPaddingDef
-          }
+          className={`${style.searchInput} ${size === "big" ? style.inputPadding : style.inputPaddingDef}`}
         />
         <div
           className={`${style.searchIcon} ${size === "big" ? style.searchIconBig : style.searchIconDef}`}

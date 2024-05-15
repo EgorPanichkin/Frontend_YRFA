@@ -1,6 +1,6 @@
 import { Container } from "@/shared";
 
-import style from "./RegisterPage.module.sass";
+import style from "./RegisterPage.module.scss";
 import { Registration } from "@/features";
 
 export const RegisterPage = () => {
