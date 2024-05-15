@@ -5,7 +5,9 @@
 .red {
   border: 1px solid red;
 }
-
+.primary {
+  border: 1px solid var(--color-stroke-primary-pressed);
+}
 .black100 {
   border: 1px solid var(--black100);
 }
