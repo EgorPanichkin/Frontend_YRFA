@@ -1,4 +1,5 @@
 import { validateForm } from "@/shared";
+import { t } from "i18next";
 import { useState } from "react";
 
 export const AuthValidation = () => {
@@ -16,12 +17,18 @@ export const AuthValidation = () => {
 
   const validationRules = {
     password: {
-      errorMessage: ["Заполните поле Пароль", "Не менее 8 и 24 символов"],
+      errorMessage: [
+        t("auth.login.passwordInput.errorLabel.one"),
+        t("auth.login.passwordInput.errorLabel.twoo"),
+      ],
       minLength: 8,
       maxLength: 24,
     },
     phone: {
-      errorMessage: ["Заполните поле Номер", "Не корректный номер!"],
+      errorMessage: [
+        t("auth.login.phoneInput.errorLabel.one"),
+        t("auth.login.phoneInput.errorLabel.twoo"),
+      ],
       minLength: 16,
     },
   };
