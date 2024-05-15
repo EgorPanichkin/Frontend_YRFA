@@ -24,7 +24,6 @@ export const Search = () => {
   useEffect(() => {
     dispatch(searchResults());
   }, [dispatch]);
-  console.log(data);
   const isAllEmpty = Object.values(data).every(
     (arr) => Array.isArray(arr) && arr.length === 0,
   );
@@ -60,10 +59,10 @@ export const Search = () => {
       return [...acc, ...newData];
     }, [])
     .map((item) => {
-      const { analyse_name, diagnostic_name, ...rest } = item;
+      const { analyse_name, diagnostic_name, title, ...rest } = item;
       return {
         ...rest,
-        title: diagnostic_name || analyse_name,
+        title: diagnostic_name || analyse_name || title,
       };
     });
   const filteredDataWithPrice = filteredData.filter((obj) => "price" in obj);

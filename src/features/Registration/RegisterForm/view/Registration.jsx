@@ -5,6 +5,7 @@ import { IMaskInput } from "react-imask";
 
 import style from "./Registration.module.scss";
 import { CustomInput } from "@/shared/ui/CustomInput";
+import { t } from "i18next";
 
 export const Registration = () => {
   const {
@@ -27,10 +28,10 @@ export const Registration = () => {
     <form className={style.registerForm} onSubmit={handleSubmit}>
       <div className={style.registerBlockTitle}>
         <Typography variant="h2" weight="600" className={style.registerTitle}>
-          Заполните анкету
+          {t("auth.register.title")}
         </Typography>
         <Typography variant="body" weight="400" color="#4A4A4A">
-          Заполните свои данные для дальнейшней регистрации
+          {t("auth.register.body")}
         </Typography>
       </div>
       <div className={style.formWrapper}>
@@ -44,7 +45,7 @@ export const Registration = () => {
               htmlFor="name"
               className={focusedInput === "name" ? style.focusedLabel : ""}
             >
-              Имя
+              {t("auth.register.nameInput.label")}
             </label>
           )}
           <CustomInput
@@ -53,7 +54,7 @@ export const Registration = () => {
             value={inputValues.name}
             onBlur={() => setFocusedInput("")}
             onFocus={() => setFocusedInput("name")}
-            placeholder="Введите Ваше имя"
+            placeholder={t("auth.register.nameInput.placeholder")}
             onChange={(event) => handleInputChange(event, "name")}
             className={focusedInput === "name" ? style.registerInput : ""}
           />
@@ -68,7 +69,7 @@ export const Registration = () => {
               htmlFor="surName"
               className={focusedInput === "surName" ? style.focusedLabel : ""}
             >
-              Фамилия
+              {t("auth.register.surnameInput.label")}
             </label>
           )}
           <CustomInput
@@ -77,7 +78,7 @@ export const Registration = () => {
             onBlur={() => setFocusedInput("")}
             onFocus={() => setFocusedInput("surName")}
             value={inputValues.surName}
-            placeholder="Введите Ваше фамилие"
+            placeholder={t("auth.register.surnameInput.placeholder")}
             onChange={(event) => handleInputChange(event, "surName")}
             className={focusedInput === "surName" ? style.registerInput : ""}
           />
@@ -92,7 +93,7 @@ export const Registration = () => {
               htmlFor="phone"
               className={focusedInput === "phone" ? style.focusedLabel : ""}
             >
-              Номер
+              {t("auth.register.phoneInput.label")}
             </label>
           )}
           <IMaskInput
@@ -122,7 +123,7 @@ export const Registration = () => {
               htmlFor="date"
               className={focusedInput === "date" ? style.focusedLabel : ""}
             >
-              Дата рождения
+              {t("auth.register.dateInput.label")}
             </label>
           )}
           <CustomInput
@@ -136,10 +137,12 @@ export const Registration = () => {
           />
         </div>
         <div>
-          <label htmlFor="gender">Пол</label>
+          <label htmlFor="gender">{t("auth.register.genderInput.label")}</label>
           <AccordionForm
             accordionTitle={
-              inputValues.gender ? inputValues.gender : "Укажите свой пол"
+              inputValues.gender
+                ? inputValues.gender
+                : t("auth.register.genderInput.placeholder")
             }
             onClickOption={handleOptionClick}
             optionsItems={optionsItems}
@@ -155,7 +158,7 @@ export const Registration = () => {
               htmlFor="password"
               className={focusedInput === "password" ? style.focusedLabel : ""}
             >
-              Пароль
+              {t("auth.register.passwordInput.label")}
             </label>
           )}
           <CustomInput
@@ -164,7 +167,7 @@ export const Registration = () => {
             onBlur={() => setFocusedInput("")}
             onFocus={() => setFocusedInput("password")}
             value={inputValues.password}
-            placeholder="Введите пароль"
+            placeholder={t("auth.register.passwordInput.placeholder")}
             onChange={(event) => handleInputChange(event, "password")}
             className={focusedInput === "password" ? style.registerInput : ""}
           />
@@ -175,7 +178,9 @@ export const Registration = () => {
               {errorsInput.enterPassword}
             </label>
           ) : !passwordMatch && inputValues.enterPassword ? (
-            <label className={style.errorLabel}>Пароли не совпадают</label>
+            <label className={style.errorLabel}>
+              {t("auth.register.enterPasswordInput.errorLabel.twoo")}
+            </label>
           ) : (
             <label
               htmlFor="enterPassword"
@@ -183,7 +188,7 @@ export const Registration = () => {
                 focusedInput === "enterPassword" ? style.focusedLabel : ""
               }
             >
-              Проверка пароля
+              {t("auth.register.enterPasswordInput.label")}
             </label>
           )}
           <CustomInput
@@ -192,7 +197,7 @@ export const Registration = () => {
             onBlur={() => setFocusedInput("")}
             onFocus={() => setFocusedInput("enterPassword")}
             value={inputValues.enterPassword}
-            placeholder="Повторите пароль"
+            placeholder={t("auth.register.enterPasswordInput.placeholder")}
             onChange={(event) => handleInputChange(event, "enterPassword")}
             className={
               focusedInput === "enterPassword" ? style.registerInput : ""
@@ -201,7 +206,7 @@ export const Registration = () => {
         </div>
       </div>
       <CustomButton color="default" type="submit" disabled={isDisabled}>
-        Далее
+        {t("auth.register.button")}
       </CustomButton>
     </form>
   );

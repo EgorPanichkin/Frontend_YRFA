@@ -13,6 +13,7 @@ import { IMaskInput } from "react-imask";
 import { Link, useNavigate } from "react-router-dom";
 
 import style from "./Authorization.module.scss";
+import { t } from "i18next";
 
 export const Authorization = () => {
   const {
@@ -68,14 +69,14 @@ export const Authorization = () => {
             weight="600"
             className={style.authorizationTitle}
           >
-            Войдите
+            {t("auth.login.title")}
           </Typography>
           <Typography
             className={style.authorizationBody}
             variant="body"
             weight="400"
           >
-            Войдите в свой аккаунт чтобы отслеживать историю записи и анализов
+            {t("auth.login.body")}
           </Typography>
         </div>
         <div className={style.formWrapperInput}>
@@ -87,7 +88,7 @@ export const Authorization = () => {
                 htmlFor="phone"
                 className={focusedInput === "phone" ? style.focusedLabel : ""}
               >
-                Номер
+                {t("auth.login.phoneInput.label")}
               </label>
             )}
             <IMaskInput
@@ -117,7 +118,7 @@ export const Authorization = () => {
                   focusedInput === "password" ? style.focusedLabel : ""
                 }
               >
-                Пароль
+                {t("auth.login.passwordInput.label")}
               </label>
             )}
             <CustomInput
@@ -126,7 +127,7 @@ export const Authorization = () => {
               onBlur={() => setFocusedInput("")}
               onFocus={() => setFocusedInput("password")}
               value={inputValues.password}
-              placeholder="Введите пароль"
+              placeholder={t("auth.login.phoneInput.placeholder")}
               onChange={(event) => handleInputChange(event, "password")}
               className={
                 focusedInput === "password"
@@ -142,18 +143,18 @@ export const Authorization = () => {
           type="submit"
           disabled={isDisabled}
         >
-          Войти
+          {t("auth.login.button")}
         </CustomButton>
       </div>
       <div className={style.helpBlock}>
         <Link className={style.helpBlockLinkTop} to="sms-verification">
-          Забыли пароль?
+          {t("auth.login.linkPassword")}
         </Link>
         <Typography className={style.helpBlockSpan} variant="span" weight="400">
-          Ещё нет аккаунта?
+          {t("auth.login.titleLinkRegister")}
         </Typography>
         <Link className={style.helpBlockLinkBottom} to="/registration">
-          Зарегистрируйтесь
+          {t("auth.login.linkRegister")}
         </Link>
       </div>
     </form>

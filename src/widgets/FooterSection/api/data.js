@@ -1,31 +1,50 @@
 import { PATHS } from "@/shared";
+import phone from "@/shared/assets/icons/FooterIcons/phone.svg";
+import inst from "@/shared/assets/icons/FooterIcons/inst.svg";
+import fb from "@/shared/assets/icons/FooterIcons/fb.svg";
+import wa from "@/shared/assets/icons/FooterIcons/wa.svg";
 
 export const data = {
-  list1: {
-    title: "footer.list1.title",
-  },
-  list2: {
-    title: "footer.list2.title",
-    items: [{ text: "footer.list2.item1", path: PATHS.actual }],
-  },
-  list3: {
-    title: "footer.list3.title",
-    items: [
-      { text: "footer.list3.item1", path: PATHS.directions },
-      { text: "footer.list3.item2", path: PATHS.about },
-      { text: "FAQ", path: PATHS.FAQ },
-    ],
-  },
-  list4: {
-    title: "footer.list4.title",
-    items: [
-      { text: "footer.list4.item1", path: PATHS.vacancy },
-      { text: "footer.list4.item2", path: PATHS.doctors },
-    ],
-  },
-  list5: {
-    title: "footer.list5.title",
-  },
+  icons: [fb, inst, phone, wa],
+  nav: [
+    {
+      title: "Компания",
+      links: [
+        { name: "О компании", path: PATHS.about },
+        { name: "Акции", path: PATHS.actual },
+      ],
+    },
+    {
+      title: "Карта сайта",
+      links: [
+        { name: "Услуги", path: PATHS.directions },
+        { name: "FAQ", path: PATHS.FAQ },
+      ],
+    },
+    {
+      title: "Сотрудничество",
+      links: [
+        { name: "Вакансии", path: PATHS.vacancy },
+        { name: "Врачам", path: PATHS.doctors },
+      ],
+    },
+    {
+      title: "Соц.сети",
+      links: [
+        { name: "Facebook", path: "https://www.facebook.com/" },
+        { name: "Instagram", path: "https://www.instagram.com/" },
+      ],
+    },
+    {
+      title: "Контакты",
+      links: [
+        { name: "+996 703 52 52 07", path: "+996 703 52 52 07" },
+        { name: "+996 703 52 52 07", path: "+996 703 52 52 07" },
+        { name: "+996 703 52 52 07", path: "+996 703 52 52 07" },
+        { name: "+996 703 52 52 07", path: "+996 703 52 52 07" },
+      ],
+    },
+  ],
   policy: "footer.policy",
   disclamer: "footer.disclamer",
 };

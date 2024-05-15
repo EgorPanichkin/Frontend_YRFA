@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import { t } from "i18next";
+
 export const RegisterValidation = () => {
   // для состояния кнопки, тоесть активная кнопка или не активная
   const [isDisabled, setIsDisabled] = useState(false);
@@ -21,39 +23,49 @@ export const RegisterValidation = () => {
   const navigate = useNavigate();
 
   // данные для опции пола
-  const optionsItems = ["Мужской", "Женский"];
+  const optionsItems = [
+    t("auth.register.genderInput.options.man"),
+    t("auth.register.genderInput.options.woman"),
+  ];
 
   const validationRules = {
     name: {
-      errorMessage: ["Заполните поле Имя", "Имя от 2 до 20 символов!"],
+      errorMessage: [
+        t("auth.register.nameInput.errorLabel.one"),
+        t("auth.register.nameInput.errorLabel.twoo"),
+      ],
       minLength: 2,
-      maxLength: 30,
+      maxLength: 20,
     },
     surName: {
-      errorMessage: ["Заполните поле Фамилия", "Фамилия от 2 до 20 символов!"],
+      errorMessage: [
+        t("auth.register.surnameInput.errorLabel.one"),
+        t("auth.register.surnameInput.errorLabel.twoo"),
+      ],
       minLength: 2,
-      maxLength: 30,
+      maxLength: 20,
     },
     phone: {
-      errorMessage: ["Заполните поле Номер", "Не корректный номер!"],
+      errorMessage: [
+        t("auth.register.phoneInput.errorLabel.one"),
+        t("auth.register.phoneInput.errorLabel.twoo"),
+      ],
       minLength: 16,
     },
     date: {
-      errorMessage: ["Заполните поле дата"],
+      errorMessage: [t("auth.register.dateInput.errorLabel")],
       minLength: 0,
     },
     password: {
       minLength: 8,
       maxLength: 24,
       errorMessage: [
-        "Заполните поле пароля",
-        "Не менее 8 до 24 символов",
-        "Пароли не совпадают",
-        "Пароль должен содержать от 8 до 24 символов, как минимум одну цифру, одну букву верхнего и нижнего регистра",
+        t("auth.register.passwordInput.errorLabel.one"),
+        t("auth.register.passwordInput.errorLabel.twoo"),
       ],
     },
     enterPassword: {
-      errorMessage: ["Заполните поле повтор пароля", "Пароли не совпадают"],
+      errorMessage: [t("auth.register.enterPasswordInput.errorLabel.one")],
       minLength: 0,
     },
   };

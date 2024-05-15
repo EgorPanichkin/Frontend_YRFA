@@ -20,10 +20,9 @@ export const ModalWrapper = ({ children, onCloseModal }) => {
   const handlModalClick = (event) => {
     event.target.classList.contains(style.modalBg) && onCloseModal();
   };
-
   return (
     <div ref={modalRef} onClick={handlModalClick} className={style.modalBg}>
-      {children}
+      <div className={style.modalContent}>{children}</div>
     </div>
   );
 };

@@ -9,16 +9,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   opacity: 0;
   animation: fadeIn 250ms ease forwards;
-
   &.fadeIn {
     opacity: 1;
   }
-
   &.fadeOut {
     animation: fadeOut 250ms ease forwards;
+  }
+  .modalContent {
+    max-height: calc(100vh - 0.1px);
+    overflow-y: auto;
+  }
+
+  .modalContent::-webkit-scrollbar {
+    display: none;
   }
 }
 

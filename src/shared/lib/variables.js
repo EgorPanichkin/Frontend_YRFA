@@ -33,6 +33,7 @@ export const PATHS = {
   news: "/news",
   newsArticle: "/news/:id",
   vacancy: "/vacancy",
+  vacancyDetails: "/vacancy/:id",
   charity: "/charity",
   charityMoreDetails: "/charity/charity-more/:id",
   search: "/search",

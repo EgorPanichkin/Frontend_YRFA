@@ -16,8 +16,15 @@ import style from "./Feedback.module.scss";
 
 export const Feedback = () => {
   const [feedbackModal, setFeedbackModal] = useState(false);
-  const { handleInputChange, isButtonDisabled, inputValues, counter } =
-    FeedbackValidation();
+  const {
+    // диструктуризация
+    handleInputChange,
+    isButtonDisabled,
+    setInputValues,
+    inputValues,
+    setCounter,
+    counter,
+  } = FeedbackValidation();
 
   const { fio, emailPhone, text } = inputValues;
 
@@ -30,9 +37,15 @@ export const Feedback = () => {
       message: text,
     });
 
-    if (response && response.status === 200) {
+    if (response) {
       notify.success("Форма успешно отправлена!");
       setFeedbackModal(false);
+      setCounter(0);
+      setInputValues({
+        fio: "",
+        text: "",
+        emailPhone: "",
+      });
     }
   };
 
