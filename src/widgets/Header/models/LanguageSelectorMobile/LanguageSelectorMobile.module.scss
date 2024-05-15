@@ -16,13 +16,16 @@
     }
   }
   .menu {
-    height: auto;
-    transition: height 1s linear;
+    transform-origin: top;
+    transform: scaleY(1);
+    transition: transform 0.4s;
   }
   .hiddenMenu {
     overflow: hidden;
-    height: 0px;
-    transition: height 1s linear;
+    max-height: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.4s;
   }
   .link {
     display: flex;
