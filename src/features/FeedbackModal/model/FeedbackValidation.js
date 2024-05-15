@@ -34,7 +34,9 @@ export const FeedbackValidation = () => {
   return {
     handleInputChange,
     isButtonDisabled,
+    setInputValues,
     inputValues,
+    setCounter,
     counter,
   };
 };
