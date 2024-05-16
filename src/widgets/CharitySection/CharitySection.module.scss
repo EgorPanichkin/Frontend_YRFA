@@ -13,8 +13,18 @@
     margin-bottom: 24px;
   }
   .cardsWrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 384px);
+    align-items: stretch;
+    justify-content: center;
+    gap: 19px;
+    margin-bottom: 50px;
+    @media (max-width: 765px) {
+      grid-template-columns: repeat(auto-fill, 330px);
+      gap: 15px;
+    }
+    @media (max-width: 450px) {
+      grid-template-columns: repeat(auto-fill, 280px);
+    }
   }
 }
