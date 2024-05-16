@@ -7,10 +7,11 @@ export const ReusedHero = (props) => {
     backgroundImage: `url(${img})`,
   };
   return (
-    <section
-      className={`${style.hero} ${className}`}
-      style={img ? heroStyle : null}
-    >
+    <>
+      <section
+        className={`${style.hero} ${className}`}
+        style={img ? heroStyle : null}
+      ></section>
       <div className={style.textBlock}>
         <Typography variant="h1" weight="bold" color="black">
           {title}
@@ -24,7 +25,7 @@ export const ReusedHero = (props) => {
           </Typography>
         </CustomButton>
       </div>
-    </section>
+    </>
   );
 };
 
