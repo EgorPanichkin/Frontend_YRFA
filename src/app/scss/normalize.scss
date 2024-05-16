@@ -55,6 +55,7 @@ a:not([class]) {
 }
 
 img {
+  object-fit: cover;
   max-width: 100%;
   display: block;
 }
