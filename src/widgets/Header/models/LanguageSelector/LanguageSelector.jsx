@@ -25,13 +25,29 @@ export const LanguageSelector = () => {
     i18n.changeLanguage(lang);
   }, [select]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   const toggleCities = () => {
     setShow(!show);
   };
 
   const handleSelect = (title, lang) => {
-    dispatch(langAction.switchLanguage(lang));
-    setShow(false);
+    if (select !== lang) {
+      dispatch(langAction.switchLanguage(lang));
+      setShow(false);
+    }
   };
 
   return (

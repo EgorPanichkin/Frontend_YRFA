@@ -1,4 +1,4 @@
-import { ChevronRight, Cross, CustomButton, Typography } from "@/shared";
+import { ChevronRightIcon, Cross, CustomButton, Typography } from "@/shared";
 import style from "./ModalActual.module.scss";
 
 export const ModalActual = (props) => {
@@ -24,8 +24,8 @@ export const ModalActual = (props) => {
         </Typography>
       </div>
       <CustomButton className={style.button}>
-        Записаться к врачу
-        <ChevronRight />
+        Записаться на прием
+        <ChevronRightIcon />
       </CustomButton>
     </div>
   );

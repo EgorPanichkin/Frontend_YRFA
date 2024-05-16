@@ -45,5 +45,12 @@
   }
   .button {
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    path {
+      fill: var(--background-white);
+    }
   }
 }
