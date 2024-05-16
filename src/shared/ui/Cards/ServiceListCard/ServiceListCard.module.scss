@@ -2,6 +2,7 @@
   width: 282px;
   border-radius: 8px;
   overflow: hidden;
+  transition: height 0.2s;
   @media (max-width: 946px) {
     width: 330px;
   }
@@ -22,16 +23,10 @@
       height: 100%;
     }
   }
-  .selectorHidden {
-    background: var(--color-bg-light-primary-hover);
+  .selector {
+    cursor: pointer;
     overflow: hidden;
-    cursor: pointer;
-    height: 57px;
-  }
-  .selectorOpen {
-    background: var(--color-bg-light-primary-hover);
-    cursor: pointer;
-    height: auto;
+    border-radius: 0 0 10px 10px;
   }
 
   .iconOpen {
@@ -43,15 +38,30 @@
   }
 
   .title {
+    background: var(--color-bg-light-primary-hover);
+    height: 57px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
   }
   .links {
+    background: var(--color-bg-light-primary-hover);
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transform-origin: top;
+    transform: scaleY(1);
+    transition: transform 0.7s;
+  }
+  .noLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.7s;
   }
 }

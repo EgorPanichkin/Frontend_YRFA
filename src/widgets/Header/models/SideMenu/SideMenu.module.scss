@@ -5,7 +5,8 @@
   right: 0;
   background-color: var(--background-white);
   padding: 24px 16px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto; /* Включить вертикальную прокрутку */
   transform: translateX(100%);
   animation: ani 1s forwards;
 

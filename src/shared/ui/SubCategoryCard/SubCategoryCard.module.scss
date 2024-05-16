@@ -6,20 +6,31 @@
   background-color: var(--black200);
   cursor: pointer;
 }
-
-.menu {
-  margin-top: 16px;
-  height: auto;
-  background-color: var(--black200);
-}
-.hidden {
-  overflow: hidden;
-  height: 0;
-}
-
 .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--black200);
+}
+.menu {
+  background: var(--black200);
+  margin-top: 16px;
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 0.7s;
+}
+.hidden {
+  max-height: 0;
+  margin-top: 16px;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.7s;
+}
+
+.iconOpen {
+  rotate: 180deg;
+  transition: rotate 0.2s;
+}
+.icon {
+  transition: rotate 0.2s;
 }
