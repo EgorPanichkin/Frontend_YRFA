@@ -36,10 +36,7 @@ export const FinalServicePage = () => {
         >
           Цена
         </Typography>
-        <PriceCard
-          text="пока с бэка не пришел текс решил написать так"
-          price={main.price}
-        />
+        <PriceCard text={main.price_description} price={main.price} />
         <Typography
           variant="h2"
           className={style.about}
