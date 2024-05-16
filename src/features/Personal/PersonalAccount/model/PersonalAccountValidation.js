@@ -19,9 +19,6 @@ export const usePersonalAccount = () => {
   // состояние для редактирования
   const [editMode, setEditMode] = useState(true);
 
-  // состояние для удоления предстоящих приемов
-  const [confirmationId, setConfirmationId] = useState(null);
-
   // состояние для дроп меню опции
   const [dropDownMenu, setDropDownMenu] = useState(true);
 
@@ -32,7 +29,7 @@ export const usePersonalAccount = () => {
   const selectRef = useRef(null);
 
   // данные для предстоящих приёмом
-  const [receptionsList, setReceptionsList] = useState([
+  const receptionsList = [
     {
       direction: "УЗИ беременности",
       doctor: "Кадырбекова Уулжан Ахментовна",
@@ -47,7 +44,7 @@ export const usePersonalAccount = () => {
       time: "12:15",
       id: 2,
     },
-  ]);
+  ];
 
   // обьект с данными для валидации полей
   const validationRules = {
@@ -186,19 +183,6 @@ export const usePersonalAccount = () => {
     setDropDownMenu(true);
   };
 
-  // функция показываем уведомление для подтверждения удаления
-  const handleDeleteConfirmation = (receptionId) => {
-    setConfirmationId(receptionId);
-  };
-
-  // функция для удоления приёма
-  const handleConfirmDelete = () => {
-    setReceptionsList(
-      receptionsList.filter((reception) => reception.id !== confirmationId),
-    ); // Удаляем прием из списка
-    setConfirmationId(null); // Скрываем уведомление
-  };
-
   useEffect(() => {
     // Проверка, должна ли кнопка стать неактивной
     setIsDisabled(
@@ -241,16 +225,12 @@ export const usePersonalAccount = () => {
 
   return {
     infoCabinetSettingsClose,
-    handleDeleteConfirmation,
-    handleConfirmDelete,
     setConfirmationExit,
     handleOptionClick,
     handleInputChange,
-    setConfirmationId,
     confirmationExit,
     setFocusedInput,
     receptionsList,
-    confirmationId,
     optionsItems,
     dropDownMenu,
     handleSubmit,

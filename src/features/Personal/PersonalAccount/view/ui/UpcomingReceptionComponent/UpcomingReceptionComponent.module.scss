@@ -13,7 +13,7 @@
     font-size: 14px;
   }
 
-  div:not(.upcomingReceptionBlock) {
+  div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,25 +25,6 @@
     @media screen and (max-width: 320px) {
       display: block;
       margin: 5px 0 0;
-    }
-  }
-
-  .upcomingReceptionBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    position: absolute;
-    right: -20px;
-    height: 30px;
-    box-shadow: 0px 1px 4px -1px rgba(25, 92, 121, 0.25);
-    background-color: var(--background-white);
-    width: 30px;
-    transition: 200ms;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.2);
     }
   }
 }
