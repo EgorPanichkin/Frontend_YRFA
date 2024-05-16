@@ -129,7 +129,7 @@ export const PasswordResetForm = () => {
               focusedInput === "enterPassword" ? style.focusedLabel : ""
             }
           >
-            Проверка пароля
+            Подтвердите пароль
           </label>
         )}
         <CustomInput

@@ -1,6 +1,6 @@
 import { Container } from "@/shared";
 
-import style from "./loginPage.module.sass";
+import style from "./loginPage.module.scss";
 import { Authorization } from "@/features";
 
 export const LoginPage = () => {

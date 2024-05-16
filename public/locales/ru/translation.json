@@ -42,9 +42,6 @@
     "analysis": "Анализы",
     "login": "Вход в кабинет",
     "registration": "Регистрация",
-    "sms-verification": "Введите номер",
-    "verification": "Введите код",
-    "password-reset": "Creating a password",
     "actual": "Акции",
     "news": "Блог",
     "vacancy": "Вакансии",
@@ -159,7 +156,7 @@
         }
       },
       "enterPasswordInput": {
-        "label": "Повтор пароля",
+        "label": "Подтвердите пароль",
         "placeholder": "Повторите пароль",
         "errorLabel": {
           "one": "Заполните поле повтор пароля",
