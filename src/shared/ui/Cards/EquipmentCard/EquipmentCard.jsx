@@ -19,7 +19,7 @@ export const EquipmentCard = (props) => {
             setIsActive(!isActive);
           }}
         >
-          <Typography>{title}</Typography>
+          <Typography weight="bold">{title}</Typography>
           <ChevronDown />
         </div>
         <div

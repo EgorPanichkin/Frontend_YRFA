@@ -1,28 +1,52 @@
 import style from "./BodyLOVZ.module.scss";
 import { Container, Typography } from "@/shared";
 
-export const BodyLovz = () => {
-  const data = {
-    title: "Заголовок",
-    textOne:
-      "Lorem ipsum dolor sit amet consectetur. Porta nibh tellus at id viverra nunc sed nascetur tempor. Bibendum nec dignissim in ultrices mauris id. Facilisi vulputate massa ut sed nisl suspendisse. Posuere amet id dapibus proin. Aliquam lobortis sed odio scelerisque fusce nulla at. Vel facilisi sit nulla orci nisl fermentum sed. Lacus est accumsan eu adipiscing in leo aliquam ipsum. Accumsan augue quis dolor a proin. Molestie vulputate pulvinar placerat egestas molestie quis elementum praesent eleifend. Pellentesque dui vitae amet ornare. Etiam lacus molestie pellentesque eu neque ullamcorper feugiat duis mauris. Tellus nec gravida ullamcorper eget proin faucibus. Risus in pharetra suscipit tempor platea. Scelerisque faucibus tortor consectetur leo commodo turpis nulla.",
-    textTwo:
-      "Lorem ipsum dolor sit amet consectetur. Porta nibh tellus at id viverra nunc sed nascetur tempor. Bibendum nec dignissim in ultrices mauris id. Facilisi vulputate massa ut sed nisl suspendisse. Posuere amet id dapibus proin. Aliquam lobortis sed odio scelerisque fusce nulla at. Vel facilisi sit nulla orci nisl fermentum sed. Lacus est accumsan eu adipiscing in leo aliquam ipsum. Accumsan augue quis dolor a proin. Molestie vulputate pulvinar placerat egestas molestie quis elementum praesent eleifend. Pellentesque dui vitae amet ornare. Etiam lacus molestie pellentesque eu neque ullamcorper feugiat duis mauris. Tellus nec gravida ullamcorper eget proin faucibus. Risus in pharetra suscipit tempor platea. Scelerisque faucibus tortor consectetur leo commodo turpis nulla.",
-  };
+const data = {
+  list1: [
+    "Доступная среда: Безбарьерная инфраструктура, включая пандусы и лифты.",
+    "Специализированные программы реабилитации: Индивидуальные планы восстановления и реабилитации.",
+    "Комплексная медицинская помощь: Консультации узких специалистов, диагностика и лечение.",
+    "Психологическая поддержка: Консультации психологов и психотерапевтов.",
+  ],
+  list2: [
+    "Индивидуальный подход к каждому пациенту.",
+    "Высококвалифицированные специалисты с опытом работы с ЛОВЗ.",
+    "Современное оборудование для диагностики и лечения.",
+    "Удобное расположение и доступность всех услуг.",
+  ],
+};
 
+export const BodyLovz = () => {
   return (
     <>
       <Container>
         <div className={style.content}>
-          <Typography variant="h2" weight="extraBold" color="black500">
-            {data.title}
+          <Typography variant="h4" weight="bold" color="primary">
+            В клинике ЮРФА мы стремимся обеспечить высокий уровень медицинского
+            обслуживания для людей с ограниченными возможностями здоровья
+            (ЛОВЗ). Мы предлагаем:
           </Typography>
-          <Typography variant="body" weight="regular" color="black400">
-            {data.textOne}
+          <ul className={style.list}>
+            {data.list1.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Typography>{item}</Typography>
+                </li>
+              );
+            })}
+          </ul>
+          <Typography variant="h4" weight="bold" color="primary">
+            Преимущества клиники ЮРФА для ЛОВЗ:
           </Typography>
-          <Typography variant="body" weight="regular" color="black400">
-            {data.textTwo}
-          </Typography>
+          <ul className={style.list}>
+            {data.list2.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Typography>{item}</Typography>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </Container>
     </>

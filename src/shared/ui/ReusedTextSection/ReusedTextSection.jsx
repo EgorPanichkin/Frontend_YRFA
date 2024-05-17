@@ -7,7 +7,7 @@ export const ReusedTextSection = (props) => {
 
   return (
     <section className={`${style.section} ${reverse ? style.reverse : null}`}>
-      {!reverse && (
+      {!reverse && image && (
         <div className={style.imageWrapper}>
           <img src={image} alt="image" />
         </div>
@@ -23,7 +23,7 @@ export const ReusedTextSection = (props) => {
           {data?.body}
         </Typography>
       </div>
-      {reverse && (
+      {reverse && image && (
         <div className={style.imageWrapper}>
           <img src={image} alt="image" />
         </div>
