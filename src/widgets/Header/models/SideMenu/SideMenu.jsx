@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Cross, CustomButton, Logo } from "@/shared";
 import style from "./SideMenu.module.scss";
 import { Selector } from "../Selector/Selector";
@@ -8,16 +9,24 @@ import { LocationSelectorMobile } from "../LocationSelectorMobile/LocationSelect
 const { main, services, more } = navigationHeaderLinks;
 
 export const SideMenu = ({ handleClick }) => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const closeMenu = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      handleClick(false);
+    }, 1000); // Duration should match the animation duration
+  };
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className={style.sideMenu}>
+    <div className={`${style.sideMenu} ${!isVisible ? style.slideOut : ""}`}>
       <div className={style.top}>
         <Logo width={80} height={52} color="#12709A" />
-        <Cross
-          color="#BFBFBF"
-          onClick={() => {
-            handleClick(false);
-          }}
-        />
+        <Cross color="#BFBFBF" className={style.cross} onClick={closeMenu} />
       </div>
       <CustomButton variant="orange" size="small" className={style.button}>
         Записаться онлайн

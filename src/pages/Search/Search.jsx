@@ -78,9 +78,11 @@ export const Search = () => {
         </Typography>
         <SearchInput size="big" />
         {isAllEmpty ? (
-          <Typography variant="h3" weight="bold">
-            упс ничего не найдено
-          </Typography>
+          <div className={style.nothing}>
+            <Typography variant="h3" weight="bold">
+              упс ничего не найдено
+            </Typography>
+          </div>
         ) : (
           <div className={style.anchorBlock}>
             <Typography weight="bold">

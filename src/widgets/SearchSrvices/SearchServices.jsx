@@ -25,7 +25,9 @@ export const SearchServices = (props) => {
             <Typography variant="h6" weight="bold">
               {item.title}
             </Typography>
-            <Typography color="light">{item.main_description}</Typography>
+            <Typography color="light" truncate={150}>
+              {item.main_description}
+            </Typography>
           </div>
         ))}
       </div>

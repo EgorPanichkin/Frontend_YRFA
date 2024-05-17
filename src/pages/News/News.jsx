@@ -34,7 +34,7 @@ export const News = () => {
               title={blog.title}
               mainDescription={blog.main_description}
               pubDate={blog.pub_date}
-              id={blog.id}
+              id={`blog-more/${blog.id}`}
               key={blog.id}
             />
           ))}
