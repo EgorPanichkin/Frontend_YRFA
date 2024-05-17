@@ -29,10 +29,23 @@
     padding: 8px 16px 16px;
     height: auto;
     background-color: var(--color-bg-light-primary-hover);
+    max-height: 1000px;
+    overflow: hidden;
+    opacity: 1;
+    transition:
+      max-height 0.7s ease,
+      opacity 0.7s ease;
   }
   .hiddenMenu {
-    height: 0;
+    padding: 8px 16px 16px;
     background-color: var(--color-bg-light-primary-hover);
     overflow: hidden;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.7s ease,
+      opacity 0.7s ease,
+      visibility 0.7s ease;
   }
 }

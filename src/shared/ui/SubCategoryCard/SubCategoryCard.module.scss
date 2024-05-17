@@ -6,6 +6,15 @@
   background-color: var(--black200);
   cursor: pointer;
 }
+.cardBlock {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 1s;
+  background-color: var(--black200);
+  cursor: pointer;
+  height: 68px;
+}
 .title {
   display: flex;
   justify-content: space-between;
@@ -13,18 +22,24 @@
   background-color: var(--black200);
 }
 .menu {
-  background: var(--black200);
   margin-top: 16px;
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: transform 0.7s;
+  background: var(--black200);
+  max-height: 1000px; /* Значение должно быть больше, чем ожидаемая максимальная высота контента */
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    max-height 0.7s ease,
+    opacity 0.7s ease;
 }
 .hidden {
-  max-height: 0;
   margin-top: 16px;
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: transform 0.7s;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.7s ease,
+    opacity 0.7s ease,
+    visibility 0.7s ease;
 }
 
 .iconOpen {

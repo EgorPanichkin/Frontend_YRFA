@@ -9,7 +9,7 @@ export const SubCategoryCard = ({ data }) => {
 
   if (data.diagnostic_subcategory === null) {
     return (
-      <Link to={"current-service/" + data.id} className={style.card}>
+      <Link to={"current-service/" + data.id} className={style.cardBlock}>
         <Typography weight="bold">{data.diagnostic_name}</Typography>
       </Link>
     );
