@@ -8,14 +8,17 @@ export const Article = () => {
 
   return (
     <>
-      <ReusedHero
-        title={data.title}
-        textButton="Запись на прием"
-        body={data.main_description}
-        img={data.image}
-      />
-      <div className={style.body}>
-        <ArticleBody />
+      <div className={style.article}>
+        <ReusedHero
+          title={data.title}
+          textButton="Запись на прием"
+          body={data.main_description}
+          img={data.image}
+          className={style.hero}
+        />
+        <div className={style.body}>
+          <ArticleBody />
+        </div>
       </div>
     </>
   );
