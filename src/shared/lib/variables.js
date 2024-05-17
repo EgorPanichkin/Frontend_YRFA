@@ -31,7 +31,7 @@ export const PATHS = {
   personalReset: "/personal-account/personal-reset",
   actual: "/actual",
   news: "/news",
-  newsArticle: "/news/:id",
+  newsArticle: "/news/blog-more/:id",
   vacancy: "/vacancy",
   vacancyDetails: "/vacancy/:id",
   charity: "/charity",
