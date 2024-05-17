@@ -1,4 +1,4 @@
-import { ChevronRight, Container, Typography } from "@/shared";
+import { ChevronRight, Typography } from "@/shared";
 import style from "./Breadcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -28,101 +28,78 @@ const data = {
   doctors_articles: "breadcrumbs.doctors_articles",
   events: "breadcrumbs.events",
   "charity-more": "breadcrumbs.charity-more",
+  "blog-more": "breadcrumbs.blog-more",
 };
 
 export const Breadcrumbs = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
-  console.log(pathnames);
-
-  const filteredPathnames = {};
-  for (const key in pathnames) {
-    if (Object.prototype.hasOwnProperty.call(pathnames, key)) {
-      const parsedKey = parseInt(key, 10);
-      if (parsedKey % 2 !== 0) {
-        filteredPathnames[key] = pathnames[key];
-        if (/\d/.test(key)) {
-          filteredPathnames[key] = key;
-        }
-      }
-    }
-  }
-
-  const isNumeric = (str) => {
-    return /^\d+$/.test(str);
-  };
+  let pathnames = location.pathname.split("/").filter((x) => x);
 
   if (pathnames.length === 0) {
     return null;
   }
 
-  if (data[pathnames[0]] == undefined) {
-    return false;
+  const cleanPathnames = (pathnames) => {
+    if (
+      pathnames.length > 0 &&
+      !isNaN(Number(pathnames[pathnames.length - 1]))
+    ) {
+      return pathnames.slice(0, -1);
+    }
+    return pathnames;
+  };
+
+  const cleanedPathnames = cleanPathnames(pathnames);
+
+  if (cleanedPathnames.length > 1 && !isNaN(Number(cleanedPathnames[1]))) {
+    pathnames = [`${pathnames[0]}/${pathnames[1]}`, ...pathnames.slice(2)];
   }
 
-  const filteredPathnamess = pathnames.filter((name) => !isNumeric(name));
+  const displayPathnames = cleanedPathnames.filter((segment) =>
+    isNaN(Number(segment)),
+  );
 
-  if (filteredPathnamess.length === 0) {
+  if (displayPathnames.length === 0 || !data[displayPathnames[0]]) {
     return null;
   }
-
-  const numericPathnames = pathnames.map((name) => {
-    const parsed = parseInt(name, 10);
-    return isNaN(parsed) ? name : parsed;
-  });
   return (
-    <Container>
-      <div className={style.breadcrumbs}>
-        <Link to="/" className={style.homeLink}>
-          <Typography variant="smallBody" weight="bold" color="primary">
-            {t("breadcrumbs.home")}
-          </Typography>
-        </Link>
-        {pathnames.map((name, index) => {
-          const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
-          const isLast = index === numericPathnames.length - 1;
-          const filterNumberObj =
-            Object.keys(filteredPathnames).length > 0
-              ? routeTo
-              : `${name}/${Object.keys(filteredPathnames)}`;
-          const translationName = t(data[name]).replace(/\d+/g, "").trim();
-          if (!translationName) {
-            return null;
-          }
-          return isLast ? (
-            <div className={style.link} key={`${name}${index}`}>
-              <div className={style.chevron}>
-                <ChevronRight className={style.chevronRight} />
-              </div>
-              <Typography
-                variant="smallBody"
-                weight="bold"
-                color={isLast ? "" : "primary"}
-              >
-                {translationName}
-              </Typography>
+    <div className={style.breadcrumbs}>
+      <Link to="/" className={style.homeLink}>
+        <Typography variant="smallBody" weight="bold" color="primary">
+          {t("breadcrumbs.home")}
+        </Typography>
+      </Link>
+      {pathnames.map((name, index) => {
+        const isLast = index === displayPathnames.length - 1;
+        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
+        const isNumericSegment = !isNaN(Number(name));
+        const translationName = data[displayPathnames[index]]
+          ? t(data[displayPathnames[index]])
+          : name;
+        if (isNumericSegment) {
+          return null;
+        }
+        return isLast ? (
+          <div className={style.link} key={index}>
+            <div className={style.chevron}>
+              <ChevronRight className={style.chevronRight} />
             </div>
-          ) : (
-            <Link
-              className={style.link}
-              key={`${name}${index}`}
-              to={filterNumberObj}
-            >
-              <div className={style.chevron}>
-                <ChevronRight className={style.chevronRight} />
-              </div>
-              <Typography
-                variant="smallBody"
-                weight="bold"
-                color={isLast ? " " : "primary"}
-              >
-                {translationName}
-              </Typography>
-            </Link>
-          );
-        })}
-      </div>
-    </Container>
+            <Typography variant="smallBody" weight="bold">
+              {translationName}
+            </Typography>
+          </div>
+        ) : (
+          <Link className={style.link} key={index} to={routeTo}>
+            <div className={style.chevron}>
+              <ChevronRight className={style.chevronRight} />
+            </div>
+            <Typography variant="smallBody" weight="bold" color="primary">
+              {translationName}
+            </Typography>
+          </Link>
+        );
+      })}
+    </div>
   );
 };

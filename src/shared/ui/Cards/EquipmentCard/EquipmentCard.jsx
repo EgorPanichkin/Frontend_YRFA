@@ -10,7 +10,7 @@ export const EquipmentCard = (props) => {
   return (
     <div className={style.card}>
       <div className={style.imageWrapper}>
-        <img src={image} alt="" />
+        <img src={image} alt={title} />
       </div>
       <div className={style.selector}>
         <div
