@@ -21,26 +21,26 @@ export const VacancyDetails = () => {
           <CVForm />
         </div>
         <div className={style.details}>
-          <Typography variant="h1" weight="bold">
+          <Typography variant="h2" weight="bold">
             Требования
           </Typography>
-          <Typography variant="h5" color="light" className={style.text}>
+          <Typography variant="body" color="light" className={style.text}>
             {data.description}
           </Typography>
         </div>
         <div className={style.details}>
-          <Typography variant="h1" weight="bold">
+          <Typography variant="h2" weight="bold">
             Опыт работы
           </Typography>
-          <Typography variant="h5" color="light" className={style.text}>
+          <Typography variant="body" color="light" className={style.text}>
             {data.work_experience}
           </Typography>
         </div>
         <div className={style.details}>
-          <Typography variant="h1" weight="bold">
+          <Typography variant="h2" weight="bold">
             Подробная информация
           </Typography>
-          <Typography variant="h5" color="light" className={style.text}>
+          <Typography variant="body" color="light" className={style.text}>
             {data.requirements}
           </Typography>
         </div>
