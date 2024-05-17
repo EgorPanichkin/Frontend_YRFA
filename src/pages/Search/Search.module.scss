@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  .nothing {
+    height: 16.4vh;
+  }
   .anchorBlock {
     display: flex;
     flex-direction: column;
