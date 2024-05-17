@@ -1,21 +1,11 @@
-import { Garbage } from "@/shared";
 import style from "./UpcomingReceptionComponent.module.scss";
 
 export const UpcomingReceptionComponent = (props) => {
-  const { reception, editMode, onDelete } = props;
-
-  const handleDelete = () => {
-    onDelete(reception.id); // Передаем id приема для удаления
-  };
+  const { reception } = props;
 
   return (
     <>
       <div className={style.upcomingReception}>
-        {!editMode && (
-          <div className={style.upcomingReceptionBlock}>
-            {<Garbage onClick={handleDelete} />}
-          </div>
-        )}
         <div>
           <span>Направление:</span>
           <span className={style.upcomingReceptionData}>

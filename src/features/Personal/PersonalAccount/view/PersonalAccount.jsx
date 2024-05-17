@@ -20,16 +20,12 @@ export const PersonalAccount = () => {
   const {
     // диструктурирую состоянии и функции с PersonalAccountValidation
     infoCabinetSettingsClose,
-    handleDeleteConfirmation,
-    handleConfirmDelete,
     setConfirmationExit,
     handleOptionClick,
     handleInputChange,
-    setConfirmationId,
     confirmationExit,
     setFocusedInput,
     receptionsList,
-    confirmationId,
     optionsItems,
     dropDownMenu,
     handleSubmit,
@@ -163,7 +159,7 @@ export const PersonalAccount = () => {
               disabled={editMode}
               onFocus={() => setFocusedInput("phone")}
               onBlur={() => setFocusedInput("")}
-              className={focusedInput === "phone" ? style.focusedInput : ""}
+              className={`${style.phoneInput} ${focusedInput === "phone" && style.focusedInput}`}
             />
           </div>
           <div>
@@ -184,6 +180,7 @@ export const PersonalAccount = () => {
                 id="date"
                 type="date"
                 value={inputValues.date || ""}
+                className={style.fakeInput}
                 disabled
               />
             ) : (
@@ -222,6 +219,7 @@ export const PersonalAccount = () => {
                     .map(() => "•")
                     .join("") || ""
                 }
+                className={style.fakeInput}
                 disabled
               />
             ) : (
@@ -288,23 +286,12 @@ export const PersonalAccount = () => {
             />
           </ModalWrapper>
         )}
-        {confirmationId && (
-          <ModalWrapper onCloseModal={() => setConfirmationId(false)}>
-            <ModalPersonal
-              title="Вы действительно хотите отменить запись?"
-              confirmation="id"
-              setConfirmationId={setConfirmationId}
-              handleConfirmDelete={handleConfirmDelete}
-            />
-          </ModalWrapper>
-        )}
         <div className={style.upcomingReceptionsWrapper}>
           {receptionsList.map((reception) => (
             <UpcomingReceptionComponent
               key={reception.id}
               reception={reception}
               editMode={editMode}
-              onDelete={handleDeleteConfirmation} // Передаем функцию обработки удаления
             />
           ))}
         </div>

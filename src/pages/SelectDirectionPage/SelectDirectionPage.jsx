@@ -9,7 +9,7 @@ export const SelectDirectionPage = () => {
     <>
       <ReusedHero
         title={category.category_name}
-        textButton={"Записаться на прием"}
+        textButton={"Записаться онлайн"}
         body={category.category_description}
       />
       <Container>

@@ -1,15 +1,10 @@
 import style from "./Search.module.scss";
-import {
-  Container,
-  SearchInput,
-  Typography,
-  TabSelectButton,
-  Loader,
-} from "@/shared";
+import { Container, SearchInput, Typography, TabSelectButton } from "@/shared";
 import { useState, useEffect } from "react";
 import { SearchPrice, SearchServices } from "@/widgets";
 import { useDispatch, useSelector } from "react-redux";
 import { searchResults, selectSearchResults } from "@/app/store/searchSlice";
+import { LoaderPage } from "..";
 
 export const Search = () => {
   const [allResults, setAllResults] = useState(0);
@@ -70,7 +65,7 @@ export const Search = () => {
   if (loading) {
     return (
       <div className={style.loader}>
-        <Loader />
+        <LoaderPage />
       </div>
     );
   }

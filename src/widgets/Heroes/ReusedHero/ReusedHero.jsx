@@ -18,7 +18,7 @@ export const ReusedHero = (props) => {
         <Typography color="black" variant="body">
           {body}
         </Typography>
-        <CustomButton className={style.btnBlurImg} color="orange">
+        <CustomButton className={style.btnBlurImg} variant="orange">
           <Typography variant="h10" color="white" weight="semiBold">
             {textButton}
           </Typography>
@@ -27,17 +27,3 @@ export const ReusedHero = (props) => {
     </section>
   );
 };
-
-// export const ReusedHero = ({ heroData }) => {
-//   return (
-//     <section className={style.hero}>
-//       <div className={style.textBlock}>
-//         <Typography variant="h1" weight="bold" color="white">
-//           {heroData?.header}
-//         </Typography>
-//         <Typography color="white">{heroData?.text}</Typography>
-//         <SignUpButton>Записаться на прием</SignUpButton>
-//       </div>
-//     </section>
-//   );
-// };

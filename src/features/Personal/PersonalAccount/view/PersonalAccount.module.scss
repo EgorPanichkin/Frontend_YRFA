@@ -96,8 +96,13 @@
         .errorLabel {
           color: var(--error);
         }
+        .phoneInput,
+        .fakeInput {
+          padding: 14px;
+        }
         input {
           width: 384px;
+          background-color: var(--black100);
 
           @media screen and (max-width: 760px) {
             max-width: 330px;
