@@ -6,12 +6,25 @@
   align-items: center;
   border-radius: 50px;
   justify-content: center;
-  background-color: var(--background-white);
-  box-shadow: 0px 4px 40px 0px #0000001a;
+  background-color: var(--color-bg-button-primary-default);
+  box-shadow: var(--large);
   right: 35px;
   bottom: 35px;
   position: fixed;
   z-index: 100;
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-bg-button-primary-hover);
+    }
+    &:active {
+      background-color: var(--color-bg-button-primary-pressed);
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      background-color: var(--color-bg-button-primary-pressed);
+    }
+  }
 }
 
 .questio {
@@ -87,7 +100,7 @@
       display: block;
       text-align: end;
     }
-    .questioBtn {
+    .questionBtn {
       display: inline-block;
       width: 100%;
     }
