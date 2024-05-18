@@ -18,7 +18,7 @@ export const HeroHome = () => {
             <div className={style.actualCards} key={index}>
               <ActualCard
                 title={item.title}
-                expiration={item.expiration}
+                expiration={item.stock}
                 description={item.description}
                 imgSrc={item.image}
                 reverse={index % 2 === 0}

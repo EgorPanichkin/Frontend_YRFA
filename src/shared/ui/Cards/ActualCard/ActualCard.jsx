@@ -22,7 +22,7 @@ export const ActualCard = (props) => {
   return (
     <>
       <div
-        onClick={windowWidth > 768 ? null : () => setModalIsActive(true)}
+        onClick={windowWidth > 920 ? null : () => setModalIsActive(true)}
         className={[style.card, className, reverse ? style.reverse : null].join(
           " ",
         )}
