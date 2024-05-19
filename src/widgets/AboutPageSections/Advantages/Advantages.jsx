@@ -6,7 +6,8 @@ export const Advantages = () => {
   return (
     <div className={style.section}>
       <Typography variant="h3" weight="bold">
-        Наши преимущества
+        Медицинская клиника ЮРФА обладает рядом преимуществ <br /> Вот основные
+        из них:
       </Typography>
       <div className={style.blocks}>
         {advantages.map((item, index) => {

@@ -11,6 +11,7 @@ export const CustomButton = (props) => {
     disabled,
     link,
     onClick,
+    reference,
   } = props;
 
   const classGenerated = [style[variant], style[size], style.button, className]
@@ -25,6 +26,7 @@ export const CustomButton = (props) => {
       type={type}
       disabled={disabled}
       className={classGenerated}
+      ref={reference}
     >
       {children}
     </button>

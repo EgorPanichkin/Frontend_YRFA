@@ -110,7 +110,7 @@ export const Feedback = () => {
                 color="default"
                 type="submit"
                 disabled={isButtonDisabled}
-                className={style.questioBtn}
+                className={style.questionBtn}
               >
                 Отправить
               </CustomButton>

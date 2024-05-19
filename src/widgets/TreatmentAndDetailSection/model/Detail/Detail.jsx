@@ -13,7 +13,7 @@ export const Detail = () => {
       <ActualCard
         className={style.card}
         title={actual[0].title}
-        expiration={actual[0].expiration}
+        expiration={actual[0].stock}
         description={actual[0].description}
         imgSrc={actual[0].image}
       />

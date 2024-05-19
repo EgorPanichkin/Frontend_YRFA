@@ -16,6 +16,9 @@ export const DropdownHeaderMenu = ({ items, title }) => {
       onMouseLeave={() => {
         setShow(false);
       }}
+      onClick={() => {
+        setShow(!show);
+      }}
     >
       <div className={style.selector}>
         <Typography variant="smallBody">{t(title)}</Typography>

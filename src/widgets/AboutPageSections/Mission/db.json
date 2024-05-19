@@ -1,16 +1,28 @@
 {
   "missions": [
     {
-      "title": "Заголовок",
-      "text": "Lorem ipsum dolor sit amet consectetur. Sit quam pretium morbi quis tellus eget. Facilisi elementum felis non praesent amet. Sapien nulla est in non nibh. Quam facilisis turpis dui est cursus in enim. Iaculis mi mi nullam dui turpis faucibus ac diam. Ridiculus mi magna mattis praesent quisque aliquet sed condimentum. Condimentum urna cras tellus ipsum laoreet. Nibh volutpat lacinia ultrices blandit nisl. Vitae sapien nunc sem nibh cursus nam. Sed diam."
+      "title": "Профессионализм",
+      "text": "Профессионализм подразумевает знания, квалификацию, опыт, обучение новым методикам, ответственность, профессиональное развитие; скорость и точность; безопасность нашей медицинской деятельности."
     },
     {
-      "title": "Заголовок",
-      "text": "Lorem ipsum dolor sit amet consectetur. Sit quam pretium morbi quis tellus eget. Facilisi elementum felis non praesent amet. Sapien nulla est in non nibh. Quam facilisis turpis dui est cursus in enim. Iaculis mi mi nullam dui turpis faucibus ac diam. Ridiculus mi magna mattis praesent quisque aliquet sed condimentum. Condimentum urna cras tellus ipsum laoreet. Nibh volutpat lacinia ultrices blandit nisl. Vitae sapien nunc sem nibh cursus nam. Sed diam."
+      "title": "Лидерство",
+      "text": "Мы первые внедрили в отечественную медицинскую практику лучшее диагностическое оборудование, обучили лучших специалистов, предоставили современный сервис и высокое качество медицинских услуг нашим гражданам. Мы поддерживаем инициативность сотрудников и заинтересованы в предложении нашим пациентам самых передовых и высокотехнологичных методов диагностики, лечения и реабилитации."
     },
     {
-      "title": "Заголовок",
-      "text": "Lorem ipsum dolor sit amet consectetur. Sit quam pretium morbi quis tellus eget. Facilisi elementum felis non praesent amet. Sapien nulla est in non nibh. Quam facilisis turpis dui est cursus in enim. Iaculis mi mi nullam dui turpis faucibus ac diam. Ridiculus mi magna mattis praesent quisque aliquet sed condimentum. Condimentum urna cras tellus ipsum laoreet. Nibh volutpat lacinia ultrices blandit nisl. Vitae sapien nunc sem nibh cursus nam. Sed diam."
+      "title": "Уважение",
+      "text": "Мы с уважением относимся к пациентам, независимо от их социального статуса, проявляем заботу и внимание к их потребностям. Основа командной работы – взаимоуважение и ответственность. Мы ценим уважение и добросовестность в сотрудничестве с нашими партнерами."
+    },
+    {
+      "title": "Команда",
+      "text": "Команда ЮРФА – это совместное достижение целей и выполнение задач, забота о каждом сотруднике и взаимоподдержка."
+    },
+    {
+      "title": "Инновации",
+      "text": "Мы располагаем необходимым оборудованием для проведения комплексной диагностики при любом заболевании. Мы применяем самые современные медицинские технологии и продолжаем работать над предложением нашим пациентам методов и оборудования с высоким уровнем конкурентоспособности по отношению к тем, которые уже существуют."
+    },
+    {
+      "title": "Рациональность",
+      "text": "Мы ценим порядок в работе, дисциплину, мы ставим практические и взвешенные цели и задачи, мы ценим рациональные решения."
     }
   ]
 }
