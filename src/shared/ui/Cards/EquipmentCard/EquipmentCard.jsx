@@ -20,7 +20,7 @@ export const EquipmentCard = (props) => {
           }}
         >
           <Typography>{title}</Typography>
-          <ChevronDown />
+          <ChevronDown className={isActive ? style.iconOpen : style.icon} />
         </div>
         <div
           className={isActive ? style.menu : style.hiddenMenu}

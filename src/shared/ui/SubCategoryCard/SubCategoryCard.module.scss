@@ -10,7 +10,6 @@
   width: 100%;
   padding: 16px;
   border-radius: 8px;
-  transition: all 1s;
   background-color: var(--black200);
   cursor: pointer;
   height: 68px;
@@ -24,22 +23,26 @@
 .menu {
   margin-top: 16px;
   background: var(--black200);
-  max-height: 1000px; /* Значение должно быть больше, чем ожидаемая максимальная высота контента */
-  overflow: hidden;
   opacity: 1;
+  overflow: hidden;
+  max-height: 400px;
   transition:
-    max-height 0.7s ease,
-    opacity 0.7s ease;
+    max-height 0.5s ease-out,
+    margin-top 0.5s ease-out,
+    visibility 0.5s ease-out,
+    opacity 0.5s ease-out;
 }
 .hidden {
   margin-top: 16px;
-  max-height: 0;
-  visibility: hidden;
   opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  max-height: 0;
   transition:
-    max-height 0.7s ease,
-    opacity 0.7s ease,
-    visibility 0.7s ease;
+    max-height 0.25s ease,
+    margin-top 0.5s ease,
+    visibility 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .iconOpen {

@@ -1,10 +1,4 @@
-import {
-  BurgerMenu,
-  ModalWrapper,
-  PhoneIcon,
-  SearchInput,
-  Typography,
-} from "@/shared";
+import { BurgerMenu, PhoneIcon, SearchInput, Typography } from "@/shared";
 import style from "./HeaderMobile.module.scss";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -37,11 +31,7 @@ export const HeaderMobile = () => {
           <BurgerMenu />
         </button>
       </div>
-      {isActive && (
-        <ModalWrapper onCloseModal={setActive}>
-          <SideMenu handleClick={setActive} />
-        </ModalWrapper>
-      )}
+      {isActive && <SideMenu handleClick={setActive} />}
     </>
   );
 };
