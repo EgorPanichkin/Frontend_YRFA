@@ -48,4 +48,11 @@
       opacity 0.7s ease,
       visibility 0.7s ease;
   }
+  .iconOpen {
+    rotate: 180deg;
+    transition: rotate 0.2s;
+  }
+  .icon {
+    transition: rotate 0.2s;
+  }
 }

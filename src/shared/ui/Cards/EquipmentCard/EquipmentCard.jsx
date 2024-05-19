@@ -19,8 +19,8 @@ export const EquipmentCard = (props) => {
             setIsActive(!isActive);
           }}
         >
-          <Typography weight="bold">{title}</Typography>
-          <ChevronDown />
+          <Typography>{title}</Typography>
+          <ChevronDown className={isActive ? style.iconOpen : style.icon} />
         </div>
         <div
           className={isActive ? style.menu : style.hiddenMenu}
