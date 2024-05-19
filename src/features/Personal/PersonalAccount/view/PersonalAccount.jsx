@@ -195,7 +195,7 @@ export const PersonalAccount = () => {
               />
             )}
           </div>
-          <div>
+          {/* <div>
             {errorsInput.password ? (
               <label htmlFor="password" className={style.errorLabel}>
                 {errorsInput.password}
@@ -236,7 +236,7 @@ export const PersonalAccount = () => {
                 disabledInput={editMode}
               />
             )}
-          </div>
+          </div> */}
           <div>
             <label htmlFor="gender" className={style.personalCabinetLabel}>
               Пол

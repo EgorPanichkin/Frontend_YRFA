@@ -50,7 +50,11 @@ const usersErrorResponse = (data) => {
 };
 
 axiosPersonal.interceptors.request.use(async (config) => {
-  if (config.url === "/profile/" || config.url === "/logout/") {
+  if (
+    config.url === "/profile/" ||
+    config.url === "/logout/" ||
+    config.url === "/change_password/"
+  ) {
     const token = localStorage.getItem("access");
     config.headers = {
       Authorization: `Bearer ${token}`,

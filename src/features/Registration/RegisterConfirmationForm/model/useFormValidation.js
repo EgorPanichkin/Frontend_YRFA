@@ -3,6 +3,12 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 export const useFormValidation = () => {
+  const verificationData = useSelector(
+    (state) => state.verificationData.verificationData,
+  );
+
+  const { registerPhone } = verificationData;
+
   const [focusedInput, setFocusedInput] = useState("");
 
   const [inputValues, setInputValues] = useState({
@@ -34,11 +40,6 @@ export const useFormValidation = () => {
 
     setErrorsInput({ ...errorsInput, [inputName]: error });
   };
-
-  const verificationData = useSelector(
-    (state) => state.verificationData.verificationData,
-  );
-  const { registerPhone } = verificationData;
 
   return {
     inputValues,

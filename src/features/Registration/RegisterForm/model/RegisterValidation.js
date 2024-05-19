@@ -1,4 +1,4 @@
-import { addPhoneRegister } from "@/app/store/verificationDataSlice";
+import { addPhone, addPhoneRegister } from "@/app/store/verificationDataSlice";
 import {
   PATHS,
   notify,
@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { t } from "i18next";
 
 export const RegisterValidation = () => {
-  // для состояния кнопки, тоесть активная кнопка или не активная
+  // для состояния кнопки, активная кнопка или не активная
   const [isDisabled, setIsDisabled] = useState(false);
 
   // состояние для фокуса
@@ -126,7 +126,7 @@ export const RegisterValidation = () => {
     );
   }, [errorsInput, inputValues, passwordMatch]);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(addPhone(inputValues.phone));
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -137,11 +137,11 @@ export const RegisterValidation = () => {
     // Перевожу с русский на английский
     const genderRuEn = gender === "Мужской" ? "Man" : "Women";
 
-    // функция для того чтобы убрать тере и скобки
+    // функция для того чтобы убрать тире и скобки
     const phoneNum = phoneNumberRefactorer(phone);
 
     try {
-      const response = await usersRequester("/register/", {
+      const formData = {
         phone_number: phoneNum,
         first_name: name,
         last_name: surName,
@@ -149,7 +149,8 @@ export const RegisterValidation = () => {
         gender: genderRuEn,
         password: password,
         confirm_password: enterPassword,
-      });
+      };
+      const response = await usersRequester("/register/", formData);
 
       if (response && response.status === 200) {
         navigate(PATHS.registrationPhoneConfirmation);

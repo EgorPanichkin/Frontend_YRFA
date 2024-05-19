@@ -24,14 +24,14 @@ export const useFormValidation = () => {
       minLength: 16,
     },
     code: {
-      errorMessage: ["Заполните поле код", "Не менее 6 цифр"],
+      errorMessage: ["Заполните поле код", "Не менее 8 цифр"],
     },
     password: {
-      minLength: 6,
+      minLength: 8,
       maxLength: 24,
       errorMessage: [
         "Заполните поле пароля",
-        "Не менее 6 до 24 символов",
+        "От 8 до 24 символов",
         "Пароли не совпадают",
       ],
     },
