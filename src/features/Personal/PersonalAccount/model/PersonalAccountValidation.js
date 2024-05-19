@@ -99,7 +99,6 @@ export const usePersonalAccount = () => {
     lastName: "",
     phone: "",
     date: "",
-    password: "hello1234",
     gender: "",
   });
 
@@ -128,7 +127,6 @@ export const usePersonalAccount = () => {
     lastName: "",
     phone: "",
     date: "",
-    password: "",
     gender: "",
   });
 
@@ -174,7 +172,7 @@ export const usePersonalAccount = () => {
   const handleEdit = () => {
     setEditMode(false);
     setDropDownMenu(true);
-    setInputValues({ ...inputValues, password: "" });
+    // setInputValues({ ...inputValues, password: "" });
   };
 
   // функция для включения режима редактирования и так же выкл опцию
@@ -196,7 +194,7 @@ export const usePersonalAccount = () => {
     event.preventDefault();
 
     // диструктуризация значений с полей
-    const { name, lastName, date, gender, password, phone } = inputValues;
+    const { name, lastName, date, gender, phone } = inputValues;
 
     // функция для того чтобы убрать тере и скобки
     const phoneNum = phoneNumberRefactorer(phone);
@@ -212,7 +210,6 @@ export const usePersonalAccount = () => {
         last_name: lastName,
         birth_date: date,
         gender: genderRuEn,
-        password: password,
       },
       "patch",
     );

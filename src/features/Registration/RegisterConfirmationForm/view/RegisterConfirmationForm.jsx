@@ -68,7 +68,6 @@ export const RegisterConfirmationForm = () => {
     }
   };
 
-  // --------------- FIX_ME!!!
   // Состояние для уведомления
   const [notificationPhone, setNotificationPhone] = useState(false);
 
@@ -85,7 +84,7 @@ export const RegisterConfirmationForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const phoneNum = phoneNumberRefactorer(inputValues.phone);
+    const phoneNum = phoneNumberRefactorer(registerPhone);
 
     try {
       const response = await usersRequester("/confirm_register/", {
