@@ -8,20 +8,6 @@ export const DropMenu = ({ items, title }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const menuRef = useRef(null);
 
-  // FIX ME
-  // useEffect(() => {
-  //   function handleClickOutside(event) {
-  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
-  //       setShowMenu(false)
-  //     }
-  //   }
-
-  //   document.addEventListener("mousedown", handleClickOutside)
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside)
-  //   }
-  // }, [menuRef])
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -50,9 +36,7 @@ export const DropMenu = ({ items, title }) => {
               onMouseLeave={handleMouseLeave}
             >
               <span className={style.link}>{item.label}</span>
-              <div className={style.chevron}>
-                {hoveredItem === item.label && <ChevronRight />}
-              </div>
+              <div className={style.chevron}>{hoveredItem === item.label && <ChevronRight />}</div>
             </Link>
           ))}
         </div>

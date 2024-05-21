@@ -23,6 +23,7 @@
   "plugins": ["react", "html"],
   "rules": {
     "react/jsx-no-target-blank": "off",
+    "react-hooks/exhaustive-deps": "off",
     "react/prop-types": "off",
     "indent": "off",
     "linebreak-style": 0,

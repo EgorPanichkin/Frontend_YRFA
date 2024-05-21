@@ -52,4 +52,11 @@ button {
 }
 .searchIconBig {
   height: 56px;
+  @media screen and (max-width: 760px) {
+    height: 48px;
+  }
+}
+
+.mobileSearch {
+  width: 228px;
 }

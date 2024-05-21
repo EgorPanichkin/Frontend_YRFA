@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Cross, CustomButton, Logo } from "@/shared";
+import { Cross, CustomButton, Logo, SearchInput } from "@/shared";
 import style from "./SideMenu.module.scss";
 import { Selector } from "../Selector/Selector";
 import { PATHS, navigationHeaderLinks } from "@shared/lib/variables";
@@ -44,15 +44,13 @@ export const SideMenu = ({ handleClick }) => {
           <Logo width={80} height={52} color="#12709A" />
           <Cross color="#BFBFBF" className={style.cross} onClick={closeMenu} />
         </div>
+        <div className={style.search}>
+          <SearchInput size="mobile" />
+        </div>
         <CustomButton variant="orange" size="small" className={style.button}>
           Записаться онлайн
         </CustomButton>
-        <CustomButton
-          link={PATHS.login}
-          variant="neutral"
-          size="small"
-          className={style.button}
-        >
+        <CustomButton link={PATHS.login} variant="neutral" size="small" className={style.button}>
           Войти как пациент
         </CustomButton>
         <nav className={style.nav}>

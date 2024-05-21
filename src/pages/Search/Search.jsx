@@ -1,5 +1,5 @@
 import style from "./Search.module.scss";
-import img from "@/shared/assets/images/nothingFound.png";
+import img from "@/shared/assets/images/searchNotFound.svg";
 import { Container, SearchInput, Typography, TabSelectButton } from "@/shared";
 import { useState, useEffect } from "react";
 import { SearchPrice, SearchServices } from "@/widgets";
@@ -20,9 +20,7 @@ export const Search = () => {
   useEffect(() => {
     dispatch(searchResults());
   }, [dispatch]);
-  const isAllEmpty = Object.values(data).every(
-    (arr) => Array.isArray(arr) && arr.length === 0,
-  );
+  const isAllEmpty = Object.values(data).every((arr) => Array.isArray(arr) && arr.length === 0);
   const handleCountDataServices = (count) => {
     setCountDataServices(count);
   };
@@ -59,7 +57,6 @@ export const Search = () => {
     });
 
   const filteredDataWithPrice = filteredData.filter((obj) => "price" in obj);
-  console.log(filteredData);
 
   if (loading) {
     return (
@@ -77,8 +74,7 @@ export const Search = () => {
         </Typography>
         <SearchInput size="big" />
         <Typography weight="bold">
-          Найдено<span className={style.resultsText}> {allResults} </span>{" "}
-          результатов
+          Найдено<span className={style.resultsText}> {allResults} </span> результатов
         </Typography>
         {isAllEmpty ? (
           <div className={style.nothing}>
@@ -87,10 +83,7 @@ export const Search = () => {
         ) : (
           <div className={style.anchorBlock}>
             <div className={style.buttonAnchor}>
-              <TabSelectButton
-                onClick={showAllResults}
-                active={activeSection === null ? true : false}
-              >
+              <TabSelectButton onClick={showAllResults} active={activeSection === null ? true : false}>
                 Все результаты
               </TabSelectButton>
               <TabSelectButton
@@ -113,28 +106,12 @@ export const Search = () => {
       </div>
       {!isAllEmpty && (
         <>
-          {activeSection === "services" && (
-            <SearchServices
-              data={filteredData}
-              dataCount={handleCountDataServices}
-            />
-          )}
-          {activeSection === "price" && (
-            <SearchPrice
-              data={filteredDataWithPrice}
-              dataCount={handleCountDataPrice}
-            />
-          )}
+          {activeSection === "services" && <SearchServices data={filteredData} dataCount={handleCountDataServices} />}
+          {activeSection === "price" && <SearchPrice data={filteredDataWithPrice} dataCount={handleCountDataPrice} />}
           {activeSection === null && (
             <div>
-              <SearchServices
-                data={filteredData}
-                dataCount={handleCountDataServices}
-              />
-              <SearchPrice
-                data={filteredDataWithPrice}
-                dataCount={handleCountDataPrice}
-              />
+              <SearchServices data={filteredData} dataCount={handleCountDataServices} />
+              <SearchPrice data={filteredDataWithPrice} dataCount={handleCountDataPrice} />
             </div>
           )}
         </>

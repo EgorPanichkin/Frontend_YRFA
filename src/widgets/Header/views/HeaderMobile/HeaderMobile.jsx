@@ -1,4 +1,4 @@
-import { BurgerMenu, PhoneIcon, SearchInput, Typography } from "@/shared";
+import { BurgerMenu, PhoneIcon, Typography } from "@/shared";
 import style from "./HeaderMobile.module.scss";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -19,9 +19,6 @@ export const HeaderMobile = () => {
               1225
             </a>
           </Typography>
-        </div>
-        <div className={style.search}>
-          <SearchInput />
         </div>
         <button
           onClick={() => {

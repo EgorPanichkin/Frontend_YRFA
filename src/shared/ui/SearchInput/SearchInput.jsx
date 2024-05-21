@@ -24,7 +24,7 @@ export const SearchInput = (props) => {
 
   return (
     <div className={style.searchPages}>
-      <form onSubmit={handleSearch} className={style.searchPages}>
+      <form onSubmit={handleSearch} className={`${style.searchPages}  ${size === "mobile" && style.mobileSearch}`}>
         <input
           type="text"
           placeholder={t("header.search")}
@@ -32,9 +32,7 @@ export const SearchInput = (props) => {
           onChange={handleInputChange}
           className={`${style.searchInput} ${size === "big" ? style.inputPadding : style.inputPaddingDef}`}
         />
-        <div
-          className={`${style.searchIcon} ${size === "big" ? style.searchIconBig : style.searchIconDef}`}
-        >
+        <div className={`${style.searchIcon} ${size === "big" ? style.searchIconBig : style.searchIconDef}`}>
           <button type="submit">
             <GlassIcon />
           </button>

@@ -1,11 +1,5 @@
 import { PageNavBar } from "@/features";
-import {
-  ActualCard,
-  ArticleBody,
-  Container,
-  PriceCard,
-  Typography,
-} from "@/shared";
+import { ActualCard, ArticleBody, Container, PriceCard, Typography } from "@/shared";
 import { ReusedHero } from "@/widgets";
 import { useLoaderData } from "react-router-dom";
 import style from "./FinalServicePage.module.scss";
@@ -17,7 +11,7 @@ export const FinalServicePage = () => {
       <ReusedHero
         title={main.diagnostic_name}
         textButton="Записаться на прием"
-        body
+        body={main.main_description}
         img={main.image}
       />
       <PageNavBar
@@ -28,32 +22,17 @@ export const FinalServicePage = () => {
         ]}
       />
       <Container>
-        <Typography
-          variant="h2"
-          className={style.price}
-          weight="bold"
-          id="price"
-        >
+        <Typography variant="h2" className={style.price} weight="bold" id="price">
           Цена
         </Typography>
         <PriceCard text={main.price_description} price={main.price} />
-        <Typography
-          variant="h2"
-          className={style.about}
-          weight="bold"
-          id="about"
-        >
+        <Typography variant="h2" className={style.about} weight="bold" id="about">
           О направлении
         </Typography>
       </Container>
       <ArticleBody />
       <Container>
-        <Typography
-          variant="h2"
-          className={style.actual}
-          weight="bold"
-          id="actual"
-        >
+        <Typography variant="h2" className={style.actual} weight="bold" id="actual">
           Акции
         </Typography>
         <div className={style.flex}>
@@ -69,7 +48,7 @@ export const FinalServicePage = () => {
                   reverse={index % 2 !== 0}
                   option="accent"
                 />
-              ),
+              )
           )}
         </div>
       </Container>

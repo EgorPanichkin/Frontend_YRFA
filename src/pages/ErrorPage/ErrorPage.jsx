@@ -1,6 +1,6 @@
 import { CustomButton, HomeIcon, Typography } from "@/shared";
 import style from "./ErrorPage.module.scss";
-import image from "@/shared/assets/images/Error.png";
+import image from "@/shared/assets/images/error.svg";
 import { Footer, Header } from "@/widgets";
 
 export const ErrorPage = () => {

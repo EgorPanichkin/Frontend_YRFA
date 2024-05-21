@@ -18,15 +18,6 @@
     align-items: center;
     img {
       width: 690px;
-      height: 430px;
-      @media screen and (max-width: 760px) {
-        width: 480px;
-        height: 330px;
-      }
-      @media screen and (max-width: 480px) {
-        width: 280px;
-        height: 174px;
-      }
     }
   }
   .anchorBlock {
