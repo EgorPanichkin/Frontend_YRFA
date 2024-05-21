@@ -38,11 +38,7 @@ import {
 import { Layout } from "../Layout/Layout";
 import { PATHS, PrivateRoute, baseGetRequest } from "@/shared";
 
-// FIX_ME
-import { TestPage } from "@/pages/TestPage/TestPage";
-
 export const router = createBrowserRouter([
-  { path: "test/", element: <TestPage /> },
   {
     path: PATHS.welcome,
     element: <WelcomePage />,

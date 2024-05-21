@@ -34,7 +34,7 @@ export const RegisterConfirmationForm = () => {
     // Проверка, должна ли кнопка стать неактивной
     setIsDisabled(
       // Проверка на наличие ошибок валидации и на пустоту поля
-      errorsInput.code !== "" || inputValues.code === "",
+      errorsInput.code !== "" || inputValues.code === ""
     );
   }, [errorsInput, inputValues]);
 
@@ -54,7 +54,6 @@ export const RegisterConfirmationForm = () => {
     setNotificationPhone(true);
     setCount(60);
 
-    // --------------- FIX_ME!!!
     try {
       const response = await usersRequester("/accept_phone/", {
         phone_number: registerPhone,
@@ -103,20 +102,10 @@ export const RegisterConfirmationForm = () => {
 
   return (
     <form className={style.smsForm} onSubmit={handleSubmit}>
-      <Typography
-        variant="h2"
-        color="black"
-        weight="bold"
-        className={style.smsFormTitle}
-      >
+      <Typography variant="h2" color="black" weight="bold" className={style.smsFormTitle}>
         Введите номер телефона
       </Typography>
-      <Typography
-        variant="body"
-        color="gray"
-        weight="regular"
-        className={style.smsFormBody}
-      >
+      <Typography variant="body" color="gray" weight="regular" className={style.smsFormBody}>
         Мы отправили вам 6-ти значный код для подтверждения
       </Typography>
       <Typography variant="span" className={style.phone}>
@@ -125,33 +114,21 @@ export const RegisterConfirmationForm = () => {
       {errorsInput.code ? (
         <label className={style.errorLabel}>{errorsInput.code}</label>
       ) : (
-        <label
-          htmlFor="code"
-          className={focusedInput === "code" ? style.focusedLabel : ""}
-        >
+        <label htmlFor="code" className={focusedInput === "code" ? style.focusedLabel : ""}>
           Код из СМС
         </label>
       )}
       <CustomInput
         id="code"
         type="code"
-        className={
-          focusedInput === "code"
-            ? `${style.focusedCode} ${style.codeInput}`
-            : style.codeInput
-        }
+        className={focusedInput === "code" ? `${style.focusedCode} ${style.codeInput}` : style.codeInput}
         placeholder="Введите код"
         value={inputValues.code}
         onChange={(event) => handleInputChange(event, "code")}
         onFocus={() => setFocusedInput("code")}
         onBlur={() => setFocusedInput("")}
       />
-      <CustomButton
-        color="default"
-        type="submit"
-        className={style.smsButton}
-        disabled={isDisabled}
-      >
+      <CustomButton color="default" type="submit" className={style.smsButton} disabled={isDisabled}>
         Продолжить
       </CustomButton>
       {count !== 0 ? (
@@ -162,11 +139,7 @@ export const RegisterConfirmationForm = () => {
           </Typography>
         </Typography>
       ) : (
-        <button
-          type="button"
-          className={style.smsFormLink}
-          onClick={handleNotification}
-        >
+        <button type="button" className={style.smsFormLink} onClick={handleNotification}>
           Отправить код снова
         </button>
       )}

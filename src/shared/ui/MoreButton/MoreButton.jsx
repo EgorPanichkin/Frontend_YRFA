@@ -1,5 +1,4 @@
 import style from "./MoreButton.module.scss";
-// import { useState } from "react";
 import { Typography, ChevronDownIcon } from "@/shared";
 
 export const MoreButton = (props) => {
