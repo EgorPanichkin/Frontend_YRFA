@@ -10,6 +10,8 @@
   width: 100%;
   padding: 16px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
   background-color: var(--black200);
   cursor: pointer;
   height: 68px;
@@ -23,6 +25,9 @@
 .menu {
   margin-top: 16px;
   background: var(--black200);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   opacity: 1;
   overflow: hidden;
   max-height: 400px;
@@ -33,6 +38,9 @@
     opacity 0.5s ease-out;
 }
 .hidden {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
