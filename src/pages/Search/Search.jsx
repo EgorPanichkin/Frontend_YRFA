@@ -1,4 +1,5 @@
 import style from "./Search.module.scss";
+import img from "@/shared/assets/images/nothingFound.png";
 import { Container, SearchInput, Typography, TabSelectButton } from "@/shared";
 import { useState, useEffect } from "react";
 import { SearchPrice, SearchServices } from "@/widgets";
@@ -47,11 +48,7 @@ export const Search = () => {
     .filter(([key, value]) => Array.isArray(value) && value.length > 0)
     // eslint-disable-next-line no-unused-vars
     .reduce((acc, [key, value]) => {
-      const newData = value.map((obj, index) => ({
-        ...obj,
-        id: acc.length + index + 1,
-      }));
-      return [...acc, ...newData];
+      return [...acc, ...value];
     }, [])
     .map((item) => {
       const { analyse_name, diagnostic_name, title, ...rest } = item;
@@ -60,7 +57,9 @@ export const Search = () => {
         title: diagnostic_name || analyse_name || title,
       };
     });
+
   const filteredDataWithPrice = filteredData.filter((obj) => "price" in obj);
+  console.log(filteredData);
 
   if (loading) {
     return (
@@ -77,18 +76,16 @@ export const Search = () => {
           Результаты поиска
         </Typography>
         <SearchInput size="big" />
+        <Typography weight="bold">
+          Найдено<span className={style.resultsText}> {allResults} </span>{" "}
+          результатов
+        </Typography>
         {isAllEmpty ? (
           <div className={style.nothing}>
-            <Typography variant="h3" weight="bold">
-              упс ничего не найдено
-            </Typography>
+            <img src={img} alt="nothingFound" />
           </div>
         ) : (
           <div className={style.anchorBlock}>
-            <Typography weight="bold">
-              Найдено<span className={style.resultsText}> {allResults} </span>
-              результатов
-            </Typography>
             <div className={style.buttonAnchor}>
               <TabSelectButton
                 onClick={showAllResults}

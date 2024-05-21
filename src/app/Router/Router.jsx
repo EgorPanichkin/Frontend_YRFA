@@ -283,12 +283,23 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: PATHS.search,
+        path: "/search",
         element: <Search />,
         loader: () => {
           const urlParams = new URLSearchParams(window.location.search);
           const searchTerm = urlParams.get("q");
           return searchTerm;
+        },
+      },
+      {
+        path: `${PATHS.searchService}/:idService`,
+        element: <FinalServicePage />,
+        loader: async ({ params }) => {
+          const main = await baseGetRequest(
+            `/servises/diagnostics/${params.idService}`,
+          );
+          const actual = await baseGetRequest("/main/sale/");
+          return { main, actual };
         },
       },
       { path: PATHS.notFound, element: <NotFoundPage /> },
