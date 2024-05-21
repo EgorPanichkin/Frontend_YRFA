@@ -281,9 +281,7 @@ export const router = createBrowserRouter([
         path: `${PATHS.searchService}/:idService`,
         element: <FinalServicePage />,
         loader: async ({ params }) => {
-          const main = await baseGetRequest(
-            `/servises/diagnostics/${params.idService}`,
-          );
+          const main = await baseGetRequest(`/servises/diagnostics/${params.idService}`);
           const actual = await baseGetRequest("/main/sale/");
           return { main, actual };
         },
