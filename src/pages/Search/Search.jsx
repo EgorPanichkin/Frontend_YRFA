@@ -57,7 +57,6 @@ export const Search = () => {
     });
 
   const filteredDataWithPrice = filteredData.filter((obj) => "price" in obj);
-  console.log(filteredData);
 
   if (loading) {
     return (
