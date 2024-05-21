@@ -37,6 +37,7 @@ export const PATHS = {
   charity: "/charity",
   charityMoreDetails: "/charity/charity-more/:id",
   search: "/search",
+  searchService: "/search/search-service",
   notFound: "*",
 };
 

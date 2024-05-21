@@ -20,6 +20,7 @@ const data = {
   "current-service": "breadcrumbs.current-service",
   lovz: "breadcrumbs.lovz",
   search: "breadcrumbs.search",
+  "search-service": "breadcrumbs.search-service",
   charity: "breadcrumbs.charity",
   "personal-account": "breadcrumbs.personal-account",
   "post-history": "breadcrumbs.post-history",
@@ -34,6 +35,8 @@ const data = {
 export const Breadcrumbs = () => {
   const { t } = useTranslation();
   const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get("q");
   let pathnames = location.pathname.split("/").filter((x) => x);
 
   if (pathnames.length === 0) {
@@ -72,7 +75,7 @@ export const Breadcrumbs = () => {
       </Link>
       {pathnames.map((name, index) => {
         const isLast = index === displayPathnames.length - 1;
-        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
+        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}${query ? `?q=${query}` : ""}`;
         const isNumericSegment = !isNaN(Number(name));
         const translationName = data[displayPathnames[index]]
           ? t(data[displayPathnames[index]])
