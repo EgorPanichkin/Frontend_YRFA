@@ -1,25 +1,21 @@
 import { searchRequester } from "@/shared";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// eslint-disable-next-line no-unused-vars
-export const searchResults = createAsyncThunk(
-  "search/searchResults",
-  async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchTerm = urlParams.get("q");
+export const searchResults = createAsyncThunk("search/searchResults", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchTerm = urlParams.get("q");
 
-    if (searchTerm) {
-      const response = await searchRequester({ query: searchTerm });
-      return response;
-    }
-  },
-);
+  if (searchTerm) {
+    const response = await searchRequester({ query: searchTerm });
+    return response;
+  }
+});
 const searchSlice = createSlice({
   name: "search",
   initialState: {
     data: [],
     loading: false,
-    erroe: null,
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {

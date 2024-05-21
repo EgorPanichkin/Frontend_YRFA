@@ -57,9 +57,7 @@ export const router = createBrowserRouter([
         element: <HomePage />,
         loader: async () => {
           const popular = await baseGetRequest("/servises/popular/");
-          const categories = await baseGetRequest(
-            "/servises/diagnostic-categories/",
-          );
+          const categories = await baseGetRequest("/servises/diagnostic-categories/");
           const swiper = await baseGetRequest("/main/swiper/");
           const branches = await baseGetRequest("/main/filial/");
           const actual = await baseGetRequest("/main/sale/");
@@ -101,9 +99,7 @@ export const router = createBrowserRouter([
         path: PATHS.doctorsArticles,
         element: <Article />,
         loader: (loader) => {
-          return baseGetRequest(
-            `/blogs/${loader.params.type}/${loader.params.id}`,
-          );
+          return baseGetRequest(`/blogs/${loader.params.type}/${loader.params.id}`);
         },
       },
 
@@ -129,9 +125,7 @@ export const router = createBrowserRouter([
         element: <Directions />,
         loader: async () => {
           const popular = await baseGetRequest("/servises/popular/");
-          const categories = await baseGetRequest(
-            "/servises/diagnostic-categories/",
-          );
+          const categories = await baseGetRequest("/servises/diagnostic-categories/");
           const swiper = await baseGetRequest("/main/swiper/");
           const actual = await baseGetRequest("/main/sale/");
           return {
@@ -146,13 +140,9 @@ export const router = createBrowserRouter([
         path: `${PATHS.selectDirections}/:idCategory`,
         element: <SelectDirectionPage />,
         loader: async (loader) => {
-          const category = await baseGetRequest(
-            `/servises/diagnostic-categories/${loader.params.idCategory}`,
-          );
+          const category = await baseGetRequest(`/servises/diagnostic-categories/${loader.params.idCategory}`);
           const services = await baseGetRequest("/servises/diagnostics/");
-          const subCategorys = await baseGetRequest(
-            "/servises/diagnostic-subcategories/",
-          );
+          const subCategorys = await baseGetRequest("/servises/diagnostic-subcategories/");
           return {
             category: category,
             services: services,
@@ -164,9 +154,7 @@ export const router = createBrowserRouter([
         path: `select-direction/:idCategory${PATHS.currentService}/:idService`,
         element: <FinalServicePage />,
         loader: async (loader) => {
-          const main = await baseGetRequest(
-            `/servises/diagnostics/${loader.params.idService}/`,
-          );
+          const main = await baseGetRequest(`/servises/diagnostics/${loader.params.idService}/`);
           const actual = await baseGetRequest("/main/sale/");
           return { main, actual: actual };
         },
@@ -183,9 +171,7 @@ export const router = createBrowserRouter([
         element: <AnalysisSelection />,
         loader: async (loader) => {
           const list = await baseGetRequest("/servises/analyses/");
-          const info = await baseGetRequest(
-            `/servises/analyses/${loader.params.id}`,
-          );
+          const info = await baseGetRequest(`/servises/analyses/${loader.params.id}`);
           return { list: list, info };
         },
       },

@@ -1,12 +1,4 @@
-import {
-  CustomButton,
-  CustomInput,
-  PATHS,
-  Typography,
-  notify,
-  phoneNumberRefactorer,
-  usersRequester,
-} from "@/shared";
+import { CustomButton, CustomInput, PATHS, Typography, notify, phoneNumberRefactorer, usersRequester } from "@/shared";
 import { AuthValidation } from "../model/AuthValidation";
 import { useEffect, useState } from "react";
 import { IMaskInput } from "react-imask";
@@ -35,9 +27,9 @@ export const Authorization = () => {
     // Проверка, должна ли кнопка стать неактивной
     setIsDisabled(
       Object.values(errorsInput).some((error) => error !== "") || // Проверка на наличие ошибок валидации
-        Object.values(inputValues).some((value) => value.trim() === ""), // Проверка на пустые поля ввода
+        Object.values(inputValues).some((value) => value.trim() === "") // Проверка на пустые поля ввода
     );
-  }, [errorsInput]);
+  }, [errorsInput, inputValues]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -64,18 +56,10 @@ export const Authorization = () => {
     <form className={style.authorizationForm} onSubmit={handleSubmit}>
       <div className={style.formWrapper}>
         <div className={style.authorizationBlock}>
-          <Typography
-            variant="h2"
-            weight="600"
-            className={style.authorizationTitle}
-          >
+          <Typography variant="h2" weight="600" className={style.authorizationTitle}>
             {t("auth.login.title")}
           </Typography>
-          <Typography
-            className={style.authorizationBody}
-            variant="body"
-            weight="400"
-          >
+          <Typography className={style.authorizationBody} variant="body" weight="400">
             {t("auth.login.body")}
           </Typography>
         </div>
@@ -84,10 +68,7 @@ export const Authorization = () => {
             {errorsInput.phone ? (
               <label className={style.errorLabel}>{errorsInput.phone}</label>
             ) : (
-              <label
-                htmlFor="phone"
-                className={focusedInput === "phone" ? style.focusedLabel : ""}
-              >
+              <label htmlFor="phone" className={focusedInput === "phone" ? style.focusedLabel : ""}>
                 {t("auth.login.phoneInput.label")}
               </label>
             )}
@@ -101,23 +82,14 @@ export const Authorization = () => {
               onInput={(event) => handleInputChange(event, "phone")}
               onFocus={() => setFocusedInput("phone")}
               onBlur={() => setFocusedInput("")}
-              className={
-                focusedInput === "phone"
-                  ? `${style.focusedInput} ${style.input}`
-                  : style.input
-              }
+              className={focusedInput === "phone" ? `${style.focusedInput} ${style.input}` : style.input}
             />
           </div>
           <div>
             {errorsInput.password ? (
               <label className={style.errorLabel}>{errorsInput.password}</label>
             ) : (
-              <label
-                htmlFor="password"
-                className={
-                  focusedInput === "password" ? style.focusedLabel : ""
-                }
-              >
+              <label htmlFor="password" className={focusedInput === "password" ? style.focusedLabel : ""}>
                 {t("auth.login.passwordInput.label")}
               </label>
             )}
@@ -129,20 +101,11 @@ export const Authorization = () => {
               value={inputValues.password}
               placeholder={t("auth.login.phoneInput.placeholder")}
               onChange={(event) => handleInputChange(event, "password")}
-              className={
-                focusedInput === "password"
-                  ? `${style.focusedInput} ${style.input}`
-                  : style.input
-              }
+              className={focusedInput === "password" ? `${style.focusedInput} ${style.input}` : style.input}
             />
           </div>
         </div>
-        <CustomButton
-          className={style.formWrapperButton}
-          color="default"
-          type="submit"
-          disabled={isDisabled}
-        >
+        <CustomButton className={style.formWrapperButton} color="default" type="submit" disabled={isDisabled}>
           {t("auth.login.button")}
         </CustomButton>
       </div>

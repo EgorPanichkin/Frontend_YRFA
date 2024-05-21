@@ -21,7 +21,7 @@ export const HeaderMobile = () => {
           </Typography>
         </div>
         <div className={style.search}>
-          <SearchInput />
+          <SearchInput size="mobile" />
         </div>
         <button
           onClick={() => {

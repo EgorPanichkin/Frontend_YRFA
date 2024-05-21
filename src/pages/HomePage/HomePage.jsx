@@ -1,9 +1,4 @@
-import {
-  BranchesSection,
-  HeroHome,
-  ServiceSection,
-  TreatmentAndDetailSection,
-} from "@/widgets";
+import { BranchesSection, HeroHome, ServiceSection, TreatmentAndDetailSection } from "@/widgets";
 import db from "./Home.db.json";
 import { Container } from "@/shared";
 
