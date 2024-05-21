@@ -4,21 +4,36 @@
   align-items: center;
   justify-content: center;
 }
+.resultsText {
+  color: var(--color-icon-primary-default);
+}
 .searchTitle {
   margin-top: 76px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   .nothing {
-    height: 16.4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 690px;
+      height: 430px;
+      @media screen and (max-width: 760px) {
+        width: 480px;
+        height: 330px;
+      }
+      @media screen and (max-width: 480px) {
+        width: 280px;
+        height: 174px;
+      }
+    }
   }
   .anchorBlock {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    .resultsText {
-      color: var(--color-icon-primary-default);
-    }
+
     .buttonAnchor {
       display: flex;
       gap: 16px;
