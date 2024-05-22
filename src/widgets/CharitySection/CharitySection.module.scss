@@ -14,17 +14,16 @@
   }
   .cardsWrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 384px);
+    grid-template-columns: repeat(3, minmax(280px, 384px));
     align-items: stretch;
     justify-content: center;
     gap: 19px;
     margin-bottom: 50px;
-    @media (max-width: 765px) {
-      grid-template-columns: repeat(auto-fill, 330px);
-      gap: 15px;
+    @media (max-width: 950px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 450px) {
-      grid-template-columns: repeat(auto-fill, 280px);
+    @media (max-width: 603px) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
