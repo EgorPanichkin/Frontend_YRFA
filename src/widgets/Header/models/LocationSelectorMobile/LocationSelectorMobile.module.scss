@@ -5,6 +5,8 @@
     justify-content: space-between;
     padding: 10px 8px 10px 16px;
     background-color: var(--color-bg-light-primary-default);
+    vertical-align: text-top;
+    align-items: center;
     cursor: pointer;
     .title {
       margin-left: 4px;
@@ -15,16 +17,32 @@
     }
   }
   .menu {
-    transform-origin: top;
-    transform: scaleY(1);
-    transition: transform 0.4s;
+    opacity: 1;
+    overflow: hidden;
+    max-height: 400px;
+    transition:
+      max-height 0.5s ease-out,
+      margin-top 0.5s ease-out,
+      visibility 0.5s ease-out,
+      opacity 0.5s ease-out;
   }
   .hiddenMenu {
+    opacity: 0;
+    visibility: hidden;
     overflow: hidden;
     max-height: 0;
-    transform-origin: top;
-    transform: scaleY(0);
-    transition: transform 0.4s;
+    transition:
+      max-height 0.25s ease,
+      margin-top 0.5s ease,
+      visibility 0.5s ease,
+      opacity 0.5s ease;
+  }
+  .iconOpen {
+    rotate: 180deg;
+    transition: rotate 0.2s;
+  }
+  .icon {
+    transition: rotate 0.2s;
   }
   .link {
     width: 100%;

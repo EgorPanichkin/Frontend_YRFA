@@ -5,12 +5,14 @@ import { Selector } from "../Selector/Selector";
 import { PATHS, navigationHeaderLinks } from "@shared/lib/variables";
 import { LanguageSelectorMobile } from "../LanguageSelectorMobile/LanguageSelectorMobile";
 import { LocationSelectorMobile } from "../LocationSelectorMobile/LocationSelectorMobile";
+import { useNavigate } from "react-router-dom";
 
 const { main, services, more } = navigationHeaderLinks;
 
 export const SideMenu = ({ handleClick }) => {
   const [isVisible, setIsVisible] = useState(true);
   const modalRef = useRef(null);
+  const navigate = useNavigate();
 
   const closeMenu = () => {
     setIsVisible(false);
@@ -37,6 +39,13 @@ export const SideMenu = ({ handleClick }) => {
     }
   };
 
+  const handleNavigation = (path) => {
+    closeMenu();
+    setTimeout(() => {
+      navigate(path);
+    }, 500);
+  };
+
   return (
     <div ref={modalRef} onClick={handleModalClick} className={style.modalBg}>
       <div className={`${style.sideMenu} ${!isVisible ? style.slideOut : ""}`}>
@@ -45,7 +54,7 @@ export const SideMenu = ({ handleClick }) => {
           <Cross color="#BFBFBF" className={style.cross} onClick={closeMenu} />
         </div>
         <div className={style.search}>
-          <SearchInput size="mobile" />
+          <SearchInput size="mobile" onCloseMenu={closeMenu} />
         </div>
         <CustomButton variant="orange" size="small" className={style.button}>
           Записаться онлайн
@@ -54,9 +63,9 @@ export const SideMenu = ({ handleClick }) => {
           Войти как пациент
         </CustomButton>
         <nav className={style.nav}>
-          <Selector items={main.items} title={main.title} />
-          <Selector items={services.items} title={services.title} />
-          <Selector items={more.items} title={more.title} />
+          <Selector items={main.items} title={main.title} onNavigate={handleNavigation} />
+          <Selector items={services.items} title={services.title} onNavigate={handleNavigation} />
+          <Selector items={more.items} title={more.title} onNavigate={handleNavigation} />
         </nav>
         <div className={style.selectors}>
           <LanguageSelectorMobile />

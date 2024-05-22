@@ -36,7 +36,7 @@ export const LanguageSelectorMobile = () => {
         <Typography variant="smallBody" weight="bold" className={style.title}>
           {correctValue[select]}
         </Typography>
-        <ChevronDown />
+        <ChevronDown className={isActive ? style.iconOpen : style.icon} />
       </div>
       <div className={isActive ? style.menu : style.hiddenMenu}>
         {languages.map((item, index) => {

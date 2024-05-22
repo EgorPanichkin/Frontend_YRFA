@@ -1,11 +1,10 @@
 import { ChevronDown } from "@/shared";
 import { Typography } from "../../../../shared/ui";
 import style from "./Selector.module.scss";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const Selector = ({ items, title }) => {
+export const Selector = ({ items, title, onNavigate }) => {
   const [isActive, setIsActive] = useState(false);
   const { t } = useTranslation();
 
@@ -20,16 +19,16 @@ export const Selector = ({ items, title }) => {
         <Typography variant="smallBody" weight="bold">
           {t(title)}
         </Typography>
-        <ChevronDown />
+        <ChevronDown className={isActive ? style.iconOpen : style.icon} />
       </div>
       <div className={isActive ? style.menu : style.hiddenMenu}>
         {items.map((item, index) => {
           return (
-            <Link to={item.path} className={style.link} key={index}>
+            <div className={style.link} key={index} onClick={() => onNavigate(item.path)}>
               <Typography variant="smallBody" color="light">
                 {t(item.label)}
               </Typography>
-            </Link>
+            </div>
           );
         })}
       </div>
