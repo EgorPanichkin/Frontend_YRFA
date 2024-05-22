@@ -26,15 +26,12 @@ export const SearchServices = (props) => {
       </Typography>
       <div className={style.servicesCard}>
         {data.slice(0, visibleCount).map((item, index) => (
-          <Link
-            key={index}
-            to={`${PATHS.searchService}/${item.id}?q=${searchQuery}`}
-          >
+          <Link key={index} to={`${PATHS.searchService}/${item.id}?q=${searchQuery}`}>
             <div className={style.cardServices}>
               <Typography variant="h6" weight="bold">
                 {item.title}
               </Typography>
-              <Typography color="light" truncate={150}>
+              <Typography color="light" truncate={140}>
                 {item.main_description}
               </Typography>
             </div>

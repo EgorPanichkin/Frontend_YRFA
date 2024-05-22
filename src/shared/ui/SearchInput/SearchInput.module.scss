@@ -6,7 +6,6 @@
   background: var(--color-bg-button-neutral-default);
   border: none;
   outline: none;
-  width: 420px;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
 
@@ -45,7 +44,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
 }
 .searchIconDef {
   height: 36px;
@@ -59,4 +57,25 @@ button {
 
 .mobileSearch {
   width: 228px;
+  @media screen and (max-width: 1322px) {
+    width: 200px;
+  }
+}
+
+.mobileInput {
+  display: flex;
+  input {
+    border-radius: 100px 0 0 100px;
+    width: 182px;
+    height: 36px;
+    padding-left: 16px;
+    background-color: var(--color-bg-light-primary-hover, #f5f6f6);
+  }
+  .mobileIcon {
+    background-color: var(--color-bg-light-primary-hover, #f5f6f6);
+    border-radius: 0 100px 100px 0;
+    padding: 8px 16px;
+    width: 46px;
+    height: 36px;
+  }
 }

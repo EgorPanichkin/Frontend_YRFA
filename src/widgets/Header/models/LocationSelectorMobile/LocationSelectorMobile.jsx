@@ -41,7 +41,7 @@ export const LocationSelectorMobile = () => {
         <Typography variant="smallBody" weight="bold" className={style.title}>
           {regions?.filter((region) => region.id == city)[0]?.title}
         </Typography>
-        <ChevronDown />
+        <ChevronDown className={isActive ? style.iconOpen : style.icon} />
       </div>
       <div className={isActive ? style.menu : style.hiddenMenu}>
         {regions.map((region) => {

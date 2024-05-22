@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { GlassIcon } from "@/shared/assets";
 
 export const SearchInput = (props) => {
-  const { size } = props;
+  const { size, onCloseMenu } = props;
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -17,14 +17,36 @@ export const SearchInput = (props) => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim() !== "") {
-      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      if (onCloseMenu) {
+        onCloseMenu();
+        setTimeout(() => {
+          navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+        }, 1000);
+      } else {
+        navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      }
       setSearchTerm("");
     }
   };
 
+  if (size === "mobile") {
+    return (
+      <div className={style}>
+        <form onSubmit={handleSearch} className={style.mobileInput}>
+          <input type="text" placeholder={t("header.search")} value={searchTerm} onChange={handleInputChange} />
+          <div className={style.mobileIcon}>
+            <button type="submit">
+              <GlassIcon />
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
   return (
     <div className={style.searchPages}>
-      <form onSubmit={handleSearch} className={`${style.searchPages}  ${size === "mobile" && style.mobileSearch}`}>
+      <form onSubmit={handleSearch} className={`${style.searchPages}`}>
         <input
           type="text"
           placeholder={t("header.search")}
