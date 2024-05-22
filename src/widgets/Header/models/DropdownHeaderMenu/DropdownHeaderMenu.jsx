@@ -21,16 +21,16 @@ export const DropdownHeaderMenu = ({ items, title }) => {
       }}
     >
       <div className={style.selector}>
-        <Typography variant="smallBody">{t(title)}</Typography>
-        <ChevronDown />
+        <div className={style.head}>
+          <Typography variant="smallBody">{t(title)}</Typography>
+          <ChevronDown />
+        </div>
         {show && (
           <div className={style.whitespace}>
             <div className={style.menuDropdown}>
               {items.map((item, index) => (
                 <Link to={item.path} key={index} className={style.childItem}>
-                  <Typography className={style.text}>
-                    {t(item.label)}
-                  </Typography>
+                  <Typography className={style.text}>{t(item.label)}</Typography>
                 </Link>
               ))}
             </div>

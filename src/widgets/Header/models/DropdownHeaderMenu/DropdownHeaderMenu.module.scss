@@ -3,6 +3,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    vertical-align: text-top;
+  }
   .whitespace {
     position: absolute;
     z-index: 999;
