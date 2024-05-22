@@ -8,7 +8,9 @@ export const NotFoundPage = () => {
     <Container>
       <div className={style.errorWrapper}>
         <div className={style.errorContent}>
-          <img className={style.errorImg} src={errorImg} alt="404" />
+          <div className={style.imgWrapper}>
+            <img src={errorImg} alt="404" />
+          </div>
           <Typography variant="h3" weight="bold" color="blue500" className={style.errorTitle}>
             Ой, кажется возникла ошибка
           </Typography>
@@ -17,7 +19,7 @@ export const NotFoundPage = () => {
           </Typography>
           <Link to={"/"} className={style.errorBtn}>
             <HomeIcon fill="white" />
-            <Typography variant="bodySmall" weight="bold" color="white" className={style.errorBtnText}>
+            <Typography variant="bodySmall" weight="bold" color="dark" className={style.errorBtnText}>
               На главную
             </Typography>
           </Link>
