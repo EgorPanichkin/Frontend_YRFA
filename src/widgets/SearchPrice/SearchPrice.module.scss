@@ -11,17 +11,15 @@
       display: flex;
       width: 282px;
       padding: 16px;
-      height: 193px;
-      gap: 21px;
+      // height: 193px;
+      gap: 16px;
       flex-direction: column;
-      align-items: center;
       border-radius: 15px;
       background: var(--color-bg-button-neutral-default);
       .titleCard {
         display: flex;
         flex-direction: column;
-        height: 96px;
-        gap: 32px;
+        gap: 16px;
       }
       .btnPrice {
         width: 100%;
