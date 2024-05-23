@@ -1,11 +1,13 @@
 .card {
   width: 100%;
-  padding: 16px;
+  // padding: 16px;
   border-radius: 8px;
   transition: all 1s;
-  background-color: var(--black200);
+  // background-color: var(--black200);
   cursor: pointer;
+  // height: 52px;
 }
+
 .cardBlock {
   width: 100%;
   padding: 16px;
@@ -16,14 +18,30 @@
   cursor: pointer;
   height: 52px;
 }
+
 .title {
+  // height: 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--black200);
+  padding: 16px;
+  border-radius: 8px;
 }
+.titleHidden {
+  // height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black200);
+  padding: 16px;
+  border-radius: 8px 8px 0 0;
+}
+
 .menu {
-  margin-top: 16px;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  // margin-top: 16px;
   background: var(--black200);
   display: flex;
   flex-direction: column;
@@ -37,7 +55,9 @@
     visibility 0.5s ease-out,
     opacity 0.5s ease-out;
 }
+
 .hidden {
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -56,6 +76,7 @@
   rotate: 180deg;
   transition: rotate 0.2s;
 }
+
 .icon {
   transition: rotate 0.2s;
 }

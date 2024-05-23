@@ -17,22 +17,20 @@ export const SubCategoryCard = ({ data }) => {
 
   return (
     <div className={style.card} onClick={() => setIsActive(!isActive)}>
-      <div className={style.title}>
+      <div className={isActive ? style.titleHidden : style.title}>
         <Typography weight="bold" color="default">
           {data.subcategory_name}
         </Typography>
         <ChevronDown className={isActive ? style.iconOpen : style.icon} />
       </div>
       <div className={isActive ? style.menu : style.hidden}>
-        {data.diagnostic_subcategory?.map((item, index) => {
-          return (
-            <Link to={"current-service/" + item.id} key={index}>
-              <Typography variant="smallBody" weight="bold" color="primary">
-                {item.diagnostic_name}
-              </Typography>
-            </Link>
-          );
-        })}
+        {data.diagnostic_subcategory?.map((item, index) => (
+          <Link to={"current-service/" + item.id} key={index}>
+            <Typography variant="smallBody" weight="bold" color="primary">
+              {item.diagnostic_name}
+            </Typography>
+          </Link>
+        ))}
       </div>
     </div>
   );
