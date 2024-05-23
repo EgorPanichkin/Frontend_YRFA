@@ -36,7 +36,7 @@ export const SearchInput = (props) => {
           <input type="text" placeholder={t("header.search")} value={searchTerm} onChange={handleInputChange} />
           <div className={style.mobileIcon}>
             <button type="submit">
-              <GlassIcon />
+              <GlassIcon className={style.searchIcon} />
             </button>
           </div>
         </form>

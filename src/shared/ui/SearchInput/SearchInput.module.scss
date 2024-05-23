@@ -7,18 +7,19 @@
   outline: none;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
-  padding: 10px 16px;
-  width: 380px;
+  width: 364px;
+  @media screen and (max-width: 1322px) {
+    width: 314px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 230px;
+  }
 }
 .inputPadding {
   height: 56px;
   @media screen and (max-width: 760px) {
-    width: 314px;
     height: 48px;
     padding: 6px 0px 6px 16px;
-  }
-  @media screen and (max-width: 400px) {
-    width: 250px;
   }
 }
 .inputPaddingDef {
@@ -36,6 +37,7 @@ button {
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   height: 35px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,10 +67,10 @@ button {
     width: 182px;
     height: 36px;
     padding-left: 16px;
-    background-color: var(--color-bg-light-primary-hover, #f5f6f6);
+    background-color: var(--color-bg-light-primary-hover);
   }
   .mobileIcon {
-    background-color: var(--color-bg-light-primary-hover, #f5f6f6);
+    background-color: var(--color-bg-light-primary-hover);
     border-radius: 0 100px 100px 0;
     padding: 8px 16px;
     width: 46px;
